@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="la-escuela.css/administrativos-styles.css">
+  <link rel="stylesheet" href="/header/header.css">
+  <script src="/header/header_function.js"></script>
+  <title>Administrativos EPG UNAC</title>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="contenedor">
+    <h1>Administrativos de la EPG - UNAC</h1>
+
+    <div class="filtros">
+      <label for="facultadSelect">Filtrar por facultad:</label>
+      <select id="facultadSelect">
+        <option value="todas">Todas</option>
+      </select>
+
+      <label for="buscador">Buscar por nombre:</label>
+      <input type="text" id="buscador" placeholder="Escribe un nombre...">
+    </div>
+
+    <ul id="listaAdministrativos" class="lista-personal"></ul>
+  </main>
+
+  <script src="/favico.js"></script>
+  <script src="/header/header.js"></script>
+  <script src="la-escuela-js/administrativos.js"></script>
+</body>
+</html>

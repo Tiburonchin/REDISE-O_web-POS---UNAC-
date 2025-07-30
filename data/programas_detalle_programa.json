@@ -1,0 +1,121 @@
+{
+  "Facultad de Ciencias de la Salud": {
+    "Maestría": [
+      "Maestría en Gerencia en Salud",
+      "Maestría en Salud Pública",
+      "Maestría en Ciencias de la Salud con Mención en Educación para la Salud",
+      "Maestría en Enfermería",
+      "Maestría en Enfermeria Familiar y Comunitaria",
+      "Maestría en Salud Ocupacional y Ambiental"
+    ],
+    "Doctorado": [
+      "Doctorado en Salud Pública",
+      "Doctorado en Ciencias de la Salud",
+      "Doctorado en Administración en Salud",
+      "Doctorado en Enfermería"
+    ],
+    "Especialidad": [
+      "Especialidad en Administración en Salud",
+      "Especialidad en Enfermería en Centro Quirúrgico",
+      "Especialidad en Enfermería en Cuidados Quirúrgicos",
+      "Especialidad en Enfermería en Emergencias y Desastres",
+      "Especialidad en Enfermería en Gerontología y Geriatría",
+      "Especialidad en Enfermería en Oncología",
+      "Especialidad en Enfermería en Salud Mental",
+      "Especialidad en Salud Pública y Comunitaria",
+      "Especialidad en Enfermería en Salud del Niño y Adolescente",
+      "Especialidad en Enfermería Intensiva",
+      "Especialidad en Enfermería Pediátrica",
+      "Especialidad en Enfermería en Epidemiología",
+      "Especialidad en Enfermería en Salud Familiar y Comunitaria",
+      "Especialidad en Enfermería Neonatalogía",
+      "Especialidad en Política y Gestión de la Salud en Enfermería",
+      "Especialidad en Enfermería en Crecimiento, Desarrollo del Niño y Estimulación de la Primera Infancia"
+    ]
+  },
+  "Facultad en Ciencias Económicas": {
+    "Maestría": [
+      "Maestría en Comercio y Negociaciones Internacionales",
+      "Maestría en Finanzas",
+      "Maestría en Investigación y Docencia Universitaria",
+      "Maestría en Proyectos de Inversión"
+    ]
+  },
+  "Facultad de Ingeniería Industrial y de Sistemas": {
+    "Maestría": [
+      "Maestría en Ingenería Industrial con Mención en Gerencia de la Calidad y Productividad",
+      "Maestría en Ingenería Industrial con Mención en Gerencia Logística",
+      "Maestría en Ingenería de Sistemas"
+    ],
+    "Doctorado": [
+      "Doctorado en Ingenería de Sistemas",
+      "Doctorado en Ingenería Industrial"
+    ]
+  },
+  "Facultad de Ingeniería Química": {
+    "Maestría": [
+      "Maestría en Gerencia de Calidad y Desarrollo Humano",
+      "Maestría en Ciencia y Tecnología de Alimentos",
+      "Maestría en Ingeniería Química"
+    ]
+  },
+  "Facultad de Ingeniería Eléctrica y Electrónica": {
+    "Maestría": [
+      "Maestría en Ciencias de la Electrónica con Mención en Ingenería Biomédica",
+      "Maestría en Ciencias de la Electrónica con Mención en Control y Automatización",
+      "Maestría en Ciencias de la Electrónica con Mención en Telecomunicaciones",
+      "Maestría en Ciencias de la Electrónica con Mención en Gestión de Sistemas de Energía Eléctrica",
+      "Maestría en Ciencias de la Electrónica con Mención en Gerencia de Proyectos de Ingenería"
+    ],
+    "Doctorado": [
+      "Doctorado en Ingenería Eléctrica"
+    ]
+  },
+  "Facultad de Ingeniería Pesquera y de Alimentos": {
+    "Maestría": [
+      "Maestría en Gestión Pesquera",
+      "Maestría en Ingenería de Alimentos"
+    ]
+  },
+  "Facultad de Ingeniería Mecánica y Energía": {
+    "Maestría": [
+      "Maestría en Gerencia del Mantenimiento"
+    ]
+  },
+  "Facultad de Ciencias Contables": {
+    "Maestría": [
+      "Maestría en Tributación",
+      "Maestría en Ciencias Fiscalizadoras con Mención en Auditoría Gubernamental",
+      "Maestría en Ciencias Fiscalizadoras con Mención en Auditoría Integral Empresarial",
+      "Maestría en Gestión Pública"
+    ],
+    "Doctorado": [
+      "Doctorado en Ciencias Contables"
+    ]
+  },
+  "Facultad de Ciencias Administrativas": {
+    "Maestría": [
+      "Maestría en Gerencia Educativa",
+      "Maestría en Administración Estratégica de empresas",
+      "Maaestría en Administración Marítima y Portuaria"
+    ],
+    "Doctorado": [
+      "Doctorado en Administración"
+    ]
+  },
+  "Facultad de Ingeniería Ambiental y de Recursos Naturales": {
+    "Maestría": [
+      "Maestría en Gestión Ambiental para el Desarrollo Sostenible"
+    ]
+  },
+  "Facultad de Ciencias Naturales y Matemática": {
+    "Maestría": [
+      "Maestría en Didáctica de la Eneseñanza de la Física y Matemática"
+    ]
+  },
+  "Facultad de Ciencias de la Educación": {
+    "Doctorado": [
+      "Doctorado en Educación"
+    ]
+  }
+}

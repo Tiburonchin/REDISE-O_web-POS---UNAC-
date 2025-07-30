@@ -1,0 +1,182 @@
+[
+    {
+        "facultad": "Ciencias de la Salud",
+        "Maestría": [
+            {
+                "nombre": "Maestría en Salud Pública",
+                "slug": "maestria-en-salud-publica",
+                "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ],
+        "Doctorado": [
+
+        ]
+    },
+    {
+        "facultad": "Ingeniería Industrial",
+        "Maestría": [
+            {
+                "nombre": "Maestría en Ingeniería Industrial",
+                "slug": "maestria-en-ingenieria-industrial",
+                "descripcion": "Programa orientado a formar expertos en la optimización de procesos industriales",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ],
+        "Doctorado": [
+
+        ]
+    },
+    {
+        "facultad": "Ciencias Económicas",
+        "Maestría": [
+            {
+                "nombre": "Maestría en Comercio y Negociaciones Internacionales",
+                "slug": "maestria-en-comercio-y-negociaciones-internacionales",
+                "descripcion": "Programa orientado a formar profesionales capaces de gestionar y negociar en el ámbito",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "httpss://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            },
+            {
+                "nombre": "Maestría en Finanzas",
+                "slug": "maestria-en-finanzas",
+                "descripcion": "Enfocado en la gestión financiera y la toma de decisiones económicas",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg"   ,
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            },
+            {
+                "nombre": "Maestría en Investigación y Docencia Universitaria",
+                "slug": "maestria-en-investigacion-y-docencia-universitaria",
+                "descripcion": "Programa diseñado para formar investigadores y docentes universitarios",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            },
+            {
+                "nombre": "Maestría en Proyectos de Inversión",
+                "slug": "maestria-en-proyectos-de-inversion",
+                "descripcion": "Capacita en la formulación y evaluación de proyectos de inversión",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ],
+        "Doctorado": [
+            {
+                "nombre": "Doctorado en Economía",
+                "slug": "doctorado-en-economia",
+                "descripcion": "Programa de investigación avanzada en el campo de la economía",
+                "duracion": "3 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ]
+    },
+    {
+        "facultad": "Ciencias Administrativas",
+        "Maestría": [
+            {
+                "nombre": "Maestría en Administración de Empresas",
+                "slug": "maestria-en-administracion-de-empresas",
+                "descripcion": "Programa orientado a formar líderes en el ámbito empresarial",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ],
+        "Doctorado": [
+            {
+                "nombre": "Doctorado en Administración",
+                "slug": "doctorado-en-administracion",
+                "descripcion": "Programa de investigación avanzada en el campo de la administración",
+                "duracion": "3 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ]
+    },
+    {
+        "facultad": "Ingeniería de Sistemas",
+        "Maestría": [
+            {
+                "nombre": "Maestría en Ingeniería de Software",
+                "slug": "maestria-en-ingenieria-de-software",
+                "descripcion": "Programa orientado a formar expertos en el desarrollo de software",
+                "duracion": "2 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ],
+        "Doctorado": [
+            {
+                "nombre": "Doctorado en Ingeniería de Sistemas",
+                "slug": "doctorado-en-ingenieria-de-sistemas",
+                "descripcion": "Programa de investigación avanzada en el campo de la ingeniería de sistemas",
+                "duracion": "3 años",
+                "modalidad": "Presencial",
+                "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+                "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "imagen_4": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+                "descripcion_1": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+                "descripcion_2": "Los estudiantes aprenderán a desarrollar e implementar programas de salud pública"
+            }
+        ]
+    }
+]

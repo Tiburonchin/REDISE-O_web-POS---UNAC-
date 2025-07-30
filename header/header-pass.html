@@ -1,0 +1,100 @@
+<header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo"><a href="#"><img src="/img/ep.png" alt=""></a></div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-menu">
+                <!-- LA ESCUELA -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link has-dropdown">LA ESCUELA</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Presentación</a>
+                        <a href="#" class="dropdown-item">Misión y Visión</a>
+                        <a href="#" class="dropdown-item">Directores</a>
+                        <a href="#" class="dropdown-item">Administrativos</a>
+                        <a href="#" class="dropdown-item">Docentes</a>
+                    </div>
+                </div>
+
+                <!-- ADMISION -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link has-dropdown">ADMISIÓN</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Proceso de Admisión</a>
+                        <a href="#" class="dropdown-item">Cronograma Académico</a>
+                        <a href="#" class="dropdown-item">Requisitos y Costos</a>
+                        <a href="#" class="dropdown-item">Formatos y Tutoriales</a>
+                    </div>
+                </div>
+
+                <!-- PROGRAMAS -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">PROGRAMAS</a>
+                </div>
+
+                <!-- CONÓCENOS -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link has-dropdown">CONÓCENOS</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Transparencia</a>
+                        <a href="#" class="dropdown-item">Calidad</a>
+                        <a href="#" class="dropdown-item">Revista Científica</a>
+                        <a href="#" class="dropdown-item">Ubicación</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Action Button -->
+            <button class="action-btn">Función Futura</button>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <!-- LA ESCUELA Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleDropdown('escuela')">LA ESCUELA ▼</a>
+                <div class="mobile-dropdown" id="escuela">
+                    <a href="#" class="mobile-dropdown-item">Presentación</a>
+                    <a href="#" class="mobile-dropdown-item">Misión y Visión</a>
+                    <a href="#" class="mobile-dropdown-item">Directores</a>
+                    <a href="#" class="mobile-dropdown-item">Administrativos</a>
+                    <a href="#" class="mobile-dropdown-item">Docentes</a>
+                </div>
+            </div>
+
+            <!-- ADMISION Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleDropdown('admision')">ADMISIÓN ▼</a>
+                <div class="mobile-dropdown" id="admision">
+                    <a href="#" class="mobile-dropdown-item">Proceso de Admisión</a>
+                    <a href="#" class="mobile-dropdown-item">Cronograma Académico</a>
+                    <a href="#" class="mobile-dropdown-item">Requisitos y Costos</a>
+                    <a href="#" class="mobile-dropdown-item">Formatos y Tutoriales</a>
+                </div>
+            </div>
+
+            <!-- PROGRAMAS Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">PROGRAMAS</a>
+            </div>
+
+            <!-- CONÓCENOS Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleDropdown('conocenos')">CONÓCENOS ▼</a>
+                <div class="mobile-dropdown" id="conocenos">
+                    <a href="#" class="mobile-dropdown-item">Transparencia</a>
+                    <a href="#" class="mobile-dropdown-item">Calidad</a>
+                    <a href="#" class="mobile-dropdown-item">Revista Científica</a>
+                    <a href="#" class="mobile-dropdown-item">Ubicación</a>
+                </div>
+            </div>
+
+            <button class="mobile-action-btn">Función Futura</button>
+        </div>
+</header>

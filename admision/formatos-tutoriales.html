@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formatos-tutoriales.css">
+    <link rel="stylesheet" href="/header/header.css">
+    <script src="/header/header_function.js"></script>
+    <title>Formatos y Tutoriales</title>
+</head>
+<body>
+    <div id="header"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Formatos y Tutoriales</h1>
+            <p>Descarga todos los formatos necesarios para tu proceso de admisión<br>
+            y sigue nuestros tutoriales paso a paso</p>
+        </div>
+
+        <!-- Formatos Section -->
+        <div class="section-card formats-section">
+            <h2 class="section-title">Formatos de Admisión</h2>
+            
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="showCategory('proceso')">Proceso de Admisión</button>
+                <button class="filter-btn" onclick="showCategory('investigacion')">Proyecto de Investigación</button>
+                <button class="filter-btn" onclick="showCategory('guias')">Guías y Manuales</button>
+            </div>
+
+            <div id="proceso" class="formats-category active">
+                <div class="formats-grid">
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">⚖️</div>
+                            <div class="format-title">Declaración Jurada</div>
+                        </div>
+                        <div class="format-description">
+                            Documento donde declaras la veracidad de tu información académica y profesional bajo juramento.
+                        </div>
+                        <a href="#" class="download-btn">Descargar PDF</a>
+                    </div>
+
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">👤</div>
+                            <div class="format-title">Formato Hoja de Vida-CV</div>
+                        </div>
+                        <div class="format-description">
+                            Formato oficial para presentar tu currículum vitae con el estilo requerido por la institución.
+                        </div>
+                        <a href="#" class="download-btn">Descargar WORD</a>
+                    </div>
+
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">📝</div>
+                            <div class="format-title">Formato Ficha de Inscripción</div>
+                        </div>
+                        <div class="format-description">
+                            Formato oficial para registrar tus datos personales y académicos. Completa todos los campos requeridos.
+                        </div>
+                        <a href="#" class="download-btn">Descargar PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="investigacion" class="formats-category">
+                <div class="formats-grid">
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">🔬</div>
+                            <div class="format-title">Formato Proyecto de Investigación</div>
+                        </div>
+                        <div class="format-description">
+                            Plantilla oficial para presentar tu propuesta de investigación con la estructura requerida.
+                        </div>
+                        <a href="#" class="download-btn">Descargar WORD</a>
+                    </div>
+
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">📋</div>
+                            <div class="format-title">Directiva Proyecto de Investigación</div>
+                        </div>
+                        <div class="format-description">
+                            Lineamientos y directrices oficiales para la elaboración de proyectos de investigación.
+                        </div>
+                        <a href="#" class="download-btn">Descargar PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="guias" class="formats-category">
+                <div class="formats-grid">
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">📚</div>
+                            <div class="format-title">Manual para Ingresantes Posgrado</div>
+                        </div>
+                        <div class="format-description">
+                            Guía completa con toda la información necesaria para nuevos estudiantes de posgrado.
+                        </div>
+                        <a href="#" class="download-btn">Descargar PDF</a>
+                    </div>
+
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">📧</div>
+                            <div class="format-title">Manual para ingresar al Correo Institucional</div>
+                        </div>
+                        <div class="format-description">
+                            Instrucciones paso a paso para configurar y acceder a tu correo electrónico institucional.
+                        </div>
+                        <a href="#" class="download-btn">Descargar PDF</a>
+                    </div>
+
+                    <div class="format-card">
+                        <div class="format-header">
+                            <div class="format-icon">💻</div>
+                            <div class="format-title">Sistema de Gestión Académico</div>
+                        </div>
+                        <div class="format-description">
+                            Manual de usuario para el sistema de gestión académica y consulta de notas en línea.
+                        </div>
+                        <a href="#" class="download-btn">Descargar PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutoriales Section -->
+        <div class="section-card tutorials-section">
+            <h2 class="section-title">Tutoriales Paso a Paso</h2>
+            
+            <div class="tutorial-grid">
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="play-button" onclick="playTutorial('inscription')"></div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3 class="tutorial-title">Cómo completar tu inscripción online</h3>
+                        <p class="tutorial-description">
+                            Aprende paso a paso cómo registrarte en nuestro sistema y completar tu ficha de inscripción correctamente.
+                        </p>
+                        <div class="tutorial-meta">
+                            <span>Tutorial básico</span>
+                            <span class="tutorial-duration">8:30 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="play-button" onclick="playTutorial('documents')"></div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3 class="tutorial-title">Preparación de documentos</h3>
+                        <p class="tutorial-description">
+                            Guía detallada sobre cómo digitalizar, organizar y subir correctamente todos tus documentos.
+                        </p>
+                        <div class="tutorial-meta">
+                            <span>Tutorial intermedio</span>
+                            <span class="tutorial-duration">12:15 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="play-button" onclick="playTutorial('payment')"></div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3 class="tutorial-title">Proceso de pago online</h3>
+                        <p class="tutorial-description">
+                            Conoce las diferentes opciones de pago y cómo realizar tu pago de manera segura en línea.
+                        </p>
+                        <div class="tutorial-meta">
+                            <span>Tutorial básico</span>
+                            <span class="tutorial-duration">6:45 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="play-button" onclick="playTutorial('exam')"></div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3 class="tutorial-title">Preparación para el examen</h3>
+                        <p class="tutorial-description">
+                            Tips y estrategias para prepararte efectivamente para tu examen de admisión.
+                        </p>
+                        <div class="tutorial-meta">
+                            <span>Tutorial avanzado</span>
+                            <span class="tutorial-duration">15:20 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="play-button" onclick="playTutorial('interview')"></div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3 class="tutorial-title">Cómo afrontar la entrevista</h3>
+                        <p class="tutorial-description">
+                            Consejos prácticos para presentarte con confianza en tu entrevista de admisión.
+                        </p>
+                        <div class="tutorial-meta">
+                            <span>Tutorial intermedio</span>
+                            <span class="tutorial-duration">10:30 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-card">
+                    <div class="tutorial-thumbnail">
+                        <div class="play-button" onclick="playTutorial('results')"></div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3 class="tutorial-title">Consulta de resultados y matrícula</h3>
+                        <p class="tutorial-description">
+                            Aprende cómo consultar tus resultados y completar tu proceso de matrícula exitosamente.
+                        </p>
+                        <div class="tutorial-meta">
+                            <span>Tutorial básico</span>
+                            <span class="tutorial-duration">7:15 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="help-section">
+            <h3>¿Necesitas ayuda adicional?</h3>
+            <p>Nuestro equipo de admisiones está disponible para resolver todas tus dudas y acompañarte durante todo el proceso. No dudes en contactarnos.</p>
+            <a href="#" class="contact-btn">Contactar Soporte</a>
+        </div>
+    </div>
+
+    <script src="/favico.js"></script>
+    <script src="/header/header.js"></script>
+    <script src="js/formatos-tutoriales.js"></script>
+</body>
+</html>

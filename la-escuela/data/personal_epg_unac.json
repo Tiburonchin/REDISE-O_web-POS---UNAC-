@@ -1,0 +1,70 @@
+{
+    "facultades": [
+        {
+        "nombre": "Facultad de Ingeniería de Sistemas",
+        "director": {
+            "nombre": "Dr. Juan Pérez",
+            "grado": "Doctor en Ciencias de la Educación",
+            "especialidad": "Gestión Educativa",
+            "correo": "jperez@unac.edu.pe",
+            "imagen": "img/directores/juan_perez.jpg"
+        },
+        "docentes": [
+            {
+            "nombre": "Dra. Yesmi Ortega",
+            "grado": "Doctorado en Administración",
+            "especialidad": "Internet de las Cosas (IoT)",
+            "correo": "yortega@unac.edu.pe",
+            "imagen": "img/docentes/yesmi_ortega.jpg"
+            },
+            {
+            "nombre": "Mg. Luis Contreras",
+            "grado": "Magíster en Ingeniería de Sistemas",
+            "especialidad": "Bases de Datos",
+            "correo": "lcontreras@unac.edu.pe",
+            "imagen": "img/docentes/luis_contreras.jpg"
+            }
+        ],
+        "administrativos": [
+            {
+            "nombre": "Andrea Ramírez",
+            "cargo": "Secretaria Académica",
+            "grado": "Bachiller en Administración",
+            "correo": "aramirez@unac.edu.pe",
+            "imagen": "img/administrativos/andrea_ramirez.jpg"
+            },
+            {
+            "nombre": "Marco Cárdenas",
+            "cargo": "Asistente Administrativo",
+            "grado": "Técnico en Computación",
+            "correo": "mcardenas@unac.edu.pe",
+            "imagen": "img/administrativos/marco_cardenas.jpg"
+            }
+        ]
+        },
+        {
+        "nombre": "Facultad de Ciencias Contables",
+        "director": {
+            "nombre": "Dra. Carmen Salazar",
+            "grado": "Doctorado en Tecnología Educativa",
+            "especialidad": "Producción científica",
+            "correo": "csalazar@unac.edu.pe",
+            "imagen": "img/directores/carmen_salazar.jpg"
+        },
+        "docentes": [],
+        "administrativos": []
+        },
+        {
+        "nombre": "Facultad de Ciencias Administrativas",
+        "director": {
+            "nombre": "Dr. Carlos López",
+            "grado": "Doctorado en Administración",
+            "especialidad": "Gestión Empresarial",
+            "correo": "clopez@unac.edu.pe",
+            "imagen": "img/directores/carlos_lopez.jpg"
+        },
+        "docentes": [],
+        "administrativos": []
+        }
+    ]
+}

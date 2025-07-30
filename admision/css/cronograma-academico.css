@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    padding-top: 80px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+}
+
+.page-header h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.content-section {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+}
+
+/* Timeline específico para fechas */
+.timeline-container {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 5px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+}
+
+.timeline-date {
+    background: #3498db;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 120px;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+
+.timeline-date .day {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+}
+
+.timeline-date .month {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* Tabla responsive mejorada */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dates-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background: white;
+}
+
+.dates-table th,
+.dates-table td {
+    padding: 15px 12px;
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+}
+
+.dates-table th {
+    background: #3498db !important;
+    color: white !important;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.dates-table td {
+    background: white;
+}
+
+.dates-table tr {
+    transition: all 0.3s ease;
+}
+
+.dates-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.dates-table tbody tr:hover td {
+    background: #f8f9fa;
+}
+
+.dates-table .date-col {
+    font-weight: 600;
+    color: #3498db;
+    width: 100px;
+    white-space: nowrap;
+}
+
+.dates-table .event-col {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 200px;
+}
+
+.dates-table .desc-col {
+    color: #7f8c8d;
+    min-width: 250px;
+}
+
+.dates-table .semester-col {
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: center;
+    width: 100px;
+}
+
+/* Cards para móvil como alternativa a la tabla */
+.schedule-cards {
+    display: none;
+}
+
+.schedule-card {
+    background: white;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+}
+
+.schedule-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.schedule-card-date {
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.schedule-card-semester {
+    background: #e8f4fd;
+    color: #3498db;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.schedule-card-event {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.schedule-card-desc {
+    color: #7f8c8d;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* Cards grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.info-card h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.info-card .highlight {
+    background: #e8f4fd;
+    color: #3498db;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Botones */
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Alert boxes para información importante */
+.alert {
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 5px solid;
+}
+
+.alert-info {
+    background: #e8f4fd;
+    border-left-color: #3498db;
+    color: #2980b9;
+}
+
+.alert-warning {
+    background: #fef9e7;
+    border-left-color: #f39c12;
+    color: #d68910;
+}
+
+.alert-success {
+    background: #eafaf1;
+    border-left-color: #27ae60;
+    color: #229954;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .timeline-item {
+        padding: 20px;
+    }
+    
+    .timeline-date {
+        min-width: 100px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px 15px;
+    }
+
+    .page-header {
+        padding: 40px 25px;
+    }
+
+    .page-header h1 {
+        font-size: 2.2em;
+    }
+
+    .content-section {
+        padding: 25px 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .timeline-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+        min-width: auto;
+        width: 120px;
+    }
+
+    /* Ocultar tabla y mostrar cards en móvil */
+    .table-container {
+        display: none;
+    }
+
+    .schedule-cards {
+        display: block;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .info-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px 10px;
+    }
+
+    .page-header {
+        padding: 30px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8em;
+    }
+
+    .page-header p {
+        font-size: 1em;
+    }
+
+    .content-section {
+        padding: 20px 15px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .timeline-item {
+        padding: 15px;
+    }
+
+    .timeline-date {
+        padding: 12px 15px;
+        width: 100px;
+    }
+
+    .timeline-date .day {
+        font-size: 1.2em;
+    }
+
+    .timeline-date .month {
+        font-size: 0.8em;
+    }
+
+    .info-card {
+        padding: 20px 15px;
+    }
+
+    .schedule-card {
+        padding: 15px;
+    }
+
+    .schedule-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .main-content {
+        padding: 12px 8px;
+    }
+
+    .page-header h1 {
+        font-size: 1.6em;
+    }
+
+    .content-section {
+        padding: 15px 12px;
+    }
+
+    .timeline-item {
+        padding: 12px;
+    }
+
+    .schedule-card {
+        padding: 12px;
+    }
+}

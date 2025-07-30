@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="la-escuela.css/directores-styles.css">
+  <link rel="stylesheet" href="/header/header.css">
+  <script src="/header/header_function.js"></script>
+  <title>Directores - EPG UNAC</title>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="container">
+    <h1>Directores de Facultad</h1>
+    <div class="selector-container">
+      <label for="facultadSelect">Selecciona una facultad:</label>
+      <select id="facultadSelect">
+        <option value="todas">Todas las facultades</option>
+      </select>
+
+      <input type="text" id="buscador" placeholder="Buscar director por nombre">
+    </div>
+    <ul id="listaDirectores"></ul>
+  </div>
+
+  <script src="/favico.js"></script>
+  <script src="/header/header.js"></script>
+  <script src="la-escuela-js/directores.js"></script>
+</body>
+</html>
