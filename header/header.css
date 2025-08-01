@@ -224,19 +224,44 @@ header.header .nav-link:hover::before {
 }
 
 .action-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 193, 7, 0.3);
     padding: 12px 20px;
-    border-radius: 5px;
+    border-radius: 12px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
+    transition: left 0.5s ease;
 }
 
 .action-btn:hover {
-    background: #c0392b;
+    background: rgba(255, 193, 7, 0.15);
+    border-color: rgba(255, 193, 7, 0.6);
+    color: rgba(255, 193, 7, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+}
+
+.action-btn:hover::before {
+    left: 100%;
 }
 
 /* Mobile Menu */
@@ -298,17 +323,19 @@ header.header .mobile-menu {
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border-top: 3px solid #FFC107;
-    border-bottom: 3px solid #FFC107;
+    background: rgba(10, 46, 82, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 193, 7, 0.3);
+    border-bottom: 1px solid rgba(255, 193, 7, 0.3);
     max-height: 0;
     overflow: hidden;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 20px 20px;
 }
 
 header.header .mobile-menu.active {
@@ -329,9 +356,10 @@ header.header .mobile-menu.active {
 }
 
 .mobile-nav-item {
-    border-bottom: 1px solid rgba(255, 193, 7, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .mobile-nav-item::before {
@@ -339,9 +367,9 @@ header.header .mobile-menu.active {
     position: absolute;
     left: 0;
     top: 0;
-    width: 4px;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(to bottom, #FFC107, #FFD54F);
+    background: linear-gradient(to bottom, rgba(255, 193, 7, 0.6), rgba(255, 213, 79, 0.4));
     transform: scaleY(0);
     transition: transform 0.3s ease;
     transform-origin: bottom;
@@ -359,9 +387,9 @@ header.header .mobile-menu.active {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.95);
     text-decoration: none;
-    padding: 16px 25px;
+    padding: 18px 25px;
     font-weight: 500;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -369,7 +397,7 @@ header.header .mobile-menu.active {
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    background: transparent;
 }
 
 .mobile-nav-link::after {
@@ -379,15 +407,15 @@ header.header .mobile-menu.active {
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.06), transparent);
     transition: right 0.6s ease;
 }
 
 .mobile-nav-link:hover {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 193, 7, 0.08));
-    color: #FFC107;
-    transform: translateX(8px);
-    text-shadow: 0 1px 3px rgba(255, 193, 7, 0.3);
+    background: rgba(255, 193, 7, 0.08);
+    color: rgba(255, 193, 7, 0.95);
+    transform: translateX(6px);
+    text-shadow: 0 1px 3px rgba(255, 193, 7, 0.2);
 }
 
 .mobile-nav-link:hover::after {
@@ -395,22 +423,24 @@ header.header .mobile-menu.active {
 }
 
 .mobile-dropdown {
-    background: linear-gradient(145deg, rgba(255, 193, 7, 0.12), rgba(255, 193, 7, 0.06));
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 0 0 12px 12px;
-    margin: 0 8px;
-    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.15);
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
+    border-radius: 0 0 15px 15px;
+    margin: 0 12px;
+    box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.1);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
 }
 
 .mobile-dropdown.active {
     max-height: 320px;
-    margin-bottom: 8px;
-    border-left: 3px solid #FFC107;
-    border-right: 3px solid #FFC107;
+    margin-bottom: 10px;
+    border-left: 2px solid rgba(255, 193, 7, 0.4);
+    border-right: 2px solid rgba(255, 193, 7, 0.4);
     animation: expandDown 0.5s ease-out;
 }
 
@@ -430,26 +460,26 @@ header.header .mobile-menu.active {
 .mobile-dropdown-item {
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     padding: 14px 25px;
     font-size: 14px;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 193, 7, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    background: transparent;
 }
 
 .mobile-dropdown-item::before {
     content: '▸';
     margin-right: 12px;
-    color: #FFC107;
+    color: rgba(255, 193, 7, 0.7);
     font-weight: bold;
     font-size: 16px;
     transition: all 0.4s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-dropdown-item::after {
@@ -459,44 +489,48 @@ header.header .mobile-menu.active {
     top: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.25), rgba(255, 160, 0, 0.25));
+    background: rgba(255, 193, 7, 0.08);
     transform: translateX(-100%);
     transition: transform 0.4s ease;
 }
 
 .mobile-dropdown-item:hover {
-    background: linear-gradient(135deg, #FFC107, #FFB300);
-    color: #0a2e52;
-    transform: translateX(8px);
-    box-shadow: 0 3px 12px rgba(255, 193, 7, 0.4);
+    background: rgba(255, 193, 7, 0.12);
+    color: rgba(255, 193, 7, 1);
+    transform: translateX(6px);
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.15);
     font-weight: 600;
 }
 
 .mobile-dropdown-item:hover::before {
-    transform: translateX(6px) scale(1.1);
-    color: #0a2e52;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    transform: translateX(4px) scale(1.1);
+    color: rgba(255, 193, 7, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-dropdown-item:hover::after {
     transform: translateX(0);
 }
 
+/* OPCIÓN 1: Botón Glassmorphism Moderno */
 .mobile-action-btn {
-    margin: 20px 25px;
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
-    border: none;
+    margin: 25px 25px 30px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 193, 7, 0.3);
     padding: 16px 25px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-weight: 600;
     cursor: pointer;
     width: calc(100% - 50px);
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 14px;
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -508,19 +542,82 @@ header.header .mobile-menu.active {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.2), transparent);
     transition: left 0.6s ease;
 }
 
 .mobile-action-btn:hover {
-    background: linear-gradient(135deg, #c0392b, #a93226);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+    background: rgba(255, 193, 7, 0.15);
+    border-color: rgba(255, 193, 7, 0.6);
+    color: rgba(255, 193, 7, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 193, 7, 0.2), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .mobile-action-btn:hover::before {
     left: 100%;
 }
+
+/* OPCIÓN 2: Botón Minimalista con Gradiente Sutil (comentado)
+.mobile-action-btn-option2 {
+    margin: 25px 25px 30px 25px;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 160, 0, 0.05));
+    color: rgba(255, 193, 7, 0.9);
+    border: 2px solid rgba(255, 193, 7, 0.2);
+    padding: 18px 25px;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    width: calc(100% - 50px);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.mobile-action-btn-option2:hover {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1));
+    border-color: rgba(255, 193, 7, 0.5);
+    color: rgba(255, 193, 7, 1);
+    transform: scale(1.02);
+}
+*/
+
+/* OPCIÓN 3: Botón con Icono y Efecto Neón (comentado)
+.mobile-action-btn-option3 {
+    margin: 25px 25px 30px 25px;
+    background: transparent;
+    color: rgba(255, 193, 7, 0.8);
+    border: 1px solid rgba(255, 193, 7, 0.4);
+    padding: 16px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    width: calc(100% - 50px);
+    transition: all 0.4s ease;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    position: relative;
+}
+
+.mobile-action-btn-option3::before {
+    content: '⚡';
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.mobile-action-btn-option3:hover {
+    background: rgba(255, 193, 7, 0.1);
+    color: rgba(255, 193, 7, 1);
+    border-color: rgba(255, 193, 7, 0.8);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.3),
+                inset 0 0 20px rgba(255, 193, 7, 0.1);
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+*/
 
 /* Responsive */
 @media (max-width: 1200px) {

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Header Mejorado</title>
+    <link rel="stylesheet" href="header.css">
+    <script src="header_function.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+        
+        .demo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .changes-list {
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .changes-list h3 {
+            color: #FFC107;
+            margin-bottom: 15px;
+        }
+        
+        .changes-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .changes-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the header -->
+    <link rel="stylesheet" href="header.css">
+    <script src="header_function.js"></script>
+    
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo"><a href="#"><img src="../img/ep.png" alt="Logo" style="height: 50px;"></a></div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-menu">
+                <!-- LA ESCUELA -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link has-dropdown">LA ESCUELA</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Presentación</a>
+                        <a href="#" class="dropdown-item">Misión y Visión</a>
+                        <a href="#" class="dropdown-item">Directores</a>
+                        <a href="#" class="dropdown-item">Administrativos</a>
+                        <a href="#" class="dropdown-item">Docentes</a>
+                    </div>
+                </div>
+
+                <!-- ADMISION -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link has-dropdown">ADMISIÓN</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Proceso de Admisión</a>
+                        <a href="#" class="dropdown-item">Cronograma Académico</a>
+                        <a href="#" class="dropdown-item">Requisitos y Costos</a>
+                        <a href="#" class="dropdown-item">Formatos y Tutoriales</a>
+                    </div>
+                </div>
+
+                <!-- PROGRAMAS -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link">PROGRAMAS</a>
+                </div>
+
+                <!-- CONÓCENOS -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link has-dropdown">CONÓCENOS</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Transparencia</a>
+                        <a href="#" class="dropdown-item">Calidad</a>
+                        <a href="#" class="dropdown-item">Revista Científica</a>
+                        <a href="#" class="dropdown-item">Ubicación</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Action Button -->
+            <button class="action-btn">Función Futura</button>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <!-- LA ESCUELA Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleDropdown('escuela')">LA ESCUELA ▼</a>
+                <div class="mobile-dropdown" id="escuela">
+                    <a href="#" class="mobile-dropdown-item">Presentación</a>
+                    <a href="#" class="mobile-dropdown-item">Misión y Visión</a>
+                    <a href="#" class="mobile-dropdown-item">Directores</a>
+                    <a href="#" class="mobile-dropdown-item">Administrativos</a>
+                    <a href="#" class="mobile-dropdown-item">Docentes</a>
+                </div>
+            </div>
+
+            <!-- ADMISION Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleDropdown('admision')">ADMISIÓN ▼</a>
+                <div class="mobile-dropdown" id="admision">
+                    <a href="#" class="mobile-dropdown-item">Proceso de Admisión</a>
+                    <a href="#" class="mobile-dropdown-item">Cronograma Académico</a>
+                    <a href="#" class="mobile-dropdown-item">Requisitos y Costos</a>
+                    <a href="#" class="mobile-dropdown-item">Formatos y Tutoriales</a>
+                </div>
+            </div>
+
+            <!-- PROGRAMAS Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">PROGRAMAS</a>
+            </div>
+
+            <!-- CONÓCENOS Mobile -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" onclick="toggleDropdown('conocenos')">CONÓCENOS ▼</a>
+                <div class="mobile-dropdown" id="conocenos">
+                    <a href="#" class="mobile-dropdown-item">Transparencia</a>
+                    <a href="#" class="mobile-dropdown-item">Calidad</a>
+                    <a href="#" class="mobile-dropdown-item">Revista Científica</a>
+                    <a href="#" class="mobile-dropdown-item">Ubicación</a>
+                </div>
+            </div>
+
+            <button class="mobile-action-btn">Función Futura</button>
+        </div>
+    </header>
+
+    <div class="demo-content">
+        <h1>🎉 Header Rediseñado - Más Armonioso y Transparente</h1>
+        
+        <div class="feature-card">
+            <div class="changes-list">
+                <h3>✨ Mejoras Implementadas:</h3>
+                <ul>
+                    <li><strong>Menú Móvil Transparente:</strong> Efecto glassmorphism con blur y transparencia</li>
+                    <li><strong>Colores Más Armoniosos:</strong> Reducción de saturación y mejor contraste</li>
+                    <li><strong>Botón "Función Futura" Rediseñado:</strong> Estilo glassmorphism moderno</li>
+                    <li><strong>Animaciones Mejoradas:</strong> Transiciones más suaves y naturales</li>
+                    <li><strong>Mejor Accesibilidad:</strong> Colores y contrastes optimizados</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="changes-list">
+                <h3>🎨 Opciones de Diseño para el Botón:</h3>
+                <ul>
+                    <li><strong>Opción 1 (Actual):</strong> Glassmorphism con efecto blur - Moderno y elegante</li>
+                    <li><strong>Opción 2:</strong> Minimalista con gradiente sutil - Disponible en comentarios CSS</li>
+                    <li><strong>Opción 3:</strong> Botón con icono y efecto neón - Disponible en comentarios CSS</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <h3>📱 Prueba el Menú Móvil</h3>
+            <p>Reduce el tamaño de la ventana o usa las herramientas de desarrollador para ver el menú móvil mejorado.</p>
+            <p><strong>Características:</strong></p>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li>Fondo transparente con efecto blur</li>
+                <li>Colores menos saturados y más elegantes</li>
+                <li>Animaciones suaves mantenidas</li>
+                <li>Botón "Función Futura" completamente rediseñado</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
