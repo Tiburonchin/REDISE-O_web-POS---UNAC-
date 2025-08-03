@@ -12,16 +12,43 @@ function initializeHeaderFunctions() {
     // Variables para los elementos
     let mobileMenu = null;
     let mobileBtn = null;
+    let overlay = null;
     
     // Inicializar elementos después de que el DOM esté listo
     function initializeElements() {
         mobileMenu = document.getElementById('mobileMenu');
         mobileBtn = document.querySelector('.mobile-menu-btn');
         
+        // Crear el overlay si no existe
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            overlay.addEventListener('click', closeMobileMenu);
+            document.body.appendChild(overlay);
+        }
+        
         console.log('Mobile menu element:', mobileMenu); // Debug
         console.log('Mobile button element:', mobileBtn); // Debug
+        console.log('Overlay element:', overlay); // Debug
         
         return mobileMenu && mobileBtn;
+    }
+    
+    function closeMobileMenu() {
+        if (mobileMenu && mobileBtn && overlay) {
+            mobileMenu.classList.remove('active');
+            mobileBtn.classList.remove('active');
+            overlay.classList.remove('active');
+            
+            // Cerrar todos los dropdowns
+            document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            
+            // Quitar clase del body para permitir scroll
+            document.body.classList.remove('mobile-menu-open');
+            console.log('Menu closed'); // Debug
+        }
     }
     
     function toggleMobileMenu() {
@@ -38,22 +65,12 @@ function initializeHeaderFunctions() {
         console.log('Toggling menu, currently active:', isActive); // Debug
         
         if (isActive) {
-            // Cerrar menú
-            mobileMenu.classList.remove('active');
-            mobileBtn.classList.remove('active');
-            
-            // Cerrar todos los dropdowns
-            document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
-            
-            // Quitar clase del body para permitir scroll
-            document.body.classList.remove('mobile-menu-open');
-            console.log('Menu closed'); // Debug
+            closeMobileMenu();
         } else {
             // Abrir menú
             mobileMenu.classList.add('active');
             mobileBtn.classList.add('active');
+            overlay.classList.add('active');
             
             // Prevenir scroll del body cuando el menú está abierto
             document.body.classList.add('mobile-menu-open');
@@ -92,19 +109,12 @@ function initializeHeaderFunctions() {
             initializeElements();
         }
         
-        if (mobileMenu && mobileBtn && 
+        if (mobileMenu && mobileBtn && overlay &&
             !mobileMenu.contains(event.target) && 
             !mobileBtn.contains(event.target) &&
             mobileMenu.classList.contains('active')) {
             
-            mobileMenu.classList.remove('active');
-            mobileBtn.classList.remove('active');
-            document.body.classList.remove('mobile-menu-open');
-            
-            // Close all mobile dropdowns
-            document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+            closeMobileMenu();
         }
     });
 
@@ -116,14 +126,8 @@ function initializeHeaderFunctions() {
         }
         
         // If window is wider than tablet breakpoint, close mobile menu and dropdowns
-        if (window.innerWidth > 900 && mobileMenu && mobileBtn) {
-            mobileMenu.classList.remove('active');
-            mobileBtn.classList.remove('active');
-            document.body.classList.remove('mobile-menu-open');
-            
-            document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+        if (window.innerWidth > 900 && mobileMenu && mobileBtn && overlay) {
+            closeMobileMenu();
         }
     });
 
@@ -135,13 +139,7 @@ function initializeHeaderFunctions() {
         }
         
         if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            mobileBtn.classList.remove('active');
-            document.body.classList.remove('mobile-menu-open');
-            
-            document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+            closeMobileMenu();
         }
     });
 

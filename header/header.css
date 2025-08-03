@@ -11,6 +11,27 @@ body.mobile-menu-open {
     overflow: hidden;
 }
 
+/* Overlay para difuminar el fondo cuando el menú móvil está activo */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 header.header {
     background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%) !important;
     position: fixed !important;
@@ -128,29 +149,35 @@ header.header .nav-link:hover::before {
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-10px);
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border: 2px solid #FFC107;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    min-width: 220px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 
+                0 5px 15px rgba(255, 193, 7, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    min-width: 240px;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1001;
-    padding: 12px 0;
-    backdrop-filter: blur(10px);
+    padding: 8px 0;
+    overflow: hidden;
 }
 
 .dropdown-menu::before {
     content: '';
     position: absolute;
-    top: -6px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(135deg, #ffffff, #f8f9fa);
-    border: 2px solid #FFC107;
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 193, 7, 0.3);
     border-bottom: none;
     border-right: none;
     transform: translateX(-50%) rotate(45deg);
@@ -166,15 +193,17 @@ header.header .nav-link:hover::before {
 .dropdown-item {
     display: flex;
     align-items: center;
-    padding: 18px 24px;
+    padding: 16px 24px;
     color: #0a2e52;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 193, 7, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 193, 7, 0.08);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    margin: 0 8px;
+    border-radius: 8px;
 }
 
 .dropdown-item::before {
@@ -183,11 +212,12 @@ header.header .nav-link:hover::before {
     left: 0;
     top: 0;
     height: 100%;
-    width: 4px;
+    width: 3px;
     background: linear-gradient(135deg, #FFC107, #FFA000);
     transform: scaleY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: bottom;
+    border-radius: 0 2px 2px 0;
 }
 
 .dropdown-item::after {
@@ -196,20 +226,24 @@ header.header .nav-link:hover::before {
     right: 20px;
     opacity: 0;
     transform: translateX(-10px);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: #FFC107;
     font-weight: bold;
+    font-size: 16px;
 }
 
 .dropdown-item:last-child {
     border-bottom: none;
+    margin-bottom: 0;
 }
 
 .dropdown-item:hover {
-    background: linear-gradient(135deg, #FFC107, #FFA000);
+    background: rgba(255, 193, 7, 0.12);
     color: #0a2e52;
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+    transform: translateX(8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border-color: transparent;
 }
 
 .dropdown-item:hover::before {
@@ -323,19 +357,20 @@ header.header .mobile-menu {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(10, 46, 82, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 193, 7, 0.3);
-    border-bottom: 1px solid rgba(255, 193, 7, 0.3);
+    background: rgba(10, 46, 82, 0.92);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 193, 7, 0.4);
+    border-bottom: 2px solid rgba(255, 193, 7, 0.6);
     max-height: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 24px 24px;
 }
 
 header.header .mobile-menu.active {
@@ -356,10 +391,12 @@ header.header .mobile-menu.active {
 }
 
 .mobile-nav-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
 }
 
 .mobile-nav-item::before {
@@ -367,12 +404,18 @@ header.header .mobile-menu.active {
     position: absolute;
     left: 0;
     top: 0;
-    width: 3px;
+    width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 193, 7, 0.6), rgba(255, 213, 79, 0.4));
+    background: linear-gradient(to bottom, rgba(255, 193, 7, 0.8), rgba(255, 213, 79, 0.6));
     transform: scaleY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-origin: bottom;
+    border-radius: 0 2px 2px 0;
+}
+
+.mobile-nav-item:hover {
+    background: rgba(255, 193, 7, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .mobile-nav-item:hover::before {
@@ -423,35 +466,43 @@ header.header .mobile-menu.active {
 }
 
 .mobile-dropdown {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 0 0 15px 15px;
-    margin: 0 12px;
-    box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 16px 16px;
+    margin: 0 16px;
+    box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.1),
+                0 4px 15px rgba(0, 0, 0, 0.1);
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.2);
 }
 
 .mobile-dropdown.active {
-    max-height: 320px;
-    margin-bottom: 10px;
-    border-left: 2px solid rgba(255, 193, 7, 0.4);
-    border-right: 2px solid rgba(255, 193, 7, 0.4);
-    animation: expandDown 0.5s ease-out;
+    max-height: 350px;
+    margin-bottom: 12px;
+    border-left: 2px solid rgba(255, 193, 7, 0.6);
+    border-right: 2px solid rgba(255, 193, 7, 0.6);
+    border-bottom: 2px solid rgba(255, 193, 7, 0.4);
+    animation: expandDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.15),
+                0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes expandDown {
     0% {
         max-height: 0;
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-15px);
+    }
+    50% {
+        opacity: 0.7;
     }
     100% {
-        max-height: 320px;
+        max-height: 350px;
         opacity: 1;
         transform: translateY(0);
     }
@@ -460,26 +511,28 @@ header.header .mobile-menu.active {
 .mobile-dropdown-item {
     display: flex;
     align-items: center;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.92);
     text-decoration: none;
-    padding: 14px 25px;
+    padding: 16px 28px;
     font-size: 14px;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
     background: transparent;
+    margin: 0 4px;
+    border-radius: 8px;
 }
 
 .mobile-dropdown-item::before {
     content: '▸';
-    margin-right: 12px;
-    color: rgba(255, 193, 7, 0.7);
+    margin-right: 14px;
+    color: rgba(255, 193, 7, 0.8);
     font-weight: bold;
-    font-size: 16px;
-    transition: all 0.4s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-dropdown-item::after {
@@ -489,23 +542,26 @@ header.header .mobile-menu.active {
     top: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 193, 7, 0.08);
+    background: rgba(255, 193, 7, 0.15);
     transform: translateX(-100%);
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 8px;
 }
 
 .mobile-dropdown-item:hover {
-    background: rgba(255, 193, 7, 0.12);
+    background: rgba(255, 193, 7, 0.18);
     color: rgba(255, 193, 7, 1);
-    transform: translateX(6px);
-    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.15);
+    transform: translateX(8px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
     font-weight: 600;
+    border-color: transparent;
 }
 
 .mobile-dropdown-item:hover::before {
-    transform: translateX(4px) scale(1.1);
+    transform: translateX(6px) scale(1.2);
     color: rgba(255, 193, 7, 1);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .mobile-dropdown-item:hover::after {
