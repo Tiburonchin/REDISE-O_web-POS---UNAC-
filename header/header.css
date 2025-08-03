@@ -38,7 +38,7 @@ header.header {
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    z-index: 1000 !important;
+    z-index: 9999 !important;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
     width: 100% !important;
     display: block !important;
