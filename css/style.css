@@ -13,10 +13,39 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .main-content {
     padding-top: 90px; /* Espacio para el header fijo */
+    margin: 0;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 60px; /* Reducir espacio en mobile */
+    }
+    
+    .hero {
+        margin-top: -60px; /* Compensar el padding-top reducido en mobile */
+        padding-top: 60px; /* Mantener el espacio interno reducido */
+        min-height: 100vh;
+    }
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 480px) {
+    .main-content {
+        padding-top: 50px; /* Aún menos espacio en móviles pequeños */
+    }
+    
+    .hero {
+        margin-top: -50px;
+        padding-top: 50px;
+        min-height: 100vh;
+    }
 }
 
 /* ===================================
@@ -31,6 +60,8 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin-top: -90px; /* Compensar el padding-top del main-content */
+    padding-top: 90px; /* Mantener el espacio interno */
 }
 
 .hero::before {
@@ -428,8 +459,18 @@ body {
     box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
 }
 
-/* Responsividad para botones */
+/* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
+    .main-content {
+        padding-top: 60px; /* Reducir espacio en mobile */
+    }
+    
+    .hero {
+        margin-top: -60px; /* Compensar el padding-top reducido en mobile */
+        padding-top: 60px; /* Mantener el espacio interno reducido */
+        min-height: 100vh;
+    }
+    
     .hero-buttons {
         flex-direction: column;
         gap: 1rem;
@@ -656,4 +697,25 @@ body {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 3rem;
+}
+
+/* Ajuste adicional para móviles muy pequeños */
+@media (max-width: 480px) {
+    .main-content {
+        padding-top: 50px; /* Aún menos espacio en móviles pequeños */
+    }
+    
+    .hero {
+        margin-top: -50px;
+        padding-top: 50px;
+        min-height: 100vh;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.2rem, 12vw, 3.5rem);
+    }
+    
+    .animated-word {
+        font-size: clamp(1.8rem, 10vw, 2.8rem);
+    }
 }
