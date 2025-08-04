@@ -173,26 +173,41 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 900;
-    font-size: clamp(2.8rem, 7vw, 5rem);
-    line-height: 1.2;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+    line-height: 1.1;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: wordGlow 2s ease-in-out infinite alternate;
+    text-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
 }
 
 .animated-word::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 235, 59, 0.1));
-    border-radius: 15px;
-    filter: blur(15px);
-    opacity: 0.4;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(255, 235, 59, 0.08));
+    border-radius: 20px;
+    filter: blur(12px);
+    opacity: 0.6;
     z-index: -1;
-    animation: glowPulse 3s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+/* Efecto hover más elegante para la palabra cursiva */
+.animated-word:hover {
+    text-shadow: 
+        0 0 10px rgba(255, 193, 7, 0.6),
+        0 0 20px rgba(255, 193, 7, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.animated-word:hover::before {
+    opacity: 0.8;
+    filter: blur(15px);
 }
 
 @keyframes containerFadeIn {
@@ -211,24 +226,20 @@ body {
         text-shadow: 
             0 0 5px rgba(255, 193, 7, 0.3),
             0 0 10px rgba(255, 193, 7, 0.2);
-        transform: scale(1);
     }
     100% {
         text-shadow: 
             0 0 8px rgba(255, 193, 7, 0.4),
             0 0 15px rgba(255, 193, 7, 0.3);
-        transform: scale(1.02);
     }
 }
 
 @keyframes glowPulse {
     0%, 100% {
-        opacity: 0.3;
-        transform: scale(0.95);
+        opacity: 0.4;
     }
     50% {
-        opacity: 0.5;
-        transform: scale(1.05);
+        opacity: 0.7;
     }
 }
 
@@ -327,6 +338,18 @@ body {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Animación específica para mobile más sutil */
+@keyframes statsFadeInMobile {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -488,7 +511,7 @@ body {
     }
     
     .animated-word {
-        font-size: clamp(2.2rem, 9vw, 3.5rem);
+        font-size: clamp(2.6rem, 10vw, 4.2rem) !important;
     }
     
     .animated-word-container {
@@ -496,20 +519,124 @@ body {
     }
     
     .hero-stats {
-        margin: 2rem 0;
+        margin: 1.5rem 0; /* Reducir margen */
+        animation: statsFadeInMobile 1s ease-out 0.8s both;
+    }
+    
+    /* Diseño compacto horizontal para stats en mobile */
+    .hero-stats .row.g-4 {
+        gap: 0.5rem !important;
     }
     
     .stat-item {
-        padding: 1.5rem 0.8rem;
-        margin-bottom: 1.5rem;
+        padding: 1rem 0.5rem; /* Reducir padding significativamente */
+        margin-bottom: 0;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 193, 7, 0.2);
+        min-height: auto;
+        animation: statsFadeInMobile 0.6s ease-out both;
+    }
+    
+    /* Animación escalonada para cada estadística */
+    .stat-item:nth-child(1) {
+        animation-delay: 0.9s;
+    }
+    
+    .stat-item:nth-child(2) {
+        animation-delay: 1s;
+    }
+    
+    .stat-item:nth-child(3) {
+        animation-delay: 1.1s;
+    }
+    
+    .stat-item::before {
+        display: none; /* Quitar la línea inferior en mobile */
+    }
+    
+    .stat-item:hover {
+        transform: translateY(-2px) scale(1.02);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 193, 7, 0.4);
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.1);
+    }
+    
+    .stat-item:hover .stat-number {
+        transform: scale(1.05);
+        color: #FFD54F;
+    }
+    
+    .stat-item:hover .stat-label {
+        color: #ffffff;
     }
     
     .stat-number {
-        font-size: clamp(2rem, 7vw, 3rem);
+        font-size: clamp(1.6rem, 6vw, 2.2rem) !important; /* Más pequeño */
+        margin-bottom: 0.3rem !important;
     }
     
     .stat-label {
-        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        font-size: clamp(0.75rem, 2.5vw, 0.9rem) !important; /* Más pequeño */
+        letter-spacing: 0.5px;
+    }
+    
+    /* Layout alternativo: estadísticas en línea para pantallas muy pequeñas */
+    @media (max-width: 576px) {
+        .hero-stats .col-lg-8 {
+            max-width: 100%;
+        }
+        
+        .hero-stats .row.g-4 {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5rem !important;
+        }
+        
+        .hero-stats .col-md-4,
+        .hero-stats .col-sm-6,
+        .hero-stats .col-sm-12 {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .stat-item {
+            padding: 0.8rem 0.3rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efecto de brillo sutil para pantallas pequeñas */
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.1), transparent);
+            transition: left 2s ease;
+        }
+        
+        .stat-item:hover::after {
+            left: 100%;
+        }
+        
+        .stat-number {
+            font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+            margin-bottom: 0.2rem !important;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-label {
+            font-size: clamp(0.65rem, 2vw, 0.8rem) !important;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
     }
 }
 
@@ -716,6 +843,6 @@ body {
     }
     
     .animated-word {
-        font-size: clamp(1.8rem, 10vw, 2.8rem);
+        font-size: clamp(2.1rem, 12vw, 3.4rem) !important;
     }
 }
