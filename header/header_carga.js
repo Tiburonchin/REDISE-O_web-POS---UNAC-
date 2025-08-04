@@ -60,14 +60,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 script.onload = () => {
                     window.headerJSLoaded = true;
                     console.log('JavaScript del header cargado exitosamente');
-                    
-                    // Cargar también el script de fix para dropdowns
-                    const fixScript = document.createElement('script');
-                    fixScript.src = isInSubdirectory ? '../header/header_dropdown_fix.js' : 'header/header_dropdown_fix.js';
-                    fixScript.onload = () => {
-                        console.log('Script de fix para dropdowns cargado exitosamente');
-                    };
-                    document.head.appendChild(fixScript);
                 };
                 script.onerror = () => {
                     console.error('Error al cargar el JavaScript del header desde:', jsPath);
