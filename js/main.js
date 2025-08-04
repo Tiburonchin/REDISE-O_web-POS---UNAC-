@@ -32,26 +32,39 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateWord() {
         if (!animatedWord) return;
         
-        // Efecto de fade out
+        // Efecto de fade out con escala y rotación
         animatedWord.style.opacity = '0';
-        animatedWord.style.transform = 'translateY(20px)';
+        animatedWord.style.transform = 'translateY(30px) scale(0.8) rotateX(15deg)';
+        animatedWord.style.filter = 'blur(2px)';
         
         setTimeout(() => {
             // Cambiar la palabra
             currentWordIndex = (currentWordIndex + 1) % words.length;
             animatedWord.textContent = words[currentWordIndex];
             
-            // Efecto de fade in
+            // Efecto de fade in con bounce
             animatedWord.style.opacity = '1';
-            animatedWord.style.transform = 'translateY(0)';
-        }, 300);
+            animatedWord.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+            animatedWord.style.filter = 'blur(0px)';
+            
+            // Añadir un pequeño bounce al final
+            setTimeout(() => {
+                animatedWord.style.transform = 'translateY(0) scale(1.05) rotateX(0deg)';
+                setTimeout(() => {
+                    animatedWord.style.transform = 'translateY(0) scale(1) rotateX(0deg)';
+                }, 150);
+            }, 100);
+        }, 400);
     }
     
     // Iniciar animación de palabras
     function startWordAnimation() {
         if (animatedWord) {
-            animatedWord.style.transition = 'all 0.3s ease';
-            animationInterval = setInterval(animateWord, 3000);
+            animatedWord.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            // Esperar un poco antes de comenzar la animación
+            setTimeout(() => {
+                animationInterval = setInterval(animateWord, 4000);
+            }, 2000);
         }
     }
     
