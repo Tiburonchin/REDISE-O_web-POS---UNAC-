@@ -909,7 +909,6 @@ img {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-decoration: none;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
     font-size: 0.9rem;
     position: relative;
@@ -1090,7 +1089,7 @@ img {
 /* Responsive design para cinta en tablets */
 @media (max-width: 768px) {
     .cinta-section {
-        padding: 12px 20px;
+        padding: 12px 0;
     }
     
     .cinta-text {
@@ -2433,26 +2432,28 @@ img {
 }
 
 /* ===================================
-   OPTIMIZACIONES FINALES Y OVERFLOW CONTROL
+   CORRECCIONES ADICIONALES MOBILE
    =================================== */
 
-/* Control de overflow mejorado y optimizado */
-*:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *):not(.stat-item):not(.stat-number):not(.stat-label) {
+/* Prevenir overflow horizontal global */
+* {
     max-width: 100%;
 }
 
-/* Elementos posicionados optimizados */
+/* Específico para elementos posicionados */
 [class*="position-absolute"], 
-[class*="position-fixed"] {
-    max-width: calc(100vw - 10px);
-}
-
+[class*="position-fixed"],
 *::before,
 *::after {
     max-width: calc(100vw - 10px);
 }
 
-/* Bootstrap container optimizations */
+/* Asegurar que bootstrap no cause overflow */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .container,
 .container-fluid {
     padding-left: 15px;
@@ -2460,71 +2461,47 @@ img {
     overflow-x: hidden;
 }
 
-/* Media query optimizada para tablets */
+/* Regla final para asegurar responsividad total */
 @media (max-width: 991px) {
-    /* Excluir botones y estadísticas de la regla global */
-    *:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *):not(.stat-item):not(.stat-number):not(.stat-label) {
-        max-width: 100vw;
+    *:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *) {
+        max-width: 100vw !important;
     }
     
-    /* Botones del hero mantienen su diseño */
-    .btn-cta,
-    .hero-buttons,
-    .hero-buttons * {
-        max-width: none;
-        width: auto;
+    /* Mantener tamaño original de botones del hero */
+    .btn-cta {
+        max-width: none !important;
+        width: auto !important;
     }
     
-    /* Estadísticas mantienen flexibilidad */
-    .stat-item,
-    .stat-number,
-    .stat-label {
-        max-width: none;
+    .hero-buttons {
+        max-width: none !important;
+        width: auto !important;
     }
     
-    /* Elementos decorativos optimizados */
+    /* Ocultar elementos decorativos problemáticos en tablets */
     .motivacional-background::before,
     .motivacional-background::after {
-        width: 120px;
-        height: 120px;
+        width: 120px !important;
+        height: 120px !important;
     }
 }
 
-/* Optimización específica para móviles pequeños */
 @media (max-width: 576px) {
+    /* Asegurar que ningún elemento cause overflow */
     .row {
         margin-left: -10px;
         margin-right: -10px;
     }
     
-    /* Optimización de columnas Bootstrap */
-    [class*="col-"] {
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+    .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+    .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+    .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
         padding-left: 10px;
         padding-right: 10px;
-    }
-    
-    /* Prevenir que elementos anchos causen overflow */
-    .hero-stats .row.g-4 {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-/* Utilidades para rendimiento */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Optimización para dispositivos de alta densidad */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .hero::before,
-    .hero::after {
-        will-change: auto;
     }
 }
