@@ -1134,8 +1134,8 @@ body {
 }
 
 .btn-ultimo {
-    background: #e74c3c;
-    color: white;
+    background: #FFC107 ;
+    color: rgb(66, 32, 0);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1147,7 +1147,7 @@ body {
 }
 
 .btn-ultimo:hover {
-    background: #c0392b;
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
     color: white;
     transform: scale(1.1);
 }
