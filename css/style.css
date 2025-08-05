@@ -1738,3 +1738,218 @@ body {
         max-height: 50px;
     }
 }
+
+/* ===================================
+   INFORMACIÓN Y CONTACTO SECTION
+   =================================== */
+
+.info-contacto-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0a2e52 0%, #0d3a63 100%);
+    position: relative;
+    color: #fff;
+}
+
+.info-contacto-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.info-content {
+    position: relative;
+    z-index: 1;
+    padding-right: 1.5rem;
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.info-subtitle {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+}
+
+.contacto-item i {
+    font-size: 1.1rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+    color: #FFC107;
+}
+
+.contacto-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-label {
+    font-weight: 600;
+    color: #FFC107;
+    font-size: 0.9rem;
+}
+
+.contacto-value {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+}
+
+.formulario-contacto {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form .form-group {
+    margin-bottom: 0.875rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+    height: auto;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    border-color: #0a2e52;
+    box-shadow: 0 0 0 0.15rem rgba(10, 46, 82, 0.15);
+    background: #fff;
+}
+
+.phone-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.country-code {
+    flex: 0 0 90px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.625rem 0.5rem;
+    font-size: 0.85rem;
+    background: #fafbfc;
+    transition: all 0.3s ease;
+}
+
+.country-code:focus {
+    border-color: #0a2e52;
+    box-shadow: 0 0 0 0.15rem rgba(10, 46, 82, 0.15);
+    background: #fff;
+}
+
+.phone-input .form-control {
+    flex: 1;
+}
+
+.form-check {
+    margin-bottom: 0.875rem;
+}
+
+.form-check-input:checked {
+    background-color: #0a2e52;
+    border-color: #0a2e52;
+}
+
+.form-check-label {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.3;
+}
+
+.privacy-text {
+    background: #f1f5f9;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.3;
+    margin-bottom: 0.875rem;
+    border-left: 3px solid #FFC107;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #0a2e52 0%, #0d3a63 100%);
+    border: none;
+    padding: 0.875rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-transform: none;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(10, 46, 82, 0.3);
+    background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
+    color: #0a2e52;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-contacto-section {
+        padding: 40px 0;
+    }
+    
+    .info-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .info-title {
+        font-size: 1.75rem;
+    }
+    
+    .formulario-contacto {
+        padding: 1.5rem;
+    }
+    
+    .contacto-item {
+        gap: 0.75rem;
+    }
+    
+    .phone-input {
+        flex-direction: column;
+    }
+    
+    .country-code {
+        flex: none;
+    }
+}
