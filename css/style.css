@@ -1059,9 +1059,14 @@ body {
    ADMISIÓN SECTION STYLES
    =================================== */
 
+/* ===================================
+   ADMISIÓN SECTION STYLES
+   =================================== */
+
 .admision-section {
-    background: #f8f9fa;
-    padding: 60px 0;
+    background: #ffffff;
+    padding: 80px 0;
+    border-top: 1px solid #e9ecef;
 }
 
 .admision-image {
@@ -1070,26 +1075,45 @@ body {
 
 .admision-image img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
+    object-position: center;
 }
 
 .admision-content {
     padding-left: 2rem;
 }
 
+.admision-badge {
+    display: inline-block;
+    background: #f8f9fa;
+    color: #0a2e52;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
 .admision-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #0a2e52;
     margin-bottom: 1rem;
+    line-height: 1.2;
+    font-family: 'Roboto', sans-serif;
 }
 
 .admision-deadline {
+    margin-bottom: 1.2rem;
+}
+
+.deadline-info {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .deadline-label {
@@ -1097,87 +1121,101 @@ body {
     font-weight: 500;
     color: #666;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .deadline-date {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #dc3545;
-    background: #fff;
-    padding: 5px 15px;
-    border: 2px solid #dc3545;
+    font-family: 'Roboto', sans-serif;
+}
+
+.admision-programs {
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .programs-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
 }
 
 .university-name {
     font-size: 1.1rem;
     color: #0a2e52;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin: 0;
+}
+
+.admision-action {
+    margin-top: 1.5rem;
 }
 
 .btn-admision {
-    background: #FFC107;
-    color: #0a2e52;
+    background: #0a2e52;
+    color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 15px 35px;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: inline-block;
-    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-admision:hover {
-    background: #FFB300;
-    color: #0a2e52;
-    transform: translateY(-1px);
+    background: #1a4b73;
+    color: white;
+}
+
+.btn-admision i {
+    font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 991px) {
     .admision-content {
         padding-left: 0;
-        margin-top: 2rem;
+        margin-top: 3rem;
         text-align: center;
+    }
+    
+    .admision-title {
+        font-size: 2.2rem;
+    }
+    
+    .deadline-info {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .admision-section {
+        padding: 60px 0;
+    }
+    
+    .admision-image img {
+        height: 300px;
     }
     
     .admision-title {
         font-size: 2rem;
     }
     
-    .admision-deadline {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .admision-section {
-        padding: 40px 0;
-    }
-    
-    .admision-image img {
-        height: 250px;
-    }
-    
-    .admision-title {
-        font-size: 1.8rem;
-    }
-    
     .programs-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .btn-admision {
-        padding: 10px 25px;
+        padding: 12px 28px;
         font-size: 0.9rem;
     }
 }
