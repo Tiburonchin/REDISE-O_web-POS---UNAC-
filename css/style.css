@@ -760,6 +760,7 @@ body {
     }
 }
 
+
 /* ===================================
    RESPONSIVE DESIGN
    =================================== */
@@ -798,6 +799,166 @@ body {
     .btn-cta {
         font-size: 1rem;
         padding: 15px 25px;
+    }
+}
+
+/* ===================================
+   CINTA INFORMATIVA SECTION
+   =================================== */
+
+.cinta-section {
+    padding: 20px 0;
+    background: linear-gradient(135deg, #FFC107 0%, #FFD54F 50%, #FFEB3B 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cinta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cinta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cinta-text {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    color: #0a2e52;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.cinta-action {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-cinta {
+    background: #0a2e52;
+    color: #FFC107;
+    border: 2px solid rgba(10, 46, 82, 0.3);
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(10, 46, 82, 0.3);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-cinta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: all 0.4s ease;
+    border-radius: 10px;
+    z-index: -1;
+    transform: translateY(100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-cinta::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, 
+        rgba(255, 193, 7, 0.2) 0%, 
+        transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.btn-cinta:hover {
+    color: #0a2e52;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(10, 46, 82, 0.2);
+}
+
+.btn-cinta:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-cinta:hover::after {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+}
+
+.btn-cinta:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 8px rgba(10, 46, 82, 0.3),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cinta i {
+    transition: all 0.4s ease;
+    margin-right: 10px;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    color: #FFC107;
+}
+
+.btn-cinta:hover i {
+    transform: translateX(3px);
+    color: #1a3a5f;
+    filter: drop-shadow(0 1px 2px rgba(10, 46, 82, 0.3));
+}
+
+.btn-cinta span {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
     }
 }
 
@@ -844,5 +1005,301 @@ body {
     
     .animated-word {
         font-size: clamp(2.1rem, 12vw, 3.4rem) !important;
+    }
+    
+    /* Cinta section responsive */
+    .cinta-section {
+        padding: 15px 0;
+    }
+    
+    .cinta-text {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        margin-bottom: 0.8rem;
+        text-align: center;
+    }
+    
+    .cinta-action {
+        text-align: center !important;
+    }
+    
+    .btn-cinta {
+        font-size: 0.85rem;
+        padding: 10px 22px;
+        width: 100%;
+        max-width: 260px;
+        letter-spacing: 0.6px;
+        border-radius: 10px;
+    }
+}
+
+/* Responsive design para cinta en tablets */
+@media (max-width: 768px) {
+    .cinta-section {
+        padding: 18px 0;
+    }
+    
+    .cinta-text {
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .cinta-action {
+        text-align: center !important;
+    }
+    
+    .btn-cinta {
+        font-size: 0.88rem;
+        padding: 11px 24px;
+        border-radius: 10px;
+    }
+}
+
+/* ===================================
+   ADMISIÓN SECTION STYLES
+   =================================== */
+
+.admision-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.admision-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.admision-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.admision-image img {
+    transition: transform 0.6s ease;
+    border-radius: 20px;
+}
+
+.admision-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10, 46, 82, 0.9));
+    color: white;
+    padding: 30px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    border-radius: 0 0 20px 20px;
+}
+
+.admision-image:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.overlay-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.overlay-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.admision-content {
+    padding-left: 2rem;
+}
+
+.admision-header {
+    margin-bottom: 2rem;
+}
+
+.admision-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0a2e52;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.admision-deadline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.deadline-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.deadline-date {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: 2px solid rgba(220, 53, 69, 0.2);
+}
+
+.admision-programs {
+    margin-bottom: 2.5rem;
+}
+
+.programs-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.university-name {
+    font-size: 1.2rem;
+    color: #0a2e52;
+    font-weight: 500;
+    margin: 0;
+}
+
+.admision-action {
+    margin-bottom: 3rem;
+}
+
+.btn-admision {
+    background: #FFC107;
+    color: #0a2e52;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-admision::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-admision:hover {
+    background: #FFB300;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 193, 7, 0.4);
+    color: #0a2e52;
+}
+
+.btn-admision:hover::before {
+    left: 100%;
+}
+
+.admision-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    border-left: 4px solid #FFC107;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    font-size: 1.2rem;
+    color: #FFC107;
+    width: 25px;
+    text-align: center;
+}
+
+.feature-item span {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .admision-content {
+        padding-left: 0;
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .admision-title {
+        font-size: 2.5rem;
+    }
+    
+    .admision-deadline {
+        justify-content: center;
+    }
+    
+    .admision-features {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .admision-title {
+        font-size: 2rem;
+    }
+    
+    .programs-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-admision {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+    
+    .feature-item {
+        padding: 12px 15px;
     }
 }
