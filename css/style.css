@@ -1344,3 +1344,146 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* ===================================
+   PROGRAMAS DESTACADOS SECTION STYLES
+   =================================== */
+
+.programas-section {
+    background: #ffffff;
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.programas-navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-nav {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e9ecef;
+    background: white;
+    color: #666;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.programa-card-nueva {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.programa-card-nueva:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.programa-content-nueva {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.programa-title-nueva {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    font-family: 'Roboto', sans-serif;
+    flex-grow: 1;
+}
+
+.programa-details {
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.detail-item i {
+    color: #999;
+    width: 16px;
+    font-size: 0.85rem;
+}
+
+.programa-action-nueva {
+    margin-top: auto;
+    text-align: right;
+}
+
+.btn-programa-nueva {
+    background: #e74c3c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-programa-nueva:hover {
+    background: #c0392b;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-programa-nueva i {
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .programas-section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .programas-navigation {
+        justify-content: center;
+    }
+    
+    .programa-card-nueva {
+        padding: 1.5rem;
+    }
+    
+    .programa-title-nueva {
+        font-size: 1.15rem;
+    }
+}
