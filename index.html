@@ -5,67 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escuela de Posgrado UNAC - Excelencia Académica</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap CSS (for grid and utilities) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Meta tags -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Escuela de Posgrado UNAC - Programas de maestría y doctorado de excelencia académica para formar líderes del futuro">
     <meta name="keywords" content="posgrado, maestría, doctorado, UNAC, universidad, educación superior">
     <meta name="author" content="Universidad Nacional del Callao">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- ================================
+         HEADER SECTION
+         ================================ -->
     <div id="header"></div>
 
-    <!-- Main Content -->
+    <!-- ================================
+         MAIN CONTENT
+         ================================ -->
     <main class="main-content">
         
-        <!-- Hero Section -->
+        <!-- ================================
+             HERO SECTION
+             ================================ -->
         <section class="hero" id="hero">
             <div class="container">
                 <div class="row align-items-center min-vh-100">
                     <div class="col-12 hero-content text-center">
+                        <!-- Hero Title -->
                         <h1 class="hero-title">
                             LA ESCUELA DE POSGRADO - UNAC ES
                         </h1>
+                        
+                        <!-- Animated Word -->
                         <div class="animated-word-container">
                             <span class="animated-word" id="animatedWord">maravilloso</span>
                         </div>
+                        
+                        <!-- Hero Description -->
                         <p class="hero-description">
                             En nuestra Escuela de Posgrado, brindamos la oportunidad de crecer profesionalmente con programas de excelencia.
                         </p>
                         
-                        <!-- Estadísticas -->
+                        <!-- Hero Statistics -->
                         <div class="hero-stats">
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <div class="row g-4">
+                                        <!-- Stat 1: Programas -->
                                         <div class="col-md-4 col-sm-6">
                                             <div class="stat-item">
                                                 <div class="stat-number">+50</div>
                                                 <div class="stat-label">Programas</div>
                                             </div>
                                         </div>
+                                        
+                                        <!-- Stat 2: Egresados -->
                                         <div class="col-md-4 col-sm-6">
                                             <div class="stat-item">
                                                 <div class="stat-number">+1000</div>
                                                 <div class="stat-label">Egresados</div>
                                             </div>
                                         </div>
+                                        
+                                        <!-- Stat 3: Convenios -->
                                         <div class="col-md-4 col-sm-12">
                                             <div class="stat-item">
                                                 <div class="stat-number">50+</div>
@@ -77,8 +95,9 @@
                             </div>
                         </div>
                         
+                        <!-- Hero Action Buttons -->
                         <div class="hero-buttons">
-                            <a href="#" class="btn btn-primary btn-cta">
+                            <a href="#info-contacto" class="btn btn-primary btn-cta">
                                 <i class="fas fa-info-circle me-2"></i>
                                 Solicitar Información
                             </a>
@@ -91,26 +110,31 @@
                 </div>
             </div>
             
-            <!-- Scroll indicator -->
-            <div class="scroll-indicator">
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" aria-hidden="true">
                 <div class="scroll-arrow">
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </section>
 
-        <!-- Cinta Informativa Section -->
+        <!-- ================================
+             CINTA INFORMATIVA SECTION
+             ================================ -->
         <section class="cinta-section" id="cinta">
             <div class="container">
                 <div class="row align-items-center">
+                    <!-- Cinta Content -->
                     <div class="col-lg-8 col-md-7">
                         <div class="cinta-content">
                             <h3 class="cinta-text">Una universidad con rostro humano</h3>
                         </div>
                     </div>
+                    
+                    <!-- Cinta Action -->
                     <div class="col-lg-4 col-md-5 text-end">
                         <div class="cinta-action">
-                            <a href="#" class="btn btn-cinta">
+                            <a href="#info-contacto" class="btn btn-cinta">
                                 <i class="fas fa-question-circle"></i>
                                 <span>¿Necesitas más información?</span>
                             </a>
@@ -120,26 +144,31 @@
             </div>
         </section>
 
-        <!-- Admisión 2025-II Section -->
+        <!-- ================================
+             ADMISIÓN 2025-II SECTION
+             ================================ -->
         <section class="admision-section" id="admision">
             <div class="container">
                 <div class="row align-items-center g-5">
-                    <!-- Imagen de la universidad -->
+                    <!-- Imagen de la Universidad -->
                     <div class="col-lg-6">
                         <div class="admision-image">
                             <img src="img/index/admsion.jpg" alt="Escuela de Posgrado UNAC" class="img-fluid">
                         </div>
                     </div>
                     
-                    <!-- Contenido informativo -->
+                    <!-- Contenido Informativo -->
                     <div class="col-lg-6">
                         <div class="admision-content">
+                            <!-- Badge del Proceso -->
                             <div class="admision-badge">
                                 <span>Proceso de Admisión</span>
                             </div>
                             
+                            <!-- Título Principal -->
                             <h2 class="admision-title">Admisión 2025 - II</h2>
                             
+                            <!-- Fecha Límite -->
                             <div class="admision-deadline">
                                 <div class="deadline-info">
                                     <span class="deadline-label">Inscripciones hasta el</span>
@@ -147,11 +176,13 @@
                                 </div>
                             </div>
                             
+                            <!-- Programas Disponibles -->
                             <div class="admision-programs">
                                 <h3 class="programs-title">Doctorados • Diplomados • Maestrías</h3>
                                 <p class="university-name">Escuela de Posgrado UNAC</p>
                             </div>
                             
+                            <!-- Botón de Acción -->
                             <div class="admision-action">
                                 <a href="admision/proceso-admision.html" class="btn btn-admision">
                                     <span>Ver Guía de Admisión</span>
@@ -164,17 +195,21 @@
             </div>
         </section>
 
-        <!-- Lo Último Section -->
+        <!-- ================================
+             LO ÚLTIMO SECTION
+             ================================ -->
         <section class="lo-ultimo-section" id="lo-ultimo">
             <div class="container">
+                <!-- Section Header -->
                 <div class="row">
                     <div class="col-12 mb-4">
                         <h2 class="lo-ultimo-title">Lo último</h2>
                     </div>
                 </div>
                 
+                <!-- News Cards Grid -->
                 <div class="row g-4">
-                    <!-- Card 1 -->
+                    <!-- Card 1: Docencia -->
                     <div class="col-lg-4 col-md-6">
                         <div class="ultimo-card">
                             <div class="ultimo-image">
@@ -194,7 +229,7 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
+                    <!-- Card 2: Medicina -->
                     <div class="col-lg-4 col-md-6">
                         <div class="ultimo-card">
                             <div class="ultimo-image">
@@ -214,7 +249,7 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
+                    <!-- Card 3: Becas -->
                     <div class="col-lg-4 col-md-6">
                         <div class="ultimo-card">
                             <div class="ultimo-image">
@@ -237,18 +272,21 @@
             </div>
         </section>
 
-        <!-- Programas Destacados Section -->
+        <!-- ================================
+             PROGRAMAS DESTACADOS SECTION
+             ================================ -->
         <section class="programas-section" id="programas">
             <div class="container">
+                <!-- Section Header with Navigation -->
                 <div class="row">
                     <div class="col-12 mb-5">
                         <div class="d-flex justify-content-between align-items-center">
                             <h2 class="section-title mb-0">Titulaciones destacadas</h2>
                             <div class="programas-navigation">
-                                <button class="btn-nav prev" type="button">
+                                <button class="btn-nav prev" type="button" aria-label="Anterior">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="btn-nav next" type="button">
+                                <button class="btn-nav next" type="button" aria-label="Siguiente">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -256,6 +294,7 @@
                     </div>
                 </div>
                 
+                <!-- Programs Grid -->
                 <div class="row g-4" id="programas-container">
                     <!-- Programa 1 -->
                     <div class="col-lg-4 col-md-6">
@@ -436,11 +475,16 @@
             </div>
         </section>
 
-        <!-- Frase Motivacional Section -->
+        <!-- ================================
+             FRASE MOTIVACIONAL SECTION
+             ================================ -->
         <section class="motivacional-section" id="motivacional">
-            <div class="motivacional-background">
+            <!-- Background Elements -->
+            <div class="motivacional-background" aria-hidden="true">
                 <div class="motivacional-overlay"></div>
             </div>
+            
+            <!-- Content -->
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
@@ -455,9 +499,12 @@
             </div>
         </section>
 
-        <!-- Empresas Section -->
+        <!-- ================================
+             EMPRESAS SECTION
+             ================================ -->
         <section class="empresas-section" id="empresas">
             <div class="container">
+                <!-- Section Header -->
                 <div class="row">
                     <div class="col-12 text-center mb-5">
                         <h2 class="section-title">El talento se premia</h2>
@@ -465,61 +512,62 @@
                     </div>
                 </div>
                 
+                <!-- Company Logos Grid -->
                 <div class="empresas-grid">
-                    <!-- Primera fila de empresas -->
+                    <!-- Primera Fila de Empresas -->
                     <div class="row justify-content-center align-items-center g-4 mb-4">
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp1.webp" alt="Empresa 1" class="img-fluid">
+                                <img src="img/index/emp1.webp" alt="Empresa 1" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp2.webp" alt="Empresa 2" class="img-fluid">
+                                <img src="img/index/emp2.webp" alt="Empresa 2" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp3.webp" alt="Empresa 3" class="img-fluid">
+                                <img src="img/index/emp3.webp" alt="Empresa 3" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp4.webp" alt="Empresa 4" class="img-fluid">
+                                <img src="img/index/emp4.webp" alt="Empresa 4" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp5.webp" alt="Empresa 5" class="img-fluid">
+                                <img src="img/index/emp5.webp" alt="Empresa 5" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Segunda fila de empresas -->
+                    <!-- Segunda Fila de Empresas -->
                     <div class="row justify-content-center align-items-center g-4">
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp6.webp" alt="Empresa 6" class="img-fluid">
+                                <img src="img/index/emp6.webp" alt="Empresa 6" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp7.webp" alt="Empresa 7" class="img-fluid">
+                                <img src="img/index/emp7.webp" alt="Empresa 7" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp8.webp" alt="Empresa 8" class="img-fluid">
+                                <img src="img/index/emp8.webp" alt="Empresa 8" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp9.webp" alt="Empresa 9" class="img-fluid">
+                                <img src="img/index/emp9.webp" alt="Empresa 9" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                             <div class="empresa-logo">
-                                <img src="img/index/emp10.webp" alt="Empresa 10" class="img-fluid">
+                                <img src="img/index/emp10.webp" alt="Empresa 10" class="img-fluid" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -527,22 +575,26 @@
             </div>
         </section>
 
-        <!-- Testimonios Section -->
+        <!-- ================================
+             TESTIMONIOS SECTION
+             ================================ -->
         <section class="testimonios-section" id="testimonios">
             <div class="container">
+                <!-- Section Header -->
                 <div class="row">
-                    <div class="col-12 text-center mb-5">
+                    <div class="col-12 text-center mb-3">
                         <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
                         <p class="section-subtitle">Testimonios de egresados que han transformado sus carreras profesionales</p>
                     </div>
                 </div>
 
-                <div class="testimonios-marquee-container">
+                <!-- Testimonios Marquee -->
+                <div class="testimonios-marquee-container mb-5">
                     <div class="testimonios-marquee">
-                        <!-- Primera fila de testimonios -->
+                        <!-- Testimonio 1: María García -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student1.jpg" alt="María García" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto2.jpg" alt="María García" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">María García</h4>
                                     <p class="author-handle">@maria_garcia</p>
@@ -553,9 +605,10 @@
                             </p>
                         </div>
 
+                        <!-- Testimonio 2: Carlos Mendoza -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student2.jpg" alt="Carlos Mendoza" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto4.jpg" alt="Carlos Mendoza" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">Carlos Mendoza</h4>
                                     <p class="author-handle">@carlos_ing</p>
@@ -566,9 +619,10 @@
                             </p>
                         </div>
 
+                        <!-- Testimonio 3: Ana Rodríguez -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student3.jpg" alt="Ana Rodríguez" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto3.PNG" alt="Ana Rodríguez" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">Ana Rodríguez</h4>
                                     <p class="author-handle">@ana_economia</p>
@@ -579,9 +633,10 @@
                             </p>
                         </div>
 
+                        <!-- Testimonio 4: Diego Hernández -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student4.jpg" alt="Diego Hernández" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto5.jpg" alt="Diego Hernández" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">Diego Hernández</h4>
                                     <p class="author-handle">@diego_tech</p>
@@ -592,9 +647,10 @@
                             </p>
                         </div>
 
+                        <!-- Testimonio 5: Lucía Vásquez -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student5.jpg" alt="Lucía Vásquez" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto2.PNG" alt="Lucía Vásquez" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">Lucía Vásquez</h4>
                                     <p class="author-handle">@lucia_master</p>
@@ -605,10 +661,11 @@
                             </p>
                         </div>
 
-                        <!-- Duplicamos para efecto continuo -->
+                        <!-- Duplicados para efecto continuo -->
+                        <!-- Testimonio 1 (duplicado) -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student1.jpg" alt="María García" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto2.jpg" alt="María García" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">María García</h4>
                                     <p class="author-handle">@maria_garcia</p>
@@ -619,9 +676,10 @@
                             </p>
                         </div>
 
+                        <!-- Testimonio 2 (duplicado) -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student2.jpg" alt="Carlos Mendoza" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto4.jpg" alt="Carlos Mendoza" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">Carlos Mendoza</h4>
                                     <p class="author-handle">@carlos_ing</p>
@@ -632,9 +690,10 @@
                             </p>
                         </div>
 
+                        <!-- Testimonio 3 (duplicado) -->
                         <div class="testimonio-card">
                             <div class="testimonio-author">
-                                <img src="img/index/student3.jpg" alt="Ana Rodríguez" class="author-avatar">
+                                <img src="img/index/foto_perfil/foto3.PNG" alt="Ana Rodríguez" class="author-avatar">
                                 <div class="author-info">
                                     <h4 class="author-name">Ana Rodríguez</h4>
                                     <p class="author-handle">@ana_economia</p>
@@ -793,11 +852,18 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- ================================
+         FOOTER SECTION
+         ================================ -->
     <div id="footer"></div>
 
-    <!-- Scripts -->
+    <!-- ================================
+         JAVASCRIPT SCRIPTS
+         ================================ -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
     <script src="js/image-loader.js"></script>
     <script src="js/config.js"></script>
     <script src="header/header_carga.js"></script>

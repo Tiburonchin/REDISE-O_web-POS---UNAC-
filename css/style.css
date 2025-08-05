@@ -1196,13 +1196,20 @@ body {
 
 .admision-image {
     overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .admision-image img {
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
+    transition: transform 0.3s ease;
+}
+
+.admision-image:hover img {
+    transform: scale(1.02);
 }
 
 .admision-content {
@@ -1328,7 +1335,8 @@ body {
     }
     
     .admision-image img {
-        height: 300px;
+        height: 280px;
+        object-position: center top;
     }
     
     .admision-title {
@@ -1502,7 +1510,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .testimonios-marquee-container::before,
