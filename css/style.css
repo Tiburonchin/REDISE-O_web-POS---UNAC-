@@ -1744,7 +1744,7 @@ body {
    =================================== */
 
 .info-contacto-section {
-    padding: 60px 0;
+    padding: 50px 0;
     background: linear-gradient(135deg, #0a2e52 0%, #0d3a63 100%);
     position: relative;
     color: #fff;
@@ -1763,85 +1763,40 @@ body {
     pointer-events: none;
 }
 
-.info-content {
-    position: relative;
-    z-index: 1;
-    padding-right: 1.5rem;
-}
-
 .info-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
 }
 
 .info-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #e0e0e0;
-    margin-bottom: 2rem;
-    line-height: 1.5;
-}
-
-.contacto-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-.contacto-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.875rem;
-}
-
-.contacto-item i {
-    font-size: 1.1rem;
-    margin-top: 0.15rem;
-    flex-shrink: 0;
-    color: #FFC107;
-}
-
-.contacto-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.contacto-label {
-    font-weight: 600;
-    color: #FFC107;
-    font-size: 0.9rem;
-}
-
-.contacto-value {
-    color: #e0e0e0;
-    font-size: 0.85rem;
-    margin-top: 0.15rem;
+    margin-bottom: 0;
+    line-height: 1.4;
 }
 
 .formulario-contacto {
     background: #fff;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
-}
-
-.contact-form .form-group {
-    margin-bottom: 0.875rem;
+    height: fit-content;
 }
 
 .contact-form .form-control,
 .contact-form .form-select {
     border: 2px solid #e9ecef;
     border-radius: 8px;
-    padding: 0.625rem 0.875rem;
+    padding: 0.6rem 0.75rem;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     background: #fafbfc;
-    height: auto;
+    margin-bottom: 0.75rem;
 }
 
 .contact-form .form-control:focus,
@@ -1857,13 +1812,14 @@ body {
 }
 
 .country-code {
-    flex: 0 0 90px;
+    flex: 0 0 80px;
     border: 2px solid #e9ecef;
     border-radius: 8px;
-    padding: 0.625rem 0.5rem;
-    font-size: 0.85rem;
+    padding: 0.6rem 0.4rem;
+    font-size: 0.8rem;
     background: #fafbfc;
     transition: all 0.3s ease;
+    margin-bottom: 0.75rem;
 }
 
 .country-code:focus {
@@ -1877,7 +1833,7 @@ body {
 }
 
 .form-check {
-    margin-bottom: 0.875rem;
+    margin-bottom: 0.75rem;
 }
 
 .form-check-input:checked {
@@ -1891,28 +1847,18 @@ body {
     line-height: 1.3;
 }
 
-.privacy-text {
-    background: #f1f5f9;
-    padding: 0.875rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    color: #666;
-    line-height: 1.3;
-    margin-bottom: 0.875rem;
-    border-left: 3px solid #FFC107;
-}
-
 .btn-submit {
     background: linear-gradient(135deg, #0a2e52 0%, #0d3a63 100%);
     border: none;
-    padding: 0.875rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     width: 100%;
     transition: all 0.3s ease;
     text-transform: none;
     color: #fff;
+    margin-top: 0.5rem;
 }
 
 .btn-submit:hover {
@@ -1922,27 +1868,214 @@ body {
     color: #0a2e52;
 }
 
+/* Estilos para checkboxes del formulario */
+.form-check {
+    margin-bottom: 0.75rem;
+}
+
+.form-check-input {
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid #0a2e52;
+    border-radius: 4px;
+    background-color: transparent;
+    margin-top: 0.1rem;
+}
+
+.form-check-input:checked {
+    background-color: #FFC107;
+    border-color: #FFC107;
+}
+
+.form-check-input:focus {
+    border-color: #FFC107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.form-check-label {
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    line-height: 1.4;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.info-side {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-info-simple {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contacto-item-destacado {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contacto-item-compacto {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.icono-contacto {
+    background: #FFC107;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icono-contacto-pequeno {
+    background: #FFC107;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icono-contacto i {
+    font-size: 1.2rem;
+    color: #0a2e52;
+}
+
+.icono-contacto-pequeno i {
+    font-size: 0.9rem;
+    color: #0a2e52;
+}
+
+.contacto-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-content-compacto {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-label {
+    font-size: 0.9rem;
+    color: #FFC107;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.contacto-label-pequeno {
+    font-size: 0.8rem;
+    color: #FFC107;
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+}
+
+.contacto-telefono {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+
+.contacto-telefono-pequeno {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.contacto-disponibilidad {
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    font-weight: 400;
+}
+
+.contacto-disponibilidad-pequeno {
+    font-size: 0.7rem;
+    color: #e0e0e0;
+    font-weight: 400;
+}
+
+.mapa-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+}
+
+.mapa-title {
+    color: #FFC107;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.mapa-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.75rem;
+}
+
+.mapa-embed iframe {
+    display: block;
+    width: 100%;
+}
+
+.direccion-compacta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.direccion-compacta i {
+    color: #FFC107;
+    font-size: 0.9rem;
+}
+
+.direccion-compacta span {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .info-contacto-section {
-        padding: 40px 0;
-    }
-    
-    .info-content {
-        padding-right: 0;
-        margin-bottom: 2rem;
+        padding: 35px 0;
     }
     
     .info-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     
     .formulario-contacto {
-        padding: 1.5rem;
-    }
-    
-    .contacto-item {
-        gap: 0.75rem;
+        padding: 1.25rem;
+        margin-bottom: 2rem;
     }
     
     .phone-input {
@@ -1951,5 +2084,51 @@ body {
     
     .country-code {
         flex: none;
+    }
+    
+    .info-side {
+        gap: 1.25rem;
+    }
+    
+    .contacto-info-simple {
+        padding: 1.25rem;
+    }
+    
+    .mapa-container {
+        padding: 1rem;
+    }
+    
+    .mapa-embed iframe {
+        height: 180px;
+    }
+    
+    .contacto-item-destacado {
+        gap: 0.75rem;
+    }
+    
+    .contacto-item-compacto {
+        gap: 0.6rem;
+    }
+    
+    .icono-contacto {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .icono-contacto-pequeno {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .icono-contacto-pequeno i {
+        font-size: 0.8rem;
+    }
+    
+    .contacto-telefono {
+        font-size: 1.1rem;
+    }
+    
+    .contacto-telefono-pequeno {
+        font-size: 0.9rem;
     }
 }
