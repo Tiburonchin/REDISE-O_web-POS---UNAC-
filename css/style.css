@@ -1449,8 +1449,8 @@ body {
 }
 
 .btn-programa-nueva {
-    background: #e74c3c;
-    color: white;
+    background:  linear-gradient(135deg, #fcca37  0%, #FFC107  100%);
+    color: rgb(66, 32, 0);
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -1462,7 +1462,7 @@ body {
 }
 
 .btn-programa-nueva:hover {
-    background: #c0392b;
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%) ;
     color: white;
     transform: scale(1.05);
 }
@@ -1497,7 +1497,7 @@ body {
 }
 
 /* ===================================
-   MOTIVACIONAL SECTION STYLES
+    MOTIVACIONAL SECTION STYLES
    =================================== */
 
 .motivacional-section {
@@ -1527,7 +1527,7 @@ body {
     left: -10%;
     width: 300px;
     height: 300px;
-    background: linear-gradient(45deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.05) 100%);
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.08) 0%, rgba(255, 193, 7, 0.03) 100%);
     border-radius: 50%;
     animation: floatShape1 5s ease-in-out infinite;
 }
@@ -1539,7 +1539,7 @@ body {
     right: -10%;
     width: 250px;
     height: 250px;
-    background: linear-gradient(45deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.03) 100%);
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.06) 0%, rgba(255, 193, 7, 0.02) 100%);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: floatShape2 4s ease-in-out infinite reverse;
 }
@@ -1551,8 +1551,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 193, 7, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(255, 193, 7, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.03) 0%, transparent 50%);
     z-index: 2;
 }
 
@@ -1569,23 +1569,11 @@ body {
     line-height: 1.3;
     margin-bottom: 1.5rem;
     text-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.3),
-        0 4px 8px rgba(0, 0, 0, 0.2),
-        0 8px 16px rgba(0, 0, 0, 0.1);
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        0 0 30px rgba(255, 193, 7, 0.15);
     position: relative;
-}
-
-.motivacional-text::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 193, 7, 0.1) 50%, transparent 70%);
-    border-radius: 20px;
-    z-index: -1;
-    animation: shimmer 2s ease-in-out infinite;
 }
 
 .motivacional-subtitle {
@@ -1612,19 +1600,7 @@ body {
     }
     50% {
         transform: translateY(-40px) rotate(-360deg) scale(0.8);
-    }
-}
-
-@keyframes shimmer {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.02);
-    }
-}
+    }}
 
 /* Formas adicionales de fondo */
 .motivacional-section::before {
@@ -1634,7 +1610,7 @@ body {
     left: 50%;
     width: 150px;
     height: 150px;
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.12) 0%, rgba(255, 193, 7, 0.04) 100%);
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.06) 0%, rgba(255, 193, 7, 0.02) 100%);
     border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
     transform: translateX(-50%);
     animation: floatShape3 6s ease-in-out infinite;
@@ -1648,7 +1624,7 @@ body {
     left: 20%;
     width: 100px;
     height: 100px;
-    background: linear-gradient(45deg, rgba(255, 193, 7, 0.08) 0%, rgba(255, 193, 7, 0.02) 100%);
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 193, 7, 0.01) 100%);
     border-radius: 50%;
     animation: floatShape4 4s ease-in-out infinite;
     z-index: 1;
