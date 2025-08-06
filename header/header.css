@@ -68,7 +68,7 @@ header.header {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
     width: 100% !important;
     display: block !important;
-    border-bottom: 2px solid #FFC107 !important;
+    border-bottom: 2px solid #E6A800 !important; /* Cambiado de #FFC107 a dorado más oscuro */
 }
 
 header.header .header-container {
@@ -123,7 +123,7 @@ header.header .nav-link {
     color: rgba(255, 255, 255, 0.9) !important;
     text-decoration: none !important;
     padding: 24px 20px !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important; /* Cambiado de 500 a 600 para más grosor */
     font-size: 14px !important;
     transition: all 0.3s ease !important;
     position: relative !important;
@@ -135,8 +135,8 @@ header.header .nav-link {
 
 header.header .nav-link:hover, 
 header.header .nav-item:hover > .nav-link {
-    color: #FFC107 !important;
-    background: rgba(255, 193, 7, 0.08) !important;
+    color: #E6A800 !important; /* Cambiado de #FFC107 a un dorado más oscuro */
+    background: rgba(230, 168, 0, 0.08) !important; /* Fondo más oscuro acorde */
 }
 
 header.header .nav-link::before {
@@ -146,7 +146,7 @@ header.header .nav-link::before {
     left: 50%;
     width: 0;
     height: 2px;
-    background: #FFC107;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
     transform: translateX(-50%);
     transition: width 0.3s ease;
 }
@@ -161,12 +161,12 @@ header.header .nav-link:hover::before {
     font-size: 10px;
     transition: transform 0.3s ease;
     display: inline-block;
-    color: rgba(255, 193, 7, 0.8);
+    color: rgba(230, 168, 0, 0.8); /* Cambiado a dorado más oscuro */
 }
 
 .nav-item:hover .nav-link.has-dropdown::after {
     transform: rotate(180deg);
-    color: #FFC107;
+    color: #E6A800; /* Cambiado a dorado más oscuro */
 }
 
 header.header .dropdown-menu {
@@ -219,7 +219,7 @@ header.header .dropdown-item {
     color: #0a2e52 !important;
     text-decoration: none !important;
     font-size: 14px !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important; /* Cambiado de 400 a 500 para más grosor */
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -234,16 +234,16 @@ header.header .dropdown-item {
     top: 0;
     height: 100%;
     width: 2px;
-    background: #FFC107;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
     transform: scaleY(0);
     transition: transform 0.3s ease;
     transform-origin: bottom;
 }
 
 header.header .dropdown-item:hover {
-    background: rgba(255, 193, 7, 0.08) !important;
+    background: rgba(230, 168, 0, 0.08) !important; /* Cambiado a dorado más oscuro */
     color: #0a2e52 !important;
-    font-weight: 500 !important;
+    /* Eliminado font-weight: 500 para evitar cambio de grosor en hover */
 }
 
 .dropdown-item:hover::before {
@@ -251,23 +251,64 @@ header.header .dropdown-item:hover {
 }
 
 .action-btn {
-    background: #FFC107;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
     color: #0a2e52;
-    border: none;
+    border: 2px solid transparent;
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 24px;
     font-size: 14px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(255, 213, 79, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estilos para el icono del botón */
+.action-btn i {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.action-btn:hover i {
+    color: #FFD54F;
+}
+
+.action-btn span {
+    transition: color 0.3s ease;
+}
+
+.action-btn:hover span {
+    color: #FFD54F;
 }
 
 .action-btn:hover {
-    background: #FFD54F;
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
+    color: #FFD54F;
+    border-color: #FFD54F;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 12px rgba(10, 46, 82, 0.2);
+}
+
+.action-btn:active {
+    background: linear-gradient(135deg, #082140 0%, #122a4d 100%);
+    color: #FFC107;
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(10, 46, 82, 0.3);
+    transition: all 0.15s ease;
+}
+
+/* Estado de enfoque para accesibilidad */
+.action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.4);
 }
 
 /* Mobile Menu */
@@ -288,7 +329,7 @@ header.header .dropdown-item:hover {
 }
 
 .mobile-menu-btn:hover {
-    background: rgba(255, 193, 7, 0.1);
+    background: rgba(230, 168, 0, 0.1); /* Cambiado a dorado más oscuro */
     transform: scale(1.05);
 }
 
@@ -296,7 +337,7 @@ header.header .dropdown-item:hover {
     display: block;
     width: 24px;
     height: 3px;
-    background: #FFC107;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
     margin: 3px 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 2px;
@@ -304,11 +345,11 @@ header.header .dropdown-item:hover {
 }
 
 .mobile-menu-btn.active {
-    background: rgba(255, 193, 7, 0.15);
+    background: rgba(230, 168, 0, 0.15); /* Cambiado a dorado más oscuro */
 }
 
 .mobile-menu-btn.active .hamburger-line {
-    background: #FFC107;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
 }
 
 .mobile-menu-btn.active .hamburger-line:nth-child(1) {
@@ -331,7 +372,7 @@ header.header .mobile-menu {
     right: 0;
     background: #ffffff;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-top: 2px solid #FFC107;
+    border-top: 2px solid #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
     max-height: 0;
     overflow: hidden;
     transition: all 0.4s ease;
@@ -377,7 +418,7 @@ header.header .mobile-menu.active {
     color: #0a2e52;
     text-decoration: none;
     padding: 16px 20px;
-    font-weight: 500;
+    font-weight: 600; /* Cambiado de 500 a 600 para más grosor */
     transition: all 0.3s ease;
     font-size: 15px;
     text-transform: uppercase;
@@ -385,7 +426,7 @@ header.header .mobile-menu.active {
 }
 
 .mobile-nav-link:hover {
-    color: #FFC107;
+    color: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
     padding-left: 24px;
 }
 
@@ -396,7 +437,7 @@ header.header .mobile-menu.active {
     transition: all 0.4s ease;
     margin: 0 20px;
     border-radius: 6px;
-    border: 1px solid rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(230, 168, 0, 0.1); /* Cambiado a dorado más oscuro */
 }
 
 .mobile-dropdown.active {
@@ -412,7 +453,7 @@ header.header .mobile-menu.active {
     text-decoration: none;
     padding: 12px 16px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500; /* Cambiado de 400 a 500 para más grosor */
     transition: all 0.3s ease;
     opacity: 0.8;
 }
@@ -420,38 +461,80 @@ header.header .mobile-menu.active {
 .mobile-dropdown-item::before {
     content: '•';
     margin-right: 12px;
-    color: #FFC107;
+    color: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
     font-size: 16px;
 }
 
 .mobile-dropdown-item:hover {
-    background: rgba(255, 193, 7, 0.08);
+    background: rgba(230, 168, 0, 0.08); /* Cambiado a dorado más oscuro */
     color: #0a2e52;
     opacity: 1;
     padding-left: 20px;
+    /* Eliminado el cambio de font-weight en hover */
 }
 
 .mobile-action-btn {
     margin: 20px;
-    background: #FFC107;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
     color: #0a2e52;
-    border: none;
+    border: 2px solid transparent;
     padding: 14px 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
     width: calc(100% - 40px);
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.5px;
     font-size: 14px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(255, 213, 79, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Estilos para el icono del botón móvil */
+.mobile-action-btn i {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.mobile-action-btn:hover i {
+    color: #FFD54F;
+}
+
+.mobile-action-btn span {
+    transition: color 0.3s ease;
+}
+
+.mobile-action-btn:hover span {
+    color: #FFD54F;
 }
 
 .mobile-action-btn:hover {
-    background: #FFD54F;
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
+    color: #FFD54F;
+    border-color: #FFD54F;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 12px rgba(10, 46, 82, 0.2);
+}
+
+.mobile-action-btn:active {
+    background: linear-gradient(135deg, #082140 0%, #122a4d 100%);
+    color: #FFC107;
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(10, 46, 82, 0.3);
+    transition: all 0.15s ease;
+}
+
+/* Estado de enfoque para el botón móvil */
+.mobile-action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.4);
 }
 
 /* OPCIÓN 2: Botón Minimalista con Gradiente Sutil (comentado)
