@@ -3,7 +3,44 @@
  * Funcionalidades principales para la página de inicio
  */
 
+// Optimización de carga: Esperar a que todo esté listo
 document.addEventListener('DOMContentLoaded', function() {
+    // ===================================
+    // OPTIMIZACIÓN DE CARGA INICIAL
+    // ===================================
+    
+    // Asegurar que las imágenes críticas se carguen primero
+    const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="admsion"], .hero img');
+    let loadedImages = 0;
+    
+    function checkImagesLoaded() {
+        loadedImages++;
+        if (loadedImages >= criticalImages.length) {
+            // Todas las imágenes críticas están cargadas, inicializar funcionalidades
+            initializePageFunctionality();
+        }
+    }
+    
+    // Precargar imágenes críticas
+    criticalImages.forEach(img => {
+        if (img.complete) {
+            checkImagesLoaded();
+        } else {
+            img.addEventListener('load', checkImagesLoaded);
+            img.addEventListener('error', checkImagesLoaded); // Continuar aunque haya error
+        }
+    });
+    
+    // Fallback: si no hay imágenes críticas, inicializar inmediatamente
+    if (criticalImages.length === 0) {
+        initializePageFunctionality();
+    }
+    
+    // Timeout de seguridad: inicializar después de 2 segundos máximo
+    setTimeout(initializePageFunctionality, 2000);
+});
+
+function initializePageFunctionality() {
     // ===================================
     // VARIABLES GLOBALES
     // ===================================
@@ -503,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-});
+} // Cierre de initializePageFunctionality
 
 // ===================================
 // GLOBAL UTILITIES

@@ -1,4 +1,12 @@
 
+/* FORZAR VISIBILIDAD DEL HEADER - SOLUCIÓN DE EMERGENCIA */
+#header,
+header.header {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
 /* Resetear y proteger los estilos del header contra Bootstrap */
 header.header,
 #header {
