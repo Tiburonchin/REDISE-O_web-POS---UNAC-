@@ -230,7 +230,7 @@ img {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 4vw, 3rem);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: var(--spacing-md);
@@ -1143,6 +1143,7 @@ img {
 
 .ultimo-card {
     background: white;
+    border: 1px solid #55555552;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
