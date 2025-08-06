@@ -1577,7 +1577,7 @@ img {
 
 .programa-card-nueva {
     background: white;
-    border: 1px solid #e9ecef;
+    border: 1px solid #6464644d;
     border-radius: 8px;
     padding: 2rem;
     height: 100%;
@@ -2460,11 +2460,38 @@ img {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     margin-bottom: 0.75rem;
+    position: relative;
+    min-height: 280px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mapa-embed iframe {
     display: block;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* Fallback cuando el mapa no carga */
+.mapa-embed::before {
+    content: "🗺️ Mapa de ubicación";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #666;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .direccion-compacta {

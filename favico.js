@@ -1,3 +1,4 @@
+// Script para generar favicon robusto
 function setFavicon(iconURL) {
     let link = document.querySelector("link[rel~='icon']");
     
