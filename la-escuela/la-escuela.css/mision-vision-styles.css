@@ -1,5 +1,5 @@
 /* ================================
-   PRESENTACIÓN STYLES - UNAC EPG
+   MISIÓN Y VISIÓN STYLES - UNAC EPG
    ================================ */
 
 /* Variables de color para consistencia */
@@ -240,7 +240,7 @@ body {
    PROPÓSITO SECTION CON PALETA UNAC
    ================================ */
 .proposito-section {
-    padding: 6rem 0;
+    
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 30%, #f0f7ff 70%, #fff8e1 100%);
     position: relative;
     overflow: hidden;
@@ -324,7 +324,7 @@ body {
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 6rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(255, 213, 79, 0.3);
@@ -350,7 +350,7 @@ body {
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
@@ -893,7 +893,7 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+    background: #FFC107;
     border-radius: 2px;
 }
 

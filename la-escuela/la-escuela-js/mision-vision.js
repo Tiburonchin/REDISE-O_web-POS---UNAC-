@@ -1,4 +1,4 @@
-// Presentación de la Universidad - JavaScript
+// Misión y Visión de la Universidad - JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     
     // Smooth scroll para el botón de hero
@@ -129,5 +129,5 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeInObserver.observe(el);
     });
     
-    console.log('Presentación UNAC - JavaScript cargado correctamente');
+    console.log('Misión y Visión UNAC - JavaScript cargado correctamente');
 });
