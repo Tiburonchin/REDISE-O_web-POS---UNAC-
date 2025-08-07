@@ -81,26 +81,6 @@ body {
     text-align: center;
 }
 
-.breadcrumb-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    opacity: 0.9;
-    font-weight: 500;
-}
-
-.breadcrumb-nav i.fa-home {
-    color: var(--accent-gold);
-}
-
-.breadcrumb-nav i.fa-chevron-right {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.7rem;
-}
-
 .hero-welcome {
     margin-bottom: 2rem;
 }
@@ -178,22 +158,56 @@ body {
 .btn-scroll-down {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     color: var(--white);
     text-decoration: none;
-    font-weight: 500;
-    padding: 12px 24px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border: 2px solid rgba(255, 213, 79, 0.8);
+    border-radius: 50px;
+    background: rgba(255, 213, 79, 0.15);
+    backdrop-filter: blur(15px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(255, 213, 79, 0.2);
+}
+
+.btn-scroll-down::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-scroll-down:hover::before {
+    left: 100%;
 }
 
 .btn-scroll-down:hover {
     color: var(--primary-blue);
     background: var(--accent-gold);
     border-color: var(--accent-gold);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 213, 79, 0.4);
+}
+
+.btn-scroll-down i {
+    font-size: 1rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-3px); }
+    60% { transform: translateY(-2px); }
 }
 
 /* ================================
@@ -877,10 +891,6 @@ body {
     
     .hero-subtitle {
         font-size: 1rem;
-    }
-    
-    .breadcrumb-nav {
-        margin-bottom: 1.5rem;
     }
     
     .proposito-stats {
