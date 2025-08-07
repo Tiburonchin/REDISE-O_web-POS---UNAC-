@@ -77,7 +77,6 @@ header.header .header-container {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 24px !important;
     height: 80px !important;
     box-sizing: border-box !important;
 }
