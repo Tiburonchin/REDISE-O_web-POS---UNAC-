@@ -126,7 +126,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 193, 7, 0.3);
 }
 
@@ -158,50 +157,44 @@ body {
 .btn-scroll-down {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     color: var(--white);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 15px 30px;
-    border: 2px solid rgba(255, 213, 79, 0.8);
-    border-radius: 50px;
-    background: rgba(255, 213, 79, 0.15);
-    backdrop-filter: blur(15px);
-    transition: all 0.4s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0;
+    border: none;
+    background: none;
+    transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 8px 25px rgba(255, 213, 79, 0.2);
+    letter-spacing: 0.8px;
 }
 
-.btn-scroll-down::before {
+.btn-scroll-down::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.6s ease;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
 }
 
-.btn-scroll-down:hover::before {
-    left: 100%;
+.btn-scroll-down:hover::after {
+    width: 100%;
 }
 
 .btn-scroll-down:hover {
-    color: var(--primary-blue);
-    background: var(--accent-gold);
-    border-color: var(--accent-gold);
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(255, 213, 79, 0.4);
+    color: var(--accent-gold);
+    transform: translateY(-1px);
 }
 
 .btn-scroll-down i {
-    font-size: 1rem;
+    font-size: 0.9rem;
     animation: bounce 2s infinite;
+    margin-left: 0.25rem;
 }
 
 @keyframes bounce {
@@ -244,23 +237,147 @@ body {
 }
 
 /* ================================
-   PROPÓSITO SECTION
+   PROPÓSITO SECTION CON PALETA UNAC
    ================================ */
 .proposito-section {
-    padding: var(--section-padding);
-    background: var(--light-bg);
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 30%, #f0f7ff 70%, #fff8e1 100%);
     position: relative;
     overflow: hidden;
 }
 
+.proposito-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* Formas decorativas con paleta UNAC */
+.proposito-section::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-dark));
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Círculo azul UNAC flotante */
+.proposito-section {
+    position: relative;
+}
+
+.proposito-section .decorative-shape.shape-circle-left::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -50px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Triángulo dorado UNAC */
+.proposito-section .decorative-shape.shape-floating-squares::before {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 70px solid rgba(255, 213, 79, 0.1);
+    animation: float 7s ease-in-out infinite;
+}
+
+/* Header de la sección con paleta UNAC */
+.proposito-header {
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.proposito-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+    color: var(--primary-blue);
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 213, 79, 0.3);
+    transition: all 0.3s ease;
+}
+
+.proposito-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 213, 79, 0.4);
+    background: linear-gradient(135deg, var(--accent-gold-dark) 0%, #e6a000 100%);
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #FF8C00;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Contenido principal con paleta UNAC */
 .proposito-content {
-    background: var(--white);
-    padding: 4rem 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 50px rgba(10, 46, 82, 0.12);
     position: relative;
     overflow: hidden;
     z-index: 2;
+    border: 2px solid rgba(255, 213, 79, 0.1);
 }
 
 .proposito-content::before {
@@ -269,44 +386,140 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+    height: 6px;
+    background: #FF8C00;
+    border-radius: 20px 20px 0 0;
 }
 
-.proposito-text {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-    line-height: 1.7;
-    color: var(--text-dark);
-    text-align: center;
-    margin: 0;
-}
-
-.proposito-text strong {
-    color: var(--primary-blue);
-    font-weight: 600;
-}
-
-/* Nuevos estilos para Propósito Expandido */
-.proposito-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, var(--accent-gold), #e6a000);
-    color: var(--primary-blue);
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.proposito-text-container {
+    margin-bottom: 2.5rem;
 }
 
 .proposito-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
     font-weight: 700;
+    line-height: 1.3;
+}
+
+.proposito-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.proposito-text strong {
+    color: var(--accent-gold-dark);
+    font-weight: 700;
+    position: relative;
+}
+
+.proposito-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    text-align: justify;
+    margin: 0;
+}
+
+/* Features con paleta UNAC sin efectos de movimiento */
+.proposito-features {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-item:nth-child(1) {
+    border-left-color: var(--primary-blue);
+    background: rgba(10, 46, 82, 0.05);
+}
+
+.feature-item:nth-child(2) {
+    border-left-color: var(--accent-gold);
+    background: rgba(255, 213, 79, 0.05);
+}
+
+.feature-item:nth-child(3) {
+    border-left-color: var(--secondary-blue);
+    background: rgba(26, 58, 95, 0.05);
+}
+
+.feature-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item:nth-child(1):hover {
+    background: rgba(10, 46, 82, 0.08);
+}
+
+.feature-item:nth-child(2):hover {
+    background: rgba(255, 213, 79, 0.08);
+}
+
+.feature-item:nth-child(3):hover {
+    background: rgba(26, 58, 95, 0.08);
+}
+
+.feature-item i {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.feature-item:nth-child(1) i {
+    color: var(--primary-blue);
+}
+
+.feature-item:nth-child(2) i {
+    color: var(--accent-gold-dark);
+}
+
+.feature-item:nth-child(3) i {
+    color: var(--secondary-blue);
+}
+
+.feature-item span {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Contenido principal */
+.proposito-content {
+    padding: 2rem 0;
+}
+
+.proposito-text-container {
+    margin-bottom: 3rem;
+}
+
+.proposito-title {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .proposito-text,
@@ -322,44 +535,203 @@ body {
     font-weight: 600;
 }
 
+/* Características destacadas */
+.proposito-features {
+    margin: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.feature-item i {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+/* Estadísticas circulares con paleta UNAC */
 .proposito-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-top: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 0;
 }
 
 .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
-    border-radius: 15px;
-    border: 1px solid rgba(10, 46, 82, 0.1);
-    transition: all 0.3s ease;
+    position: relative;
+    padding: 0;
+    background: transparent;
+    border: none;
+    transition: all 0.4s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(10, 46, 82, 0.1);
+    transform: scale(1.05);
+}
+
+/* Primer elemento - Azul UNAC principal */
+.stat-item:nth-child(1) .stat-icon {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    box-shadow: 0 8px 30px rgba(10, 46, 82, 0.3);
+    animation: pulse-unac-blue 4s ease-in-out infinite;
+}
+
+.stat-item:nth-child(1):hover .stat-icon {
+    box-shadow: 0 12px 40px rgba(10, 46, 82, 0.5), 0 0 0 10px rgba(10, 46, 82, 0.1);
+    animation: none;
+}
+
+.stat-item:nth-child(1) .stat-number {
+    color: var(--primary-blue);
+}
+
+/* Segundo elemento - Dorado UNAC */
+.stat-item:nth-child(2) .stat-icon {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+    box-shadow: 0 8px 30px rgba(255, 213, 79, 0.4);
+    animation: pulse-unac-gold 4s ease-in-out infinite 1.3s;
+}
+
+.stat-item:nth-child(2):hover .stat-icon {
+    box-shadow: 0 12px 40px rgba(255, 213, 79, 0.6), 0 0 0 10px rgba(255, 213, 79, 0.1);
+    animation: none;
+}
+
+.stat-item:nth-child(2) .stat-number {
+    color: var(--accent-gold-dark);
+}
+
+/* Tercer elemento - Azul secundario UNAC */
+.stat-item:nth-child(3) .stat-icon {
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, #1a4f7a 100%);
+    box-shadow: 0 8px 30px rgba(26, 58, 95, 0.4);
+    animation: pulse-unac-secondary 4s ease-in-out infinite 2.6s;
+}
+
+.stat-item:nth-child(3):hover .stat-icon {
+    box-shadow: 0 12px 40px rgba(26, 58, 95, 0.6), 0 0 0 10px rgba(26, 58, 95, 0.1);
+    animation: none;
+}
+
+.stat-item:nth-child(3) .stat-number {
+    color: var(--secondary-blue);
+}
+
+/* Animaciones de pulso con paleta UNAC */
+@keyframes pulse-unac-blue {
+    0%, 100% { 
+        box-shadow: 0 8px 30px rgba(10, 46, 82, 0.3); 
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 12px 40px rgba(10, 46, 82, 0.5), 0 0 0 8px rgba(10, 46, 82, 0.1); 
+        transform: scale(1.02);
+    }
+}
+
+@keyframes pulse-unac-gold {
+    0%, 100% { 
+        box-shadow: 0 8px 30px rgba(255, 213, 79, 0.4); 
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 12px 40px rgba(255, 213, 79, 0.6), 0 0 0 8px rgba(255, 213, 79, 0.1); 
+        transform: scale(1.02);
+    }
+}
+
+@keyframes pulse-unac-secondary {
+    0%, 100% { 
+        box-shadow: 0 8px 30px rgba(26, 58, 95, 0.4); 
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 12px 40px rgba(26, 58, 95, 0.6), 0 0 0 8px rgba(26, 58, 95, 0.1); 
+        transform: scale(1.02);
+    }
+}
+
+.stat-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.stat-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    border-radius: 50%;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.stat-item:hover .stat-icon::before {
+    transform: translateX(100%);
+}
+
+.stat-item:hover .stat-icon {
+    transform: rotate(10deg);
+}
+
+.stat-info {
+    text-align: center;
 }
 
 .stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary-blue);
+    font-size: 2.5rem;
+    font-weight: 900;
     display: block;
     margin-bottom: 0.5rem;
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+    line-height: 1.3;
+    max-width: 150px;
+    margin: 0 auto;
 }
 
-.proposito-image .image-container {
+/* Sección visual mejorada */
+.proposito-visual {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.image-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -367,13 +739,19 @@ body {
 }
 
 .image-frame {
-    width: 280px;
-    height: 280px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--accent-gold);
-    box-shadow: 0 15px 40px rgba(10, 46, 82, 0.2);
+    box-shadow: 0 10px 30px rgba(10, 46, 82, 0.15);
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.image-frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(10, 46, 82, 0.2);
 }
 
 .proposito-img {
@@ -383,56 +761,44 @@ body {
     transition: transform 0.3s ease;
 }
 
-.image-frame:hover .proposito-img {
-    transform: scale(1.05);
-}
-
-.floating-elements {
+.image-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.floating-icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10, 46, 82, 0.7), rgba(26, 58, 95, 0.5));
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border: 2px solid var(--accent-gold);
-    animation: float 3s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.floating-icon.icon-1 {
-    top: -10px;
-    right: 20px;
-    animation-delay: 0s;
+.image-frame:hover .image-overlay {
+    opacity: 1;
 }
 
-.floating-icon.icon-2 {
-    bottom: 30px;
-    left: -10px;
-    animation-delay: 1s;
+.overlay-content {
+    text-align: center;
+    color: white;
 }
 
-.floating-icon.icon-3 {
-    top: 50%;
-    right: -20px;
-    animation-delay: 2s;
+.overlay-content i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--accent-gold);
 }
 
-.floating-icon i {
-    color: var(--primary-blue);
+.overlay-content span {
     font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Badge institucional minimalista */
 .unac-badge {
     position: absolute;
     bottom: -15px;
@@ -440,79 +806,131 @@ body {
     transform: translateX(-50%);
     background: var(--primary-blue);
     color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 5px 15px rgba(10, 46, 82, 0.3);
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(10, 46, 82, 0.25);
+    min-width: 140px;
+    white-space: nowrap;
 }
 
 .badge-content {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    justify-content: center;
 }
 
-.badge-content small {
+.badge-content i {
+    color: var(--accent-gold);
+    font-size: 1rem;
+}
+
+.badge-text {
+    text-align: center;
+}
+
+.badge-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    line-height: 1.2;
+}
+
+.badge-subtitle {
     font-size: 0.7rem;
-    opacity: 0.8;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    opacity: 0.9;
+    font-weight: 400;
 }
 
 /* ================================
-   VIDEO SECTION
+   VIDEO SECTION - OPTIMIZADO CON PALETA UNAC
    ================================ */
 .video-section {
-    padding: var(--section-padding);
-    background: var(--white);
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 30%, #fff9e6 70%, #ffffff 100%);
     position: relative;
     overflow: hidden;
+}
+
+/* Patrón decorativo sutil */
+.video-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(10, 46, 82, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 213, 79, 0.03) 0%, transparent 50%);
+    z-index: 1;
 }
 
 .video-content {
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .video-intro {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 3rem;
-    line-height: 1.6;
-    max-width: 600px;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 4rem;
+    line-height: 1.7;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
+    position: relative;
+}
+
+.video-intro::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
+    border-radius: 2px;
 }
 
 .video-container {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .video-thumbnail {
     position: relative;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(10, 46, 82, 0.15);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--white);
+    border: 3px solid rgba(255, 213, 79, 0.1);
 }
 
 .video-thumbnail:hover {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(10, 46, 82, 0.25);
+    border-color: rgba(255, 213, 79, 0.3);
 }
 
 .video-thumbnail img {
     width: 100%;
-    height: 400px;
+    height: 450px;
     object-fit: cover;
     object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.video-thumbnail:hover img {
+    transform: scale(1.02);
 }
 
 .video-play-button {
@@ -520,27 +938,43 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    background: rgba(255, 193, 7, 0.9);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4), 
+                0 0 0 0 rgba(255, 213, 79, 0.3);
+    animation: pulse-play 3s ease-in-out infinite;
+}
+
+@keyframes pulse-play {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4), 
+                    0 0 0 0 rgba(255, 213, 79, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4), 
+                    0 0 0 15px rgba(255, 213, 79, 0);
+    }
 }
 
 .video-play-button i {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--primary-blue);
-    margin-left: 3px;
+    margin-left: 4px;
+    text-shadow: 0 2px 4px rgba(10, 46, 82, 0.3);
 }
 
 .video-thumbnail:hover .video-play-button {
-    background: var(--accent-gold-dark);
-    transform: translate(-50%, -50%) scale(1.05);
+    background: linear-gradient(135deg, var(--accent-gold-dark) 0%, #e6a000 100%);
+    transform: translate(-50%, -50%) scale(1.1);
+    animation: none;
+    box-shadow: 0 12px 35px rgba(255, 193, 7, 0.6), 
+                0 0 0 20px rgba(255, 213, 79, 0);
 }
 
 .video-overlay {
@@ -548,26 +982,54 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(10, 46, 82, 0.3) 40%,
+                rgba(10, 46, 82, 0.8) 100%);
+    padding: 3rem 2rem 2rem;
     color: var(--white);
+    transition: opacity 0.3s ease;
+}
+
+.video-thumbnail:hover .video-overlay {
+    background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(10, 46, 82, 0.4) 40%,
+                rgba(10, 46, 82, 0.9) 100%);
 }
 
 .video-caption {
     margin: 0;
-    font-size: 1rem;
-    font-weight: 500;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.3px;
 }
 
 .video-iframe {
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(10, 46, 82, 0.15);
+    border: 3px solid rgba(255, 213, 79, 0.2);
+    background: var(--white);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .video-iframe iframe {
-    border-radius: 15px;
+    border-radius: 17px;
+    width: 100%;
+    height: 450px;
 }
 
 /* ================================
@@ -895,41 +1357,96 @@ body {
     
     .proposito-stats {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 2.5rem;
+        margin-top: 3rem;
+        padding: 2rem 0;
     }
     
     .stat-item {
-        padding: 1rem;
+        transform: none;
     }
     
-    .image-frame {
-        width: 220px;
-        height: 220px;
+    .stat-item:hover {
+        transform: scale(1.02);
     }
     
-    .floating-icon {
-        width: 40px;
-        height: 40px;
+    .stat-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     
-    .floating-icon i {
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    .stat-icon {
+        width: 45px;
+        height: 45px;
         font-size: 1rem;
     }
     
-    .video-thumbnail img {
-        height: 250px;
+    .stat-number {
+        font-size: 1.8rem;
     }
     
-    .video-play-button {
-        width: 60px;
-        height: 60px;
+    .image-frame {
+        width: 280px;
+        height: 280px;
     }
     
-    .video-play-button i {
+    .proposito-features {
+        margin: 1.5rem 0;
+    }
+    
+    .feature-item {
+        margin-bottom: 0.75rem;
+    }
+    
+    .proposito-title {
         font-size: 1.5rem;
     }
     
-    .proposito-content {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .video-thumbnail img {
+        height: 300px;
+    }
+    
+    .video-container {
+        padding: 0 15px;
+    }
+    
+    .video-intro {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        padding: 0 15px;
+    }
+
+    .video-play-button {
+        width: 65px;
+        height: 65px;
+    }
+
+    .video-play-button i {
+        font-size: 1.6rem;
+    }
+    
+    .video-thumbnail {
+        border-radius: 15px;
+        margin: 0 10px;
+    }
+    
+    .video-iframe iframe {
+        height: 300px;
+    }    .proposito-content {
         padding: 2.5rem 1.5rem;
         margin: 0 1rem;
     }
@@ -955,6 +1472,29 @@ body {
     }
 }
 
+/* Responsive para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .proposito-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 600px;
+    }
+    
+    .stat-icon {
+        width: 110px;
+        height: 110px;
+        font-size: 2.2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .proposito-content {
+        padding: 3rem 2rem;
+    }
+}
+
 @media (max-width: 576px) {
     .main-content {
         padding-top: 80px;
@@ -977,14 +1517,45 @@ body {
     }
     
     .video-thumbnail img {
-        height: 200px;
-    }
-    
-    .video-iframe iframe {
         height: 250px;
     }
     
-    .valor-card {
+    .video-container {
+        padding: 0 10px;
+    }
+    
+    .video-intro {
+        font-size: 1rem;
+        padding: 0 10px;
+        margin-bottom: 2.5rem;
+    }
+    
+    .video-play-button {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .video-play-button i {
+        font-size: 1.4rem;
+    }
+    
+    .video-thumbnail {
+        border-radius: 12px;
+        margin: 0 5px;
+    }
+
+    .video-iframe iframe {
+        height: 250px;
+        border-radius: 12px;
+    }
+    
+    .video-overlay {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    
+    .video-caption {
+        font-size: 0.95rem;
+    }    .valor-card {
         padding: 2rem 1.5rem;
     }
     
@@ -1058,5 +1629,70 @@ body {
     .valor-card {
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+}
+
+/* ================================
+   ESPACIADO LATERAL CONTENEDORES
+   ================================ */
+   
+/* Espaciado lateral general para todas las secciones */
+.container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Espaciado adicional para contenido de texto */
+.hero-content,
+.video-content,
+.proposito-content,
+.mision-content,
+.vision-content,
+.cta-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Espaciado específico para móviles */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    
+    .hero-content,
+    .video-content,
+    .proposito-content,
+    .mision-content,
+    .vision-content,
+    .cta-content {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* Espaciado adicional para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+    }
+}
+
+/* Espaciado mejorado para desktop */
+@media (min-width: 1025px) {
+    .container {
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+    }
+    
+    .hero-content,
+    .video-content,
+    .proposito-content,
+    .mision-content,
+    .vision-content,
+    .cta-content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
