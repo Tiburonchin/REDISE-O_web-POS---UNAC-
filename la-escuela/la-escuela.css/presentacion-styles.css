@@ -29,7 +29,7 @@ body {
 }
 
 .main-content {
-    padding-top: 90px; /* Espacio para header fijo */
+    padding-top: 83px; /* Espacio para header fijo */
 }
 
 /* ================================
@@ -355,7 +355,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: #FF8C00;
+    background: #FFC107;
     border-radius: 2px;
 }
 
@@ -387,7 +387,7 @@ body {
     left: 0;
     right: 0;
     height: 6px;
-    background: #FF8C00;
+    background: #FFC107 ;
     border-radius: 20px 20px 0 0;
 }
 
@@ -1497,7 +1497,7 @@ body {
 
 @media (max-width: 576px) {
     .main-content {
-        padding-top: 80px;
+        padding-top: 67px;
     }
     
     .hero-presentacion {
