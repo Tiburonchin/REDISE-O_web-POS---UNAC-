@@ -1,5 +1,5 @@
 /* ================================
-   PRESENTACIÓN STYLES - UNAC EPG
+   MISIÓN Y VISIÓN STYLES - UNAC EPG
    ================================ */
 
 /* Variables de color para consistencia */
@@ -22,6 +22,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -37,7 +42,7 @@ body {
    ================================ */
 .hero-presentacion {
     position: relative;
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,12 +101,28 @@ body {
 
 .hero-title {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.2;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title-line-1 {
+    display: block;
+    font-size: 0.9em;
+}
+
+.title-line-2 {
+    display: block;
+    font-size: 0.9em;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
 }
 
 .hero-divider {
@@ -135,12 +156,12 @@ body {
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 400;
     margin-bottom: 2.5rem;
     opacity: 0.95;
     line-height: 1.7;
-    max-width: 750px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -744,6 +765,11 @@ body {
         --section-padding: 3rem 0;
     }
     
+    /* Prevenir overflow horizontal */
+    html, body {
+        overflow-x: hidden;
+    }
+    
     .hero-presentacion {
         min-height: 60vh;
     }
@@ -754,6 +780,13 @@ body {
     
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+    
+    /* Estilos específicos para la sección de presentación */
+    .presentacion-section {
+        padding: 3rem 0;
+        margin: 0;
+        overflow-x: hidden;
     }
     
     .presentacion-text p {
@@ -804,6 +837,7 @@ body {
     .image-frame {
         width: 280px;
         height: 280px;
+        margin: 0 auto;
     }
     
     .cert-logo {
@@ -820,6 +854,7 @@ body {
 @media (max-width: 576px) {
     .main-content {
         padding-top: 67px;
+        overflow-x: hidden;
     }
     
     .hero-presentacion {
@@ -832,6 +867,12 @@ body {
     
     .section-title {
         font-size: 1.8rem;
+    }
+    
+    /* Ocultar elementos decorativos que pueden causar overflow */
+    .presentacion-section::before,
+    .presentacion-section::after {
+        display: none;
     }
     
     .stat-icon {
@@ -860,6 +901,7 @@ body {
     .image-frame {
         width: 250px;
         height: 250px;
+        margin: 0 auto;
     }
     
     .unac-badge {
@@ -874,6 +916,17 @@ body {
     
     .badge-subtitle {
         font-size: 0.65rem;
+    }
+    
+    /* Corregir espaciado en contenido de presentación */
+    .presentacion-content {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .presentacion-visual {
+        text-align: center;
+        margin-top: 2rem;
     }
 }
 
@@ -945,14 +998,59 @@ body {
    ESPACIADO LATERAL CONTENEDORES
    ================================ */
 .container {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    max-width: 100% !important;
 }
 
 @media (max-width: 768px) {
     .container {
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Corregir espaciado en presentación para móviles */
+    .presentacion-section {
+        padding: 3rem 0;
+        overflow-x: hidden;
+    }
+    
+    .presentacion-content {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .presentacion-visual {
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+    
+    .image-container {
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Ajustes específicos para móviles pequeños */
+    .presentacion-section {
+        padding: 2rem 0;
+    }
+    
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .col-lg-6 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
     }
 }
 
@@ -1245,6 +1343,7 @@ body {
 @media (max-width: 768px) {
     .intro-section {
         padding: 40px 0;
+        overflow-x: hidden;
     }
     
     .intro-title {
@@ -1253,6 +1352,7 @@ body {
     
     .pilares-section {
         padding: 60px 0;
+        overflow-x: hidden;
     }
     
     .pilar-card {
@@ -1263,14 +1363,32 @@ body {
     .image-frame {
         width: 300px;
         height: 200px;
+        margin: 0 auto;
     }
     
     .presentacion-content {
-        padding-left: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .presentacion-visual {
+        padding: 1rem 0;
+        text-align: center;
     }
     
     .commitment-section {
         padding: 1.5rem;
         margin-top: 1.5rem;
+    }
+    
+    /* Asegurar que no haya overflow horizontal */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .col-lg-6, .col-md-6, .col-sm-12 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
     }
 }

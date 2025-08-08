@@ -108,23 +108,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Efecto de typing para el título hero (opcional)
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
+    // Efecto de typing para el título hero con dos líneas
+    const titleLine1 = document.querySelector('.title-line-1');
+    const titleLine2 = document.querySelector('.title-line-2');
+    
+    if (titleLine1 && titleLine2) {
+        const text1 = titleLine1.textContent;
+        const text2 = titleLine2.textContent;
+        
+        titleLine1.textContent = '';
+        titleLine2.textContent = '';
         
         let i = 0;
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
+        
+        // Escribir primera línea
+        const typeWriter1 = () => {
+            if (i < text1.length) {
+                titleLine1.textContent += text1.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter1, 100);
+            } else {
+                // Comenzar segunda línea después de completar la primera
+                setTimeout(typeWriter2, 300);
+            }
+        };
+        
+        // Escribir segunda línea
+        let j = 0;
+        const typeWriter2 = () => {
+            if (j < text2.length) {
+                titleLine2.textContent += text2.charAt(j);
+                j++;
+                setTimeout(typeWriter2, 150);
             }
         };
         
         // Iniciar el efecto después de un pequeño delay
-        setTimeout(typeWriter, 1000);
+        setTimeout(typeWriter1, 1000);
     }
     
     // Smooth scroll para todos los enlaces internos
