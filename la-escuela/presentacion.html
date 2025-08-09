@@ -28,6 +28,13 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="../img/logo_unac.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
+    </div>
     <!-- ================================
          HEADER SECTION
          ================================ -->
@@ -471,48 +478,7 @@
     <script src="../footer/footer_carga.js"></script>
     
     <!-- Smooth scrolling -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling para enlaces internos
-            const scrollLinks = document.querySelectorAll('a[href^="#"]');
-            
-            scrollLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Animaciones al hacer scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                    }
-                });
-            }, observerOptions);
-
-            // Observar elementos para animación
-            const animatedElements = document.querySelectorAll('.ventaja-card, .cert-item, .highlight-box');
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="js/critical-loading.js"></script>
     
     <!-- JavaScript específico para presentación -->
     <script src="la-escuela-js/presentacion-fixed.js"></script>
