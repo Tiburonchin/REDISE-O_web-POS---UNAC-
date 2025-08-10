@@ -2634,7 +2634,7 @@ img {
 
 /* Regla final para asegurar responsividad total */
 @media (max-width: 991px) {
-    *:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *) {
+    *:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *):not(img.footer-logo) {
         max-width: 100vw !important;
     }
     

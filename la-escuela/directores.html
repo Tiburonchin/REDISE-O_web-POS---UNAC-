@@ -1,31 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="la-escuela.css/directores-styles.css">
-  <link rel="stylesheet" href="/header/header.css">
-  <script src="/header/header_function.js"></script>
-  <title>Directores - EPG UNAC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Directores - Escuela de Posgrado UNAC</title>
+
+    <!-- SEO Meta Tags Actualizadas -->
+    <meta name="description" content="Conoce a los directores de la Escuela de Posgrado de la Universidad Nacional del Callao (UNAC). Información sobre el Director General y los directores de facultad, trayectoria y liderazgo académico.">
+    <meta name="keywords" content="UNAC, Escuela de Posgrado, directores, director general, facultad, universidad, Callao, posgrado, liderazgo, educación, Perú">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Directores - Escuela de Posgrado UNAC">
+    <meta property="og:description" content="Conoce a los directores de la Escuela de Posgrado UNAC. Trayectoria, liderazgo y compromiso académico.">
+    <meta property="og:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <meta property="og:url" content="https://posgrado.unac.edu.pe/la-escuela/directores.html">
+    <meta property="og:site_name" content="Escuela de Posgrado UNAC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Directores - Escuela de Posgrado UNAC">
+    <meta name="twitter:description" content="Conoce a los directores de la Escuela de Posgrado UNAC. Trayectoria, liderazgo y compromiso académico.">
+    <meta name="twitter:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <meta name="twitter:site" content="@UNACoficial">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="la-escuela.css/directores-styles.css">
 </head>
+
 <body>
-  <div id="header"></div>
-
-  <div class="container">
-    <h1>Directores de Facultad</h1>
-    <div class="selector-container">
-      <label for="facultadSelect">Selecciona una facultad:</label>
-      <select id="facultadSelect">
-        <option value="todas">Todas las facultades</option>
-      </select>
-
-      <input type="text" id="buscador" placeholder="Buscar director por nombre">
+    <!-- Preloader -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="../img/logo_unac.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
     </div>
-    <ul id="listaDirectores"></ul>
-  </div>
+    <!-- ================================
+         HEADER SECTION
+         ================================ -->
+    <div id="header"></div>
 
-  <script src="/favico.js"></script>
-  <script src="/header/header.js"></script>
+    <!-- ================================
+         MAIN CONTENT
+         ================================ -->
+    <main class="main-content">
+        
+        <!-- ================================
+            HERO SECTION
+            ================================ -->
+        <section class="hero-presentacion">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <img src="../img/escuela/horizontal.jpg" alt="Directores Escuela de Posgrado UNAC" class="hero-bg-image">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="hero-content">
+                            <div class="hero-welcome">
+                                <span class="welcome-text">Conoce a nuestros</span>
+                                <h1 class="hero-title">DIRECTORES DE LA ESCUELA DE POSGRADO</h1>
+                                <div class="hero-divider">
+                                    <div class="divider-line"></div>
+                                    <div class="divider-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="divider-line"></div>
+                                </div>
+                            </div>
+                            <p class="hero-subtitle">
+                                Descubre al equipo de directores que lidera la <strong>excelencia académica, la innovación y el desarrollo profesional</strong> en nuestra Escuela de Posgrado de la UNAC.<br>
+                                Conoce su trayectoria, compromiso y visión para transformar la educación de posgrado en el Perú.
+                            </p>
+                            <div class="hero-cta">
+                                <a href="#directores-section" class="btn-scroll-down">
+                                    <span>Ver directores</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ESPACIO ENTRE HERO Y DIRECTOR PRINCIPAL -->
+        <div style="height: 3.5rem;"></div>
+
+        <!-- DIRECTOR PRINCIPAL -->
+        <section class="container" id="directores-section">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-6 col-md-8 col-12">
+                    <div class="director-card director-principal" style="margin: 0 auto 2.5rem auto;">
+                        <img src="../img/directores/juan_valdivia.png" alt="Dr. Juan Valdivia" class="director-foto" loading="eager">
+                        <div class="director-nombre">Dr. Juan Valdivia</div>
+                        <div class="director-cargo" style="color:#FFD54F;font-weight:700;">Director General</div>
+                        <div class="director-info">Director de la Escuela de Posgrado UNAC. Lidera la gestión académica y estratégica de la Escuela, promoviendo la excelencia y la innovación en la formación de posgrado.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Directores de Facultad</h2>
+            <div class="selector-container">
+                <label for="facultadSelect">Selecciona una facultad:</label>
+                <select id="facultadSelect">
+                    <option value="todas">Todas las facultades</option>
+                </select>
+                <input type="text" id="buscador" placeholder="Buscar director por nombre">
+            </div>
+            <div id="listaDirectores" class="modern-lista-directores"></div>
+
+            <!-- MODAL PARA DIRECTOR -->
+            <div class="modal fade" id="modalDirector" tabindex="-1" aria-labelledby="modalDirectorLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header" style="border-bottom: none;">
+                            <h5 class="modal-title" id="modalDirectorLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column flex-md-row align-items-center gap-4">
+                            <img id="modalDirectorFoto" src="" alt="" class="rounded-circle shadow" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #FFD54F;">
+                            <div>
+                                <div id="modalDirectorFacultad" class="mb-2 text-secondary"></div>
+                                <div id="modalDirectorCargo" class="mb-2 fw-bold" style="color:#FFD54F;"></div>
+                                <div id="modalDirectorDescripcion" class="mb-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="../header/header_function.js"></script>
+  <script src="../header/header_carga.js"></script>
+  <script src="../footer/footer_carga.js"></script>
+  <script src="../footer/footer_function.js"></script>
   <script src="la-escuela-js/directores.js"></script>
+  <script src="../favico.js"></script>
 </body>
 </html>

@@ -1,0 +1,93 @@
+[
+  {
+    "nombre": "Dr. Juan Valdivia",
+    "facultad": "FCA",
+    "cargo": "Director",
+    "foto": "../img/directores/juan_valdivia.png",
+    "descripcion": "Director de la Facultad de Ciencias Administrativas."
+  },
+  {
+    "nombre": "Directora FCA",
+    "facultad": "FCA",
+    "cargo": "Directora",
+    "foto": "../img/directores/FCA.jpeg",
+    "descripcion": "Directora de la Facultad de Ciencias Administrativas."
+  },
+  {
+    "nombre": "Director FCC",
+    "facultad": "FCC",
+    "cargo": "Director",
+    "foto": "../img/directores/FCC.png",
+    "descripcion": "Director de la Facultad de Ciencias Contables."
+  },
+  {
+    "nombre": "Director FCE",
+    "facultad": "FCE",
+    "cargo": "Director",
+    "foto": "../img/directores/FCE.jpeg",
+    "descripcion": "Director de la Facultad de Ciencias Económicas."
+  },
+  {
+    "nombre": "Director FCED",
+    "facultad": "FCED",
+    "cargo": "Director",
+    "foto": "../img/directores/FCED.jpg",
+    "descripcion": "Director de la Facultad de Ciencias de la Educación."
+  },
+  {
+    "nombre": "Director FCNM",
+    "facultad": "FCNM",
+    "cargo": "Director",
+    "foto": "../img/directores/FCNM.jpg",
+    "descripcion": "Director de la Facultad de Ciencias Naturales y Matemática."
+  },
+  {
+    "nombre": "Director FCS",
+    "facultad": "FCS",
+    "cargo": "Director",
+    "foto": "../img/directores/FCS.jpeg",
+    "descripcion": "Director de la Facultad de Ciencias de la Salud."
+  },
+  {
+    "nombre": "Director FIARN",
+    "facultad": "FIARN",
+    "cargo": "Director",
+    "foto": "../img/directores/FIARN.jpg",
+    "descripcion": "Director de la Facultad de Ingeniería Ambiental y Recursos Naturales."
+  },
+  {
+    "nombre": "Director FIEE",
+    "facultad": "FIEE",
+    "cargo": "Director",
+    "foto": "../img/directores/FIEE.jpg",
+    "descripcion": "Director de la Facultad de Ingeniería Electrónica y Eléctrica."
+  },
+  {
+    "nombre": "Director FIIS",
+    "facultad": "FIIS",
+    "cargo": "Director",
+    "foto": "../img/directores/FIIS.jpg",
+    "descripcion": "Director de la Facultad de Ingeniería Industrial y de Sistemas."
+  },
+  {
+    "nombre": "Director FIME",
+    "facultad": "FIME",
+    "cargo": "Director",
+    "foto": "../img/directores/FIME.jpeg",
+    "descripcion": "Director de la Facultad de Ingeniería Mecánica y Energía."
+  },
+  {
+    "nombre": "Director FIPA",
+    "facultad": "FIPA",
+    "cargo": "Director",
+    "foto": "../img/directores/FIPA.jpeg",
+    "descripcion": "Director de la Facultad de Ingeniería Pesquera y de Alimentos."
+  },
+  {
+    "nombre": "Director FIQ",
+    "facultad": "FIQ",
+    "cargo": "Director",
+    "foto": "../img/directores/FIQ.jpg",
+    "descripcion": "Director de la Facultad de Ingeniería Química."
+  }
+]

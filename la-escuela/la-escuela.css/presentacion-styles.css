@@ -1081,7 +1081,8 @@ body {
 .features-divider {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--primary-blue));
+
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
     margin: 0 auto;
     border-radius: 2px;
 }
