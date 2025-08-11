@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="la-escuela.css/directores-styles.css">
 </head>
 
-<body>
+<body class="page-directores">
     <!-- Preloader -->
     <div class="page-preloader" id="preloader">
         <div class="preloader-content">
@@ -101,18 +101,15 @@
                 </div>
             </div>
         </section>
-        <!-- ESPACIO ENTRE HERO Y DIRECTOR PRINCIPAL -->
-        <div style="height: 3.5rem;"></div>
-
         <!-- DIRECTOR PRINCIPAL -->
-        <section class="container" id="directores-section">
+        <section class="container main-director-section" id="directores-section">
           <div class="main-director">
                     <div class="director-content">
                         <div class="director-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Director Principal" class="director-photo">
+                            <img src="../img/directores/juan_valdivia.png" alt="Director Principal" class="director-photo">
                         </div>
                         <div class="director-info">
-                            <h3>Dr. Carlos Eduardo Mendoza Vargas</h3>
+                            <h3>Dr. Juan Valdivia</h3>
                             <p class="director-title">Director de la Escuela de Posgrado</p>
                             <p class="director-description">
                                 Reconocido académico con más de 20 años de experiencia en educación superior y gestión universitaria. Especialista en investigación científica y desarrollo de programas de posgrado de alta calidad académica.
@@ -136,28 +133,8 @@
                     </div>
                 </div>
         </section>
-
-            <!-- SECCIÓN PERFIL DIRECTOR -->
-          <section id="perfilDirector" class="perfil-director-section" style="display:none;">
-              <div class="perfil-director-bg"></div>
-              <div class="perfil-director-content">
-                  <button class="btn-volver-lista" id="volverListaBtn"><i class="fas fa-arrow-left"></i> Volver a la lista</button>
-                  <div class="perfil-director-main">
-                      <img id="perfilDirectorFoto" class="perfil-director-foto" src="" alt="Foto director">
-                      <div class="perfil-director-info">
-                          <h2 id="perfilDirectorNombre" class="perfil-director-nombre"></h2>
-                          <div id="perfilDirectorCargo" class="perfil-director-cargo"></div>
-                          <div id="perfilDirectorFacultad" class="perfil-director-facultad"></div>
-                          <p id="perfilDirectorDescripcion" class="perfil-director-descripcion"></p>
-                          <div id="perfilDirectorContacto" class="perfil-director-contacto"></div>
-                      </div>
-                  </div>
-              </div>
-          </section>
-        </section>
-  </main>
-
-  <main class="directors-section directors-bg-pattern">
+        <!-- Lista de Directores -->
+        <section class="directors-section directors-bg-pattern">
         <div class="floating-elements">
             <div class="floating-element" style="top: 10%; left: 10%; width: 20px; height: 20px; animation-delay: 0s;"></div>
             <div class="floating-element" style="top: 20%; right: 15%; width: 15px; height: 15px; animation-delay: 2s;"></div>
@@ -183,13 +160,13 @@
         <div class="directors-container" id="directorsContainer">
             <!-- Director Principal de Posgrado -->
             <div class="director-card visible" data-category="posgrado">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Dr. Carlos Mendoza" class="director-image">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face" alt="Director/a X" class="director-image">
                 <div class="director-info">
-                    <h3 class="director-name">Dr. Carlos Mendoza Rivera</h3>
-                    <p class="director-position">Director Principal</p>
+                    <h3 class="director-name">Director/a X</h3>
+                    <p class="director-position">Director/a</p>
                     <p class="director-faculty">Escuela de Posgrado</p>
                     <p class="director-description">
-                        Líder en innovación académica y desarrollo de programas de maestría y doctorado. Especialista en gestión universitaria.
+                        Perfil en actualización. Próximamente se publicará la información oficial del/la director/a.
                     </p>
                     <div class="director-contact">
                         <button class="contact-btn email" title="Email">
@@ -199,7 +176,7 @@
                             <i class="fas fa-phone"></i>
                         </button>
                     </div>
-                    <button class="view-more-btn" onclick="openDirectorModal('carlos-mendoza')">Ver más detalles</button>
+                    <button class="view-more-btn" onclick="openDirectorModal('director-x')">Ver más detalles</button>
                 </div>
             </div>
 
@@ -350,8 +327,81 @@
                     <button class="view-more-btn" onclick="openDirectorModal('carmen-ruiz')">Ver más detalles</button>
                 </div>
             </div>
+
+            <!-- Tarjetas adicionales (placeholders) -->
+            <div class="director-card visible" data-category="facultad">
+                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=300&fit=crop&crop=face" alt="Director/a X1" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Director/a X1</h3>
+                    <p class="director-position">Director/a</p>
+                    <p class="director-faculty">Facultad por definir</p>
+                    <p class="director-description">Perfil en actualización.</p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="ingenieria">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=face" alt="Director/a X2" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Director/a X2</h3>
+                    <p class="director-position">Director/a</p>
+                    <p class="director-faculty">Ingeniería</p>
+                    <p class="director-description">Perfil en actualización.</p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="ciencias">
+                <img src="https://images.unsplash.com/photo-1544005316-04ce1f9e9c91?w=300&h=300&fit=crop&crop=face" alt="Director/a X3" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Director/a X3</h3>
+                    <p class="director-position">Director/a</p>
+                    <p class="director-faculty">Ciencias</p>
+                    <p class="director-description">Perfil en actualización.</p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad ingenieria">
+                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=300&fit=crop&crop=face" alt="Director/a X4" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Director/a X4</h3>
+                    <p class="director-position">Director/a</p>
+                    <p class="director-faculty">Facultad de Ingeniería</p>
+                    <p class="director-description">Perfil en actualización.</p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+        </section>
 
     <!-- Modal para detalles de directores -->
     <div id="directorsModal" class="directors-modal">
@@ -370,7 +420,6 @@
     </div>
 
   <footer id="footer"></footer>
-  <script src="../la-escuela-js/directores.js"></script>
   <script src="../header/header_function.js"></script>
   <script src="../header/header_carga.js"></script>
   <script src="../footer/footer_carga.js"></script>

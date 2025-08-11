@@ -193,6 +193,7 @@
         function initializeDirectorsFilters() {
             const filterBtns = document.querySelectorAll('.directors-filter-btn');
             const directorCards = document.querySelectorAll('.director-card');
+            const container = document.getElementById('directorsContainer');
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -216,6 +217,16 @@
                                 card.classList.add('hidden');
                                 card.classList.remove('visible');
                             }
+                        }
+                    });
+
+                    // Desplazar suavemente hacia el primer resultado visible o al contenedor
+                    requestAnimationFrame(() => {
+                        const firstVisible = container ? container.querySelector('.director-card.visible') : null;
+                        if (firstVisible) {
+                            firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } else if (container) {
+                            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     });
                 });

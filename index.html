@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escuela de Posgrado UNAC - Excelencia Académica</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Escuela de Posgrado UNAC - Programas de maestría y doctorado de excelencia académica para formar líderes del futuro">
-    <meta name="keywords" content="posgrado, maestría, doctorado, UNAC, universidad, educación superior">
-    <meta name="author" content="Universidad Nacional del Callao">
+    <!-- SEO Meta Tags Optimizados -->
+    <meta name="description" content="Escuela de Posgrado UNAC: Maestrías y doctorados con excelencia académica, investigación, innovación y liderazgo. Descubre nuestros programas, admisión, docentes y vida universitaria en la Universidad Nacional del Callao.">
+    <meta name="keywords" content="posgrado, maestría, doctorado, UNAC, Universidad Nacional del Callao, admisión, investigación, educación superior, programas, docentes, Callao, Perú, excelencia académica, innovación, liderazgo, vida universitaria">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Escuela de Posgrado UNAC - Excelencia Académica y Liderazgo">
+    <meta property="og:description" content="Conoce los programas de maestría y doctorado, admisión, docentes y vida universitaria en la Escuela de Posgrado UNAC.">
+    <meta property="og:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <meta property="og:url" content="https://posgrado.unac.edu.pe/">
+    <meta property="og:site_name" content="Escuela de Posgrado UNAC">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Escuela de Posgrado UNAC - Excelencia Académica y Liderazgo">
+    <meta name="twitter:description" content="Descubre maestrías, doctorados y oportunidades académicas en la UNAC.">
+    <meta name="twitter:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <meta name="twitter:site" content="@UNACoficial">
     
     <!-- Favicon -->
     <!-- El favicon se establece dinámicamente mediante favico.js -->
@@ -33,66 +47,7 @@
     <link rel="stylesheet" href="header/header.css">
     
     <!-- Estilos para optimizar la carga inicial -->
-    <style>
-        /* FORZAR visibilidad del header - SOLUCIÓN DEFINITIVA */
-        #header {
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: block !important;
-            transition: none !important;
-        }
-        
-        /* Asegurar que el main-content no se mueva durante la carga */
-        .main-content {
-            padding-top: 90px;
-            overflow-x: hidden;
-            width: 100%;
-        }
-        
-        /* Preloader simple para una mejor experiencia */
-        .page-preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            opacity: 1;
-            visibility: visible;
-            transition: all 0.5s ease;
-        }
-        
-        .page-preloader.hide {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .preloader-content {
-            text-align: center;
-        }
-        
-        .preloader-logo {
-            width: 80px;
-            height: 80px;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-        }
-        
-        .preloader-text {
-            margin-top: 1rem;
-            color: #0a2e52;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 500;
-        }
-    </style>
+    <link rel="stylesheet" href="css/preloader.css">
 </head>
 
 <body>
@@ -967,9 +922,6 @@
     
     <!-- Critical Loading Optimization (debe cargar primero) -->
     <script src="js/critical-loading.js"></script>
-    
-    <!-- Emergency Header Display (asegurar visibilidad) -->
-    <script src="js/emergency-header.js"></script>
     
     <!-- Custom Scripts -->
     <script src="favico.js"></script>

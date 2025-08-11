@@ -66,6 +66,8 @@ window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 headerElement.style.display = 'block';
                 headerElement.style.visibility = 'visible';
+                // Marcar como cargado para activar el fade-in definido en critical-loading.js
+                headerElement.classList.add('loaded');
                 console.log('👁️ Header forzado a ser visible');
             }, 100);
             

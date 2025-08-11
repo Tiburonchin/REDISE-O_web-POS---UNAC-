@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="la-escuela.css/mision-vision.css">
 </head>
 
-<body>
+<body class="page-mision-vision">
     <!-- Preloader -->
     <div class="page-preloader" id="preloader">
         <div class="preloader-content">
@@ -489,32 +489,7 @@
     <script src="../header/header_carga.js"></script>
     <script src="../footer/footer_carga.js"></script>
     
-    <!-- Video Functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoThumbnail = document.querySelector('.video-thumbnail');
-            const videoIframe = document.querySelector('.video-iframe');
-            
-            if (videoThumbnail && videoIframe) {
-                videoThumbnail.addEventListener('click', function() {
-                    // Ocultar thumbnail y mostrar video
-                    videoThumbnail.style.display = 'none';
-                    videoIframe.style.display = 'block';
-                    
-                    // Agregar autoplay al iframe
-                    const iframe = videoIframe.querySelector('iframe');
-                    const currentSrc = iframe.src;
-                    iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
-                    
-                    // Scroll suave hacia el video
-                    videoIframe.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'center' 
-                    });
-                });
-            }
-        });
-    </script>
+    <!-- Video functionality is handled in la-escuela-js/mision-vision.js -->
     
     <!-- JavaScript específico para misión y visión -->
     <script src="la-escuela-js/mision-vision.js"></script>

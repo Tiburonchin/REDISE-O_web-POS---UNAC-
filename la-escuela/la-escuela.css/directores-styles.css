@@ -71,6 +71,10 @@ body {
 .main-content {
     padding-top: 83px; /* Espacio para header fijo */
 }
+/* Quitar espacio superior en esta página (evita vacío sobre el hero) */
+.page-directores .main-content {
+    padding-top: 0;
+}
 
 /* ================================
    HERO SECTION
@@ -243,7 +247,8 @@ body {
     60% { transform: translateY(-2px); }
 }
 
-/* Director Principal */
+/* Director Principal (legacy - disabled) */
+/*
         .main-director {
             background: var(--white);
             border-radius: 20px;
@@ -254,21 +259,6 @@ body {
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-        }
-
-        .main-director::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-gold));
-        }
-
-        .main-director:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 60px rgba(10, 46, 82, 0.15);
         }
 
         .director-content {
@@ -290,10 +280,6 @@ body {
             border: 5px solid var(--accent-gold);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-        }
-
-        .director-photo:hover {
-            transform: scale(1.05);
         }
 
         .director-info h3 {
@@ -404,6 +390,7 @@ body {
                 align-items: center;
             }
         }
+*/
 
 /* ================================
     SECCIÓN DE DIRECTORES - UNAC EPG
@@ -431,7 +418,6 @@ body {
 
 /* Contenedor principal de directores */
 .directors-section {
-    padding: var(--section-padding);
     background: var(--light-bg);
     position: relative;
     z-index: 2;
@@ -617,6 +603,7 @@ body {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    line-clamp: 3; /* estándar */
 }
 
 .director-contact {
@@ -676,12 +663,14 @@ body {
     transform: scale(0.8);
     transition: all 0.3s ease;
     pointer-events: none;
+    display: none; /* Ocultar del flujo para que las visibles suban a primera fila */
 }
 
 .director-card.visible {
     opacity: 1;
     transform: scale(1);
     transition: all 0.3s ease;
+    display: block; /* Asegura el comportamiento de ítem de grid */
 }
 
 /* Modal para detalles de directores */
@@ -792,6 +781,193 @@ body {
 
 .directors-modal-details p {
     margin-bottom: 0.5rem;
+}
+
+/* ================================
+   DIRECTOR PRINCIPAL (sección superior)
+   ================================ */
+.main-director-section {
+    margin-top: 2rem; /* un poco más arriba respecto al hero */
+}
+.main-director {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 15px 40px rgba(10, 46, 82, 0.1);
+    border: 1px solid rgba(255, 213, 79, 0.3);
+    position: relative;
+    overflow: visible; /* evita recortes de la foto circular */
+}
+
+.main-director .director-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-director .director-image {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.main-director .director-photo {
+    width: 300px; /* más grande */
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center; /* centra el recorte en todas las resoluciones */
+    border-radius: 50%;
+    border: 6px solid var(--accent-gold);
+    box-shadow: 0 12px 30px rgba(10, 46, 82, 0.15);
+    display: block;
+}
+
+.main-director .director-image::before,
+.main-director .director-image::after {
+    content: none !important;
+}
+
+.main-director .director-info h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.main-director .director-title {
+    color: var(--accent-gold-dark);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.main-director .director-description {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+/* Usa los estilos globales existentes para credentials */
+
+.main-director .director-contact .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.main-director .director-info {
+    flex: 1 1 auto;
+    min-width: 260px;
+    max-width: 900px;
+}
+
+@media (max-width: 992px) {
+    .main-director .director-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem; /* separación controlada entre bloques en móvil */
+    }
+    .main-director {
+        padding-top: 2.5rem; /* más aire por la parte superior en móvil */
+    }
+    .main-director-section {
+        margin-top: 3rem; /* separa del hero en móvil */
+    }
+    .main-director .director-photo {
+        width: 240px; /* un poco más grande también en móvil */
+        height: 240px;
+        margin-bottom: 3rem; /* espacio claro entre la foto y la info */
+    }
+    .main-director .director-info {
+        margin-top: 0.25rem; /* pequeño respiro adicional sobre el bloque de texto */
+    }
+    /* Títulos más compactos en móvil */
+    .main-director .director-info h3 {
+        margin-bottom: 0.35rem;
+    }
+    .main-director .director-title {
+        margin-bottom: 0.6rem;
+    }
+    /* Separación controlada para los chips de credenciales */
+    .main-director .director-credentials {
+        margin-top: 1rem;
+    }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Asegura que el header fijo no tape el hero en 1024 */
+    .page-directores .hero-presentacion {
+        padding-top: 70px;
+    }
+    .main-director {
+        padding-top: 2rem; /* aire superior en tablet */
+    }
+    .main-director-section {
+        margin-top: 3rem; /* separa del hero en tablet */
+    }
+    .main-director .director-content {
+        gap: 2rem; /* separación controlada entre imagen e información */
+    }
+    .main-director .director-photo {
+        width: 250px; /* ajuste fino para cuadrar mejor a 1024 */
+        height: 250px;
+    }
+    /* Títulos un poco más compactos en tablet */
+    .main-director .director-info h3 {
+        margin-bottom: 0.4rem;
+    }
+    .main-director .director-title {
+        margin-bottom: 0.8rem;
+    }
+    .main-director .director-credentials {
+        margin-top: 1rem;
+    }
+}
+
+/* Centrar los chips de credenciales sin cambiar su estilo visual */
+.main-director .director-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Chips de credenciales - estilo restaurado y mejorado */
+.main-director .credential {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: 0.45rem 0.9rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(255, 213, 79, 0.25);
+    box-shadow: 0 6px 18px rgba(10, 46, 82, 0.15);
+    white-space: nowrap;
+}
+
+.main-director .credential:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 992px) {
+    .main-director .credential {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
 
 /* Efectos adicionales */

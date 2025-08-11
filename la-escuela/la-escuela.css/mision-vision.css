@@ -1,7 +1,7 @@
 /* ================================
    PRELOADER (Pantalla de carga)
    ================================ */
-.page-preloader {
+.page-mision-vision .page-preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -16,14 +16,14 @@
     visibility: visible;
     transition: all 0.5s ease;
 }
-.page-preloader.hide {
+.page-mision-vision .page-preloader.hide {
     opacity: 0;
     visibility: hidden;
 }
-.preloader-content {
+.page-mision-vision .preloader-content {
     text-align: center;
 }
-.preloader-logo {
+.page-mision-vision .preloader-logo {
     width: 80px;
     height: 80px;
     animation: pulse 1.5s ease-in-out infinite;
@@ -32,18 +32,19 @@
     0%, 100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.1); opacity: 0.7; }
 }
-.preloader-text {
+.page-mision-vision .preloader-text {
     margin-top: 1rem;
     color: #0a2e52;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
+
 /* ================================
    MISIÓN Y VISIÓN STYLES - UNAC EPG
    ================================ */
 
-/* Variables de color para consistencia */
-:root {
+/* Variables de color para consistencia (scoped a la página) */
+.page-mision-vision {
     --primary-blue: #0a2e52;
     --secondary-blue: #1a3a5f;
     --accent-gold: #FFD54F;
@@ -55,27 +56,12 @@
     --section-padding: 5rem 0;
 }
 
-/* Reset y base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-}
-
-.main-content {
-    padding-top: 83px; /* Espacio para header fijo */
-}
+/* Nota: se eliminan resets globales y el padding-top de .main-content para evitar colisiones */
 
 /* ================================
    HERO SECTION
    ================================ */
-.hero-presentacion {
+.page-mision-vision .hero-presentacion {
     position: relative;
     min-height: 60vh;
     display: flex;
@@ -1406,7 +1392,7 @@ body {
    RESPONSIVE DESIGN
    ================================ */
 @media (max-width: 768px) {
-    :root {
+    .page-mision-vision {
         --section-padding: 3rem 0;
     }
     
@@ -1705,35 +1691,35 @@ body {
    ================================ */
    
 /* Espaciado lateral general para todas las secciones */
-.container {
+.page-mision-vision .container {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
 }
 
 /* Espaciado adicional para contenido de texto */
-.hero-content,
-.video-content,
-.proposito-content,
-.mision-content,
-.vision-content,
-.cta-content {
+.page-mision-vision .hero-content,
+.page-mision-vision .video-content,
+.page-mision-vision .proposito-content,
+.page-mision-vision .mision-content,
+.page-mision-vision .vision-content,
+.page-mision-vision .cta-content {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 /* Espaciado específico para móviles */
 @media (max-width: 768px) {
-    .container {
+    .page-mision-vision .container {
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
     }
     
-    .hero-content,
-    .video-content,
-    .proposito-content,
-    .mision-content,
-    .vision-content,
-    .cta-content {
+    .page-mision-vision .hero-content,
+    .page-mision-vision .video-content,
+    .page-mision-vision .proposito-content,
+    .page-mision-vision .mision-content,
+    .page-mision-vision .vision-content,
+    .page-mision-vision .cta-content {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
@@ -1741,7 +1727,7 @@ body {
 
 /* Espaciado adicional para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container {
+    .page-mision-vision .container {
         padding-left: 2.5rem !important;
         padding-right: 2.5rem !important;
     }
@@ -1749,17 +1735,17 @@ body {
 
 /* Espaciado mejorado para desktop */
 @media (min-width: 1025px) {
-    .container {
+    .page-mision-vision .container {
         padding-left: 3rem !important;
         padding-right: 3rem !important;
     }
     
-    .hero-content,
-    .video-content,
-    .proposito-content,
-    .mision-content,
-    .vision-content,
-    .cta-content {
+    .page-mision-vision .hero-content,
+    .page-mision-vision .video-content,
+    .page-mision-vision .proposito-content,
+    .page-mision-vision .mision-content,
+    .page-mision-vision .vision-content,
+    .page-mision-vision .cta-content {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }

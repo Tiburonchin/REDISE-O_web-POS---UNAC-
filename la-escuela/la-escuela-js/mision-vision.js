@@ -65,43 +65,52 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Funcionalidad del video
     const videoThumbnail = document.querySelector('.video-thumbnail');
-    const videoPlayer = document.querySelector('.video-player');
+    const videoIframeContainer = document.querySelector('.video-iframe');
     const playButton = document.querySelector('.video-play-button');
-    
-    if (playButton && videoThumbnail && videoPlayer) {
+
+    if (playButton && videoThumbnail && videoIframeContainer) {
         playButton.addEventListener('click', function() {
             // Ocultar thumbnail y mostrar video
             videoThumbnail.style.display = 'none';
-            videoPlayer.style.display = 'block';
-            
+            videoIframeContainer.style.display = 'block';
+
             // Reproducir video
-            const iframe = videoPlayer.querySelector('iframe');
+            const iframe = videoIframeContainer.querySelector('iframe');
             if (iframe) {
                 const src = iframe.src;
                 iframe.src = src + (src.includes('?') ? '&' : '?') + 'autoplay=1';
             }
+
+            // Scroll suave hacia el video
+            videoIframeContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     }
     
     // Añadir efectos de parallax sutiles a las formas decorativas
+    // Parallax con rAF para mejor rendimiento
+    let ticking = false;
     window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const decorativeShapes = document.querySelectorAll('.decorative-shape');
-        
-        decorativeShapes.forEach((shape, index) => {
-            const speed = 0.5 + (index * 0.1);
-            const yPos = -(scrolled * speed);
-            shape.style.transform = `translateY(${yPos}px)`;
-        });
-        
-        // Efecto parallax para iconos flotantes
-        const floatingIcons = document.querySelectorAll('.floating-icon');
-        floatingIcons.forEach((icon, index) => {
-            const speed = 0.2 + (index * 0.05);
-            const yPos = -(scrolled * speed);
-            icon.style.transform = `translateY(${yPos}px)`;
-        });
-    });
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                const scrolled = window.pageYOffset;
+                const decorativeShapes = document.querySelectorAll('.decorative-shape');
+                decorativeShapes.forEach((shape, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    const yPos = -(scrolled * speed);
+                    shape.style.transform = `translateY(${yPos}px)`;
+                });
+
+                const floatingIcons = document.querySelectorAll('.floating-icon');
+                floatingIcons.forEach((icon, index) => {
+                    const speed = 0.2 + (index * 0.05);
+                    const yPos = -(scrolled * speed);
+                    icon.style.transform = `translateY(${yPos}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
     
     // Animación de entrada para elementos
     const fadeInObserver = new IntersectionObserver((entries) => {
@@ -129,5 +138,5 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeInObserver.observe(el);
     });
     
-    console.log('Misión y Visión UNAC - JavaScript cargado correctamente');
+    // JS cargado
 });
