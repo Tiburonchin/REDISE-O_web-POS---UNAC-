@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Todas las imágenes críticas están cargadas, inicializar funcionalidades
             initializePageFunctionality();
         }
+
+// Fallback global: si por alguna razón el header_carga.js no ocultó el preloader,
+// hazlo al completar la carga total de la página (assets incluidos)
+window.addEventListener('load', () => {
+    const preloaderEl = document.getElementById('preloader');
+    if (preloaderEl) {
+        preloaderEl.classList.add('hide');
+        setTimeout(() => {
+            if (preloaderEl.parentNode) preloaderEl.remove();
+        }, 500);
+    }
+});
     }
     
     // Precargar imágenes críticas
@@ -49,9 +61,8 @@ function initializePageFunctionality() {
     const backToTopBtn = document.getElementById('backToTop');
     const scrollIndicator = document.querySelector('.scroll-indicator');
 
-    // Ocultar preloader si existe
-    const preloader = document.getElementById('preloader');
-    if (preloader) preloader.classList.add('hide');
+    // Preloader: no ocultar aquí (DOMContentLoaded). Lo maneja header_carga.js
+    // Agregamos un fallback en window.load más abajo por si no se cargara el header dinámico.
     
     // Palabras para la animación del hero
     const words = [
