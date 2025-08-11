@@ -81,12 +81,18 @@ body {
    ================================ */
 .hero-presentacion {
     position: relative;
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     overflow: hidden;
+}
+
+/* Separación superior para evitar que el header tape el hero (desktop) */
+.page-directores .hero-presentacion {
+    padding-top: 100px; /* consistente con home */
+    min-height: 67vh; /* más altura visible en desktop */
 }
 
 .hero-background {
@@ -342,12 +348,26 @@ body {
 
         /* Responsive */
         @media (max-width: 768px) {
+    /* Espaciado superior seguro en móvil */
+    .page-directores .hero-presentacion {
+        padding-top: 80px;
+        min-height: 60vh; /* más altura visible en móvil/tablet */
+        padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en presentacion */
+    }
             .directors-section {
                 padding: 3rem 0;
             }
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            /* Tipografía del hero igual a presentacion.html */
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
             .main-director {
@@ -904,7 +924,7 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Asegura que el header fijo no tape el hero en 1024 */
     .page-directores .hero-presentacion {
-        padding-top: 70px;
+        padding-top: 100px;
     }
     .main-director {
         padding-top: 2rem; /* aire superior en tablet */
@@ -1020,5 +1040,16 @@ body {
 
     .directors-modal-name {
         font-size: 1.6rem;
+    }
+}
+
+/* Igualar valores exactos de presentacion.html para móviles pequeños */
+@media (max-width: 576px) {
+    .page-directores .hero-presentacion {
+        min-height: 50vh;
+    }
+    /* Tipografía del hero igual a presentacion.html */
+    .hero-title {
+        font-size: 1.8rem;
     }
 }

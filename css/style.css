@@ -891,7 +891,7 @@ img {
 
 .cinta-section {
     padding: 10px 0;
-    background: linear-gradient(135deg, #FFC107 0%, #FFD54F 50%, #FFEB3B 100%);
+    background: linear-gradient(135deg, #FFC107 0%, #ffd037 50%, #ffeb34 100%);
     position: relative;
     overflow: hidden;
 }
@@ -1084,7 +1084,7 @@ img {
     }
     
     .hero-title {
-        font-size: clamp(2.2rem, 12vw, 3.5rem);
+        font-size: clamp(2.2rem, 11vw, 3.5rem);
     }
     
     .animated-word {

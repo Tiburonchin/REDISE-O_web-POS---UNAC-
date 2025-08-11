@@ -63,7 +63,8 @@
    ================================ */
 .page-mision-vision .hero-presentacion {
     position: relative;
-    min-height: 60vh;
+    padding-top: 100px; /* separa del header fijo, consistente con home */
+    min-height: 60vh; /* igual que presentacion.html */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,7 +233,7 @@
 /* ================================
    SECTION STYLES GENERALES
    ================================ */
-.section-title {
+.page-mision-vision .section-title {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700;
@@ -242,7 +243,7 @@
     position: relative;
 }
 
-.section-title::after {
+.page-mision-vision .section-title::after {
     content: '';
     width: 60px;
     height: 4px;
@@ -252,7 +253,7 @@
     border-radius: 2px;
 }
 
-.section-subtitle {
+.page-mision-vision .section-subtitle {
     font-size: 1.1rem;
     color: var(--text-light);
     text-align: center;
@@ -413,7 +414,7 @@
     background: linear-gradient(135deg, var(--accent-gold-dark) 0%, #e6a000 100%);
 }
 
-.section-title {
+.page-mision-vision .proposito-section .section-title {
     font-size: clamp(2.2rem, 4.5vw, 3.2rem);
     color: var(--primary-blue);
     margin-bottom: 1.5rem;
@@ -423,7 +424,7 @@
     position: relative;
 }
 
-.section-title::after {
+.page-mision-vision .proposito-section .section-title::after {
     content: '';
     position: absolute;
     bottom: -25px;
@@ -435,7 +436,7 @@
     border-radius: 2px;
 }
 
-.section-subtitle {
+.page-mision-vision .proposito-section .section-subtitle {
     font-size: 1.2rem;
     color: var(--text-light);
     max-width: 600px;
@@ -443,7 +444,6 @@
     line-height: 1.6;
     font-weight: 400;
 }
-
 
 /* Contenido principal estilo presentación - limpio sin recuadro */
 .proposito-content {
@@ -1395,6 +1395,12 @@
     .page-mision-vision {
         --section-padding: 3rem 0;
     }
+    /* Espaciado superior seguro en móvil para que no se pegue al header */
+    .page-mision-vision .hero-presentacion {
+        padding-top: 80px;
+        min-height: 50vh; /* igual que presentacion.html */
+        padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en presentacion */
+    }
     
     .hero-presentacion {
         min-height: 50vh;
@@ -1550,11 +1556,11 @@
 }
 
 @media (max-width: 576px) {
-    .main-content {
+    .page-mision-vision .main-content {
         padding-top: 67px;
     }
     
-    .hero-presentacion {
+    .page-mision-vision .hero-presentacion {
         min-height: 40vh;
     }
     
@@ -1723,6 +1729,12 @@
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
+    /* Igualar espaciado del hero con home/directores en móvil-tablet */
+    .page-mision-vision .hero-presentacion {
+        padding-top: 80px;
+        min-height: 50vh;
+        padding-bottom: 3rem;
+    }
 }
 
 /* Espaciado adicional para tablets */
@@ -1730,6 +1742,10 @@
     .page-mision-vision .container {
         padding-left: 2.5rem !important;
         padding-right: 2.5rem !important;
+    }
+    /* Igualar relación del hero con la home en tablet */
+    .page-mision-vision .hero-presentacion {
+        padding-top: 100px;
     }
 }
 

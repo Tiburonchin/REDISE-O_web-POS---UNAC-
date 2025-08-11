@@ -48,6 +48,10 @@ function initializePageFunctionality() {
     const animatedWord = document.getElementById('animatedWord');
     const backToTopBtn = document.getElementById('backToTop');
     const scrollIndicator = document.querySelector('.scroll-indicator');
+
+    // Ocultar preloader si existe
+    const preloader = document.getElementById('preloader');
+    if (preloader) preloader.classList.add('hide');
     
     // Palabras para la animación del hero
     const words = [
