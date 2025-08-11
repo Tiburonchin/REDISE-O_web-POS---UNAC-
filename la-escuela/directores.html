@@ -27,6 +27,9 @@
     <meta name="twitter:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
     <meta name="twitter:site" content="@UNACoficial">
 
+
+    <link rel="icon" type="image/png" href="../img/logo_unac_p.png">
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +45,7 @@
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../css/preloader.css">
     <link rel="stylesheet" href="la-escuela.css/directores-styles.css">
 </head>
 
@@ -419,12 +423,19 @@
         </div>
     </div>
 
-  <footer id="footer"></footer>
-  <script src="../header/header_function.js"></script>
-  <script src="../header/header_carga.js"></script>
-  <script src="../footer/footer_carga.js"></script>
-  <script src="../footer/footer_function.js"></script>
-  <script src="la-escuela-js/directores.js"></script>
-  <script src="../favico.js"></script>
+    <footer id="footer"></footer>
+
+    <script src="../js/critical-loading.js"></script>
+    <script src="../js/preloader.js"></script>
+    <script src="../js/preloader-fallback.js"></script>
+
+    <script src="../header/header_function.js"></script>
+    <script src="../header/header_carga.js"></script>
+    <script src="../footer/footer_carga.js"></script>
+    <script src="../footer/footer_function.js"></script>
+
+    <script src="la-escuela-js/directores.js"></script>
+
+
 </body>
 </html>
