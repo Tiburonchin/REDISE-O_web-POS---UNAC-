@@ -106,51 +106,271 @@
 
         <!-- DIRECTOR PRINCIPAL -->
         <section class="container" id="directores-section">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-6 col-md-8 col-12">
-                    <div class="director-card director-principal" style="margin: 0 auto 2.5rem auto;">
-                        <img src="../img/directores/juan_valdivia.png" alt="Dr. Juan Valdivia" class="director-foto" loading="eager">
-                        <div class="director-nombre">Dr. Juan Valdivia</div>
-                        <div class="director-cargo" style="color:#FFD54F;font-weight:700;">Director General</div>
-                        <div class="director-info">Director de la Escuela de Posgrado UNAC. Lidera la gestión académica y estratégica de la Escuela, promoviendo la excelencia y la innovación en la formación de posgrado.</div>
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="section-title">Directores de Facultad</h2>
-            <div class="selector-container">
-                <label for="facultadSelect">Selecciona una facultad:</label>
-                <select id="facultadSelect">
-                    <option value="todas">Todas las facultades</option>
-                </select>
-                <input type="text" id="buscador" placeholder="Buscar director por nombre">
-            </div>
-            <div id="listaDirectores" class="modern-lista-directores"></div>
-
-            <!-- MODAL PARA DIRECTOR -->
-            <div class="modal fade" id="modalDirector" tabindex="-1" aria-labelledby="modalDirectorLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header" style="border-bottom: none;">
-                            <h5 class="modal-title" id="modalDirectorLabel"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <div class="main-director">
+                    <div class="director-content">
+                        <div class="director-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Director Principal" class="director-photo">
                         </div>
-                        <div class="modal-body d-flex flex-column flex-md-row align-items-center gap-4">
-                            <img id="modalDirectorFoto" src="" alt="" class="rounded-circle shadow" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #FFD54F;">
-                            <div>
-                                <div id="modalDirectorFacultad" class="mb-2 text-secondary"></div>
-                                <div id="modalDirectorCargo" class="mb-2 fw-bold" style="color:#FFD54F;"></div>
-                                <div id="modalDirectorDescripcion" class="mb-2"></div>
+                        <div class="director-info">
+                            <h3>Dr. Carlos Eduardo Mendoza Vargas</h3>
+                            <p class="director-title">Director de la Escuela de Posgrado</p>
+                            <p class="director-description">
+                                Reconocido académico con más de 20 años de experiencia en educación superior y gestión universitaria. Especialista en investigación científica y desarrollo de programas de posgrado de alta calidad académica.
+                            </p>
+                            <div class="director-credentials">
+                                <span class="credential">Ph.D. en Educación</span>
+                                <span class="credential">MBA</span>
+                                <span class="credential">Investigador RENACYT</span>
+                            </div>
+                            <div class="director-contact">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>director.posgrado@unac.edu.pe</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+51 1 429-6101 Ext. 201</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        </section>
+
+            <!-- SECCIÓN PERFIL DIRECTOR -->
+          <section id="perfilDirector" class="perfil-director-section" style="display:none;">
+              <div class="perfil-director-bg"></div>
+              <div class="perfil-director-content">
+                  <button class="btn-volver-lista" id="volverListaBtn"><i class="fas fa-arrow-left"></i> Volver a la lista</button>
+                  <div class="perfil-director-main">
+                      <img id="perfilDirectorFoto" class="perfil-director-foto" src="" alt="Foto director">
+                      <div class="perfil-director-info">
+                          <h2 id="perfilDirectorNombre" class="perfil-director-nombre"></h2>
+                          <div id="perfilDirectorCargo" class="perfil-director-cargo"></div>
+                          <div id="perfilDirectorFacultad" class="perfil-director-facultad"></div>
+                          <p id="perfilDirectorDescripcion" class="perfil-director-descripcion"></p>
+                          <div id="perfilDirectorContacto" class="perfil-director-contacto"></div>
+                      </div>
+                  </div>
+              </div>
+          </section>
         </section>
   </main>
 
-  <footer id="footer"></footer>
+  <main class="directors-section directors-bg-pattern">
+        <div class="floating-elements">
+            <div class="floating-element" style="top: 10%; left: 10%; width: 20px; height: 20px; animation-delay: 0s;"></div>
+            <div class="floating-element" style="top: 20%; right: 15%; width: 15px; height: 15px; animation-delay: 2s;"></div>
+            <div class="floating-element" style="bottom: 30%; left: 20%; width: 25px; height: 25px; animation-delay: 4s;"></div>
+            <div class="floating-element" style="bottom: 10%; right: 10%; width: 18px; height: 18px; animation-delay: 1s;"></div>
+        </div>
 
+        <div class="directors-section-header">
+            <h2 class="directors-section-title">Nuestros Directores</h2>
+            <p class="directors-section-subtitle">
+                Conoce a los líderes académicos que guían la excelencia educativa en la Universidad Nacional del Callao
+            </p>
+        </div>
+
+        <div class="directors-filter-container">
+            <button class="directors-filter-btn active" data-filter="all">Todos</button>
+            <button class="directors-filter-btn" data-filter="posgrado">Posgrado</button>
+            <button class="directors-filter-btn" data-filter="facultad">Facultades</button>
+            <button class="directors-filter-btn" data-filter="ingenieria">Ingeniería</button>
+            <button class="directors-filter-btn" data-filter="ciencias">Ciencias</button>
+        </div>
+
+        <div class="directors-container" id="directorsContainer">
+            <!-- Director Principal de Posgrado -->
+            <div class="director-card visible" data-category="posgrado">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Dr. Carlos Mendoza" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dr. Carlos Mendoza Rivera</h3>
+                    <p class="director-position">Director Principal</p>
+                    <p class="director-faculty">Escuela de Posgrado</p>
+                    <p class="director-description">
+                        Líder en innovación académica y desarrollo de programas de maestría y doctorado. Especialista en gestión universitaria.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('carlos-mendoza')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <!-- Directores de Facultades -->
+            <div class="director-card visible" data-category="facultad ingenieria">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Dr. Ana García" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dr. Ana García López</h3>
+                    <p class="director-position">Directora</p>
+                    <p class="director-faculty">Facultad de Ingeniería Industrial</p>
+                    <p class="director-description">
+                        Experta en sistemas de producción y gestión de calidad. Pionera en investigación aplicada a la industria.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('ana-garcia')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad ingenieria">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face" alt="Ing. Roberto Silva" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Ing. Roberto Silva Paredes</h3>
+                    <p class="director-position">Director</p>
+                    <p class="director-faculty">Facultad de Ingeniería Mecánica</p>
+                    <p class="director-description">
+                        Especialista en diseño mecánico y automatización industrial. Líder en proyectos de innovación tecnológica.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('roberto-silva')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad ciencias">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b107?w=300&h=300&fit=crop&crop=face" alt="Dra. María Torres" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dra. María Torres Castillo</h3>
+                    <p class="director-position">Directora</p>
+                    <p class="director-faculty">Facultad de Ciencias Naturales</p>
+                    <p class="director-description">
+                        Investigadora en biodiversidad y conservación. Reconocida por sus aportes a la investigación científica nacional.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('maria-torres')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=300&fit=crop&crop=face" alt="Dr. Luis Ramírez" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dr. Luis Ramírez Vega</h3>
+                    <p class="director-position">Director</p>
+                    <p class="director-faculty">Facultad de Ciencias Administrativas</p>
+                    <p class="director-description">
+                        Experto en gestión empresarial y desarrollo organizacional. Consultor en estrategias corporativas.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('luis-ramirez')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad ciencias">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face" alt="Dr. Patricia Morales" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dr. Patricia Morales Sánchez</h3>
+                    <p class="director-position">Directora</p>
+                    <p class="director-faculty">Facultad de Ciencias de la Salud</p>
+                    <p class="director-description">
+                        Especialista en salud pública y medicina preventiva. Líder en programas de investigación biomédica.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('patricia-morales')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad ingenieria">
+                <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=300&h=300&fit=crop&crop=face" alt="Ing. José Fernández" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Ing. José Fernández Cruz</h3>
+                    <p class="director-position">Director</p>
+                    <p class="director-faculty">Facultad de Ingeniería Eléctrica</p>
+                    <p class="director-description">
+                        Experto en sistemas eléctricos y energías renovables. Pionero en proyectos de sostenibilidad energética.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('jose-fernandez')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="facultad">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face" alt="Dra. Carmen Ruiz" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dra. Carmen Ruiz Delgado</h3>
+                    <p class="director-position">Directora</p>
+                    <p class="director-faculty">Facultad de Ciencias Contables</p>
+                    <p class="director-description">
+                        Especialista en auditoría y finanzas corporativas. Reconocida por su experiencia en consultoría financiera.
+                    </p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('carmen-ruiz')">Ver más detalles</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para detalles de directores -->
+    <div id="directorsModal" class="directors-modal">
+        <div class="directors-modal-content">
+            <span class="directors-modal-close" onclick="closeDirectorModal()">&times;</span>
+            <div class="directors-modal-header">
+                <img id="directorsModalImage" src="" alt="" class="directors-modal-image">
+                <h3 id="directorsModalName" class="directors-modal-name"></h3>
+                <p id="directorsModalPosition" class="directors-modal-position"></p>
+                <p id="directorsModalFaculty" class="directors-modal-faculty"></p>
+            </div>
+            <div id="directorsModalDetails" class="directors-modal-details">
+                <!-- Los detalles se cargarán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+  <footer id="footer"></footer>
+  <script src="../la-escuela-js/directores.js"></script>
   <script src="../header/header_function.js"></script>
   <script src="../header/header_carga.js"></script>
   <script src="../footer/footer_carga.js"></script>
