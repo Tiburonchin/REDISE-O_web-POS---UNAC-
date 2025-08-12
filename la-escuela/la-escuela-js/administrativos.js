@@ -1,146 +1,83 @@
-/* ================================
-   PRESENTACIÓN JAVASCRIPT - UNAC EPG (CORREGIDO)
-   ================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  const facultyFilters = document.querySelectorAll(".faculty-filter li");
+  const adminCards = document.querySelectorAll(".admin-card");
+  const noResults = document.getElementById("noResults");
+  const filterToggle = document.getElementById("filterToggle");
+  const facultySection = document.getElementById("facultySection");
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ================================
-    // ANIMACIÓN DE CONTADORES SIMPLE
-    // ================================
-    
-    function animateCounter(numberElement, targetNumber) {
-        if (numberElement.dataset.animated) return;
-        
-        numberElement.dataset.animated = 'true';
-        const duration = 2000;
-        const startTime = Date.now();
-        
-        function updateCounter() {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            // Easing suave
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
-            const currentNumber = Math.floor(targetNumber * easedProgress);
-            
-            numberElement.textContent = currentNumber;
-            
-            if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-            } else {
-                numberElement.textContent = targetNumber;
-            }
-        }
-        
-        requestAnimationFrame(updateCounter);
+  // Buscar por texto
+  if (searchInput) {
+    searchInput.addEventListener("input", filterAdmins);
+  }
+
+  // Filtro por facultad
+  facultyFilters.forEach(filter => {
+    filter.addEventListener("click", () => {
+      facultyFilters.forEach(f => f.classList.remove("active"));
+      filter.classList.add("active");
+      filterAdmins();
+    });
+  });
+
+  // Estado inicial responsive: colapsar en <= 992px
+  function setInitialCollapse() {
+    const isMobile = window.matchMedia("(max-width: 992px)").matches;
+    if (isMobile) {
+      facultySection?.classList.add("collapsed");
+      if (filterToggle) {
+        filterToggle.setAttribute("aria-expanded", "false");
+        const icon = filterToggle.querySelector("i");
+        if (icon) icon.classList.remove("fa-chevron-up"), icon.classList.add("fa-chevron-down");
+      }
+    } else {
+      facultySection?.classList.remove("collapsed");
+      if (filterToggle) {
+        filterToggle.setAttribute("aria-expanded", "true");
+        const icon = filterToggle.querySelector("i");
+        if (icon) icon.classList.remove("fa-chevron-down"), icon.classList.add("fa-chevron-up");
+      }
     }
-    
-    // ================================
-    // OBSERVADOR PARA ESTADÍSTICAS
-    // ================================
-    
-    const statsObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                const numberElement = entry.target.querySelector('.stat-number');
-                if (numberElement && !numberElement.dataset.animated) {
-                    const targetNumber = parseInt(numberElement.dataset.count) || 0;
-                    
-                    // Delay escalonado para efecto visual
-                    const circles = Array.from(document.querySelectorAll('.stat-circle'));
-                    const index = circles.indexOf(entry.target);
-                    
-                    setTimeout(function() {
-                        animateCounter(numberElement, targetNumber);
-                    }, index * 200);
-                }
-            }
-        });
-    }, {
-        threshold: 0.5
+  }
+
+  setInitialCollapse();
+  window.addEventListener("resize", setInitialCollapse);
+
+  // Toggle manual
+  filterToggle?.addEventListener("click", () => {
+    facultySection?.classList.toggle("collapsed");
+    const expanded = !(facultySection?.classList.contains("collapsed"));
+    filterToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    const icon = filterToggle.querySelector("i");
+    if (icon) {
+      icon.classList.toggle("fa-chevron-up", expanded);
+      icon.classList.toggle("fa-chevron-down", !expanded);
+    }
+  });
+
+  function filterAdmins() {
+    const query = (searchInput?.value || "").toLowerCase();
+    const activeEl = document.querySelector(".faculty-filter .active");
+    const selectedFaculty = activeEl ? activeEl.dataset.facultad : "all";
+
+    let visibleCount = 0;
+    adminCards.forEach(card => {
+      const name = (card.dataset.nombre || "").toLowerCase();
+      const faculty = card.dataset.facultad || "";
+
+      const matchesText = name.includes(query);
+      const matchesFaculty = selectedFaculty === "all" || faculty === selectedFaculty;
+
+      const show = matchesText && matchesFaculty;
+      card.style.display = show ? "flex" : "none";
+      if (show) visibleCount++;
     });
 
-    // Observar los círculos de estadísticas
-    const statCircles = document.querySelectorAll('.stat-circle');
-    statCircles.forEach(function(circle) {
-        statsObserver.observe(circle);
-    });
-    
-    // ================================
-    // SMOOTH SCROLL
-    // ================================
-    
-    const scrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    scrollLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                e.preventDefault();
-                
-                const headerHeight = 80;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // ================================
-    // ANIMACIONES GENERALES
-    // ================================
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+  }
 
-    // Observar elementos para animación
-    const elements = document.querySelectorAll('.content-main, .cert-item, .ventaja-card');
-    elements.forEach(function(el) {
-        observer.observe(el);
-    });
-    
-    console.log('Presentación UNAC: Scripts cargados correctamente');
+  // Primera aplicación de filtro
+  filterAdmins();
 });
-
-// ================================
-// ESTILOS CSS DINÁMICOS
-// ================================
-
-const styles = `
-    .fade-in {
-        animation: fadeIn 0.6s ease-out;
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-        .fade-in {
-            animation: none !important;
-        }
-    }
-`;
-
-const styleSheet = document.createElement('style');
-styleSheet.textContent = styles;
-document.head.appendChild(styleSheet);

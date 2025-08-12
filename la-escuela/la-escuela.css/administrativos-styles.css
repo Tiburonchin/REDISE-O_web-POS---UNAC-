@@ -13,6 +13,22 @@
     --white: #ffffff;
     --light-bg: #f8f9fa;
     --section-padding: 5rem 0;
+    /* Neutrals and subtle surfaces */
+    --gray-200: #f1f3f5;
+    --gray-300: #e9ecef;
+    --gray-400: #e0e0e0;
+    /* Very light blue surface for chips */
+    --blue-100: #f0f4f8;
+    /* Shadows and borders */
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --shadow-hover-chip: 0 8px 25px rgba(10, 46, 82, 0.3);
+    --border-muted: 1px solid rgba(0, 0, 0, 0.05);
+    --border-blue-10: 1px solid rgba(10, 46, 82, 0.1);
+    --glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.2);
 }
 
 /* Reset y base */
@@ -209,6 +225,16 @@ body {
         transform: translateY(-3px);
     }
 }
+
+/* Ensure expanded on desktop regardless of collapsed class */
+@media (min-width: 993px) {
+    .faculty-section {
+        display: block !important;
+    }
+    .filter-toggle {
+        display: none !important;
+    }
+}
 /* ================================
    ESTADÍSTICAS - PRESENTACIÓN MEJORADA
    ================================ */
@@ -253,4 +279,277 @@ body {
         font-size: 1.8rem;
     }
 }
+/* ================================
+   ADMINISTRATIVOS SECTION STYLES
+   ================================ */
+.administrativos-section {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+    font-family: 'Poppins', sans-serif;
+}
 
+.administrativos-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Filter Panel */
+.filter-panel {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-2);
+    margin-bottom: 1.5rem;
+}
+
+/* Toggle button for faculty filter */
+.filter-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: rgba(10, 46, 82, 0.06);
+    color: var(--primary-blue);
+    border: 1px solid rgba(10, 46, 82, 0.12);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.filter-toggle:hover {
+    background: rgba(10, 46, 82, 0.09);
+}
+
+.faculty-section {
+    margin-top: 1rem;
+}
+
+/* Collapsed state */
+.faculty-section.collapsed {
+    display: none;
+}
+
+.filter-panel h2 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.filter-panel h3 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: 500;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-400);
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: var(--glow-gold);
+}
+
+.faculty-filter {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.faculty-filter li {
+    background: var(--blue-100);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* explicit left transition as requested */
+    transition: left 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    left: 0;
+    color: var(--text-dark);
+}
+
+.faculty-filter li:hover,
+.faculty-filter li.active {
+    background: var(--primary-blue);
+    color: var(--white);
+    box-shadow: var(--shadow-hover-chip);
+    left: 2px;
+}
+
+/* Admin Cards */
+.admin-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    background: var(--gray-200);
+    color: var(--text-light);
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.admin-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    position: relative;
+    border: var(--border-blue-10);
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-3);
+}
+
+.admin-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    box-shadow: var(--shadow-blue-15);
+}
+
+.admin-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.admin-info h4 {
+    color: var(--accent-gold);
+    font-size: 1.35rem;
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.admin-info .faculty {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: var(--border-muted);
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-1);
+    background-color: var(--primary-blue);
+    border: 1px solid rgba(255, 213, 79, 0.35);
+}
+
+.icon-circle i {
+    transition: transform 0.2s ease;
+}
+
+.icon-circle:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2b);
+    background-color: var(--secondary-blue);
+}
+
+.icon-circle:hover i {
+    transform: scale(1.1);
+}
+
+.icon-circle.whatsapp,
+.icon-circle.phone,
+.icon-circle.email {
+    background-color: var(--primary-blue);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .admin-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .faculty-filter {
+        flex-direction: column;
+    }
+    
+    .admin-card {
+        padding: 1.5rem;
+    }
+    
+    .admin-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.admin-card:nth-child(2) { animation-delay: 0.1s; }
+.admin-card:nth-child(3) { animation-delay: 0.2s; }
+.admin-card:nth-child(n+4) { animation-delay: 0.3s; }

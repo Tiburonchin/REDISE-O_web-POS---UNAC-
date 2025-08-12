@@ -95,123 +95,105 @@
                 </div>
             </div>
         </section>
-
         <!-- ================================
-             PRESENTACIÓN PRINCIPAL
-             ================================ -->
-        <section class="presentacion-section" id="presentacion-section">
-            <div class="container">
-                <!-- Encabezado -->
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="section-title">Una Nueva Etapa de Excelencia</h2>
-                        <p class="section-subtitle">
-                            Comprometidos con la formación de líderes que transformen el futuro
-                        </p>
-                    </div>
-                </div>
+            ADMINISTRATIVOS SECTION
+            ================================ -->
 
-                <!-- Contenido principal -->
-                <div class="row align-items-center">
-                    <!-- Contenido elegante con diseño -->
-                    <div class="col-lg-8">
-                        <div class="content-elegant">
-                            <!-- Intro con diseño especial -->
-                            <div class="intro-card">
-                                <div class="intro-decoration">
-                                    <div class="intro-icon">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div class="intro-line-decoration"></div>
-                                </div>
-                                <div class="intro-content">
-                                    <p class="intro-text-elegant">
-                                        En la Escuela de Posgrado de la Universidad Nacional del Callao estamos en una 
-                                        <span class="highlight-text">nueva etapa de desarrollo</span> en la formación de profesionales que contribuyan al 
-                                        bienestar del país.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <!-- Contenido principal con tarjetas -->
-                            <div class="content-blocks">
-                                <div class="content-block-card">
-                                    <div class="block-header">
-                                        <div class="block-icon">
-                                            <i class="fas fa-award"></i>
-                                        </div>
-                                        <h3 class="block-title">Compromiso con la Excelencia</h3>
-                                    </div>
-                                    <div class="block-content">
-                                        <p>
-                                            Es nuestro compromiso destacar con programas en el <strong>doctorado, maestrías y diplomados</strong> 
-                                            con alto nivel académico y relacionarlos con las empresas, instituciones empresariales 
-                                            y la comunidad, así como con Escuelas de Posgrados nacionales y extranjeras.
-                                        </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="content-block-card">
-                                    <div class="block-header">
-                                        <div class="block-icon">
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <h3 class="block-title">Calidad en la Formación Superior</h3>
-                                    </div>
-                                    <div class="block-content">
-                                        <p>
-                                            Nuestra permanente preocupación es lograr <strong>alta calidad en la formación superior</strong> 
-                                            en diversas especialidades que demanda el mercado nacional e internacional, con profesores 
-                                            de altas calificaciones.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Lista con diseño especial -->
-                            <div class="features-elegant-card">
-                                <div class="features-header">
-                                    <h4 class="features-title">Nuestras Fortalezas</h4>
-                                    <div class="features-divider"></div>
-                                </div>
-                                <div class="features-grid">
-                                    <div class="feature-item">
-                                        <div class="feature-icon-bg">
-                                            <i class="fas fa-globe-americas"></i>
-                                        </div>
-                                        <span class="feature-text">Programas acreditados internacionalmente</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon-bg">
-                                            <i class="fas fa-chalkboard-teacher"></i>
-                                        </div>
-                                        <span class="feature-text">Docentes con altas calificaciones</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon-bg">
-                                            <i class="fas fa-handshake"></i>
-                                        </div>
-                                        <span class="feature-text">Vinculación empresarial directa</span>
-                                    </div>
-                                </div>
-                            </div>
+        <section class="administrativos-section">
+            <div class="container">
+                
+                <!-- Filtro a la izquierda -->
+                <aside class="filter-panel" id="filterPanel">
+                  <h2>Buscar Administrativo</h2>
+                  <input type="text" id="searchInput" placeholder="Nombre o Facultad..." />
+
+                  <button class="filter-toggle" id="filterToggle" type="button" aria-controls="facultySection" aria-expanded="true">
+                    <span>Filtrar por Facultad</span>
+                    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+                  </button>
+
+                  <div class="faculty-section" id="facultySection">
+                    <ul class="faculty-filter">
+                        <li data-facultad="all" class="active">Todas</li>
+                        <li data-facultad="Facultad de Ingeniería">Facultad de Ingeniería</li>
+                        <li data-facultad="Facultad de Derecho">Facultad de Derecho</li>
+                        <!-- Repetir para las 12 facultades -->
+                    </ul>
+                  </div>
+                </aside>
+                
+                <!-- Lista a la derecha -->
+                <div class="admin-list" id="adminContainer">
+                    <div id="noResults" class="no-results" style="display: none;">
+                        No se encuentra personal administrativo.
+                    </div>
+                    <div class="admin-card" data-nombre="Juan Pérez" data-facultad="Facultad de Ingeniería">
+                        <div class="admin-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="admin-info">
+                            <h4>Juan Pérez</h4>
+                            <p class="faculty">Facultad de Ingeniería</p>
+                        </div>
+                        <div class="contact-icons">
+                            <a href="https://wa.me/51999999999" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+51999999999" class="icon-circle phone" title="Llamar">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:juanperez@unac.edu.pe" class="icon-circle email" title="Correo">
+                                <i class="fas fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
                     
-                    <!-- Espacio para imagen vertical -->
-                    <div class="col-lg-4">
-                        <div class="image-placeholder">
-                            <!-- Aquí va tu imagen vertical -->
-                            <div class="image-space">
-                                <i class="fas fa-image"></i>
-                                <p>Espacio para imagen vertical</p>
-                            </div>
+                    <div class="admin-card" data-nombre="María López" data-facultad="Facultad de Ingeniería">
+                        <div class="admin-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="admin-info">
+                            <h4>María López</h4>
+                            <p class="faculty">Facultad de Ingeniería</p>
+                        </div>
+                        <div class="contact-icons">
+                            <a href="https://wa.me/51911111111" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+51911111111" class="icon-circle phone" title="Llamar">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:marialopez@unac.edu.pe" class="icon-circle email" title="Correo">
+                                <i class="fas fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
+
+                    <div class="admin-card" data-nombre="Carlos Torres" data-facultad="Facultad de Derecho">
+                        <div class="admin-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="admin-info">
+                            <h4>Carlos Torres</h4>
+                            <p class="faculty">Facultad de Derecho</p>
+                        </div>
+                        <div class="contact-icons">
+                            <a href="https://wa.me/51922222222" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+51922222222" class="icon-circle phone" title="Llamar">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:carlostorres@unac.edu.pe" class="icon-circle email" title="Correo">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-
-                
-
+            </div>
+        </section>
+        
     </main>
 
     <!-- ================================

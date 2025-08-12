@@ -489,7 +489,7 @@ body {
 }
 
 .directors-filter-btn {
-    padding: 12px 24px;
+    padding: 10px 24px;
     border: 0px solid;
     background: transparent;
     color: var(--primary-blue);
@@ -519,7 +519,6 @@ body {
 .directors-filter-btn:hover,
 .directors-filter-btn.active {
     color: var(--white);
-    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(10, 46, 82, 0.3);
 }
 

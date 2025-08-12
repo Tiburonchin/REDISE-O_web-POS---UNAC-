@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Aplicar estilos optimizados para imagen adaptable
         if (heroSection) {
             // Usar cover para mejor adaptación
-            heroSection.style.backgroundImage = `linear-gradient(135deg, rgba(0, 31, 63, 0.65) 0%, rgba(0, 86, 179, 0.25) 50%, rgba(0, 31, 63, 0.70) 100%), url('img/index/unac.png')`;
+            heroSection.style.backgroundImage = `linear-gradient(135deg, rgba(0, 31, 63, 0.25) 0%, rgba(0, 86, 179, 0.10) 50%, rgba(0, 31, 63, 0.30) 100%), url('img/index/unac.png')`;
             heroSection.style.backgroundSize = 'cover';
             heroSection.style.backgroundPosition = 'center';
             heroSection.style.backgroundRepeat = 'no-repeat';
