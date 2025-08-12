@@ -490,10 +490,10 @@ body {
 
 .directors-filter-btn {
     padding: 12px 24px;
-    border: 2px solid var(--primary-blue);
+    border: 0px solid;
     background: transparent;
     color: var(--primary-blue);
-    border-radius: 50px;
+    border-radius: 30px;
     cursor: pointer;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -815,7 +815,6 @@ body {
     padding: 3rem;
     margin-bottom: 4rem;
     box-shadow: 0 15px 40px rgba(10, 46, 82, 0.1);
-    border: 1px solid rgba(255, 213, 79, 0.3);
     position: relative;
     overflow: visible; /* evita recortes de la foto circular */
 }
