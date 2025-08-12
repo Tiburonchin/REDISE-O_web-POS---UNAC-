@@ -2,12 +2,77 @@
    GLOBAL STYLES & RESET
    =================================== */
 
+/* Paleta global UNAC */
+:root {
+    --primary-blue: #0a2e52;
+    --secondary-blue: #1a3a5f;
+    --accent-gold: #FFD54F;
+    --accent-gold-dark: #FFC107;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --section-padding: 5rem 0;
+}
+
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Evitar solapamiento con CTA en móviles */
+@media (max-width: 576px) {
+    /* Hero ocupa pantalla y mantiene cabecera libre */
+    .hero { min-height: 100svh; padding-top: 90px; }
+    .hero-content { padding: 0 16px 56px; overflow: visible; }
+
+    /* Tipografía y espaciado más aireados */
+    .hero-title {
+        font-size: clamp(1.7rem, 5.8vw, 2.1rem);
+        line-height: 1.15;
+        margin-top: var(--spacing-sm, 12px);
+        margin-bottom: var(--spacing-sm, 12px);
+    }
+    /* Ocultar descripción en móviles */
+    .hero-description { display: none; }
+    .animated-word-container { margin-bottom: var(--spacing-sm, 12px); }
+    .animated-word { font-size: clamp(1.1rem, 5.2vw, 1.4rem); }
+
+    .hero-stats { margin-top: var(--spacing-sm, 12px); }
+    .stat-item { padding: 10px 8px; }
+
+    /* Indicador separado del CTA */
+    .scroll-indicator { bottom: 12px; }
+}
+
+@media (max-width: 480px) {
+    .hero-content { padding-bottom: 64px; }
+    .hero-title { font-size: clamp(1.6rem, 6.2vw, 1.9rem); }
+    .animated-word { font-size: clamp(1.05rem, 5.6vw, 1.3rem); }
+    .scroll-indicator { bottom: 10px; }
+}
+
+/* Tablet: mantener indicador visible como en desktop y dar espacio seguro */
+@media (max-width: 768px) {
+    /* Espaciado cómodo en tablet */
+    .hero { min-height: 90vh; }
+    .hero-content { padding-bottom: 40px; }
+    /* Evitar recortes por overflow en contenedores internos del hero */
+    .hero-content,
+    .hero .container,
+    .hero .row.align-items-center { overflow: visible; }
+    /* Título más compacto en tablet */
+    .hero-title {
+        font-size: clamp(1.7rem, 3.4vw, 2.1rem);
+        line-height: 1.15;
+        margin-top: var(--spacing-sm, 12px);
+        margin-bottom: var(--spacing-sm, 12px);
+    }
+    .animated-word { font-size: clamp(1.2rem, 3.4vw, 1.4rem); }
+    .scroll-indicator { bottom: 16px; }
 }
 
 html {
@@ -154,8 +219,19 @@ img {
     .hero {
         margin-top: -60px;
         padding-top: 60px;
-        min-height: 80vh;
+        /* Full mobile viewport height with modern units */
+        min-height: 100vh;
+        min-height: 100dvh;
+        min-height: 100svh;
+        padding-bottom: 20px;
+        background-position: center;
+        background-size: cover;
     }
+    .hero-content { padding: var(--spacing-md) 0 0; }
+    .hero-title { font-size: clamp(1.8rem, 6.5vw, 2.2rem); margin-bottom: 0.75rem; line-height: 1.15; }
+    .animated-word-container { margin: 0.4rem 0 1rem 0; }
+    .animated-word { font-size: clamp(2.4rem, 12vw, 3.6rem); }
+    .hero-description { font-size: 1rem; margin-bottom: 1.5rem; padding: 0 12px; }
 }
 
 /* Extra Small Devices (hasta 480px) - Móviles pequeños */
@@ -167,8 +243,19 @@ img {
     .hero {
         margin-top: -50px;
         padding-top: 50px;
-        min-height: 85vh;
+        /* Full mobile viewport height with modern units */
+        min-height: 100vh;
+        min-height: 100dvh;
+        min-height: 100svh;
+        padding-bottom: 16px;
+        background-position: center;
+        background-size: cover;
     }
+    .hero-content { padding: var(--spacing-sm) 0 0; }
+    .hero-title { font-size: clamp(1.6rem, 7vw, 2rem); margin-bottom: 0.6rem; line-height: 1.15; }
+    .animated-word-container { margin: 0.35rem 0 0.9rem 0; }
+    .animated-word { font-size: clamp(2.2rem, 13vw, 3.2rem); }
+    .hero-description { font-size: 0.98rem; margin-bottom: 1.25rem; padding: 0 10px; }
 }
 
 /* ===================================
@@ -184,6 +271,97 @@ img {
     overflow: hidden;
     margin-top: -90px;
     padding-top: 90px;
+}
+
+/* Scroll indicator: no debe tapar al CTA del hero */
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 28px;
+    z-index: 1; /* por debajo del contenido del hero */
+    pointer-events: none; /* no bloquea clics/taps del CTA */
+}
+
+
+/* Asegura que el contenido/CTA quede por encima */
+.hero-content,
+.hero .btn,
+.hero a.btn {
+    position: relative;
+    z-index: 2;
+}
+
+/* Botones de acción del Hero: diseño elegante y simple */
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md, 16px);
+}
+
+.hero-buttons .btn-cta {
+    padding: 10px 18px;
+    border-radius: 999px; /* pill */
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+/* Primario: sólido pero limpio */
+.hero-buttons .btn-cta.btn-primary {
+    /* Azul institucional */
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #ffffff;
+}
+.hero-buttons .btn-cta.btn-primary:hover,
+.hero-buttons .btn-cta.btn-primary:focus {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--primary-blue) 28%, transparent);
+}
+
+/* Secundario: contorno sutil (ghost) */
+.hero-buttons .btn-cta.btn-outline-primary {
+    /* Amarillo institucional como acento */
+    background-color: transparent;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+}
+.hero-buttons .btn-cta.btn-outline-primary:hover,
+.hero-buttons .btn-cta.btn-outline-primary:focus {
+    background-color: color-mix(in srgb, var(--accent-gold) 16%, transparent);
+    border-color: var(--accent-gold-dark);
+    color: var(--accent-gold-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-gold) 24%, transparent);
+}
+
+/* Estados activos/pressed sutiles */
+.hero-buttons .btn-cta:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Accesibilidad: focus visible limpio */
+.hero-buttons .btn-cta:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--primary-blue) 35%, white);
+    outline-offset: 2px;
+}
+
+/* Ajustes responsivos de los botones */
+@media (max-width: 768px) {
+    .hero-buttons { gap: 10px; }
+    .hero-buttons .btn-cta { padding: 10px 16px; }
+}
+@media (max-width: 576px) {
+    .hero-buttons { gap: 8px; }
+    .hero-buttons .btn-cta { padding: 9px 14px; font-weight: 600; }
 }
 
 /* Evita barra interna por overflow en el contenedor/row del hero */
@@ -256,6 +434,7 @@ img {
     font-weight: 700;
     font-family: 'Poppins', 'Roboto', sans-serif;
     color: #ffffff;
+    margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     line-height: 1.1;
     text-shadow: 0 2px 10px var(--shadow-dark);
@@ -1093,7 +1272,7 @@ img {
     }
     
     .hero-title {
-        font-size: clamp(2.2rem, 11vw, 3.5rem);
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
     }
     
     .animated-word {
