@@ -13,6 +13,8 @@
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    /* Reserva solo el lado del scrollbar (derecha en LTR) para evitar vacío a la izquierda */
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -139,7 +141,7 @@ img {
     .hero {
         margin-top: -70px;
         padding-top: 70px;
-        min-height: 100vh;
+        min-height: 80vh;
     }
 }
 
@@ -152,7 +154,7 @@ img {
     .hero {
         margin-top: -60px;
         padding-top: 60px;
-        min-height: 100vh;
+        min-height: 80vh;
     }
 }
 
@@ -165,7 +167,7 @@ img {
     .hero {
         margin-top: -50px;
         padding-top: 50px;
-        min-height: 100vh;
+        min-height: 85vh;
     }
 }
 
@@ -175,13 +177,19 @@ img {
 
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin-top: -90px;
     padding-top: 90px;
+}
+
+/* Evita barra interna por overflow en el contenedor/row del hero */
+.hero .container,
+.hero .row.align-items-center {
+    overflow: hidden;
 }
 
 .hero::before {
@@ -239,6 +247,8 @@ img {
     padding: var(--spacing-lg) 0;
     animation: heroFadeIn 1.2s ease-out;
     will-change: transform, opacity;
+    /* Evita que animaciones internas generen barra de scroll temporal */
+    overflow: hidden;
 }
 
 .hero-title {
@@ -257,7 +267,7 @@ img {
 @keyframes heroFadeIn {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
@@ -268,7 +278,7 @@ img {
 @keyframes titleSlideUp {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(24px);
     }
     100% {
         opacity: 1;

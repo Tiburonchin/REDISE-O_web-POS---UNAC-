@@ -77,6 +77,28 @@
         // Configurar observer para lazy loading de imágenes no críticas
         setupLazyLoading();
         
+        // Evitar barra vertical momentánea en desktop durante la carga inicial
+        try {
+            const isDesktop = window.matchMedia('(min-width: 992px)').matches;
+            if (isDesktop) {
+                const htmlEl = document.documentElement;
+                const bodyEl = document.body;
+                const prevHtmlOverflow = htmlEl.style.overflowY;
+                const prevBodyOverflow = bodyEl.style.overflowY;
+                htmlEl.style.overflowY = 'hidden';
+                bodyEl.style.overflowY = 'hidden';
+                const restore = () => {
+                    htmlEl.style.overflowY = prevHtmlOverflow;
+                    bodyEl.style.overflowY = prevBodyOverflow;
+                };
+                if (document.readyState === 'complete') {
+                    setTimeout(restore, 600);
+                } else {
+                    window.addEventListener('load', () => setTimeout(restore, 600), { once: true });
+                }
+            }
+        } catch (_) {}
+
         console.log('Optimización de carga crítica inicializada');
     }
     
