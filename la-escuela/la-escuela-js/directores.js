@@ -1,10 +1,29 @@
 // Datos detallados de los directores
         const directorsData = {
-            'carlos-mendoza': {
-                name: 'Dr. Carlos Mendoza Rivera',
-                position: 'Director Principal',
-                faculty: 'Escuela de Posgrado',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
+            'juan-benjamin':{
+                name: 'Dr. Juan Benjamín',
+                position: 'Director UPG - FCC',
+                faculty: 'Facultad de Ciencias Contables',
+                image: '../img/directores/FCA.jpeg',
+                details: `
+                    <h3>Formación Académica</h3>
+                    <p>• Doctorado en Contabilidad - Universidad Nacional del Callao</p>
+                    <p>• Maestría en Auditoría - Universidad de Lima</p>
+                    <p>• Licenciado en Contabilidad - Universidad Nacional del Callao</p>
+
+                    <h3>Experiencia Profesional</h3>
+                    <p>Con más de 10 años de experiencia en el ámbito académico y empresarial, ha sido consultor de importantes firmas en temas de auditoría y gestión financiera.</p>
+
+                    <h3>Contacto</h3>
+                    <p>📧 jbenjamin@unac.edu.pe</p>
+                    <p>📞 (01) 429-6101 ext. 102</p>
+                `
+            },
+            'augusto-caro': {
+                name: 'Dr. Augusto Caro',
+                position: 'Director UPG - FCE',
+                faculty: 'Facultad de Ciencias Económicas',
+                image: '../img/directores/FCE.jpeg',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Doctorado en Educación Superior - Universidad Nacional Mayor de San Marcos</p>
@@ -19,11 +38,11 @@
                     <p>📞 (01) 429-6101 ext. 101</p>
                 `
             },
-            'ana-garcia': {
-                name: 'Dr. Ana García López',
-                position: 'Directora',
-                faculty: 'Facultad de Ingeniería Industrial',
-                image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+            'fredy_vicente': {
+                name: 'Dr. Fredy Vicente Salazar Sandoval',
+                position: 'Director UPG - FCC',
+                faculty: 'Facultad de Ciencias Contables',
+                image: '../img/directores/FCC.png',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Doctorado en Ingeniería Industrial - Universidad Nacional de Ingeniería</p>
@@ -43,11 +62,11 @@
                     <p>📞 (01) 429-6102 ext. 201</p>
                 `
             },
-            'roberto-silva': {
-                name: 'Ing. Roberto Silva Paredes',
-                position: 'Director',
-                faculty: 'Facultad de Ingeniería Mecánica',
-                image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face',
+            'alberto-altamiza': {
+                name: 'Mg. Alberto Gustavo Altamiza Chávez',
+                position: 'Director de UPG - FCNM',
+                faculty: 'Facultad de Ciencias Naturales',
+                image: '../img/directores/FCNM.jpg',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Maestría en Ingeniería Mecánica - Universidad Nacional de Ingeniería</p>
@@ -67,11 +86,11 @@
                     <p>📞 (01) 429-6103 ext. 301</p>
                 `
             },
-            'maria-torres': {
-                name: 'Dra. María Torres Castillo',
-                position: 'Directora',
-                faculty: 'Facultad de Ciencias Naturales',
-                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b107?w=300&h=300&fit=crop&crop=face',
+            'mery-abastos': {
+                name: 'Dra. Mery Juana Abastos Abarca',
+                position: 'Directora de UPG - FCS',
+                faculty: 'Facultad de Ciencias de la Salud',
+                image: '../img/directores/FCS.jpeg',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Doctorado en Biología - Universidad Nacional Mayor de San Marcos</p>
@@ -91,11 +110,11 @@
                     <p>📞 (01) 429-6104 ext. 401</p>
                 `
             },
-            'luis-ramirez': {
-                name: 'Dr. Luis Ramírez Vega',
-                position: 'Director',
-                faculty: 'Facultad de Ciencias Administrativas',
-                image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=300&fit=crop&crop=face',
+            'jorge-quintanilla': {
+                name: 'Dr. Jorge Quintanilla Alarcón',
+                position: 'Director de UPG - FIARN',
+                faculty: 'Facultad de Ingeniería Ambiental y Recursos Humanos',
+                image: '../img/directores/FIARN.jpg',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Doctorado en Administración - Universidad Nacional Federico Villarreal</p>
@@ -115,11 +134,11 @@
                     <p>📞 (01) 429-6105 ext. 501</p>
                 `
             },
-            'patricia-morales': {
-                name: 'Dr. Patricia Morales Sánchez',
-                position: 'Directora',
-                faculty: 'Facultad de Ciencias de la Salud',
-                image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face',
+            'jacob-villar': {
+                name: 'Dr. Jacob Astocondor Villar',
+                position: 'Director de UPG - FIEE',
+                faculty: 'Facultad de Ingeniería Eléctrica y Electrónica',
+                image: '../img/directores/FIEE.jpg',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Doctorado en Salud Pública - Universidad Peruana Cayetano Heredia</p>
