@@ -1,34 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="la-escuela.css/administrativos-styles.css">
-  <link rel="stylesheet" href="/header/header.css">
-  <script src="/header/header_function.js"></script>
-  <title>Administrativos EPG UNAC</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrativos | Escuela de Posgrado UNAC</title>
+    <!-- SEO Mejorado -->
+    <meta name="description" content="Conoce al equipo administrativo de la Escuela de Posgrado de la Universidad Nacional del Callao (UNAC). Profesionales comprometidos con la excelencia académica, gestión educativa y atención a los estudiantes de posgrado.">
+    <meta name="keywords" content="UNAC, administrativos, escuela de posgrado, universidad, gestión, equipo, personal, Callao, maestrías, doctorados, posgrado, educación superior, Perú, atención estudiantil, servicios universitarios, staff, contacto, excelencia académica">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://posgrado.unac.edu.pe/la-escuela/administrativos.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:title" content="Administrativos | Escuela de Posgrado UNAC">
+    <meta property="og:description" content="Conoce al equipo administrativo de la Escuela de Posgrado de la UNAC. Atención, gestión y excelencia académica en Callao, Perú.">
+    <meta property="og:url" content="https://posgrado.unac.edu.pe/la-escuela/administrativos.html">
+    <meta property="og:site_name" content="Escuela de Posgrado UNAC">
+    <meta property="og:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Administrativos | Escuela de Posgrado UNAC">
+    <meta name="twitter:description" content="Conoce al equipo administrativo de la Escuela de Posgrado de la UNAC. Atención, gestión y excelencia académica en Callao, Perú.">
+    <meta name="twitter:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/logo_unac_p.png" type="image/png">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../css/preloader.css">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="la-escuela.css/administrativos-styles.css">
 </head>
+
 <body>
-  <div id="header"></div>
-
-  <main class="contenedor">
-    <h1>Administrativos de la EPG - UNAC</h1>
-
-    <div class="filtros">
-      <label for="facultadSelect">Filtrar por facultad:</label>
-      <select id="facultadSelect">
-        <option value="todas">Todas</option>
-      </select>
-
-      <label for="buscador">Buscar por nombre:</label>
-      <input type="text" id="buscador" placeholder="Escribe un nombre...">
+    <!-- Preloader -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="../img/logo_unac.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
     </div>
+    <!-- ================================
+         HEADER SECTION
+         ================================ -->
+    <div id="header"></div>
 
-    <ul id="listaAdministrativos" class="lista-personal"></ul>
-  </main>
+    <!-- ================================
+         MAIN CONTENT
+         ================================ -->
+    <main class="main-content">
+        
+        <!-- ================================
+             HERO SECTION
+             ================================ -->
+        <section class="hero-presentacion">
+            <div class="hero-background">
+                <img src="../img/escuela/horizontal.jpg" alt="Escuela de Posgrado UNAC" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center hero-content">
+                        <div class="hero-welcome">
+                            <span class="welcome-text">Bienvenidos a la</span>
+                            <h1 class="hero-title">ESCUELA DE POSGRADO UNAC</h1>
+                        </div>
+                        <div class="hero-divider">
+                            <div class="divider-line"></div>
+                            <div class="divider-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="divider-line"></div>
+                        </div>
+                        <p class="hero-subtitle">
+                            Estamos en una nueva etapa de desarrollo en la formación de 
+                            <strong>profesionales de excelencia</strong> que contribuyan al 
+                            bienestar del país y América Latina.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#presentacion-section" class="btn-scroll-down">
+                                Conoce nuestra historia <i class="fas fa-chevron-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script src="/favico.js"></script>
-  <script src="/header/header.js"></script>
-  <script src="la-escuela-js/administrativos.js"></script>
+        <!-- ================================
+             PRESENTACIÓN PRINCIPAL
+             ================================ -->
+        <section class="presentacion-section" id="presentacion-section">
+            <div class="container">
+                <!-- Encabezado -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title">Una Nueva Etapa de Excelencia</h2>
+                        <p class="section-subtitle">
+                            Comprometidos con la formación de líderes que transformen el futuro
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="row align-items-center">
+                    <!-- Contenido elegante con diseño -->
+                    <div class="col-lg-8">
+                        <div class="content-elegant">
+                            <!-- Intro con diseño especial -->
+                            <div class="intro-card">
+                                <div class="intro-decoration">
+                                    <div class="intro-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="intro-line-decoration"></div>
+                                </div>
+                                <div class="intro-content">
+                                    <p class="intro-text-elegant">
+                                        En la Escuela de Posgrado de la Universidad Nacional del Callao estamos en una 
+                                        <span class="highlight-text">nueva etapa de desarrollo</span> en la formación de profesionales que contribuyan al 
+                                        bienestar del país.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Contenido principal con tarjetas -->
+                            <div class="content-blocks">
+                                <div class="content-block-card">
+                                    <div class="block-header">
+                                        <div class="block-icon">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <h3 class="block-title">Compromiso con la Excelencia</h3>
+                                    </div>
+                                    <div class="block-content">
+                                        <p>
+                                            Es nuestro compromiso destacar con programas en el <strong>doctorado, maestrías y diplomados</strong> 
+                                            con alto nivel académico y relacionarlos con las empresas, instituciones empresariales 
+                                            y la comunidad, así como con Escuelas de Posgrados nacionales y extranjeras.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="content-block-card">
+                                    <div class="block-header">
+                                        <div class="block-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <h3 class="block-title">Calidad en la Formación Superior</h3>
+                                    </div>
+                                    <div class="block-content">
+                                        <p>
+                                            Nuestra permanente preocupación es lograr <strong>alta calidad en la formación superior</strong> 
+                                            en diversas especialidades que demanda el mercado nacional e internacional, con profesores 
+                                            de altas calificaciones.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Lista con diseño especial -->
+                            <div class="features-elegant-card">
+                                <div class="features-header">
+                                    <h4 class="features-title">Nuestras Fortalezas</h4>
+                                    <div class="features-divider"></div>
+                                </div>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon-bg">
+                                            <i class="fas fa-globe-americas"></i>
+                                        </div>
+                                        <span class="feature-text">Programas acreditados internacionalmente</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon-bg">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                        </div>
+                                        <span class="feature-text">Docentes con altas calificaciones</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon-bg">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <span class="feature-text">Vinculación empresarial directa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Espacio para imagen vertical -->
+                    <div class="col-lg-4">
+                        <div class="image-placeholder">
+                            <!-- Aquí va tu imagen vertical -->
+                            <div class="image-space">
+                                <i class="fas fa-image"></i>
+                                <p>Espacio para imagen vertical</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+    </main>
+
+    <!-- ================================
+         FOOTER SECTION
+         ================================ -->
+    <div id="footer"></div>
+
+    <!-- ================================
+        JAVASCRIPT SCRIPTS
+        ================================ -->
+    <!-- Bootstrap JS -->
+
+
+    <script src="../js/critical-loading.js"></script>
+    <script src="../js/preloader.js"></script>
+    <script src="../js/preloader-fallback.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Header Scripts -->
+    <script src="../header/header_function.js"></script>
+    <script src="../header/header_carga.js"></script>
+
+    <!-- Footer Scripts -->
+    <script src="../footer/footer_carga.js"></script>
+    <script src="../footer/footer_function.js"></script>
+
+    <!-- JavaScript específico para administrativos -->
+    <script src="la-escuela-js/administrativos.js"></script>
+
+
 </body>
 </html>
