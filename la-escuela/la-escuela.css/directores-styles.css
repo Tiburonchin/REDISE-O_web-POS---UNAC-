@@ -38,6 +38,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
+
 /* ================================
    MISIÓN Y VISIÓN STYLES - UNAC EPG
    ================================ */
@@ -53,6 +54,16 @@
     --white: #ffffff;
     --light-bg: #f8f9fa;
     --section-padding: 5rem 0;
+    /* Consistent shadows/borders with administrativos */
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --shadow-hover-chip: 0 8px 25px rgba(10, 46, 82, 0.3);
+    --border-muted: 1px solid rgba(0, 0, 0, 0.05);
+    --border-blue-10: 1px solid rgba(10, 46, 82, 0.1);
+    --glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.2);
 }
 
 /* Reset y base */
@@ -489,8 +500,9 @@ body {
 }
 
 .directors-filter-btn {
+    /* Match faculty chips: text-only, keeps shape */
     padding: 10px 24px;
-    border: 0px solid;
+    border: 0;
     background: transparent;
     color: var(--primary-blue);
     border-radius: 30px;
@@ -498,10 +510,12 @@ body {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     text-decoration: none;
+    left: 0;
+    transition: left 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    isolation: isolate; /* keep ::before behind text */
 }
 
 .directors-filter-btn::before {
@@ -514,17 +528,25 @@ body {
     background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
     transition: left 0.3s ease;
     z-index: -1;
+    pointer-events: none;
 }
 
 .directors-filter-btn:hover,
 .directors-filter-btn.active {
     color: var(--white);
-    box-shadow: 0 8px 25px rgba(10, 46, 82, 0.3);
+    box-shadow: var(--shadow-hover-chip);
+    left: 2px;
 }
 
 .directors-filter-btn:hover::before,
 .directors-filter-btn.active::before {
     left: 0;
+}
+
+.directors-filter-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--glow-gold);
+    border-radius: 30px;
 }
 
 /* Contenedor de directores */
