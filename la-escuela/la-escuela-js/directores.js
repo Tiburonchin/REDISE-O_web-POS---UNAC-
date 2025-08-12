@@ -158,11 +158,11 @@
                     <p>📞 (01) 429-6106 ext. 601</p>
                 `
             },
-            'jose-fernandez': {
-                name: 'Ing. José Fernández Cruz',
-                position: 'Director',
-                faculty: 'Facultad de Ingeniería Eléctrica',
-                image: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=300&h=300&fit=crop&crop=face',
+            'osmar-morales': {
+                name: 'Ing. Osmar Raúl Morales Chalco',
+                position: 'Director de UPG - FIIS',
+                faculty: 'Facultad de Ingeniería Industrial y Sistemas',
+                image: '../img/directores/FIIS.jpg',
                 details: `
                     <h3>Formación Académica</h3>
                     <p>• Maestría en Energías Renovables - Universidad Nacional de Ingeniería</p>

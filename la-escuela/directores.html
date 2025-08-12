@@ -155,15 +155,15 @@
 
         <div class="directors-filter-container">
             <button class="directors-filter-btn active" data-filter="all">Todos</button>
-            <button class="directors-filter-btn" data-filter="posgrado">Posgrado</button>
-            <button class="directors-filter-btn" data-filter="facultad">Facultades</button>
             <button class="directors-filter-btn" data-filter="ingenieria">Ingeniería</button>
             <button class="directors-filter-btn" data-filter="ciencias">Ciencias</button>
+            <button class="directors-filter-btn" data-filter="maestria">Maestrías</button>
+            <button class="directors-filter-btn" data-filter="doctorado">Doctorados</button>
         </div>
 
         <div class="directors-container" id="directorsContainer">
             <!-- Directores de Facultades -->
-            <div class="director-card visible" data-category="facultad administración">
+            <div class="director-card visible" data-category="ciencias maestria doctorado">
                 <img src="../img/directores/FCA.jpeg" alt="Dr.Juan Castro" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">Dr. Juan Benjamin Puican Castro </h3>
@@ -185,7 +185,7 @@
             </div>
 
             
-            <div class="director-card visible" data-category="facultad ingenieria">
+            <div class="director-card visible" data-category="maestria doctorado ingenieria">
                 <img src="../img/directores/FCC.png" alt="Dr. Fredy Salazar" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">Dr. Fredy Vicente Salazar Sandoval</h3>
@@ -206,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="facultad ingenieria">
+            <div class="director-card visible" data-category="maestria ciencias">
                 <img src="../img/directores/FCE.jpeg" alt="Dr. Augusto Caro" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">&nbsp;&nbsp;&nbsp;&nbsp;Dr. Augusto Caro &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anchay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
@@ -227,7 +227,7 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="facultad ciencias">
+            <div class="director-card visible" data-category="maestria ciencias">
                 <img src="../img/directores/FCNM.jpg" alt="Mg. Alberto Altamiza" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">Mg. Alberto Gustavo Altamiza Chávez</h3>
@@ -248,7 +248,7 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="facultad">
+            <div class="director-card visible" data-category="ciencias maestria doctorado">
                 <img src="../img/directores/FCS.jpeg" alt="Dra. Mery Abastos" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">Dra. Mery Juana Abastos Abarca</h3>
@@ -269,7 +269,7 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="facultad ciencias">
+            <div class="director-card visible" data-category="ingenieria maestria">
                 <img src="../img/directores/FIARN.jpg" alt="Dr. Jorge Alarcón" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">Dr. Jorge Quintanilla Alarcón&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
@@ -290,7 +290,7 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="facultad ingenieria">
+            <div class="director-card visible" data-category="ingenieria maestria doctorado">
                 <img src="../img/directores/FIEE.jpg" alt="Dr. Jacob Villar" class="director-image">
                 <div class="director-info">
                     <h3 class="director-name">Dr. Jacob Astocondor Villar</h3>
@@ -311,12 +311,12 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="facultad">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face" alt="Dra. Carmen Ruiz" class="director-image">
+            <div class="director-card visible" data-category="ingenieria maestria doctorado">
+                <img src="../img/directores/FIIS.jpg" alt="Dr. Osmar Morales" class="director-image">
                 <div class="director-info">
-                    <h3 class="director-name">Dra. Carmen Ruiz Delgado</h3>
-                    <p class="director-position">Directora</p>
-                    <p class="director-faculty">Facultad de Ciencias Contables</p>
+                    <h3 class="director-name">Dr. Osmar Raúl Morales Chalco</h3>
+                    <p class="director-position">Director de UPG - FIIS</p>
+                    <p class="director-faculty">Facultad de Ingeniería Industrial y Sistemas</p>
                     <p class="director-description">
                         Especialista en auditoría y finanzas corporativas. Reconocida por su experiencia en consultoría financiera.
                     </p>
@@ -328,17 +328,55 @@
                             <i class="fas fa-phone"></i>
                         </button>
                     </div>
-                    <button class="view-more-btn" onclick="openDirectorModal('carmen-ruiz')">Ver más detalles</button>
+                    <button class="view-more-btn" onclick="openDirectorModal('oscamr-morales')">Ver más detalles</button>
                 </div>
             </div>
 
             <!-- Tarjetas adicionales (placeholders) -->
-            <div class="director-card visible" data-category="facultad">
-                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=300&fit=crop&crop=face" alt="Director/a X1" class="director-image">
+            <div class="director-card visible" data-category="ingenieria maestria">
+                <img src="../img/directores/FIQ.jpg" alt="Dra. Ana Reyna" class="director-image">
                 <div class="director-info">
-                    <h3 class="director-name">Director/a X1</h3>
-                    <p class="director-position">Director/a</p>
-                    <p class="director-faculty">Facultad por definir</p>
+                    <h3 class="director-name">Dra. Ana María Reyna Segura</h3>
+                    <p class="director-position">Directora de UPG - FIQ</p>
+                    <p class="director-faculty">Facultad de Ingeniería Química</p>
+                    <p class="director-description">Perfil en actualización.</p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('ana-reyna')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="ingenieria maestria">
+                <img src="../img/directores/FIPA.jpeg" alt="Dr. Wilmer Palomino" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Dr. Wilmer Huamaní Palomino</h3>
+                    <p class="director-position">Director de UPG - FIPA</p>
+                    <p class="director-faculty">Facultad de Ingeniería Pesquera y de Alimentos</p>
+                    <p class="director-description">Perfil en actualización.</p>
+                    <div class="director-contact">
+                        <button class="contact-btn email" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="contact-btn phone" title="Teléfono">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                    </div>
+                    <button class="view-more-btn" onclick="openDirectorModal('wilmer-palomino')">Ver más detalles</button>
+                </div>
+            </div>
+
+            <div class="director-card visible" data-category="ingenieria maestria">
+                <img src="../img/directores/FIME.jpeg" alt="Dr. Jorge Ilquimiche" class="director-image">
+                <div class="director-info">
+                    <h3 class="director-name">Mg. Jorge Luis Ilquimiche Melly</h3>
+                    <p class="director-position">Director de UPG - FIME</p>
+                    <p class="director-faculty">Facultad de Ingeniería Mecánica</p>
                     <p class="director-description">Perfil en actualización.</p>
                     <div class="director-contact">
                         <button class="contact-btn email" title="Email">
@@ -351,48 +389,12 @@
                 </div>
             </div>
 
-            <div class="director-card visible" data-category="ingenieria">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=face" alt="Director/a X2" class="director-image">
+            <div class="director-card visible" data-category="doctorado ciencias">
+                <img src="../img/directores/FCED.jpg" alt="Dr. Miguel Gil" class="director-image">
                 <div class="director-info">
-                    <h3 class="director-name">Director/a X2</h3>
-                    <p class="director-position">Director/a</p>
-                    <p class="director-faculty">Ingeniería</p>
-                    <p class="director-description">Perfil en actualización.</p>
-                    <div class="director-contact">
-                        <button class="contact-btn email" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </button>
-                        <button class="contact-btn phone" title="Teléfono">
-                            <i class="fas fa-phone"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="director-card visible" data-category="ciencias">
-                <img src="https://images.unsplash.com/photo-1544005316-04ce1f9e9c91?w=300&h=300&fit=crop&crop=face" alt="Director/a X3" class="director-image">
-                <div class="director-info">
-                    <h3 class="director-name">Director/a X3</h3>
-                    <p class="director-position">Director/a</p>
-                    <p class="director-faculty">Ciencias</p>
-                    <p class="director-description">Perfil en actualización.</p>
-                    <div class="director-contact">
-                        <button class="contact-btn email" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </button>
-                        <button class="contact-btn phone" title="Teléfono">
-                            <i class="fas fa-phone"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="director-card visible" data-category="facultad ingenieria">
-                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=300&fit=crop&crop=face" alt="Director/a X4" class="director-image">
-                <div class="director-info">
-                    <h3 class="director-name">Director/a X4</h3>
-                    <p class="director-position">Director/a</p>
-                    <p class="director-faculty">Facultad de Ingeniería</p>
+                    <h3 class="director-name">Dr. Miguel Angel Gil Flores</h3>
+                    <p class="director-position">Director de UPG - FCED</p>
+                    <p class="director-faculty">Facultad de Ciencias de la Educación</p>
                     <p class="director-description">Perfil en actualización.</p>
                     <div class="director-contact">
                         <button class="contact-btn email" title="Email">
