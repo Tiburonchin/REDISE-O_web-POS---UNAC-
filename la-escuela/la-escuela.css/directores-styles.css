@@ -16,6 +16,11 @@
     visibility: visible;
     transition: all 0.5s ease;
 }
+
+/* Override global smooth scrolling on this page to prevent jumps during filtering */
+html {
+    scroll-behavior: auto !important;
+}
 .page-preloader.hide {
     opacity: 0;
     visibility: hidden;
@@ -366,7 +371,9 @@ body {
         padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en presentacion */
     }
             .directors-section {
-                padding: 3rem 0;
+                padding: 5rem 0;
+                /* Prevent browser scroll anchoring jumps while filtering */
+                overflow-anchor: none;
             }
 
             .section-title {
@@ -513,8 +520,9 @@ body {
     position: relative;
     overflow: hidden;
     text-decoration: none;
-    left: 0;
-    transition: left 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     isolation: isolate; /* keep ::before behind text */
 }
 
@@ -535,7 +543,7 @@ body {
 .directors-filter-btn.active {
     color: var(--white);
     box-shadow: var(--shadow-hover-chip);
-    left: 2px;
+    transform: translateX(2px);
 }
 
 .directors-filter-btn:hover::before,
@@ -557,6 +565,8 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    /* Prevent browser scroll anchoring jumps while filtering */
+    overflow-anchor: none;
 }
 
 /* Tarjetas de directores */

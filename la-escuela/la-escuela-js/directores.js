@@ -212,10 +212,27 @@
         function initializeDirectorsFilters() {
             const filterBtns = document.querySelectorAll('.directors-filter-btn');
             const directorCards = document.querySelectorAll('.director-card');
-            const container = document.getElementById('directorsContainer');
 
             filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
+                btn.addEventListener('click', (e) => {
+                    // Evitar cualquier acción por defecto y anclaje de foco
+                    e.preventDefault();
+                    // Evitar que el foco del botón dispare un auto-scroll
+                    btn.blur();
+                    const x = window.scrollX;
+                    const y = window.scrollY; // preservar posición actual
+                    // Desactivar el desplazamiento suave momentáneamente
+                    const htmlEl = document.documentElement;
+                    const prevScrollBehavior = htmlEl.style.scrollBehavior;
+                    htmlEl.style.scrollBehavior = 'auto';
+
+                    // Bloquear temporalmente la altura del contenedor para evitar colapso y saltos
+                    const container = document.querySelector('.directors-container');
+                    const prevMinHeight = container ? container.style.minHeight : '';
+                    const containerRect = container ? container.getBoundingClientRect() : null;
+                    if (containerRect && container) {
+                        container.style.minHeight = containerRect.height + 'px';
+                    }
                     // Remover clase active de todos los botones
                     filterBtns.forEach(b => b.classList.remove('active'));
                     // Agregar clase active al botón clickeado
@@ -228,7 +245,7 @@
                             card.classList.remove('hidden');
                             card.classList.add('visible');
                         } else {
-                            const categories = card.getAttribute('data-category').split(' ');
+                            const categories = (card.getAttribute('data-category') || '').split(' ');
                             if (categories.includes(filterValue)) {
                                 card.classList.remove('hidden');
                                 card.classList.add('visible');
@@ -239,14 +256,23 @@
                         }
                     });
 
-                    // Desplazar suavemente hacia el primer resultado visible o al contenedor
+                    // Restaurar posición de scroll tras aplicar cambios en el DOM
                     requestAnimationFrame(() => {
-                        const firstVisible = container ? container.querySelector('.director-card.visible') : null;
-                        if (firstVisible) {
-                            firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        } else if (container) {
-                            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
+                        // primera corrección (por si hay layout intermedio)
+                        window.scrollTo(x, y);
+                        requestAnimationFrame(() => {
+                            // segunda corrección, asegura posición final
+                            window.scrollTo(x, y);
+                            // Restaurar comportamiento de scroll previo
+                            htmlEl.style.scrollBehavior = prevScrollBehavior;
+                            // Liberar altura bloqueada del contenedor
+                            if (container) {
+                                // usar otro frame para soltar sin provocar salto
+                                requestAnimationFrame(() => {
+                                    container.style.minHeight = prevMinHeight;
+                                });
+                            }
+                        });
                     });
                 });
             });

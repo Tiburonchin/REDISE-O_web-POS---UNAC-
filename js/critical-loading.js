@@ -13,11 +13,17 @@
     
     // Función para precargar recursos críticos
     function preloadCriticalResources() {
+        // Calcular prefijo relativo a raíz según la profundidad del archivo actual
+        const parts = location.pathname.replace(/\\/g, '/').split('/').filter(Boolean);
+        // Excluir el nombre del archivo (último segmento) para contar solo directorios
+        const dirDepth = Math.max(parts.length - 1, 0);
+        const base = '../'.repeat(dirDepth);
+
         const resources = [
-            { href: 'header/header.css', as: 'style' },
-            { href: 'img/logo_unac.png', as: 'image' },
-            { href: 'img/ep.png', as: 'image' },
-            { href: 'img/index/admsion.jpg', as: 'image' }
+            { href: base + 'header/header.css', as: 'style' },
+            { href: base + 'img/logo_unac.png', as: 'image' },
+            { href: base + 'img/ep.png', as: 'image' },
+            { href: base + 'img/index/admsion.jpg', as: 'image' }
         ];
         
         resources.forEach(resource => {

@@ -390,9 +390,10 @@ body {
     position: relative;
     overflow: hidden;
     text-decoration: none;
-    left: 0;
-    /* Smooth interactions */
-    transition: left 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth interactions without layout shift */
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     isolation: isolate; /* keep ::before behind text */
 }
 
@@ -418,7 +419,7 @@ body {
 .faculty-filter li.active {
     color: var(--white) !important;
     box-shadow: var(--shadow-hover-chip);
-    left: 2px;
+    transform: translateX(2px);
 }
 
 .faculty-filter li:focus-visible {
@@ -432,6 +433,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
+    /* Prevent browser scroll anchoring jumps while filtering */
+    overflow-anchor: none;
 }
 
 .no-results {

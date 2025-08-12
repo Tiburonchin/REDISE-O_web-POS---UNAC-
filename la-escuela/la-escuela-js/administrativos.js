@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Buscar por texto
   if (searchInput) {
-    searchInput.addEventListener("input", filterAdmins);
+    searchInput.addEventListener("input", () => {
+      const y = window.scrollY;
+      filterAdmins();
+      window.scrollTo(0, y);
+    });
   }
 
   // Filtro por facultad
@@ -16,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     filter.addEventListener("click", () => {
       facultyFilters.forEach(f => f.classList.remove("active"));
       filter.classList.add("active");
+      const y = window.scrollY;
       filterAdmins();
+      window.scrollTo(0, y);
     });
   });
 
