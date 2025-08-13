@@ -22,9 +22,15 @@
         const resources = [
             { href: base + 'header/header.css', as: 'style' },
             { href: base + 'img/logo_unac.png', as: 'image' },
-            { href: base + 'img/ep.png', as: 'image' },
-            { href: base + 'img/index/admsion.jpg', as: 'image' }
+            { href: base + 'img/ep.png', as: 'image' }
         ];
+        
+        // Solo precargar la imagen de index cuando estemos en la página de inicio
+        const path = location.pathname.replace(/\\/g, '/');
+        const isHome = path.endsWith('/') || path.endsWith('/index.html');
+        if (isHome) {
+            resources.push({ href: base + 'img/index/admsion.jpg', as: 'image' });
+        }
         
         resources.forEach(resource => {
             const link = document.createElement('link');

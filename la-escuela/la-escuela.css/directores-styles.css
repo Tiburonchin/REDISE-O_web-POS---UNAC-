@@ -371,7 +371,6 @@ body {
         padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en presentacion */
     }
             .directors-section {
-                padding: 5rem 0;
                 /* Prevent browser scroll anchoring jumps while filtering */
                 overflow-anchor: none;
             }
@@ -609,7 +608,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--accent-gold);
-    margin: 2rem auto 1rem;
+    margin: 2rem auto;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -619,7 +618,7 @@ body {
 }
 
 .director-info {
-    padding: 0 2rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
 }
 
@@ -843,7 +842,6 @@ body {
 .main-director {
     background: var(--white);
     border-radius: 20px;
-    padding: 3rem;
     margin-bottom: 4rem;
     box-shadow: 0 15px 40px rgba(10, 46, 82, 0.1);
     position: relative;
@@ -924,7 +922,7 @@ body {
         gap: 2rem; /* separación controlada entre bloques en móvil */
     }
     .main-director {
-        padding-top: 2.5rem; /* más aire por la parte superior en móvil */
+        padding-top: 6.5rem; /* más aire por la parte superior en móvil */
     }
     .main-director-section {
         margin-top: 3rem; /* separa del hero en móvil */
