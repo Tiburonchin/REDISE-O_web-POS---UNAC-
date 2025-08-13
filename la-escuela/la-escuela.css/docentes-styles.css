@@ -1,0 +1,652 @@
+/* ================================
+   PRESENTACIÓN STYLES - UNAC EPG
+   ================================ */
+
+/* Variables de color para consistencia */
+:root {
+    --primary-blue: #0a2e52;
+    --secondary-blue: #1a3a5f;
+    --accent-gold: #FFD54F;
+    --accent-gold-dark: #FFC107;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --section-padding: 5rem 0;
+    /* Neutrals and subtle surfaces */
+    --gray-200: #f1f3f5;
+    --gray-300: #e9ecef;
+    --gray-400: #e0e0e0;
+    /* Very light blue surface for chips */
+    --blue-100: #f0f4f8;
+    /* Shadows and borders */
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --shadow-hover-chip: 0 8px 25px rgba(10, 46, 82, 0.3);
+    --border-muted: 1px solid rgba(0, 0, 0, 0.05);
+    --border-blue-10: 1px solid rgba(10, 46, 82, 0.1);
+    --glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.2);
+}
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.main-content {
+    padding-top: 75px;
+}
+
+/* ================================
+   HERO SECTION - IDÉNTICO A MISIÓN-VISIÓN
+   ================================ */
+.hero-docentes {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* create stacking context above ::before */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(10, 46, 82, 0.85) 0%, 
+        rgba(26, 58, 95, 0.75) 50%,
+        rgba(255, 193, 7, 0.1) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-welcome {
+    margin-bottom: 2rem;
+}
+
+.welcome-text {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.divider-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.divider-icon {
+    margin: 0 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 193, 7, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.divider-icon i {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subtitle strong {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.hero-cta {
+    margin-top: 2rem;
+}
+
+.btn-scroll-down {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0;
+    border: none;
+    background: none;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.btn-scroll-down::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.btn-scroll-down:hover::after {
+    width: 100%;
+}
+
+.btn-scroll-down:hover {
+    color: var(--accent-gold);
+    transform: translateY(-1px);
+}
+
+.btn-scroll-down i {
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+    margin-left: 0.25rem;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Ensure expanded on desktop regardless of collapsed class */
+@media (min-width: 993px) {
+    .faculty-section {
+        display: block !important;
+    }
+    .filter-toggle {
+        display: none !important;
+    }
+}
+/* ================================
+   ESTADÍSTICAS - PRESENTACIÓN MEJORADA
+   ================================ */
+@media (min-width: 769px) {
+    .stats-grid-circular {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        max-width: 1000px;
+        gap: 3rem;
+    }
+    .stat-circle {
+        width: auto;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem 0;
+    }
+    .hero-presentacion {
+        min-height: 50vh;
+        padding: 3rem 0;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    .main-content {
+        padding-top: 67px;
+    }
+    .hero-presentacion {
+        min-height: 40vh;
+    }
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+/* ================================
+   FILTERS SECTION
+   ================================ */
+.filters-section {
+    background-color: var(--light-gray);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.filter-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    background-color: var(--white);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 0.25rem rgba(26, 90, 150, 0.25);
+    outline: 0;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+}
+
+.search-box input {
+    padding-right: 40px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background: transparent;
+    border: none;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    color: var(--accent-gold);
+}
+
+/* ================================
+   DOCENTES GRID
+   ================================ */
+.docentes-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.docente-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.docente-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.docente-image-container {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.docente-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.docente-card:hover .docente-image {
+    transform: scale(1.05);
+}
+
+.docente-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.docente-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.docente-title {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.docente-faculty {
+    display: inline-block;
+    font-size: 0.85rem;
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.docente-bio {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.docente-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--medium-gray);
+}
+
+.docente-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary-blue);
+}
+
+.docente-cta {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.docente-cta i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.docente-cta:hover {
+    color: var(--secondary-blue);
+}
+
+.docente-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* ================================
+   STATS SECTION
+   ================================ */
+.stats-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--accent-gold);
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ================================
+   LOAD MORE BUTTON
+   ================================ */
+#cargar-mas {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#cargar-mas:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+}
+
+#cargar-mas:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   RESPONSIVE STYLES
+   ================================ */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-content {
+        padding: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-docentes {
+        padding: 120px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-text {
+        font-size: 1.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .welcome-text {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .btn-scroll-down {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    #cargar-mas {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+/* Animation for stats counter */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Delays for each stat item */
+.stat-item:nth-child(1) { animation-delay: 0.1s; }
+.stat-item:nth-child(2) { animation-delay: 0.3s; }
+.stat-item:nth-child(3) { animation-delay: 0.5s; }
+.stat-item:nth-child(4) { animation-delay: 0.7s; }

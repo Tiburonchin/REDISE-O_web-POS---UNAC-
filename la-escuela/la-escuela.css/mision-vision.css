@@ -1,9 +1,55 @@
 /* ================================
+   PRELOADER (Pantalla de carga)
+   ================================ */
+   .page-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+/* Override global smooth scrolling on this page to prevent jumps during filtering */
+html {
+    scroll-behavior: auto !important;
+}
+.page-preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+.preloader-content {
+    text-align: center;
+}
+.preloader-logo {
+    width: 80px;
+    height: 80px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+}
+.preloader-text {
+    margin-top: 1rem;
+    color: #0a2e52;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+/* ================================
    MISIÓN Y VISIÓN STYLES - UNAC EPG
    ================================ */
 
-/* Variables de color para consistencia (scoped a la página) */
-.page-mision-vision {
+/* Variables globales */
+:root {
+    /* Colores base */
     --primary-blue: #0a2e52;
     --secondary-blue: #1a3a5f;
     --accent-gold: #FFD54F;
@@ -12,18 +58,54 @@
     --text-light: #6c757d;
     --white: #ffffff;
     --light-bg: #f8f9fa;
+    
+    /* Escala de grises */
+    --gray-200: #f1f3f5;
+    --gray-300: #e9ecef;
+    --gray-400: #e0e0e0;
+    --blue-100: #f0f4f8;
+    
+    /* Sombras */
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --shadow-hover-chip: 0 8px 25px rgba(10, 46, 82, 0.3);
+    
+    /* Bordes */
+    --border-muted: 1px solid rgba(0, 0, 0, 0.05);
+    --border-blue-10: 1px solid rgba(10, 46, 82, 0.1);
+    --glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.2);
+    
+    /* Espaciado */
     --section-padding: 5rem 0;
 }
 
-/* Nota: se eliminan resets globales y el padding-top de .main-content para evitar colisiones */
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--text-dark);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.main-content {
+    padding-top: 75px;
+}
 
 /* ================================
-   HERO SECTION
+   HERO SECTION - IDÉNTICO A MISIÓN-VISIÓN
    ================================ */
-.page-mision-vision .hero-presentacion {
+.hero-mision-vision {
     position: relative;
-    padding-top: 100px; /* separa del header fijo, consistente con home */
-    min-height: 60vh; /* igual que presentacion.html */
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,6 +117,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0; /* create stacking context above ::before */
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -184,9 +267,116 @@
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-3px); }
-    60% { transform: translateY(-2px); }
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (min-width: 993px) {
+    .faculty-section {
+        display: block !important;
+    }
+    .filter-toggle {
+        display: none !important;
+    }
+}
+
+/* Tablets and small desktops (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .stats-grid-circular {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        max-width: 1000px;
+        gap: 3rem;
+    }
+    
+    .stat-circle {
+        width: auto;
+    }
+    
+    .proposito-section .decorative-shape.shape-circle-left::before {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Tablets (768px and down) */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem 0;
+    }
+    
+    .hero-mision-vision {
+        min-height: 50vh;
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .proposito-section .decorative-shape.shape-circle-left::before {
+        width: 80px;
+        height: 80px;
+        left: -30px;
+    }
+    
+    .proposito-section .decorative-shape.shape-floating-squares::before {
+        right: 5%;
+        border-left-width: 30px;
+        border-right-width: 30px;
+        border-bottom-width: 50px;
+    }
+}
+
+/* Mobile devices (576px and down) */
+@media (max-width: 576px) {
+    .main-content {
+        padding-top: 67px;
+    }
+    
+    .hero-mision-vision {
+        min-height: 40vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .proposito-badge {
+        padding: 10px 20px;
+        margin-bottom: 3rem;
+    }
+    
+    .proposito-section .decorative-shape.shape-circle-left::before {
+        width: 60px;
+        height: 60px;
+        left: -20px;
+        top: 10%;
+    }
+    
+    .proposito-section .decorative-shape.shape-floating-squares::before {
+        right: 2%;
+        border-left-width: 20px;
+        border-right-width: 20px;
+        border-bottom-width: 35px;
+    }
 }
 
 /* ================================
@@ -258,10 +448,7 @@
     overflow: hidden;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
+
 
 .presentacion-content {
     position: relative;
@@ -1361,7 +1548,7 @@
         padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en presentacion */
     }
     
-    .hero-presentacion {
+    .hero-mision-vision {
         min-height: 50vh;
         padding: 3rem 0;
     }
@@ -1465,7 +1652,9 @@
     
     .video-iframe iframe {
         height: 300px;
-    }    .proposito-content {
+    }
+    
+    .proposito-content {
         padding: 2.5rem 1.5rem;
         margin: 0 1rem;
     }
@@ -1519,7 +1708,7 @@
         padding-top: 67px;
     }
     
-    .page-mision-vision .hero-presentacion {
+    .page-mision-vision .hero-mision-vision {
         min-height: 40vh;
     }
     
@@ -1639,7 +1828,7 @@
 
 /* Print styles */
 @media print {
-    .hero-presentacion,
+    .hero-mision-vision,
     .cta-section {
         background: var(--white) !important;
         color: var(--text-dark) !important;
@@ -1703,7 +1892,7 @@
         padding-right: 2.5rem !important;
     }
     /* Igualar relación del hero con la home en tablet */
-    .page-mision-vision .hero-presentacion {
+    .page-mision-vision .hero-mision-vision {
         padding-top: 100px;
     }
 }

@@ -95,7 +95,7 @@ body {
 /* ================================
    HERO SECTION
    ================================ */
-.hero-presentacion {
+.hero-directores {
     position: relative;
     min-height: 70vh;
     display: flex;
@@ -106,7 +106,7 @@ body {
 }
 
 /* Separación superior para evitar que el header tape el hero (desktop) */
-.page-directores .hero-presentacion {
+.page-directores .hero-directores {
     padding-top: 100px; /* consistente con home */
     min-height: 67vh; /* más altura visible en desktop */
 }
@@ -156,7 +156,7 @@ body {
     font-size: 1.1rem;
     font-weight: 400;
     opacity: 0.9;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.5px;
 }
 
@@ -365,10 +365,10 @@ body {
         /* Responsive */
         @media (max-width: 768px) {
     /* Espaciado superior seguro en móvil */
-    .page-directores .hero-presentacion {
+    .page-directores .hero-directores {
         padding-top: 80px;
         min-height: 60vh; /* más altura visible en móvil/tablet */
-        padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en presentacion */
+        padding-bottom: 3rem; /* coherente con padding vertical del hero móvil en directores */
     }
             .directors-section {
                 /* Prevent browser scroll anchoring jumps while filtering */
@@ -379,7 +379,7 @@ body {
                 font-size: 2rem;
             }
 
-            /* Tipografía del hero igual a presentacion.html */
+            /* Tipografía del hero igual a directores.html */
             .hero-title {
                 font-size: 2rem;
             }
@@ -951,7 +951,7 @@ body {
 /* Ajustes para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Asegura que el header fijo no tape el hero en 1024 */
-    .page-directores .hero-presentacion {
+    .page-directores .hero-directores {
         padding-top: 100px;
     }
     .main-director {
@@ -1071,12 +1071,12 @@ body {
     }
 }
 
-/* Igualar valores exactos de presentacion.html para móviles pequeños */
+/* Igualar valores exactos de directores.html para móviles pequeños */
 @media (max-width: 576px) {
-    .page-directores .hero-presentacion {
+    .page-directores .hero-directores {
         min-height: 50vh;
     }
-    /* Tipografía del hero igual a presentacion.html */
+    /* Tipografía del hero igual a directores.html */
     .hero-title {
         font-size: 1.8rem;
     }
