@@ -84,9 +84,6 @@ body {
     color: var(--text-dark);
 }
 
-.main-content {
-    padding-top: 83px; /* Espacio para header fijo */
-}
 /* Quitar espacio superior en esta página (evita vacío sobre el hero) */
 .page-administrativos .main-content {
     padding-top: 0;
@@ -288,10 +285,6 @@ body {
     :root {
         --section-padding: 3rem 0;
     }
-    .hero-presentacion {
-        min-height: 50vh;
-        padding: 3rem 0;
-    }
     .hero-title {
         font-size: 2rem;
     }
@@ -300,12 +293,6 @@ body {
     }
 }
 @media (max-width: 576px) {
-    .main-content {
-        padding-top: 67px;
-    }
-    .hero-presentacion {
-        min-height: 40vh;
-    }
     .hero-title {
         font-size: 1.8rem;
     }

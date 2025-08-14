@@ -1,0 +1,106 @@
+/* Cronograma Académico Styles */
+.cronograma-hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.cronograma-table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.cronograma-table thead {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.cronograma-table th {
+    font-weight: 600;
+    padding: 1rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cronograma-table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.evento-importante {
+    background-color: #fff8e1;
+    border-left: 4px solid var(--accent-gold);
+}
+
+.fecha-limite {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.cronograma-breadcrumb {
+    background-color: transparent;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.cronograma-breadcrumb .breadcrumb-item a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cronograma-breadcrumb .breadcrumb-item a:hover {
+    color: var(--primary-blue);
+}
+
+.cronograma-breadcrumb .breadcrumb-item.active {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.cronograma-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: '›';
+    color: var(--text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cronograma-table {
+        font-size: 0.9rem;
+    }
+    
+    .cronograma-table th,
+    .cronograma-table td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .cronograma-hero {
+        padding: 3rem 0;
+    }
+    
+    .cronograma-hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .cronograma-table {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+    
+    .cronograma-hero {
+        padding: 1.5rem 0;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
