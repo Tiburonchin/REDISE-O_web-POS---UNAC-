@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "Dr. Carlos Mendoza Huamán",
+    "titulo": "Doctor en Administración",
+    "facultad": "fca",
+    "tipo": "planta",
+    "especialidad": "Gestión Empresarial",
+    "experiencia": "15 años",
+    "email": "cmendoza@unac.edu.pe"
+  },
+  {
+    "id": 2,
+    "nombre": "Mg. Ana Torres Ríos",
+    "titulo": "Magíster en Educación Superior",
+    "facultad": "fccsshh",
+    "tipo": "contratado",
+    "especialidad": "Metodología de la Investigación",
+    "experiencia": "8 años",
+    "email": "atorres@unac.edu.pe"
+  }
+]

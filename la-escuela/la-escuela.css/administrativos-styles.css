@@ -519,7 +519,7 @@ body {
 }
 
 .admin-info h4 {
-    color: var(--accent-gold);
+    color: var(--accent-gold-dark);
     font-size: 1.35rem;
     margin: 0 0 0.5rem;
     font-weight: 600;

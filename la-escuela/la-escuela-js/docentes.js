@@ -4,32 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Datos de ejemplo de docentes (en un caso real, estos vendrían de una API)
-    const docentes = [
-        {
-            id: 1,
-            nombre: 'Dr. Carlos Mendoza Huamán',
-            titulo: 'Doctor en Administración',
-            facultad: 'fca',
-            tipo: 'planta',
-            imagen: '../img/docentes/docente1.jpg',
-            especialidad: 'Gestión Empresarial',
-            experiencia: '15 años',
-            email: 'cmendoza@unac.edu.pe'
-        },
-        {
-            id: 2,
-            nombre: 'Mg. Ana Torres Ríos',
-            titulo: 'Magíster en Educación Superior',
-            facultad: 'fccsshh',
-            tipo: 'contratado',
-            imagen: '../img/docentes/docente2.jpg',
-            especialidad: 'Metodología de la Investigación',
-            experiencia: '8 años',
-            email: 'atorres@unac.edu.pe'
-        },
-        // Agregar más docentes según sea necesario
-    ];
+    // Cargar los datos de docentes desde el archivo JSON externo
+    let docentes = [];
 
     // Elementos del DOM
     const docentesContainer = document.getElementById('docentes-container');
@@ -39,15 +15,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const cargarMasBtn = document.getElementById('cargar-mas');
     
     // Variables de estado
-    let docentesFiltrados = [...docentes];
+    let docentesFiltrados = [];
     let docentesMostrados = 6;
     const docentesPorPagina = 6;
 
     // Inicializar la página
     function init() {
-        renderDocentes();
-        setupEventListeners();
-        setupStatsCounter();
+        fetch('../la-escuela/data/docentes.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar el archivo de docentes');
+                }
+                return response.json();
+            })
+            .then(data => {
+                docentes = data;
+                docentesFiltrados = [...docentes];
+                renderDocentes();
+                setupEventListeners();
+                setupStatsCounter();
+            })
+            .catch(error => {
+                console.error('Error al cargar docentes:', error);
+                docentesContainer.innerHTML = `<div class="col-12 text-center py-5"><h3 class="h4">No se pudieron cargar los docentes</h3></div>`;
+            });
     }
 
     // Configurar event listeners
@@ -101,9 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
         docentesContainer.innerHTML = docentesAMostrar.map(docente => `
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="docente-card">
-                    <div class="docente-image-container">
-                        <img src="${docente.imagen}" alt="${docente.nombre}" class="docente-image">
-                    </div>
                     <div class="docente-info">
                         <h3 class="docente-name">${docente.nombre}</h3>
                         <div class="docente-title">${docente.titulo}</div>

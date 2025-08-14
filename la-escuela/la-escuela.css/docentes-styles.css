@@ -46,7 +46,7 @@ body {
 }
 
 .main-content {
-    padding-top: 75px;
+    padding-top: 67px;
 }
 
 /* ================================
@@ -364,26 +364,6 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.docente-image-container {
-    position: relative;
-    padding-top: 100%;
-    overflow: hidden;
-}
-
-.docente-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.docente-card:hover .docente-image {
-    transform: scale(1.05);
-}
-
 .docente-info {
     padding: 1.5rem;
     flex-grow: 1;
@@ -557,7 +537,7 @@ body {
 
 @media (max-width: 768px) {
     .hero-docentes {
-        padding: 120px 0 80px;
+        padding: 80px 0 80px;
     }
     
     .hero-title {
@@ -590,6 +570,9 @@ body {
 }
 
 @media (max-width: 575.98px) {
+    .hero-docentes {
+        padding: 140px 0 80px;
+    }
     .hero-title {
         font-size: 1.6rem;
     }
