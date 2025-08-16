@@ -1,0 +1,34 @@
+# Archivos de configuración sensibles
+**/credentials.json
+**/config.php
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Archivos de entorno de desarrollo
+.phpunit.result.cache
+.phpunit.cache/
+
+# Dependencias
+/vendor/
+/node_modules/
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de sesión
+**/sessions/*
+!**/sessions/.gitkeep
+
+# Archivos de carga
+**/uploads/*
+
+# Directorio de archivos temporales
+**/tmp/

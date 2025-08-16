@@ -5,6 +5,7 @@ header.header {
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
+    min-height: 80px;
 }
 
 /* Resetear y proteger los estilos del header contra Bootstrap */

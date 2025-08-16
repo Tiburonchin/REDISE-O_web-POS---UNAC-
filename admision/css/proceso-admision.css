@@ -524,7 +524,6 @@ body {
 .guia-video-modulo h4 {
     font-size: 1.1rem;
     color: var(--secondary-blue);
-    margin-bottom: 5rem;
     text-align: center;
 }
 
@@ -535,6 +534,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-2);
+    margin: 5.5rem 0rem 0rem;
 }
 
 .video-responsive-wrapper iframe {

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- SEO Básico -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Postulante | Admisión Posgrado UNAC</title>
+    <meta name="description" content="Consulta y busca postulantes a la Escuela de Posgrado de la Universidad Nacional del Callao (UNAC). Información de admisión, programas y requisitos actualizados.">
+    <meta name="keywords" content="UNAC, posgrado, admisión, buscar postulante, universidad nacional del callao, maestría, doctorado, programas, requisitos, inscripción">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc) -->
+    <meta property="og:title" content="Buscar Postulante | Admisión Posgrado UNAC">
+    <meta property="og:description" content="Consulta postulantes y procesos de admisión en la Escuela de Posgrado UNAC. Información oficial y actualizada.">
+    <meta property="og:image" content="https://www.unac.edu.pe/posgrado/img/logo_unac.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.unac.edu.pe/posgrado/admision/carpeta_de_postulante.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buscar Postulante | Admisión Posgrado UNAC">
+    <meta name="twitter:description" content="Consulta postulantes y procesos de admisión en la Escuela de Posgrado UNAC. Información oficial y actualizada.">
+    <meta name="twitter:image" content="https://www.unac.edu.pe/posgrado/img/logo_unac.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../admision/posgrado_envio/css/styles.css"><!-- Tu CSS personalizado -->
+
+    <link rel="icon" type="image/x-icon" href="../img/logo_unac_p.png">
+
+    <link rel="stylesheet" href="../css/preloader.css">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../admision/css/carpeta_de_postulante.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Parastoo:wght@400..700&family=Poppins:wght@300;400;500;600;700&family=UoqMunThenKhung&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- ================================ -->
+    <!-- PRELOADER                       -->
+    <!-- ================================ -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="../img/logo_unac_p.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- HEADER                          -->
+    <!-- ================================ -->
+    <header id="header"></header>
+
+    <!-- ================================ -->
+    <!-- CONTENIDO PRINCIPAL             -->
+    <!-- ================================ -->
+
+    <main class="container" style="padding-top: 90px;">
+        <div class="row mt-5">
+            <!-- ================================ -->
+            <!-- FORMULARIO DE BÚSQUEDA DE POSTULANTE -->
+            <!-- ================================ -->
+            <section class="col-md-5 mb-4">
+                <div class="card shadow-lg p-4">
+                    <h2 class="Search-title">Buscar Postulante</h2>
+                    <form id="buscarForm" class="mb-3">
+                        <div class="mb-3">
+                            <label for="dni" class="form-label">DNI del postulante</label>
+                            <input 
+                                type="text" 
+                                id="dni" 
+                                name="dni"
+                                class="form-control shadow-sm" 
+                                maxlength="8"
+                                pattern="\d{8}" 
+                                placeholder="Ingrese DNI (8 dígitos)" 
+                                required
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <label for="facultad" class="form-label">Facultad</label>
+                            <select id="facultad" class="form-select"></select>
+                        </div>
+                        <div id="tiposPrograma" class="mb-3"></div>
+                        <div class="mb-3" id="programaContainer" style="display:none;">
+                            <label for="programa" class="form-label">Programa Específico</label>
+                            <select id="programa" name="programa" class="form-select" required>
+                                <option value="">Cargando programas...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100 d-flex align-items-center justify-content-center position-relative" style="height: 48px;">
+                                <span class="me-2 d-flex align-items-center">
+                                    Buscar postulante
+                                    <!-- Ícono de lupa moderno (Bootstrap Icon) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search ms-2" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+                                    </svg>
+                                </span>
+                                <!-- Spinner dentro del botón, oculto por defecto -->
+                                <span id="spinnerBuscar" class="spinner-border spinner-border-sm text-light ms-2 d-none" role="status" aria-hidden="true" style="position: absolute; right: 16px;"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ================================ -->
+            <!-- RESPUESTA DE BÚSQUEDA           -->
+            <!-- ================================ -->
+            <aside class="col-md-7 mb-4">
+                <div id="respuesta" class="card shadow-lg p-4 h-100 d-flex align-items-center justify-content-center text-center">
+                    <span class="text-muted">Aquí aparecerá la información del postulante.</span>
+                </div>
+            </aside>
+        </div>
+
+    <!-- ================================ -->
+    <!-- SUBIDA DE DOCUMENTOS (OCULTO)    -->
+    <!-- ================================ -->
+    <section id="subidaDocumentos" class="card shadow-lg p-4 mt-4 d-none">
+            <div id="subidaSection" class="d-none">
+                <h3 class="h5 mb-3">
+                    Hola <span id="nombrePostulante" class="text-primary"></span> <span id="apellidoPostulante" class="text-primary"></span>!
+                </h3>
+                <p>Por favor suba sus documentos solicitados:</p>
+                <form id="formSubida" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="subir_archivos">
+                    <input type="hidden" id="facultadSubida" name="facultad" value="">
+                    <input type="hidden" id="programaSubida" name="programa" value="">
+                    <div class="mb-3">
+                        <label for="dniSubida" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="dniSubida" name="dni" required placeholder="DNI">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombreSubida" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombreSubida" name="nombre" required placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="correoSubida" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correoSubida" name="correo" required placeholder="Correo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="archivoPdf" class="form-label">Archivo PDF (máx 5MB)</label>
+                        <input type="file" class="form-control" id="archivoPdf" name="archivoPdf" accept="application/pdf" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">Imagen (JPG, PNG, máx 2MB)</label>
+                        <input type="file" class="form-control" id="imagen" name="imagen" accept="image/png, image/jpeg" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success shadow-sm">
+                        Subir Archivos
+                    </button>
+                    <span id="spinnerSubida" class="spinner-border spinner-border-sm text-primary ms-2 d-none" role="status" aria-hidden="true"></span>
+                </form>
+            </div>
+            <div id="mensajeSubida" class="mt-3"></div>
+        </section>
+
+    <!-- ================================ -->
+    <!-- CONSULTA POR TOKEN               -->
+    <!-- ================================ -->
+    <div class="card shadow p-4 mb-4 mt-5">
+            <h5 class="Token-title">Consultar estado por código de expediente:</h5>
+            <form id="formToken" class="mb-3">
+                <div class="input-group mb-3">
+                    <input type="text" id="tokenInput" placeholder="Ingresa tu código de expediente..." required class="form-control">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center">
+                        <span id="consultarText">Consultar</span>
+                        <span id="consultarSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+            <div id="tokenMensaje"></div>
+            <div class="table-responsive">
+                <table id="tablaToken" class="table table-bordered table-hover" style="display:none;">
+                    <thead class="table-light">
+                        <tr>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th class="d-none d-md-table-cell">Carpeta Drive</th>
+                            <th>Estado</th>
+                            <th class="d-none d-lg-table-cell">Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaTokenBody" class="table-group-divider"></tbody>
+                </table>
+            </div>
+        </div>
+        
+    <!-- ================================ -->
+    <!-- SECCIÓN DE AYUDA Y GUÍAS         -->
+    <!-- ================================ -->
+    <div class="card shadow p-4 mb-4 mt-5 help-section">
+            <h5 class="help-title">¿Necesitas Ayuda?</h5>
+            <h6 class="mb-4">Guías para inscripción:</h6>
+            
+            <div class="help-container">
+                <a class="help-card card-1" id="downloadGuia" href="#" onclick="downloadMultiplePDFs(event)">
+                    <h3>Guía para Postulantes</h3>
+                    <p class="small">Tutorial paso a paso para completar tu proceso de inscripción correctamente.</p>
+                    <div class="go-corner" href="#">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="help-card card-2" href="https://posgrado.unac.edu.pe/admision/requisitos-postulacion.html" target="_blank">
+                    <h3>Requisitos Documentales</h3>
+                    <p class="small">Lista completa de documentos necesarios según el programa al que postules.</p>
+                    <div class="go-corner" href="#">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="help-card card-3" href="https://posgrado.unac.edu.pe/admision/cronograma-academico-2025-i.html" target="_blank">
+                    <h3>Cronograma Académico</h3>
+                    <p class="small">"Calendario 2025-B: Admisión, clases, exámenes subsanación"</p>
+                    <div class="go-corner" href="#">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </div>
+                </a>
+                
+                <a class="help-card card-4" href="https://wa.me/51900969591?text=Hola,%20estoy%necesitando%20ayuda%20con%20la%20guía%20de%20postulantes.%20Gracias%20por%20tu%20atención.">
+                    <h3>Contacto y Soporte</h3>
+                    <p class="small">Información de contacto del equipo de admisiones para asistencia personalizada.</p>
+                    <div class="go-corner" href="#">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <!-- ================================ -->
+    <!-- FOOTER                          -->
+    <!-- ================================ -->
+    <div id="footer"></div>
+
+    <!-- ================================ -->
+    <!-- JAVASCRIPT SCRIPTS               -->
+    <!-- ================================ -->
+    <!-- Scripts críticos: preloader -->
+    <script src="../js/critical-loading.js"></script>
+    <script src="../js/preloader-fallback.js"></script>
+
+    <script src="../favico.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Header/Footer Scripts -->
+    <script src="../header/header_function.js"></script>
+    <script src="../header/header_carga.js"></script>
+    <script src="../footer/footer_carga.js"></script>
+    <script src="../footer/footer_function.js"></script>
+
+    <!-- Custom Scripts -->
+    <!-- <script src="favico.js"></script>  Archivo no encontrado, comentar para evitar error -->
+    <script src="../posgrado_envio/js/scripts.js"></script>
+    <script src="../posgrado_envio/js/multiple-download.js"></script>
+    <script src="../posgrado_envio/js/clipboard.js"></script>
+
+    <!-- Font Awesome 6.0 -->
+    <script src="https://kit.fontawesome.com/9101168da7.js" crossorigin="anonymous"></script>
+</body>
+</html>
