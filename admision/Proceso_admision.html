@@ -93,10 +93,117 @@
             </div>
         </div>
     </section>
-    <!-- ================================
-         MAIN CONTENT SECTION
-         ================================ -->
-    
+
+
+
+    <section id="guia-admision-2025-v2">
+        <div class="container-guia">
+
+            <div class="guia-info-col">
+                <span class="subtitulo-seccion">ADMISIÓN 2025</span>
+                <h2>Tu Futuro Profesional Comienza Aquí</h2>
+                <p>
+                    Accede a toda la información clave para tu postulación. Nuestra guía completa te ofrece detalles sobre cronogramas, requisitos y las ventajas únicas de unirte a la comunidad de posgrado de la UNAC.
+                </p>
+                
+                <a href="ruta/a/tu/guia_admision_unac_2025.pdf" class="btn-cta-primario" download>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud"><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path></svg>
+                    Descargar Guía Ahora (PDF)
+                </a>
+            </div>
+
+            <div class="guia-multimedia-col">
+
+                <div class="guia-video-modulo">
+                    <h4>O explora la guía en video:</h4>
+                    <div class="video-responsive-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================== -->
+    <!-- =   CINTA SEPARADORA - OPCIÓN 2   = -->
+    <!-- =================================== -->
+    <section class="cinta-separadora-particulas">
+        <!-- Estas son las partículas, puedes añadir o quitar más -->
+        <div class="particula"></div>
+        <div class="particula"></div>
+        <div class="particula"></div>
+        <div class="particula"></div>
+        <div class="particula"></div>
+        <div class="particula"></div>
+        <div class="particula"></div>
+        <div class="particula"></div>
+        
+        <div class="cinta-contenido">
+            <h2>¿LISTO PARA CONSTRUIR TU FUTURO?</h2>
+        </div>
+    </section>
+
+    <!-- Contenido Dinámico -->
+    <div class="stepper-container">
+        <!-- Stepper (Barra de Pasos) -->
+        <ol class="stepper-wrapper">
+            <li class="stepper-item" data-step="1"><div class="step-circle">1</div><div class="step-info"><h3 class="step-title">Inscripción</h3></div></li>
+            <li class="stepper-item" data-step="2"><div class="step-circle">2</div><div class="step-info"><h3 class="step-title">Requisitos</h3></div></li>
+            <li class="stepper-item" data-step="3"><div class="step-circle">3</div><div class="step-info"><h3 class="step-title">Pago</h3></div></li>
+            <li class="stepper-item" data-step="4"><div class="step-circle">4</div><div class="step-info"><h3 class="step-title">Documentos</h3></div></li>
+            <li class="stepper-item" data-step="5"><div class="step-circle">5</div><div class="step-info"><h3 class="step-title">Revisión</h3></div></li>
+            <li class="stepper-item" data-step="6"><div class="step-circle">6</div><div class="step-info"><h3 class="step-title">Entrevista</h3></div></li>
+        </ol>
+
+        <!-- Contenido Dinámico -->
+        <div class="step-content">
+            <div class="step-pane active" data-step="1">
+                <h3>Paso 1: Inscripción</h3>
+                <p>Bienvenido. Completa el formulario con tu información personal. Asegúrate de que los datos sean correctos.</p>
+            </div>
+            <div class="step-pane" data-step="2">
+                <h3>Paso 2: Cumplir con los requisitos</h3>
+                <p>Confirma que cumples con todos los requisitos académicos y administrativos. Lee detenidamente cada punto.</p>
+            </div>
+            <div class="step-pane" data-step="3">
+                <h3>Paso 3: Realizar el pago</h3>
+                <p>Realiza el pago de la matrícula. Puedes usar tarjeta de crédito, débito o transferencia bancaria.</p>
+            </div>
+            <div class="step-pane" data-step="4">
+                <h3>Paso 4: Enviar Documentos</h3>
+                <p>Sube los documentos solicitados en formato PDF. Asegúrate de que sean legibles y estén actualizados.</p>
+            </div>
+            <div class="step-pane" data-step="5">
+                <h3>Paso 5: Revisión y confirmación</h3>
+                <p>Nuestro equipo revisará tu solicitud. Este proceso puede tardar hasta 48 horas. Recibirás una notificación.</p>
+            </div>
+            <div class="step-pane" data-step="6">
+                <h3>Paso 6: ¡PREPÁRATE PARA TU ENTREVISTA!</h3>
+                <p>¡Felicidades! Has completado los pasos. Ahora, prepárate para la entrevista. ¡Mucho éxito!</p>
+                <div class="gemini-feature">
+                    <button class="btn btn-gemini" id="geminiBtn">
+                        <span id="geminiBtnText">✨ Generar Consejos para la Entrevista</span>
+                        <div id="loader" style="display: none;"></div>
+                    </button>
+                    <div class="gemini-result" id="geminiResult" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones de Navegación -->
+        <div class="navigation-buttons">
+            <button class="btn btn-prev" id="prevBtn">Anterior</button>
+            <button class="btn btn-next" id="nextBtn">Siguiente</button>
+        </div>
+    </div>
 
     <!-- ================================
          FOOTER SECTION
@@ -123,7 +230,7 @@
     <script src="../footer/footer_function.js"></script>
 
     <!-- JavaScript específico para administrativos -->
-    <script src="../admision/proceso_admision.js"></script>
+    <script src="js/stepper.js"></script>
 
 
 </body>

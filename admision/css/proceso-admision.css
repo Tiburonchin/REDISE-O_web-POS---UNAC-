@@ -1,50 +1,4 @@
 /* ================================
-   PRELOADER (Pantalla de carga)
-   ================================ */
-   .page-preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.5s ease;
-}
-
-/* Override global smooth scrolling on this page to prevent jumps during filtering */
-html {
-    scroll-behavior: auto !important;
-}
-.page-preloader.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-.preloader-content {
-    text-align: center;
-}
-.preloader-logo {
-    width: 80px;
-    height: 80px;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.7; }
-}
-.preloader-text {
-    margin-top: 1rem;
-    color: #0a2e52;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-}
-
-/* ================================
    PROCESO ADMISION STYLES - UNAC EPG
    ================================ */
 
@@ -269,41 +223,399 @@ body {
     60% { transform: translateY(-2px); }
 }
 
-/* ================================
-   ESTADÍSTICAS - PRESENTACIÓN MEJORADA
-   ================================ */
-@media (min-width: 769px) {
-    .stats-grid-circular {
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        max-width: 1000px;
-        gap: 3rem;
-    }
-    .stat-circle {
-        width: auto;
-    }
+/* Estilos del Contenedor del Stepper */
+
+.stepper-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-3);
+    margin: 6rem auto;
 }
+
+/* Estilos de la barra del Stepper */
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    position: relative;
+}
+
+.stepper-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: rgba(10, 46, 82, 0.1);
+    width: 100%;
+    transform: scaleX(0.95);
+    transform-origin: left;
+    z-index: 1;
+}
+
+.stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--text-light);
+    background-color: var(--white);
+    color: var(--text-light);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    transition: all 0.4s ease;
+}
+
+.step-info {
+    color: var(--text-light);
+    transition: color 0.4s ease;
+}
+
+.step-info .step-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* --- Estados del Stepper --- */
+.stepper-item.active .step-circle {
+    border-color: var(--primary-blue);
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.stepper-item.active .step-info {
+    color: var(--primary-blue);
+}
+
+.stepper-item.completed .step-circle {
+    background-color: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    color: var(--primary-blue);
+}
+.stepper-item.completed .step-info {
+    color: var(--text-dark);
+}
+
+/* --- Contenido Dinámico --- */
+.step-content {
+    border: var(--border-blue-10);
+    padding: 24px;
+    border-radius: 8px;
+    background-color: var(--white);
+    min-height: 200px;
+}
+
+.step-pane { display: none; }
+.step-pane.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-pane h3 { margin-top: 0; color: var(--text-dark); }
+.step-pane p { color: var(--text-light); line-height: 1.6; }
+
+/* Botones de Navegación */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+.btn:disabled {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.btn-prev { background-color: var(--text-light); color: white; }
+.btn-next { background-color: var(--primary-blue); color: white; }
+
+/* --- Estilos para la función de Gemini --- */
+.gemini-feature .btn-gemini {
+    background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
+    color: var(--accent-gold);
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gemini-result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    border: var(--border-blue-10);
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--accent-gold);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Diseño Responsivo --- */
 @media (max-width: 768px) {
-    :root {
-        --section-padding: 3rem 0;
-    }
-    .hero-title {
-        font-size: 2rem;
-    }
-    .hero-subtitle {
-        font-size: 1rem;
-    }
+    .stepper-container { padding: 1.5rem; }
+    .step-info { display: none; }
+    .stepper-wrapper::before { transform: scaleX(0.9); }
+    .step-circle { margin-bottom: 0; }
 }
-@media (max-width: 576px) {
-    .main-content {
-        padding-top: 67px;
+
+/* ================================================= */
+/* =  ESTILOS PARA LA SECCIÓN GUÍA ADMISIÓN (V2)   = */
+/* ================================================= */
+
+#guia-admision-2025-v2 {
+    padding: var(--section-padding);
+    background-color: var(--light-bg);
+    /* Fondo sutil para dar textura y elegancia */
+    background-image: radial-gradient(var(--text-light) 0.5px, transparent 0.5px);
+    background-size: 15px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+#guia-admision-2025-v2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--light-bg) 80%, rgba(248, 249, 250, 0.8));
+    z-index: 1;
+}
+
+.container-guia {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem; /* Espacio entre columnas */
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Columna Izquierda: Información --- */
+.guia-info-col {
+    flex: 1;
+    min-width: 50%;
+}
+
+.guia-info-col .subtitulo-seccion {
+    color: var(--accent-gold-dark);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.guia-info-col h2 {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin: 0.5rem 0 1.5rem 0;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* Detalle decorativo dorado bajo el título */
+.guia-info-col h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.guia-info-col p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+}
+
+/* Botón de Acción Principal (CTA) */
+.btn-cta-primario {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-1);
+    transition: all 0.3s ease;
+}
+
+.btn-cta-primario:hover {
+    background-color: var(--accent-gold-dark);
+    box-shadow: var(--shadow-2b);
+    transform: translateY(-4px);
+}
+.btn-cta-primario svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* --- Columna Derecha: Multimedia (PDF y Video) --- */
+.guia-multimedia-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 450px;
+}
+
+.guia-video-modulo h4 {
+    font-size: 1.1rem;
+    color: var(--secondary-blue);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.video-responsive-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-2);
+}
+
+.video-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- Responsividad para Móviles --- */
+@media (max-width: 992px) {
+    .container-guia {
+        flex-direction: column;
+        text-align: center;
     }
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    .section-title {
-        font-size: 1.8rem;
+    .guia-info-col h2::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
+@media (max-width: 768px) {
+    .guia-info-col h2 {
+        font-size: 2.4rem;
+    }
+}
+
+
+/* --- Cinta Separadora - Opción 2: Partículas --- */
+.cinta-separadora-particulas {
+    margin: 3rem 0;
+    padding: 3rem 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    position: relative;
+    overflow: hidden; /* Oculta las partículas que se salen */
+    text-align: center;
+}
+
+.cinta-separadora-particulas .cinta-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.cinta-separadora-particulas h2 {
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo y animación de las partículas */
+.particula {
+    position: absolute;
+    bottom: -20px; /* Empiezan desde abajo */
+    background-color: var(--accent-gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: flotar 20s infinite linear;
+}
+
+/* Diferentes tamaños y duraciones para un efecto más natural */
+.particula:nth-child(1) { width: 10px; height: 10px; left: 10%; animation-duration: 15s; }
+.particula:nth-child(2) { width: 5px; height: 5px; left: 20%; animation-duration: 12s; animation-delay: 3s; }
+.particula:nth-child(3) { width: 8px; height: 8px; left: 35%; animation-duration: 18s; animation-delay: 1s; }
+.particula:nth-child(4) { width: 12px; height: 12px; left: 50%; animation-duration: 13s; }
+.particula:nth-child(5) { width: 6px; height: 6px; left: 65%; animation-duration: 16s; animation-delay: 2s; }
+.particula:nth-child(6) { width: 9px; height: 9px; left: 80%; animation-duration: 11s; }
+.particula:nth-child(7) { width: 4px; height: 4px; left: 90%; animation-duration: 19s; animation-delay: 4s; }
+.particula:nth-child(8) { width: 7px; height: 7px; left: 5%; animation-duration: 14s; }
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-250px) rotate(360deg);
+        opacity: 0;
+    }
+}
