@@ -382,7 +382,7 @@ header.header .mobile-menu {
 }
 
 header.header .mobile-menu.active {
-    max-height: 500px;
+    max-height: 600px;
     opacity: 1;
     visibility: visible;
 }

@@ -49,39 +49,13 @@ body {
 
 body.page-cronograma {
     position: relative;
-    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100vw;
 }
 
 /* ===================================
    3. DECORATIVE BACKGROUNDS & ANIMATIONS
    =================================== */
-body.page-cronograma::before,
-body.page-cronograma::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    opacity: 0.08;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: float 15s ease-in-out infinite;
-}
-
-body.page-cronograma::before {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
-    top: 10%;
-    left: -150px;
-}
-
-body.page-cronograma::after {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
-    bottom: 10%;
-    right: -120px;
-    animation-delay: 3s;
-}
 
 .cronograma-section::before {
     content: '';
@@ -94,15 +68,6 @@ body.page-cronograma::after {
     border-radius: 40% 60% 60% 40% / 70% 50% 50% 30%;
     animation: floatShape 12s ease-in-out infinite alternate;
     z-index: 0;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-40px) translateX(20px) rotate(180deg);
-    }
 }
 
 @keyframes floatShape {
@@ -123,8 +88,9 @@ body.page-cronograma::after {
     padding-top: 0;
 }
 
+
 .cronograma-section {
-    padding: var(--section-padding);
+    padding: 4rem 0 4rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -132,7 +98,7 @@ body.page-cronograma::after {
 .cronograma-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0;
     position: relative;
     z-index: 1;
 }
@@ -229,36 +195,94 @@ body.page-cronograma::after {
    7. RESPONSIVE STYLES
    =================================== */
 @media (max-width: 992px) {
+    .cronograma-section {
+        padding: 2.5rem 0 2.5rem 0;
+    }
     .cronograma-container {
-        padding: 0 10px;
+        padding: 0;
     }
 }
 
 @media (max-width: 768px) {
     .cronograma-section {
-        padding: 3rem 0;
+        padding: 1.2rem 0 1.2rem 0;
     }
-
+    .cronograma-container {
+        padding: 0 1rem;
+    }
     .cronograma-title h2 {
-        font-size: 2rem;
+        font-size: 1.3rem;
+    }
+    
+    .cronograma-table-wrapper {
+        border: none;
+        box-shadow: none;
+        overflow-x: hidden;
     }
 
-    .cronograma-table th,
+    .cronograma-table thead {
+        display: none;
+    }
+
+    .cronograma-table, .cronograma-table tbody, .cronograma-table tr, .cronograma-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .cronograma-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-accent);
+        border-radius: 12px;
+        box-shadow: var(--shadow-blue-15);
+        padding: 0;
+        background-color: var(--white);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .cronograma-table tbody tr:nth-child(odd),
+    .cronograma-table tbody tr:nth-child(even) {
+        background-color: var(--white);
+    }
+
     .cronograma-table td {
-        padding: 0.9rem 1.1rem;
-        font-size: 0.95rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.9rem 1.2rem;
+        text-align: right;
+        border-bottom: 1px solid var(--border-light);
+        white-space: normal;
+        font-size: 0.92rem;
+    }
+    
+    .cronograma-table tr td:last-child {
+        border-bottom: none;
     }
 
-    body.page-cronograma::before {
-        width: 300px;
-        height: 300px;
-        left: -180px;
+    .cronograma-table td::before {
+        font-weight: 600;
+        color: var(--primary-blue);
+        text-align: left;
+        margin-right: 1rem;
+        flex-shrink: 0;
     }
 
-    body.page-cronograma::after {
-        width: 200px;
-        height: 200px;
-        right: -150px;
+    .cronograma-table td:nth-of-type(1) {
+        font-weight: 500;
+    }
+
+    .cronograma-table td:nth-of-type(1)::before {
+        content: 'Actividad';
+    }
+
+    .cronograma-table td:nth-of-type(2)::before {
+        content: 'Fecha';
+    }
+    
+    .cronograma-table tbody tr:hover {
+        background-color: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(10, 46, 82, 0.1);
     }
 }
 
@@ -273,3 +297,4 @@ body.page-cronograma::after {
         font-size: 0.9rem;
     }
 }
+
