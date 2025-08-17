@@ -1,0 +1,275 @@
+/* ====================================================================
+   CRONOGRAMA DE ADMISIÓN STYLES - EPG UNAC
+   FECHA: 16 de agosto de 2025
+   AUTOR: Gemini AI
+   ==================================================================== */
+
+/* ===================================
+   1. ROOT & VARIABLES
+   =================================== */
+:root {
+    /* Paleta de Colores Principal */
+    --primary-blue: #0a2e52;
+    --secondary-blue: #1a3a5f;
+    --accent-gold: #FFD54F;
+    --accent-gold-dark: #FFC107;
+
+    /* Paleta de Texto y Fondos */
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --primary-light-bg: #e3f0ff;
+    --warning-bg: #fff8e1;
+
+    /* Bordes y Sombras */
+    --border-light: #e9ecef;
+    --border-accent: #d0e2ff;
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+
+    /* Layout */
+    --section-padding: 5rem 0;
+}
+
+/* ===================================
+   2. GENERAL RESETS & BODY STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+body.page-cronograma {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===================================
+   3. DECORATIVE BACKGROUNDS & ANIMATIONS
+   =================================== */
+body.page-cronograma::before,
+body.page-cronograma::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    opacity: 0.08;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 15s ease-in-out infinite;
+}
+
+body.page-cronograma::before {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+    top: 10%;
+    left: -150px;
+}
+
+body.page-cronograma::after {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
+    bottom: 10%;
+    right: -120px;
+    animation-delay: 3s;
+}
+
+.cronograma-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(45deg, rgba(10, 46, 82, 0.05), transparent);
+    border-radius: 40% 60% 60% 40% / 70% 50% 50% 30%;
+    animation: floatShape 12s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-40px) translateX(20px) rotate(180deg);
+    }
+}
+
+@keyframes floatShape {
+    0% {
+        transform: translateY(20px) rotate(0deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-20px) rotate(90deg);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   4. MAIN LAYOUT & CONTAINER
+   =================================== */
+.page-cronograma .main-content {
+    padding-top: 0;
+}
+
+.cronograma-section {
+    padding: var(--section-padding);
+    position: relative;
+    overflow: hidden;
+}
+
+.cronograma-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================
+   5. TYPOGRAPHY
+   =================================== */
+.cronograma-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.cronograma-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.cronograma-title p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* ===================================
+   6. TABLE STYLES
+   =================================== */
+.cronograma-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin-bottom: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-blue-15);
+    border: 1px solid var(--border-accent);
+}
+
+.cronograma-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.cronograma-table th,
+.cronograma-table td {
+    padding: 1.1rem 1.35rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+    white-space: nowrap;
+}
+
+.cronograma-table td {
+    white-space: normal;
+}
+
+.cronograma-table thead th {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--accent-gold-dark);
+}
+
+.cronograma-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.cronograma-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cronograma-table tbody tr:nth-child(even) {
+    background-color: var(--white);
+}
+
+.cronograma-table tbody tr:nth-child(odd) {
+    background-color: var(--light-bg);
+}
+
+.cronograma-table tbody tr:hover {
+    background-color: var(--warning-bg);
+}
+
+.cronograma-table td:first-child {
+    font-weight: 500;
+    color: var(--secondary-blue);
+}
+
+.cronograma-table tbody tr:hover td:first-child {
+    color: var(--primary-blue);
+}
+
+/* ===================================
+   7. RESPONSIVE STYLES
+   =================================== */
+@media (max-width: 992px) {
+    .cronograma-container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cronograma-section {
+        padding: 3rem 0;
+    }
+
+    .cronograma-title h2 {
+        font-size: 2rem;
+    }
+
+    .cronograma-table th,
+    .cronograma-table td {
+        padding: 0.9rem 1.1rem;
+        font-size: 0.95rem;
+    }
+
+    body.page-cronograma::before {
+        width: 300px;
+        height: 300px;
+        left: -180px;
+    }
+
+    body.page-cronograma::after {
+        width: 200px;
+        height: 200px;
+        right: -150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cronograma-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .cronograma-table th,
+    .cronograma-table td {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.9rem;
+    }
+}
