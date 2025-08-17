@@ -10,10 +10,22 @@
     --accent-gold-dark: #FFC107;
     --text-dark: #2c3e50;
     --text-light: #6c757d;
+    --text-light-on-dark: rgba(255, 255, 255, 0.85);
     --white: #ffffff;
     --light-bg: #f8f9fa;
+    --accent-brown: #8B4513;
+    --warning-bg: #fff8e1;
+    --danger-text: #d32f2f;
+    --border-light: #e9ecef;
+    --primary-light-bg: #e3f0ff;
+    --primary-dark-text: #01579b;
+    --border-accent: #d0e2ff;
+    --focus-ring: #b3d4fc;
+    --button-text: #2c2c2c;
+    --active-brown: #5c3317;
+    --active-border: #d4a373;
     --section-padding: 5rem 0;
-    /* Consistent shadows/borders with administrativos */
+    /* Consistent shadows/borders */
     --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
     --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
@@ -33,7 +45,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
 }
@@ -41,6 +53,7 @@ body {
 .main-content {
     padding-top: 83px; /* Espacio para header fijo */
 }
+
 /* Quitar espacio superior en esta página (evita vacío sobre el hero) */
 .page-proceso-admision .main-content {
     padding-top: 0;
@@ -57,12 +70,7 @@ body {
     justify-content: center;
     color: var(--white);
     overflow: hidden;
-}
-
-/* Separación superior para evitar que el header tape el hero (desktop) */
-.page-proceso-admision .hero-proceso-admision {
     padding-top: 100px; /* consistente con home */
-    min-height: 67vh; /* más altura visible en desktop */
 }
 
 .hero-background {
@@ -202,13 +210,13 @@ body {
     transition: width 0.3s ease;
 }
 
-.btn-scroll-down:hover::after {
-    width: 100%;
-}
-
 .btn-scroll-down:hover {
     color: var(--accent-gold);
     transform: translateY(-1px);
+}
+
+.btn-scroll-down:hover::after {
+    width: 100%;
 }
 
 .btn-scroll-down i {
@@ -223,8 +231,9 @@ body {
     60% { transform: translateY(-2px); }
 }
 
-/* Estilos del Contenedor del Stepper */
-
+/* ================================
+   STEPPER
+   ================================ */
 .stepper-container {
     width: 100%;
     max-width: 900px;
@@ -232,10 +241,9 @@ body {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: var(--shadow-3);
-    margin: 6rem auto;
+    margin: 3rem auto 6rem auto; /* Adjusted margin */
 }
 
-/* Estilos de la barra del Stepper */
 .stepper-wrapper {
     display: flex;
     justify-content: space-between;
@@ -297,7 +305,6 @@ body {
     margin: 0;
 }
 
-/* --- Estados del Stepper --- */
 .stepper-item.active .step-circle {
     border-color: var(--primary-blue);
     background-color: var(--primary-blue);
@@ -314,11 +321,11 @@ body {
     border-color: var(--accent-gold-dark);
     color: var(--primary-blue);
 }
+
 .stepper-item.completed .step-info {
     color: var(--text-dark);
 }
 
-/* --- Contenido Dinámico --- */
 .step-content {
     border: var(--border-blue-10);
     padding: 24px;
@@ -341,7 +348,6 @@ body {
 .step-pane h3 { margin-top: 0; color: var(--text-dark); }
 .step-pane p { color: var(--text-light); line-height: 1.6; }
 
-/* Botones de Navegación */
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
@@ -368,7 +374,6 @@ body {
 .btn-prev { background-color: var(--text-light); color: white; }
 .btn-next { background-color: var(--primary-blue); color: white; }
 
-/* --- Estilos para la función de Gemini --- */
 .gemini-feature .btn-gemini {
     background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
     color: var(--accent-gold);
@@ -402,7 +407,6 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* --- Diseño Responsivo --- */
 @media (max-width: 768px) {
     .stepper-container { padding: 1.5rem; }
     .step-info { display: none; }
@@ -413,11 +417,9 @@ body {
 /* ================================================= */
 /* =  ESTILOS PARA LA SECCIÓN GUÍA ADMISIÓN (V2)   = */
 /* ================================================= */
-
 #guia-admision-2025-v2 {
     padding: var(--section-padding);
     background-color: var(--light-bg);
-    /* Fondo sutil para dar textura y elegancia */
     background-image: radial-gradient(var(--text-light) 0.5px, transparent 0.5px);
     background-size: 15px 15px;
     position: relative;
@@ -441,12 +443,11 @@ body {
     padding: 0 15px;
     display: flex;
     align-items: center;
-    gap: 3.5rem; /* Espacio entre columnas */
+    gap: 3.5rem;
     position: relative;
     z-index: 2;
 }
 
-/* --- Columna Izquierda: Información --- */
 .guia-info-col {
     flex: 1;
     min-width: 50%;
@@ -467,7 +468,6 @@ body {
     padding-bottom: 1rem;
 }
 
-/* Detalle decorativo dorado bajo el título */
 .guia-info-col h2::after {
     content: '';
     position: absolute;
@@ -486,7 +486,6 @@ body {
     max-width: 550px;
 }
 
-/* Botón de Acción Principal (CTA) */
 .btn-cta-primario {
     display: inline-flex;
     align-items: center;
@@ -506,13 +505,12 @@ body {
     box-shadow: var(--shadow-2b);
     transform: translateY(-4px);
 }
+
 .btn-cta-primario svg {
     width: 20px;
     height: 20px;
 }
 
-
-/* --- Columna Derecha: Multimedia (PDF y Video) --- */
 .guia-multimedia-col {
     flex: 1;
     display: flex;
@@ -545,8 +543,6 @@ body {
     height: 100%;
 }
 
-
-/* --- Responsividad para Móviles --- */
 @media (max-width: 992px) {
     .container-guia {
         flex-direction: column;
@@ -564,15 +560,16 @@ body {
     }
 }
 
-
-/* --- Cinta Separadora - Opción 2: Partículas --- */
+/* ================================
+   CINTA SEPARADORA
+   ================================ */
 .cinta-separadora-particulas {
     margin: 3rem 0;
-    padding: 3rem 0;
+    padding: 4rem 0;
     width: 100%;
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     position: relative;
-    overflow: hidden; /* Oculta las partículas que se salen */
+    overflow: hidden;
     text-align: center;
 }
 
@@ -587,19 +584,25 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: 1rem;
 }
 
-/* Estilo y animación de las partículas */
+.cinta-separadora-particulas p {
+    color: var(--text-light-on-dark);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .particula {
     position: absolute;
-    bottom: -20px; /* Empiezan desde abajo */
+    bottom: -20px;
     background-color: var(--accent-gold);
     border-radius: 50%;
     opacity: 0;
     animation: flotar 20s infinite linear;
 }
 
-/* Diferentes tamaños y duraciones para un efecto más natural */
 .particula:nth-child(1) { width: 10px; height: 10px; left: 10%; animation-duration: 15s; }
 .particula:nth-child(2) { width: 5px; height: 5px; left: 20%; animation-duration: 12s; animation-delay: 3s; }
 .particula:nth-child(3) { width: 8px; height: 8px; left: 35%; animation-duration: 18s; animation-delay: 1s; }
@@ -617,5 +620,123 @@ body {
     100% {
         transform: translateY(-250px) rotate(360deg);
         opacity: 0;
+    }
+}
+
+/* ================================
+   HELP SECTION (V2)
+   ================================ */
+.help-section {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+    position: relative;
+    border-top: var(--border-blue-10);
+    border-bottom: var(--border-blue-10);
+}
+
+.help-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+}
+
+.help-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.help-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+}
+
+.help-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-blue-15);
+    border-color: var(--accent-gold);
+}
+
+.help-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.help-card:hover .help-card-icon {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+    color: var(--primary-blue);
+    transform: rotate(10deg) scale(1.1);
+}
+
+.help-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.help-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.go-corner {
+    margin-top: auto; /* Pushes the corner to the bottom */
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
+}
+
+.help-card:hover .go-corner {
+    color: var(--accent-gold-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .help-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .help-title {
+        font-size: 2rem;
+    }
+    .help-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .help-container .col-lg-3 {
+        margin-bottom: 1.5rem;
     }
 }

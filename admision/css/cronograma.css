@@ -1,23 +1,23 @@
 /* Cronograma Académico Styles */
 .cronograma-hero {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-    color: white;
+    color: var(--white);
     padding: 4rem 0;
     margin-bottom: 3rem;
 }
 
 .cronograma-table {
-    background: white;
+    background: var(--white);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-2);
     margin-bottom: 3rem;
     width: 100%;
 }
 
 .cronograma-table thead {
     background-color: var(--primary-blue);
-    color: white;
+    color: var(--white);
 }
 
 .cronograma-table th {
@@ -30,16 +30,16 @@
 .cronograma-table td {
     padding: 1rem;
     vertical-align: middle;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .evento-importante {
-    background-color: #fff8e1;
+    background-color: var(--warning-bg);
     border-left: 4px solid var(--accent-gold);
 }
 
 .fecha-limite {
-    color: #d32f2f;
+    color: var(--danger-text);
     font-weight: 600;
 }
 
@@ -93,7 +93,7 @@
 @media print {
     .cronograma-table {
         box-shadow: none;
-        border: 1px solid #dee2e6;
+        border: 1px solid var(--border-light);
     }
     
     .cronograma-hero {
