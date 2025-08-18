@@ -38,7 +38,7 @@ body {
 .page-container {
     padding: var(--section-padding);
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Changed from 5rem auto to 0 auto */
 }
 .section-header {
     text-align: center;
@@ -62,9 +62,14 @@ body {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid var(--accent-gold);
+    display: inline-block; /* Added for border to fit content */
 }
 
 /* Requisitos Unificados */
+#requisitos-unificados {
+    padding-top: 3rem;
+}
+
 .requisitos-container {
     display: flex;
     gap: 2rem;
@@ -82,9 +87,9 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-2);
-    margin-bottom: 4rem;
+    margin-bottom: 2rem; /* Reduced margin */
 }
-.general-requirements ul { list-style: none; }
+.general-requirements ul { list-style: none; padding-left: 0; } /* Removed default padding */
 .general-requirements li {
     position: relative;
     padding-left: 2.2em;
@@ -137,8 +142,8 @@ body {
 .accordion-item[open] > summary::after { transform: rotate(45deg); }
 .accordion-item[open] > summary { border-bottom: 1px solid var(--gray-300); }
 .accordion-content { padding: 2rem; border-top: 1px solid var(--gray-200); }
-.accordion-content ul { list-style: none; }
-.accordion-content li { position: relative; padding-left: 2.2em; }
+.accordion-content ul { list-style: none; padding-left: 0; } /* Removed default padding */
+.accordion-content li { position: relative; padding-left: 2.2em; margin-bottom: 1em; } /* Added margin-bottom */
 .accordion-content li::before {
     content: '→'; position: absolute; left: 0;
     color: var(--accent-gold-dark); font-weight: bold; font-size: 1.5rem;
@@ -167,8 +172,14 @@ body {
     color: var(--primary-blue);
     border-bottom-color: var(--primary-blue);
 }
-.tab-content { display: none; }
+.tab-content { display: none; animation: fadeIn 0.5s; }
 .tab-content.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .costs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -181,6 +192,7 @@ body {
     box-shadow: var(--shadow-1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-gold);
 }
 
 .cost-item:hover {
@@ -192,11 +204,13 @@ body {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
+    font-weight: 600;
 }
 .cost-item p {
     color: var(--primary-blue);
     font-size: 1.8rem;
     font-weight: 700;
+    margin-bottom: 0.25rem;
 }
 .cost-item span {
     font-size: 0.9rem;
@@ -213,6 +227,80 @@ body {
 }
 .payment-notice p { margin: 0; }
 
+/* CINTA SEPARADORA FINAL: ADQUIERE DOCUMENTOS */
+.cinta-adquiere-docs {
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cinta-adquiere-docs::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 213, 79, 0.1), transparent 70%);
+    transform: rotate(45deg);
+    animation: rotate-glow 15s linear infinite;
+}
+
+@keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.cinta-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.cinta-adquiere-docs h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    color: var(--white); /* Ensure h2 color is white */
+}
+
+.cinta-adquiere-docs p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn-cta-rect {
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-cta-rect:hover {
+    background-color: var(--accent-gold-dark);
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+
 /* Media Queries */
 @media (max-width: 992px) {
     .requisitos-container {
@@ -225,6 +313,8 @@ body {
     .accordion-item summary { font-size: 1.2rem; padding: 1.2rem 1.5rem; }
     .tabs-container { flex-wrap: wrap; }
     .tab-button { flex-grow: 1; }
+    .cinta-adquiere-docs h2 { font-size: 1.8rem; }
+    .page-container { padding: 3rem 1rem; }
 }
 
 /* ================================
