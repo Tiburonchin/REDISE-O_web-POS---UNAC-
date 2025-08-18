@@ -1476,7 +1476,7 @@ img {
 
 .admision-image img {
     width: 100%;
-    height: auto;
+    height: 370px;
     object-fit: cover;
     object-position: center top;
     transition: transform 0.3s ease;
