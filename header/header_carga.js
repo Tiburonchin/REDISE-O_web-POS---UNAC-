@@ -44,9 +44,28 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 
+                // Corregir enlaces del menú principal según el subdirectorio
+                const mainNavLinks = document.querySelectorAll('#header .nav-menu .dropdown-item');
+                const mobileNavLinks = document.querySelectorAll('#header .mobile-dropdown-item');
+                
+                // Función para corregir enlaces
+                const correctLink = (link) => {
+                    const href = link.getAttribute('href');
+                    if (href) {
+                        // Si estamos en un subdirectorio y el href no empieza con ../, agregarlo
+                        if (!href.startsWith('../') && !href.startsWith('http') && !href.startsWith('#')) {
+                            link.setAttribute('href', '../' + href);
+                        }
+                    }
+                };
+                
+                // Aplicar corrección a enlaces de escritorio y móvil
+                mainNavLinks.forEach(correctLink);
+                mobileNavLinks.forEach(correctLink);
+                
                 // También corregir enlaces que apunten a páginas principales
-                const links = document.querySelectorAll('#header a[href]');
-                links.forEach(link => {
+                const allLinks = document.querySelectorAll('#header a[href]');
+                allLinks.forEach(link => {
                     const href = link.getAttribute('href');
                     if (href && href.startsWith('index.html')) {
                         link.setAttribute('href', '../' + href);

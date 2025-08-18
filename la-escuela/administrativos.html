@@ -117,10 +117,7 @@
 
                   <div class="faculty-section" id="facultySection">
                     <ul class="faculty-filter">
-                        <li data-facultad="all" class="active">Todas</li>
-                        <li data-facultad="Facultad de Ingeniería">Facultad de Ingeniería</li>
-                        <li data-facultad="Facultad de Derecho">Facultad de Derecho</li>
-                        <!-- Repetir para las 12 facultades -->
+                        <!-- Las facultades se cargarán dinámicamente desde el JSON -->
                     </ul>
                   </div>
                 </aside>
@@ -128,71 +125,11 @@
                 <!-- Lista a la derecha -->
                 <div class="admin-list" id="adminContainer">
                     <div id="noResults" class="no-results" style="display: none;">
-                        No se encuentra personal administrativo.
+                        <i class="fas fa-search"></i>
+                        <h3>No se encontraron resultados</h3>
+                        <p>No se encuentra personal administrativo que coincida con los criterios de búsqueda.</p>
                     </div>
-                    <div class="admin-card" data-nombre="Juan Pérez" data-facultad="Facultad de Ingeniería">
-                        <div class="admin-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="admin-info">
-                            <h4>Juan Pérez</h4>
-                            <p class="faculty">Facultad de Ingeniería</p>
-                        </div>
-                        <div class="contact-icons">
-                            <a href="https://wa.me/51999999999" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="tel:+51999999999" class="icon-circle phone" title="Llamar">
-                                <i class="fas fa-phone"></i>
-                            </a>
-                            <a href="mailto:juanperez@unac.edu.pe" class="icon-circle email" title="Correo">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="admin-card" data-nombre="María López" data-facultad="Facultad de Ingeniería">
-                        <div class="admin-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="admin-info">
-                            <h4>María López</h4>
-                            <p class="faculty">Facultad de Ingeniería</p>
-                        </div>
-                        <div class="contact-icons">
-                            <a href="https://wa.me/51911111111" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="tel:+51911111111" class="icon-circle phone" title="Llamar">
-                                <i class="fas fa-phone"></i>
-                            </a>
-                            <a href="mailto:marialopez@unac.edu.pe" class="icon-circle email" title="Correo">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="admin-card" data-nombre="Carlos Torres" data-facultad="Facultad de Derecho">
-                        <div class="admin-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="admin-info">
-                            <h4>Carlos Torres</h4>
-                            <p class="faculty">Facultad de Derecho</p>
-                        </div>
-                        <div class="contact-icons">
-                            <a href="https://wa.me/51922222222" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="tel:+51922222222" class="icon-circle phone" title="Llamar">
-                                <i class="fas fa-phone"></i>
-                            </a>
-                            <a href="mailto:carlostorres@unac.edu.pe" class="icon-circle email" title="Correo">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-
+                    <!-- Las tarjetas de administrativos se cargarán dinámicamente desde el JSON -->
                 </div>
             </div>
         </section>

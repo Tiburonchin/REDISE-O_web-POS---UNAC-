@@ -43,9 +43,10 @@
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Preload Header Styles para evitar flash sin estilos -->
+    <!-- Preload Header-Footer Styles para evitar flash sin estilos -->
     <link rel="stylesheet" href="header/header.css">
-    
+    <link rel="stylesheet" href="footer/footer.css">
+
     <!-- Estilos para optimizar la carga inicial -->
     <link rel="stylesheet" href="css/preloader.css">
 </head>
@@ -54,7 +55,7 @@
     <!-- Preloader -->
     <div class="page-preloader" id="preloader">
         <div class="preloader-content">
-            <img src="../img/logo_unac_p.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <img src="./img/logo_unac_p.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
             <div class="preloader-text">Cargando...</div>
         </div>
     </div>
@@ -141,9 +142,9 @@
             
             <!-- Scroll Indicator -->
             <div class="scroll-indicator" aria-hidden="true">
-                <div class="scroll-arrow">
+                <a href="#cinta" class="scroll-arrow">
                     <i class="fas fa-chevron-down"></i>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -178,7 +179,7 @@
              ================================ -->
         <section class="admision-section" id="admision">
             <div class="container">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-4">
                     <!-- Imagen de la Universidad -->
                     <div class="col-lg-6">
                         <div class="admision-image">

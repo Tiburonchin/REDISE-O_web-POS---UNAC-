@@ -279,8 +279,7 @@ img {
     left: 50%;
     transform: translateX(-50%);
     bottom: 28px;
-    z-index: 1; /* por debajo del contenido del hero */
-    pointer-events: none; /* no bloquea clics/taps del CTA */
+    z-index: 100; /* por debajo del contenido del hero */
 }
 
 
@@ -1008,6 +1007,7 @@ img {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.5rem;
     animation: bounce 2s infinite;
+    z-index: 100;
 }
 
 @keyframes bounce {
@@ -1476,7 +1476,7 @@ img {
 
 .admision-image img {
     width: 100%;
-    height: 350px;
+    height: auto;
     object-fit: cover;
     object-position: center top;
     transition: transform 0.3s ease;
@@ -2524,7 +2524,7 @@ img {
 
 .form-check-label {
     font-size: 0.85rem;
-    color: #e0e0e0;
+    color: black;
     line-height: 1.4;
     margin-left: 0.5rem;
     cursor: pointer;

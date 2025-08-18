@@ -1,22 +1,655 @@
-[
-  {
-    "id": 1,
-    "nombre": "Dr. Carlos Mendoza Huamán",
-    "titulo": "Doctor en Administración",
-    "facultad": "fca",
-    "tipo": "planta",
-    "especialidad": "Gestión Empresarial",
-    "experiencia": "15 años",
-    "email": "cmendoza@unac.edu.pe"
-  },
-  {
-    "id": 2,
-    "nombre": "Mg. Ana Torres Ríos",
-    "titulo": "Magíster en Educación Superior",
-    "facultad": "fccsshh",
-    "tipo": "contratado",
-    "especialidad": "Metodología de la Investigación",
-    "experiencia": "8 años",
-    "email": "atorres@unac.edu.pe"
+{
+  "facultades": {
+    "fca": {
+      "codigo": "fca",
+      "nombre": "Ciencias Administrativas",
+      "docentes": [
+        {
+          "id": 1,
+          "nombre": "Aguilar Loyaga Santiago Rodolfo",
+          "titulo": "Doctor en Administración",
+          "tipo": "",
+          "especialidad": "Gestión Empresarial",
+          "experiencia": "15 años",
+          "email": "cmendoza@unac.edu.pe"
+        },
+        {
+          "id": 12,
+          "nombre": "Aldana Trejo Florcita Hermoja",
+          "titulo": "Magíster en Marketing",
+          "tipo": "",
+          "especialidad": "Marketing Digital",
+          "experiencia": "11 años",
+          "email": "eruiz@unac.edu.pe"
+        },
+        {
+          "id": 13,
+          "nombre": "Alejos Ipanaque Rufino",
+          "titulo": "Magíster en Finanzas",
+          "tipo": "",
+          "especialidad": "Finanzas Corporativas",
+          "experiencia": "10 años",
+          "email": "jsoto@unac.edu.pe"
+        },
+        {
+          "id": 3,
+          "nombre": "Alvarado Bravo Nestor Macial",
+          "titulo": "Doctor en Ingeniería Industrial",
+          "tipo": "",
+          "especialidad": "Optimización de Procesos",
+          "experiencia": "12 años",
+          "email": "mrodriguez@unac.edu.pe"
+        },
+        {
+          "id": 4,
+          "nombre": "Amable Farro Alfonso Salvador",
+          "titulo": "Magíster en Contabilidad",
+          "tipo": "",
+          "especialidad": "Auditoría y Control",
+          "experiencia": "10 años",
+          "email": "rvasquez@unac.edu.pe"
+        },
+        {
+          "id": 5,
+          "nombre": "Angulo Pomiano William Peter",
+          "titulo": "Doctor en Economía",
+          "tipo": "",
+          "especialidad": "Econometría Aplicada",
+          "experiencia": "18 años",
+          "email": "jparedes@unac.edu.pe"
+        },
+        {
+          "id": 2,
+          "nombre": "Asián Quiñones Carlos Alberto",
+          "titulo": "Magíster en Educación Superior",
+          "tipo": "",
+          "especialidad": "Metodología de la Investigación",
+          "experiencia": "8 años",
+          "email": "cquinones@unac.edu.pe"
+        },
+        {
+          "id": 8,
+          "nombre": "Castillo Prado Jorge Alfredo",
+          "titulo": "Magíster en Matemática Aplicada",
+          "tipo": "",
+          "especialidad": "Estadística Avanzada",
+          "experiencia": "9 años",
+          "email": "jcastillo@unac.edu.pe"
+        },
+        {
+          "id": 6,
+          "nombre": "Corilla Cóndor Margot Cecilia",
+          "titulo": "Magíster en Ciencias Ambientales",
+          "tipo": "",
+          "especialidad": "Gestión Ambiental",
+          "experiencia": "7 años",
+          "email": "lcuva@unac.edu.pe"
+        },
+        {
+          "id": 7,
+          "nombre": "Correa Silva Edward Gerardo",
+          "titulo": "Doctor en Ingeniería Eléctrica",
+          "tipo": "",
+          "especialidad": "Sistemas de Potencia",
+          "experiencia": "20 años",
+          "email": "ecorrea@unac.edu.pe"
+        },
+        {
+          "id": 9,
+          "nombre": "de la Torre Collao Luis Alberto",
+          "titulo": "Doctor en Ingeniería Mecánica",
+          "tipo": "",
+          "especialidad": "Diseño de Máquinas",
+          "experiencia": "14 años",
+          "email": "lcollao@unac.edu.pe"
+        },
+        {
+          "id": 10,
+          "nombre": "Espinoza Carrasco Veronica Elsa",
+          "titulo": "Magíster en Tecnología de Alimentos",
+          "tipo": "",
+          "especialidad": "Procesamiento de Alimentos",
+          "experiencia": "6 años",
+          "email": "espinoza@unac.edu.pe"
+        },
+        {
+          "id": 11,
+          "nombre": "Giraldo Rios Karina Julieta",
+          "titulo": "Doctor en Ingeniería Química",
+          "tipo": "",
+          "especialidad": "Procesos Químicos",
+          "experiencia": "16 años",
+          "email": "agiraldo@unac.edu.pe"
+        },
+        {
+          "id": 14,
+          "nombre": "Gomero Ostos Nestor",
+          "titulo": "Magíster en Logística",
+          "tipo": "",
+          "especialidad": "Cadena de Suministro",
+          "experiencia": "13 años",
+          "email": "ngomero@unac.edu.pe"
+        },
+        {
+          "id": 15,
+          "nombre": "Gonzales Solsol Jorge",
+          "titulo": "Magíster en Recursos Humanos",
+          "tipo": "",
+          "especialidad": "Desarrollo Organizacional",
+          "experiencia": "9 años",
+          "email": "jgonzales@unac.edu.pe"
+        },
+        {
+          "id": 16,
+          "nombre": "Lapa Lozano Augusto German",
+          "titulo": "Magíster en Sistemas de Información",
+          "tipo": "",
+          "especialidad": "Tecnologías de la Información",
+          "experiencia": "11 años",
+          "email": "lapa@unac.edu.pe"
+        },
+        {
+          "id": 17,
+          "nombre": "Maguiña Mendoza Mario Arturo",
+          "titulo": "Magíster en Finanzas Corporativas",
+          "tipo": "",
+          "especialidad": "Mercados Financieros",
+          "experiencia": "10 años",
+          "email": "mmaguina@unac.edu.pe"
+        },
+        {
+          "id": 18,
+          "nombre": "Mendoza Apaza Fernando",
+          "titulo": "Magíster en Gestión de Proyectos",
+          "tipo": "",
+          "especialidad": "Project Management",
+          "experiencia": "8 años",
+          "email": "fmendoza@unac.edu.pe"
+        },
+        {
+          "id": 19,
+          "nombre": "Morales Chalco Juana Rosa",
+          "titulo": "Magíster en Comercio Internacional",
+          "tipo": "",
+          "especialidad": "Negociaciones Internacionales",
+          "experiencia": "12 años",
+          "email": "jchalco@unac.edu.pe"
+        },
+        {
+          "id": 20,
+          "nombre": "Moran Salazar Daniel Demetrio",
+          "titulo": "Magíster en Economía Aplicada",
+          "tipo": "",
+          "especialidad": "Política Económica",
+          "experiencia": "14 años",
+          "email": "dmoran@unac.edu.pe"
+        },
+        {
+          "id": 21,
+          "nombre": "Moreno San Martin Juan Hector",
+          "titulo": "Magíster en Psicología Organizacional",
+          "tipo": "",
+          "especialidad": "Comportamiento Organizacional",
+          "experiencia": "9 años",
+          "email": "jmoreno@unac.edu.pe"
+        },
+        {
+          "id": 22,
+          "nombre": "Narciso Gomez Kennedy",
+          "titulo": "Magíster en Gestión Pública",
+          "tipo": "",
+          "especialidad": "Políticas Públicas",
+          "experiencia": "10 años",
+          "email": "ngomez@unac.edu.pe"
+        },
+        {
+          "id": 23,
+          "nombre": "Perez Espinoza Arbues",
+          "titulo": "Magíster en Auditoría",
+          "tipo": "",
+          "especialidad": "Auditoría Financiera",
+          "experiencia": "11 años",
+          "email": "pespinoza@unac.edu.pe"
+        },
+        {
+          "id": 24,
+          "nombre": "Plasencia Alva Maibi Ana",
+          "titulo": "Magíster en Marketing Estratégico",
+          "tipo": "",
+          "especialidad": "Estrategias de Mercado",
+          "experiencia": "13 años",
+          "email": "plasencia@unac.edu.pe"
+        },
+        {
+          "id": 25,
+          "nombre": "Ponce Yactayo Dora Lourdes",
+          "titulo": "Magíster en Gestión de la Calidad",
+          "tipo": "",
+          "especialidad": "Calidad Total",
+          "experiencia": "12 años",
+          "email": "dyactayo@unac.edu.pe"
+        },
+        {
+          "id": 26,
+          "nombre": "Prado Crispin Neils Fernando",
+          "titulo": "Magíster en Gestión del Talento Humano",
+          "tipo": "",
+          "especialidad": "Recursos Humanos",
+          "experiencia": "10 años",
+          "email": "pcrispin@unac.edu.pe"
+        },
+        {
+          "id": 27,
+          "nombre": "Puelles Cacho Leoncio",
+          "titulo": "Magíster en Finanzas y Banca",
+          "tipo": "",
+          "especialidad": "Banca y Finanzas",
+          "experiencia": "9 años",
+          "email": "pquelles@unac.edu.pe"
+        },
+        {
+          "id": 28,
+          "nombre": "Puican Castro Juan Benjamin",
+          "titulo": "Magíster en Gestión Estratégica",
+          "tipo": "",
+          "especialidad": "Estrategia Empresarial",
+          "experiencia": "14 años",
+          "email": "jpuican@unac.edu.pe"
+        },
+        {
+          "id": 29,
+          "nombre": "Ramirez Sobalvarro Yasmina",
+          "titulo": "Magíster en Logística y Operaciones",
+          "tipo": "",
+          "especialidad": "Logística Empresarial",
+          "experiencia": "11 años",
+          "email": "yramirez@unac.edu.pe"
+        },
+        {
+          "id": 30,
+          "nombre": "Reyes Doria Jose Luis",
+          "titulo": "Magíster en Comercio Exterior",
+          "tipo": "",
+          "especialidad": "Comercio Internacional",
+          "experiencia": "10 años",
+          "email": "jreyes@unac.edu.pe"
+        },
+        {
+          "id": 31,
+          "nombre": "Reyes Ulfe Juan Carlos",
+          "titulo": "Magíster en Gestión de Operaciones",
+          "tipo": "",
+          "especialidad": "Operaciones y Producción",
+          "experiencia": "12 años",
+          "email": "jreyesu@unac.edu.pe"
+        },
+        {
+          "id": 32,
+          "nombre": "Riega Calle Gerardo David",
+          "titulo": "Magíster en Gestión Financiera",
+          "tipo": "",
+          "especialidad": "Finanzas Empresariales",
+          "experiencia": "13 años",
+          "email": "griega@unac.edu.pe"
+        },
+        {
+          "id": 33,
+          "nombre": "Rios Torres Maria Yrene",
+          "titulo": "Magíster en Gestión de la Calidad",
+          "tipo": "",
+          "especialidad": "Calidad y Productividad",
+          "experiencia": "11 años",
+          "email": "mrios@unac.edu.pe"
+        },
+        {
+          "id": 34,
+          "nombre": "Rivera Morales Adan Fausto",
+          "titulo": "Magíster en Gestión de Proyectos",
+          "tipo": "",
+          "especialidad": "Project Management",
+          "experiencia": "9 años",
+          "email": "arivera@unac.edu.pe"
+        },
+        {
+          "id": 35,
+          "nombre": "Rubiños Jimenez Santiago Linder",
+          "titulo": "Magíster en Marketing Digital",
+          "tipo": "",
+          "especialidad": "Marketing y Ventas",
+          "experiencia": "10 años",
+          "email": "srubinos@unac.edu.pe"
+        },
+        {
+          "id": 36,
+          "nombre": "Salazar Montenegro Jaime",
+          "titulo": "Magíster en Gestión de Recursos Humanos",
+          "tipo": "",
+          "especialidad": "Recursos Humanos",
+          "experiencia": "12 años",
+          "email": "jsalazar@unac.edu.pe"
+        },
+        {
+          "id": 37,
+          "nombre": "Santuario Ramirez Juan Carlos",
+          "titulo": "Magíster en Finanzas Corporativas",
+          "tipo": "",
+          "especialidad": "Finanzas y Banca",
+          "experiencia": "14 años",
+          "email": "jsantuario@unac.edu.pe"
+        },
+        {
+          "id": 38,
+          "nombre": "Suarez Bazalar Raul",
+          "titulo": "Magíster en Auditoría y Control",
+          "tipo": "",
+          "especialidad": "Auditoría Financiera",
+          "experiencia": "11 años",
+          "email": "jsuarez@unac.edu.pe"
+        }
+      ]
+    },
+    "fcc": {
+      "codigo": "fcc",
+      "nombre": "Ciencias Contables",
+      "docentes": [
+        {
+          "id": 4,
+          "nombre": "Mg. Rosa Elena Vásquez",
+          "titulo": "Magíster en Contabilidad",
+          "tipo": "",
+          "especialidad": "Auditoría y Control",
+          "experiencia": "10 años",
+          "email": "rvasquez@unac.edu.pe"
+        },
+        {
+          "id": 39,
+          "nombre": "Amable Molina Julio Cesar",
+          "titulo": "Magíster en Contabilidad y Finanzas",
+          "tipo": "",
+          "especialidad": "Contabilidad Financiera",
+          "experiencia": "12 años",
+          "email": "amolina@unac.edu.pe"
+        },
+        {
+          "id": 40,
+          "nombre": "Angulo Arguedas Jose Luis",
+          "titulo": "Magíster en Auditoría",
+          "tipo": "",
+          "especialidad": "Auditoría Interna",
+          "experiencia": "9 años",
+          "email": "jangulo@unac.edu.pe"
+        },
+        {
+          "id": 41,
+          "nombre": "Argote Lazon Lina",
+          "titulo": "Magíster en Finanzas",
+          "tipo": "",
+          "especialidad": "Finanzas Corporativas",
+          "experiencia": "11 años",
+          "email": "clazon@unac.edu.pe"
+        },
+        {
+          "id": 42,
+          "nombre": "Caceda Ayllon Rogelio Cesar",
+          "titulo": "Magíster en Gestión Tributaria",
+          "tipo": "",
+          "especialidad": "Tributación",
+          "experiencia": "10 años",
+          "email": "rcaceda@unac.edu.pe"
+        },
+        {
+          "id": 43,
+          "nombre": "de la Cruz Gaona Efrain Pablo",
+          "titulo": "Magíster en Contabilidad y Auditoría",
+          "tipo": "",
+          "especialidad": "Contabilidad de Costos",
+          "experiencia": "12 años",
+          "email": "edela@unac.edu.pe"
+        },
+        {
+          "id": 44,
+          "nombre": "Elliot Arias Giovanni Luis",
+          "titulo": "Magíster en Finanzas y Contabilidad",
+          "tipo": "",
+          "especialidad": "Contabilidad Financiera",
+          "experiencia": "8 años",
+          "email": "earias@unac.edu.pe"
+        },
+        {
+          "id": 45,
+          "nombre": "Espinoza Vasquez Gladys",
+          "titulo": "Magíster en Auditoría Financiera",
+          "tipo": "",
+          "especialidad": "Auditoría y Control Interno",
+          "experiencia": "10 años",
+          "email": "gespinoza@unac.edu.pe"
+        },
+        {
+          "id": 46,
+          "nombre": "Huaman Rondon Liliana Ruth",
+          "titulo": "Magíster en Contabilidad y Finanzas",
+          "tipo": "",
+          "especialidad": "Contabilidad Gerencial",
+          "experiencia": "9 años",
+          "email": "lhuaman@unac.edu.pe"
+        },
+        {
+          "id": 47,
+          "nombre": "Huertas Niquen Walter Victor",
+          "titulo": "Magíster en Contabilidad y Auditoría",
+          "tipo": "",
+          "especialidad": "Contabilidad Financiera Avanzada",
+          "experiencia": "11 años",
+          "email": "cniquen@unac.edu.pe"
+        },
+        {
+          "id": 48,
+          "nombre": "Paiva Cruz Rosaura Venecia",
+          "titulo": "Magíster en Finanzas Corporativas",
+          "tipo": "",
+          "especialidad": "Finanzas y Banca",
+          "experiencia": "10 años",
+          "email": "rpaiva@unac.edu.pe"
+        },
+        {
+          "id": 49,
+          "nombre": "Pingo Zapata Manuel Enrique",
+          "titulo": "Magíster en Contabilidad y Finanzas",
+          "tipo": "",
+          "especialidad": "Contabilidad de Gestión",
+          "experiencia": "12 años",
+          "email": "mpingo@unac.edu.pe"
+        },
+        {
+          "id": 50,
+          "nombre": "Romero Dueñez Luis Eduardo",
+          "titulo": "Magíster en Auditoría y Control",
+          "tipo": "",
+          "especialidad": "Auditoría Financiera",
+          "experiencia": "9 años",
+          "email": "lromero@unac.edu.pe"
+        },
+        {
+          "id": 51,
+          "nombre": "Salazar Bello Marinho Jose",
+          "titulo": "Magíster en Contabilidad y Auditoría",
+          "tipo": "",
+          "especialidad": "Contabilidad Financiera",
+          "experiencia": "11 años",
+          "email": "ssalazar@unac.edu.pe"
+        },
+        {
+          "id": 52,
+          "nombre": "Salazar Sandoval Fredy Vicente",
+          "titulo": "Magíster en Finanzas y Banca",
+          "tipo": "",
+          "especialidad": "Finanzas Corporativas",
+          "experiencia": "10 años",
+          "email": "csandoval@unac.edu.pe"
+        },
+        {
+          "id": 53,
+          "nombre": "Torres Carrera Lucy Emilia",
+          "titulo": "Magíster en Finanzas y Banca",
+          "tipo": "",
+          "especialidad": "Finanzas Corporativas",
+          "experiencia": "10 años",
+          "email": "ltorres@unac.edu.pe"
+        },
+        {
+          "id": 54,
+          "nombre": "Vilela Jimenez Wilmer Arturo",
+          "titulo": "Magíster en Contabilidad y Finanzas",
+          "tipo": "",
+          "especialidad": "Contabilidad Financiera",
+          "experiencia": "12 años",
+          "email": "cvilela@unac.edu.pe"
+        },
+        {
+          "id": 55,
+          "nombre": "Ynche Tecocha Jean Kevin",
+          "titulo": "Magíster en Auditoría y Control",
+          "tipo": "",
+          "especialidad": "Auditoría Interna",
+          "experiencia": "9 años",
+          "email": "ynche@unac.edu.pe"
+        }
+      ]
+    },
+    "fce": {
+      "codigo": "fce",
+      "nombre": "Ciencias Económicas",
+      "docentes": [
+        {
+          "id": 5,
+          "nombre": "Dr. Luis Fernando García",
+          "titulo": "Doctor en Economía",
+          "tipo": "planta",
+          "especialidad": "Econometría Aplicada",
+          "experiencia": "18 años",
+          "email": "lgarcia@unac.edu.pe"
+        }
+      ]
+    },
+    "fcs": {
+      "codigo": "fcs",
+      "nombre": "Ciencias de la Salud",
+      "docentes": [
+        {
+          "id": 2,
+          "nombre": "Mg. Ana Torres Ríos",
+          "titulo": "Magíster en Educación Superior",
+          "tipo": "contratado",
+          "especialidad": "Metodología de la Investigación",
+          "experiencia": "8 años",
+          "email": "atorres@unac.edu.pe"
+        }
+      ]
+    },
+    "fcnm": {
+      "codigo": "fcnm",
+      "nombre": "Ciencias Naturales y Matemática",
+      "docentes": [
+        {
+          "id": 8,
+          "nombre": "Mg. Carmen Rosa Flores",
+          "titulo": "Magíster en Matemática Aplicada",
+          "tipo": "contratado",
+          "especialidad": "Estadística Avanzada",
+          "experiencia": "9 años",
+          "email": "cflores@unac.edu.pe"
+        }
+      ]
+    },
+    "fiarn": {
+      "codigo": "fiarn",
+      "nombre": "Ingeniería Ambiental y de Recursos Naturales",
+      "docentes": [
+        {
+          "id": 6,
+          "nombre": "Mg. Patricia Díaz Silva",
+          "titulo": "Magíster en Ciencias Ambientales",
+          "tipo": "visitante",
+          "especialidad": "Gestión Ambiental",
+          "experiencia": "7 años",
+          "email": "pdiaz@unac.edu.pe"
+        }
+      ]
+    },
+    "fiee": {
+      "codigo": "fiee",
+      "nombre": "Ingeniería Eléctrica y Electrónica",
+      "docentes": [
+        {
+          "id": 7,
+          "nombre": "Dr. Eduardo Morales Chávez",
+          "titulo": "Doctor en Ingeniería Eléctrica",
+          "tipo": "planta",
+          "especialidad": "Sistemas de Potencia",
+          "experiencia": "20 años",
+          "email": "emorales@unac.edu.pe"
+        }
+      ]
+    },
+    "fiis": {
+      "codigo": "fiis",
+      "nombre": "Ingeniería Industrial y de Sistemas",
+      "docentes": [
+        {
+          "id": 3,
+          "nombre": "Dr. Miguel Ángel Rodríguez",
+          "titulo": "Doctor en Ingeniería Industrial",
+          "tipo": "planta",
+          "especialidad": "Optimización de Procesos",
+          "experiencia": "12 años",
+          "email": "mrodriguez@unac.edu.pe"
+        }
+      ]
+    },
+    "fime": {
+      "codigo": "fime",
+      "nombre": "Ingeniería Mecánica y Energía",
+      "docentes": [
+        {
+          "id": 9,
+          "nombre": "Dr. José Alberto Ramírez",
+          "titulo": "Doctor en Ingeniería Mecánica",
+          "tipo": "planta",
+          "especialidad": "Diseño de Máquinas",
+          "experiencia": "14 años",
+          "email": "jramirez@unac.edu.pe"
+        }
+      ]
+    },
+    "fipa": {
+      "codigo": "fipa",
+      "nombre": "Ingeniería Pesquera y de Alimentos",
+      "docentes": [
+        {
+          "id": 10,
+          "nombre": "Mg. Sandra Lozano Cruz",
+          "titulo": "Magíster en Tecnología de Alimentos",
+          "tipo": "contratado",
+          "especialidad": "Procesamiento de Alimentos",
+          "experiencia": "6 años",
+          "email": "slozano@unac.edu.pe"
+        }
+      ]
+    },
+    "fiq": {
+      "codigo": "fiq",
+      "nombre": "Ingeniería Química",
+      "docentes": [
+        {
+          "id": 11,
+          "nombre": "Dr. Roberto Fernández López",
+          "titulo": "Doctor en Ingeniería Química",
+          "tipo": "planta",
+          "especialidad": "Procesos Químicos",
+          "experiencia": "16 años",
+          "email": "rfernandez@unac.edu.pe"
+        }
+      ]
+    }
   }
-]
+}
