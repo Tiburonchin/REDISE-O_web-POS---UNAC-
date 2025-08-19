@@ -1,0 +1,383 @@
+@media (max-width: 425px) {
+	.page-calidad .page-container {
+		padding: 1.2rem 0.2rem;
+	}
+	.calidad-section {
+		padding: 0.7rem 0.1rem;
+		border-radius: 10px;
+	}
+	.calidad-acordeones {
+		margin-top: 1rem;
+	}
+	.accordion-item {
+		border-radius: 8px;
+		margin-bottom: 1rem;
+	}
+	.accordion-item summary {
+		font-size: 0.98rem;
+		padding: 0.9rem 0.7rem;
+		gap: 0.5rem;
+	}
+	.accordion-content {
+		padding: 0.8rem 0.3rem 0.7rem 0.3rem;
+		font-size: 0.97rem;
+	}
+	.accordion-content p {
+		margin-bottom: 1rem;
+		font-size: 0.97rem;
+	}
+	.icon-links-row {
+		gap: 0.7rem;
+		margin-top: 0.2rem;
+	}
+	.icon-link {
+		width: 38px;
+		height: 38px;
+		font-size: 1.1rem;
+		border-width: 2px;
+		margin-bottom: 0.2rem;
+	}
+	.icon-link[title]::after {
+		font-size: 0.7rem;
+		padding: 0.18em 0.5em;
+		margin-top: 0.2em;
+	}
+	.calidad-icon {
+		width: 28px;
+		height: 28px;
+		font-size: 1.1rem;
+		margin-right: 0.3rem;
+		border-width: 2px;
+		box-shadow: 0 2px 6px rgba(10,46,82,0.13), 0 0 0 2px rgba(255,213,79,0.13);
+	}
+	.calidad-title {
+		font-size: 0.93rem;
+		letter-spacing: 0.2px;
+	}
+}
+
+@media (max-width: 375px) {
+    .calidad-icon {
+        width: 64px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .calidad-icon {
+        width: 84px !important;
+    }
+}
+/* ================================
+   ACORDEÓN DE CALIDAD (inspirado en requisitos_costos.css)
+   ================================ */
+.calidad-acordeones {
+	margin-top: 2rem;
+}
+.accordion-item {
+	background-color: var(--white);
+	border-radius: 12px;
+	margin-bottom: 1.5rem;
+	box-shadow: var(--shadow-2);
+	border: 1px solid var(--gray-300);
+	transition: box-shadow 0.3s, transform 0.3s;
+	overflow: hidden;
+}
+.accordion-item:hover {
+	box-shadow: var(--shadow-blue-15);
+	transform: translateY(-5px);
+}
+.accordion-item summary {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--primary-blue);
+	padding: 1.5rem 2rem;
+	cursor: pointer;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	outline: none;
+	border-bottom: none;
+	background: none;
+}
+.accordion-item summary::-webkit-details-marker { display: none; }
+.accordion-item summary:focus-visible { box-shadow: var(--glow-gold); border-radius: 10px; }
+.accordion-item summary::after {
+	content: '+';
+	font-size: 2.2rem;
+	font-weight: 300;
+	color: var(--accent-gold-dark);
+	margin-left: auto;
+	transition: transform 0.3s;
+}
+.accordion-item[open] > summary::after { transform: rotate(45deg); }
+.accordion-item[open] > summary { border-bottom: 1px solid var(--gray-300); }
+.accordion-content {
+	padding: 2rem 2rem 1.5rem 2rem;
+	border-top: 1px solid var(--gray-200);
+	background: var(--blue-100);
+}
+.accordion-content p {
+	margin-bottom: 1.5rem;
+	color: var(--text-dark);
+	font-size: 1.05rem;
+}
+
+/* Iconos grandes y fila de links */
+.icon-links-row {
+	display: flex;
+	gap: 2.5rem;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 0.5rem;
+}
+.icon-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5rem;
+	color: var(--primary-blue);
+	background: var(--accent-gold);
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	border: 3px solid var(--white);
+	margin-bottom: 0.5rem;
+	transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+	text-decoration: none;
+	position: relative;
+}
+.icon-link:hover, .icon-link:focus {
+	background: var(--accent-gold-dark);
+	color: var(--secondary-blue);
+	transform: translateY(-3px) scale(1.08);
+	box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+	text-decoration: none;
+}
+.icon-link i {
+	pointer-events: none;
+}
+.icon-link[title]::after {
+	content: attr(title);
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	transform: translateX(-50%);
+	background: var(--primary-blue);
+	color: var(--white);
+	font-size: 0.85rem;
+	padding: 0.25em 0.7em;
+	border-radius: 6px;
+	margin-top: 0.4em;
+	opacity: 0;
+	pointer-events: none;
+	white-space: nowrap;
+	transition: opacity 0.2s;
+	z-index: 10;
+}
+.icon-link:hover[title]::after, .icon-link:focus[title]::after {
+	opacity: 1;
+}
+
+/* Ajustes para iconos en el summary */
+.calidad-icon {
+	position: static;
+	width: 48px;
+	height: 48px;
+	font-size: 2rem;
+	background: linear-gradient(135deg, var(--accent-gold) 70%, #fffbe6 100%);
+	color: var(--primary-blue);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 16px rgba(10,46,82,0.18), 0 0 0 4px rgba(255,213,79,0.18);
+	border: 3px solid var(--accent-gold-dark);
+	margin-right: 0.7rem;
+	transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+	z-index: 1;
+}
+.accordion-item[open] .calidad-icon {
+	background: linear-gradient(135deg, var(--accent-gold-dark) 70%, #fffbe6 100%);
+	border-color: var(--primary-blue);
+	box-shadow: 0 6px 24px rgba(10,46,82,0.22), 0 0 0 5px rgba(255,193,7,0.18);
+}
+.calidad-title {
+	font-size: 1.1rem;
+	color: var(--secondary-blue);
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+	.accordion-content { padding: 1.2rem 0.7rem 1rem 0.7rem; }
+	.icon-links-row { gap: 1.2rem; }
+}
+@media (max-width: 768px) {
+	.accordion-item summary { font-size: 1rem; padding: 1.2rem 1rem; }
+	.icon-link { width: 56px; height: 56px; font-size: 1.5rem; }
+}
+
+/* ================================
+   CALIDAD Y GESTIÓN - UNAC EPG
+   ================================ */
+
+:root {
+	--primary-blue: #0a2e52;
+	--secondary-blue: #1a3a5f;
+	--accent-gold: #FFD54F;
+	--accent-gold-dark: #FFC107;
+	--text-dark: #2c3e50;
+	--text-light: #6c757d;
+	--white: #ffffff;
+	--light-bg: #f8f9fa;
+	--section-padding: 5rem 1rem;
+	--gray-200: #f1f3f5;
+	--gray-300: #e9ecef;
+	--gray-400: #e0e0e0;
+	--blue-100: #f0f4f8;
+	--shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+	--shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+	--glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.4);
+}
+
+body.page-calidad {
+	font-family: 'Roboto', sans-serif;
+	background: var(--light-bg);
+	color: var(--text-dark);
+	line-height: 1.7;
+}
+
+.main-content {
+	padding-top: 67px;
+}
+
+/* HERO */
+.page-calidad .hero-calidad {
+	position: relative;
+	min-height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	overflow: hidden;
+}
+.page-calidad .hero-background {
+	position: absolute;
+	top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+.page-calidad .hero-bg-image {
+	width: 100%; height: 100%; object-fit: cover; object-position: center;
+}
+.page-calidad .hero-overlay {
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+	background: linear-gradient(135deg, rgba(10, 46, 82, 0.85) 0%, rgba(26, 58, 95, 0.75) 50%, rgba(255, 193, 7, 0.1) 100%);
+	z-index: 2;
+}
+.page-calidad .hero-content {
+	position: relative; z-index: 3; text-align: center;
+}
+.page-calidad .hero-welcome { margin-bottom: 2rem; }
+.page-calidad .welcome-text {
+	display: block; font-size: 1.1rem; font-weight: 400; opacity: 0.9;
+	margin-bottom: 0.5rem; letter-spacing: 0.5px;
+}
+.page-calidad .hero-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+	font-weight: 800;
+	margin-bottom: 1.5rem;
+	line-height: 1.1;
+	text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+	letter-spacing: 1px;
+}
+.page-calidad .hero-divider {
+	display: flex; align-items: center; justify-content: center; margin: 1.5rem 0;
+}
+.page-calidad .divider-line {
+	width: 60px; height: 2px;
+	background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+.page-calidad .divider-icon {
+	margin: 0 1rem; width: 40px; height: 40px;
+	background: rgba(255, 193, 7, 0.2);
+	border-radius: 50%; display: flex; align-items: center; justify-content: center;
+	border: 1px solid rgba(255, 193, 7, 0.3);
+}
+.page-calidad .divider-icon i {
+	color: var(--accent-gold); font-size: 1.2rem;
+}
+.page-calidad .hero-subtitle {
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 400;
+	margin-bottom: 2.5rem;
+	opacity: 0.95;
+	line-height: 1.7;
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.page-calidad .page-container {
+	padding: var(--section-padding);
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* SECCIÓN CALIDAD */
+.calidad-section {
+	background: var(--white);
+	border-radius: 18px;
+	box-shadow: var(--shadow-2);
+	padding: 2.5rem 2rem;
+	margin-bottom: 2rem;
+}
+.calidad-card {
+	background: var(--blue-100);
+	border-radius: 14px;
+	box-shadow: var(--shadow-1);
+	padding: 2rem 1.5rem 1.5rem 1.5rem;
+	margin-bottom: 1.5rem;
+	min-height: 270px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+	transition: box-shadow 0.3s, transform 0.3s;
+	border-top: 5px solid var(--accent-gold);
+}
+.calidad-card:hover {
+	box-shadow: var(--shadow-blue-15);
+	transform: translateY(-4px);
+}
+.calidad-title {
+	font-size: 1.15rem;
+	color: var(--secondary-blue);
+	margin-bottom: 1.1rem;
+	font-weight: 700;
+	margin-top: 2.2rem;
+	letter-spacing: 0.5px;
+}
+.calidad-card p {
+	color: var(--text-dark);
+	font-size: 1.02rem;
+	margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+	.page-calidad .page-container { padding: 3rem 1rem; }
+	.calidad-section { padding: 1.5rem 0.5rem; }
+	.calidad-card { padding: 1.2rem 0.5rem 1rem 0.5rem; }
+}
+@media (max-width: 768px) {
+	.page-calidad .hero-title { font-size: 1.6rem; }
+	.calidad-section { padding: 1rem 0.2rem; }
+	.calidad-title { font-size: 1rem; }
+	.calidad-card { min-height: 0; }
+}
