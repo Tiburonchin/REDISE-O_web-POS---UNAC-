@@ -1,3 +1,22 @@
+/* Botón personalizado para requisitos y costos (paleta UNAC) */
+.btn-requisitos-unac {
+    background: var(--accent-gold, #FFC107);
+    color: var(--primary-blue, #0a2e52);
+    border: 2px solid var(--accent-gold, #FFC107);
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+.btn-requisitos-unac:hover {
+    background: var(--primary-blue, #0a2e52);
+    color: var(--accent-gold, #FFC107);
+    border-color: var(--primary-blue, #0a2e52);
+}
 
 /* ================================
    PROCESO ADMISION STYLES - UNAC EPG

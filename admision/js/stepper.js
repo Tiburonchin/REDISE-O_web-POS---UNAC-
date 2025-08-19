@@ -64,11 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
             loader.style.display = 'block';
             geminiBtnText.textContent = 'Generando...';
 
-            const prompt = "Eres un coach de entrevistas. Dame 3 consejos breves (máximo 15 palabras por consejo) y 3 preguntas comunes de entrevista (solo la pregunta). Usa este formato exacto:\n**Consejos:**\n- Consejo 1\n- Consejo 2\n- Consejo 3\n\n**Preguntas:**\n- Pregunta 1\n- Pregunta 2\n- Pregunta 3\nLa respuesta debe ser solo la lista, en español.";
+            // Prompt mejorado: consejos, preguntas, ejemplos de respuesta y recursos
+            const prompt = `Eres un coach de admisión universitaria. Dame:
+1. 3 consejos breves para la entrevista (máx. 15 palabras cada uno)
+2. 3 preguntas típicas de entrevista (solo la pregunta)
+3. Ejemplos de respuesta para cada pregunta (máx. 30 palabras cada una)
+4. 2 enlaces útiles (YouTube, blogs, etc.) para prepararse para entrevistas de admisión en Perú.
+Formato exacto:
+**Consejos:**\n- Consejo 1\n- Consejo 2\n- Consejo 3\n\n**Preguntas y ejemplos:**\n- Pregunta 1\n  Ejemplo de respuesta: ...\n- Pregunta 2\n  Ejemplo de respuesta: ...\n- Pregunta 3\n  Ejemplo de respuesta: ...\n\n**Recursos útiles:**\n- [Título o canal](enlace)\n- [Título o blog](enlace)\n\nTodo en español, sin texto adicional.`;
 
             try {
                 const text = await callGemini(prompt);
-                geminiResult.textContent = text;
+                // Permitir formato enriquecido si Gemini responde con Markdown
+                geminiResult.innerHTML = text.replace(/\n/g, '<br>');
                 geminiResult.style.display = 'block';
             } catch (error) {
                 console.error('Error calling Gemini API:', error);
@@ -77,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } finally {
                 geminiBtn.disabled = false;
                 loader.style.display = 'none';
-                geminiBtnText.textContent = '✨ Generar Consejos de Nuevo';
+                geminiBtnText.textContent = '✨ Generar Consejos y Recursos Nuevos';
             }
         });
 
