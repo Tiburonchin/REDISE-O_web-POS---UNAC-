@@ -1,3 +1,4 @@
+
 /* ================================
    PROCESO ADMISION STYLES - UNAC EPG
    ================================ */
@@ -739,4 +740,24 @@ body {
     .help-container .col-lg-3 {
         margin-bottom: 1.5rem;
     }
+}
+
+/* Botón personalizado para el formulario de inscripción (paleta UNAC) */
+.btn-formulario-unac {
+    background: var(--primary-blue, #0a2e52);
+    color: var(--accent-gold, #FFC107);
+    border: 2px solid var(--primary-blue, #0a2e52);
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+.btn-formulario-unac:hover {
+    background: var(--accent-gold, #FFC107);
+    color: var(--primary-blue, #0a2e52);
+    border-color: var(--accent-gold, #FFC107);
 }
