@@ -51,7 +51,7 @@ body {
 }
 
 .main-content {
-    padding-top: 83px; /* Espacio para header fijo */
+    padding-top: 67px; /* Espacio para header fijo */
 }
 
 /* Quitar espacio superior en esta página (evita vacío sobre el hero) */

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Noticias</title>
+    <!-- Incluye la fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            padding: 24px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container-panel {
+            display: flex;
+            justify-content: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .panel {
+            background-color: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            width: 100%;
+        }
+
+        .panel-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #1f2937;
+        }
+
+        .panel-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            background-color: #f9fafb;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 640px) {
+            .news-item {
+                flex-wrap: nowrap;
+            }
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #3b82f6;
+            border-radius: 4px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .news-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .news-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 640px) {
+            .news-content {
+                margin-bottom: 0;
+            }
+        }
+        
+        .news-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .news-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin: 0;
+            margin-bottom: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .news-item p {
+            font-size: 14px;
+            color: #4b5563;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .news-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 640px) {
+             .news-actions {
+                 margin-left: 16px;
+             }
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .btn-edit {
+            background-color: #3b82f6;
+        }
+
+        .btn-edit:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-delete {
+            background-color: #ef4444;
+        }
+
+        .btn-delete:hover {
+            background-color: #dc2626;
+        }
+        
+        .process-container {
+            margin-top: 24px;
+        }
+
+        .btn-process {
+            width: 100%;
+            background-color: #10b981;
+            font-weight: 700;
+            padding: 12px;
+        }
+
+        .btn-process:hover {
+            background-color: #059669;
+        }
+        
+        .message-box {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            background-color: #374151;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: none;
+        }
+        
+        .message-box.error {
+            background-color: #ef4444;
+        }
+
+        .message-box.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor principal del panel unificado -->
+    <div class="container-panel">
+
+        <!-- Panel de Gestión y Selección de Noticias -->
+        <div class="panel">
+            <h2 class="panel-title">Gestión y Selección de Noticias</h2>
+            <p class="panel-subtitle">Selecciona hasta tres noticias para procesar, o usa los botones de acción para editar/eliminar.</p>
+            
+            <div id="news-list" class="news-list">
+                <!-- Noticias de ejemplo, se reemplazarían con datos de tu backend -->
+                <div class="news-item" data-news-id="101">
+                    <input type="checkbox" id="news-select-101" name="selected-news" value="101">
+                    <img class="news-image" src="https://placehold.co/100x100/5eead4/white?text=Tech" alt="Imagen de la noticia 1">
+                    <div class="news-content">
+                        <h3>Título de la Noticia 1</h3>
+                        <p>Este es un breve resumen sobre los últimos avances en tecnología.</p>
+                        <div class="news-details">
+                            <p><strong>Fecha:</strong> 15/08/2025</p>
+                            <p><strong>Creado por:</strong> John Doe</p>
+                            <p><strong>Categoría:</strong> Tecnología</p>
+                        </div>
+                    </div>
+                    <div class="news-actions">
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="news-item" data-news-id="102">
+                    <input type="checkbox" id="news-select-102" name="selected-news" value="102">
+                    <img class="news-image" src="https://placehold.co/100x100/fca5a5/white?text=Finanzas" alt="Imagen de la noticia 2">
+                    <div class="news-content">
+                        <h3>Título de la Noticia 2</h3>
+                        <p>Nuevas regulaciones impactan el sector financiero global.</p>
+                        <div class="news-details">
+                            <p><strong>Fecha:</strong> 14/08/2025</p>
+                            <p><strong>Creado por:</strong> Jane Smith</p>
+                            <p><strong>Categoría:</strong> Finanzas</p>
+                        </div>
+                    </div>
+                    <div class="news-actions">
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="news-item" data-news-id="103">
+                    <input type="checkbox" id="news-select-103" name="selected-news" value="103">
+                    <img class="news-image" src="https://placehold.co/100x100/7dd3fc/white?text=Espacio" alt="Imagen de la noticia 3">
+                    <div class="news-content">
+                        <h3>Título de la Noticia 3</h3>
+                        <p>Descubrimiento astronómico redefine la teoría de agujeros negros.</p>
+                        <div class="news-details">
+                            <p><strong>Fecha:</strong> 13/08/2025</p>
+                            <p><strong>Creado por:</strong> Alex Johnson</p>
+                            <p><strong>Categoría:</strong> Ciencia</p>
+                        </div>
+                    </div>
+                    <div class="news-actions">
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="news-item" data-news-id="104">
+                    <input type="checkbox" id="news-select-104" name="selected-news" value="104">
+                    <img class="news-image" src="https://placehold.co/100x100/c4b5fd/white?text=Salud" alt="Imagen de la noticia 4">
+                    <div class="news-content">
+                        <h3>Título de la Noticia 4</h3>
+                        <p>Las últimas tendencias en el bienestar mental.</p>
+                        <div class="news-details">
+                            <p><strong>Fecha:</strong> 12/08/2025</p>
+                            <p><strong>Creado por:</strong> María Rodríguez</p>
+                            <p><strong>Categoría:</strong> Salud</p>
+                        </div>
+                    </div>
+                    <div class="news-actions">
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </div>
+                </div>
+
+                <div class="news-item" data-news-id="105">
+                    <input type="checkbox" id="news-select-105" name="selected-news" value="105">
+                    <img class="news-image" src="https://placehold.co/100x100/fef08a/white?text=Deportes" alt="Imagen de la noticia 5">
+                    <div class="news-content">
+                        <h3>Título de la Noticia 5</h3>
+                        <p>Un equipo local logra la victoria en el campeonato nacional.</p>
+                        <div class="news-details">
+                            <p><strong>Fecha:</strong> 11/08/2025</p>
+                            <p><strong>Creado por:</strong> Carlos Pérez</p>
+                            <p><strong>Categoría:</strong> Deportes</p>
+                        </div>
+                    </div>
+                    <div class="news-actions">
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-container">
+                <button id="process-selected-btn" class="btn btn-process">
+                    Procesar Noticias Seleccionadas
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Mensaje de confirmación o error (oculto por defecto) -->
+    <div id="message-box" class="message-box">
+        <p id="message-text"></p>
+    </div>
+
+    <script>
+        // Función para mostrar un mensaje temporal
+        function showMessage(text, isError = false) {
+            const messageBox = document.getElementById('message-box');
+            const messageText = document.getElementById('message-text');
+            messageText.textContent = text;
+            messageBox.classList.add('show');
+            if (isError) {
+                messageBox.classList.add('error');
+            } else {
+                messageBox.classList.remove('error');
+            }
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000);
+        }
+
+        function showEditForm(noticia, onSave) {
+            const form = document.createElement('form');
+            form.style.background = '#f3f4f6';
+            form.style.padding = '16px';
+            form.style.borderRadius = '8px';
+            form.style.marginBottom = '16px';
+            form.innerHTML = `
+                <h3>Editar Noticia</h3>
+                <label>Título:<br><input type="text" name="titulo" value="${noticia.titulo}" required></label><br>
+                <label>Fecha:<br><input type="date" name="fecha" value="${noticia.fecha}" required></label><br>
+                <label>Resumen:<br><textarea name="contenido" rows="2" required>${noticia.contenido}</textarea></label><br>
+                <label>Contenido Extendido:<br><textarea name="contenido-extendido" rows="4">${noticia.contenidoExtendido || ''}</textarea></label><br>
+                <label>Creador:<br><input type="text" name="creador" value="${noticia.creador}" required></label><br>
+                <label>Categoría:<br><input type="text" name="categoria" value="${noticia.categoria}" required></label><br>
+                <button type="submit" class="btn btn-edit">Guardar</button>
+                <button type="button" class="btn btn-delete" id="cancel-edit">Cancelar</button>
+            `;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const fd = new FormData(form);
+                fd.append('action', 'edit_noticia');
+                fd.append('id', noticia.id);
+                fetch('noticias-contador.php', {
+                    method: 'POST',
+                    body: fd
+                })
+                .then(res => res.json())
+                .then(resp => {
+                    if (resp.success) {
+                        onSave();
+                        showMessage('Noticia editada correctamente');
+                    } else {
+                        showMessage('Error al guardar cambios', true);
+                    }
+                });
+            });
+            form.querySelector('#cancel-edit').onclick = function() {
+                form.remove();
+            };
+            return form;
+        }
+
+        function removeEditForms() {
+            document.querySelectorAll('form').forEach(f => {
+                if (f.querySelector('h3') && f.querySelector('h3').textContent === 'Editar Noticia') {
+                    f.remove();
+                }
+            });
+        }
+
+        function showEditModal(noticia, onSave) {
+            // Crear fondo modal
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.background = 'rgba(0,0,0,0.4)';
+            overlay.style.zIndex = '2000';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+
+            // Modal
+            const modal = document.createElement('div');
+            modal.style.background = '#fff';
+            modal.style.borderRadius = '1rem';
+            modal.style.boxShadow = '0 8px 32px rgba(0,0,0,0.2)';
+            modal.style.padding = '2rem';
+            modal.style.maxWidth = '400px';
+            modal.style.width = '100%';
+            modal.innerHTML = `
+                <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:#0d2c54;">Editar Noticia</h2>
+                <form id="edit-news-form">
+                    <label>Título:<br><input type="text" name="titulo" value="${noticia.titulo}" required></label><br>
+                    <label>Fecha:<br><input type="date" name="fecha" value="${noticia.fecha}" required></label><br>
+                    <label>Resumen:<br><textarea name="contenido" rows="2" required>${noticia.contenido}</textarea></label><br>
+                    <label>Contenido Extendido:<br><textarea name="contenido-extendido" rows="4">${noticia.contenidoExtendido || ''}</textarea></label><br>
+                    <label>Creador:<br><input type="text" name="creador" value="${noticia.creador}" required></label><br>
+                    <label>Categoría:<br><input type="text" name="categoria" value="${noticia.categoria}" required></label><br>
+                    <label>Imagen actual:</label><br>
+                    <img id="preview-img" src="${noticia.imagen.startsWith('img/') ? noticia.imagen : 'img/' + noticia.imagen}" alt="Imagen" style="width:100px;height:100px;border-radius:8px;margin-bottom:8px;object-fit:cover;"><br>
+                    <input type="file" name="imagen" id="edit-img-input" accept="image/*"><br>
+                    <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;">
+                        <button type="submit" class="btn btn-edit">Guardar</button>
+                        <button type="button" class="btn btn-delete" id="cancel-edit-modal">Cancelar</button>
+                    </div>
+                </form>
+            `;
+            overlay.appendChild(modal);
+            document.body.appendChild(overlay);
+
+            // Previsualización de imagen
+            modal.querySelector('#edit-img-input').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        modal.querySelector('#preview-img').src = ev.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Guardar cambios
+            modal.querySelector('#edit-news-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const fd = new FormData(modal.querySelector('#edit-news-form'));
+                fd.append('action', 'edit_noticia');
+                fd.append('id', noticia.id);
+                fetch('noticias-contador.php', {
+                    method: 'POST',
+                    body: fd
+                })
+                .then(res => res.json())
+                .then(resp => {
+                    if (resp.success) {
+                        showMessage('Noticia editada correctamente');
+                        overlay.remove();
+                        // Si hay nueva imagen, actualiza la imagen en la lista
+                        if (resp.imagen) {
+                            noticia.imagen = resp.imagen;
+                        }
+                        onSave();
+                    } else {
+                        showMessage('Error al guardar cambios', true);
+                    }
+                });
+            });
+            // Cancelar
+            modal.querySelector('#cancel-edit-modal').onclick = function() {
+                overlay.remove();
+            };
+        }
+
+        function guardarNoticiasDestacadas(ids) {
+            // Guarda los IDs en localStorage
+            localStorage.setItem('noticiasDestacadas', JSON.stringify(ids));
+        }
+
+        function guardarNoticiasDestacadasServidor(ids) {
+            // Enviar los IDs seleccionados al backend para guardar en noticias.json
+            fetch('noticias-contador.php', {
+                method: 'POST',
+                body: JSON.stringify({ action: 'update_destacadas', destacadas: ids }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(res => res.json())
+            .then(resp => {
+                if (resp.success) {
+                    showMessage('Noticias destacadas actualizadas');
+                } else {
+                    showMessage('Error al actualizar destacadas', true);
+                }
+            });
+        }
+
+        function cargarNoticiasPanel() {
+            removeEditForms();
+            const list = document.getElementById('news-list');
+            list.innerHTML = '<p>Cargando...</p>';
+            fetch('noticias.json')
+                .then(res => res.json())
+                .then(data => {
+                    list.innerHTML = '';
+                    const idsDestacadas = Array.isArray(data.destacadas) ? data.destacadas.map(String) : [];
+                    data.noticias.forEach(noticia => {
+                        const rutaImagen = noticia.imagen.startsWith('img/') ? noticia.imagen : 'img/' + noticia.imagen;
+                        const item = document.createElement('div');
+                        item.className = 'news-item';
+                        item.setAttribute('data-news-id', noticia.id);
+                        item.innerHTML = `
+                            <input type="checkbox" id="news-select-${noticia.id}" name="selected-news" value="${noticia.id}">
+                            <img class="news-image" src="${rutaImagen}" alt="Imagen de la noticia">
+                            <div class="news-content">
+                                <h3>${noticia.titulo}</h3>
+                                <p>${noticia.contenido}</p>
+                                <div class="news-details">
+                                    <p><strong>Fecha:</strong> ${noticia.fecha}</p>
+                                    <p><strong>Creado por:</strong> ${noticia.creador}</p>
+                                    <p><strong>Categoría:</strong> ${noticia.categoria}</p>
+                                </div>
+                            </div>
+                            <div class="news-actions">
+                                <button class="btn btn-edit">Editar</button>
+                                <button class="btn btn-delete">Eliminar</button>
+                            </div>
+                        `;
+                        // Eliminar noticia
+                        item.querySelector('.btn-delete').onclick = function() {
+                            if (confirm('¿Seguro que deseas eliminar esta noticia?')) {
+                                const fd = new FormData();
+                                fd.append('action', 'delete_noticia');
+                                fd.append('id', noticia.id);
+                                fetch('noticias-contador.php', {
+                                    method: 'POST',
+                                    body: fd
+                                })
+                                .then(res => res.json())
+                                .then(resp => {
+                                    if (resp.success) {
+                                        showMessage('Noticia eliminada');
+                                        cargarNoticiasPanel();
+                                } else {
+                                    showMessage('Error al eliminar', true);
+                                }
+                                });
+                            }
+                        };
+                        // Editar noticia (modal)
+                        item.querySelector('.btn-edit').onclick = function() {
+                            showEditModal(noticia, function() {
+                                // Actualiza solo la imagen y los datos en el item sin recargar toda la lista
+                                fetch('noticias.json')
+                                    .then(res => res.json())
+                                    .then(data2 => {
+                                        const nueva = data2.noticias.find(n => n.id === noticia.id);
+                                        if (nueva) {
+                                            // Actualiza campos
+                                            item.querySelector('h3').textContent = nueva.titulo;
+                                            item.querySelector('p').textContent = nueva.contenido;
+                                            const detalles = item.querySelector('.news-details');
+                                            detalles.innerHTML = `<p><strong>Fecha:</strong> ${nueva.fecha}</p><p><strong>Creado por:</strong> ${nueva.creador}</p><p><strong>Categoría:</strong> ${nueva.categoria}</p>`;
+                                            // Actualiza imagen
+                                            const rutaNuevaImg = nueva.imagen.startsWith('img/') ? nueva.imagen : 'img/' + nueva.imagen;
+                                            item.querySelector('.news-image').src = rutaNuevaImg;
+                                        }
+                                        showMessage('Noticia editada correctamente');
+                                    });
+                            });
+                        };
+                        // Selección de hasta 3 noticias destacadas
+                        const checkbox = item.querySelector('input[type="checkbox"]');
+                        checkbox.checked = idsDestacadas.includes(checkbox.value);
+                        checkbox.addEventListener('change', function(e) {
+                            const checkedBoxes = document.querySelectorAll('#news-list input[type="checkbox"]:checked');
+                            if (checkedBoxes.length > 3) {
+                                e.target.checked = false;
+                                showMessage('Solo puedes seleccionar hasta 3 noticias destacadas.', true);
+                                return;
+                            }
+                            // Guardar IDs seleccionados en el servidor
+                            const idsSeleccionados = Array.from(checkedBoxes).map(cb => cb.value);
+                            guardarNoticiasDestacadasServidor(idsSeleccionados);
+                        });
+                        list.appendChild(item);
+                    });
+                });
+            // Al cargar, marcar los checkboxes según lo guardado
+            const idsGuardados = JSON.parse(localStorage.getItem('noticiasDestacadas') || '[]');
+            document.querySelectorAll('#news-list input[type="checkbox"]').forEach(cb => {
+                cb.checked = idsGuardados.includes(cb.value);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarNoticiasPanel();
+            const processBtn = document.getElementById('process-selected-btn');
+            processBtn.addEventListener('click', () => {
+                const selectedNewsIds = [];
+                document.querySelectorAll('#news-list input[type="checkbox"]:checked').forEach(checkbox => {
+                    selectedNewsIds.push(checkbox.value);
+                });
+                if (selectedNewsIds.length === 0) {
+                    showMessage('Por favor, selecciona al menos una noticia.', true);
+                    return;
+                }
+                showMessage(`Noticias seleccionadas (${selectedNewsIds.length}): ${selectedNewsIds.join(', ')}`);
+                // Aquí podrías enviar los IDs seleccionados al backend si lo necesitas
+            });
+        });
+    </script>
+</body>
+</html>

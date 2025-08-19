@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let programaActual = null;
     let facultadesData = {};
     let todasLasImagenes = [];
+    let miniaturaInicio = 0; // Índice de la primera miniatura visible
 
     // Elementos del DOM
     const programaTitulo = document.getElementById('programa-titulo');
@@ -25,12 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarDuracion = document.getElementById('sidebar-duracion');
     const sidebarModalidad = document.getElementById('sidebar-modalidad');
     const sidebarFacultad = document.getElementById('sidebar-facultad');
+    // Contact info elements
+    const contactCorreo = document.getElementById('contact-correo');
+    const contactTelefono = document.getElementById('contact-telefono');
 
     // Galería elements
     const imagenPrincipal = document.getElementById('imagen-principal');
-    const imagenThumb1 = document.getElementById('imagen-thumb-1');
-    const imagenThumb2 = document.getElementById('imagen-thumb-2');
-    const imagenThumb3 = document.getElementById('imagen-thumb-3');
+    const miniaturasContainer = document.getElementById('imagenes-miniatura');
 
     // Modal elements
     const modalImagen = document.getElementById('modal-imagen');
@@ -101,8 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // if (breadcrumbPrograma) breadcrumbPrograma.textContent = programa.nombre;
 
         // Información básica
-        programaDuracion.textContent = programa.duracion;
-        programaModalidad.textContent = programa.modalidad;
+        if (facultad.duracion && programa.tipo && facultad.duracion[programa.tipo]) {
+            programaDuracion.textContent = facultad.duracion[programa.tipo];
+        } else {
+            programaDuracion.textContent = '-';
+        }
+        programaModalidad.textContent = facultad.modalidad || '-';
         
         // Badges
         facultadBadge.textContent = facultad.nombre;
@@ -111,9 +117,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Sidebar información
         sidebarTipo.textContent = programa.tipo === 'maestria' ? 'Maestría' : 'Doctorado';
-        sidebarDuracion.textContent = programa.duracion;
-        sidebarModalidad.textContent = programa.modalidad;
+        if (facultad.duracion && programa.tipo && facultad.duracion[programa.tipo]) {
+            sidebarDuracion.textContent = facultad.duracion[programa.tipo];
+        } else {
+            sidebarDuracion.textContent = '-';
+        }
+        sidebarModalidad.textContent = facultad.modalidad || '-';
         sidebarFacultad.textContent = facultad.nombre;
+
+        // Contacto dinámico de la facultad
+        if (contactCorreo && facultad.correo) {
+            contactCorreo.textContent = facultad.correo;
+            contactCorreo.href = 'mailto:' + facultad.correo;
+        }
+        if (contactTelefono && facultad.telefono) {
+            contactTelefono.textContent = facultad.telefono;
+            contactTelefono.href = 'tel:' + facultad.telefono.replace(/[^\d+]/g, '');
+        }
 
         // Configurar galería de imágenes
         configurarGaleria(programa);
@@ -129,49 +149,91 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Configurar la galería de imágenes
     function configurarGaleria(programa) {
-        todasLasImagenes = [
-            programa.imagen_1,
-            programa.imagen_2,
-            programa.imagen_3
-        ].filter(img => img && img.trim() !== '');
-
-        if (todasLasImagenes.length > 0) {
-            // Configurar imagen principal
-            imagenPrincipal.src = todasLasImagenes[0];
-            imagenPrincipal.alt = `Imagen principal de ${programa.nombre}`;
-
-            // Configurar miniaturas
-            const thumbnails = [imagenThumb1, imagenThumb2, imagenThumb3];
-            
-            thumbnails.forEach((thumb, index) => {
-                if (todasLasImagenes[index]) {
-                    thumb.src = todasLasImagenes[index];
-                    thumb.alt = `Imagen ${index + 1} de ${programa.nombre}`;
-                    thumb.style.display = 'block';
-                    thumb.classList.toggle('active', index === 0);
-                } else {
-                    thumb.style.display = 'none';
+        // Usar array 'imagenes' si existe, si no, buscar imagen_N
+        if (Array.isArray(programa.imagenes)) {
+            todasLasImagenes = programa.imagenes.filter(img => img && img.trim() !== '');
+        } else {
+            todasLasImagenes = [];
+            let i = 1;
+            while (programa[`imagen_${i}`]) {
+                const url = programa[`imagen_${i}`];
+                if (url && url.trim() !== '') {
+                    todasLasImagenes.push(url);
                 }
-            });
+                i++;
+            }
+        }
+
+        miniaturaInicio = 0;
+
+        // Si no hay imágenes, salir
+        if (todasLasImagenes.length === 0) return;
+
+        // Configurar imagen principal
+        imagenPrincipal.src = todasLasImagenes[0];
+        imagenPrincipal.alt = `Imagen principal de ${programa.nombre}`;
+
+        renderizarMiniaturas();
+    }
+
+    function renderizarMiniaturas() {
+        miniaturasContainer.innerHTML = '';
+        const total = todasLasImagenes.length;
+        // Detectar si la pantalla es <= 425px
+        const isMobile = window.matchMedia('(max-width: 425px)').matches;
+        const maxVisibles = isMobile ? 1 : 3;
+
+        // Botón retroceder
+        if (total > maxVisibles && miniaturaInicio > 0) {
+            const btnPrev = document.createElement('button');
+            btnPrev.innerHTML = '←';
+            btnPrev.className = 'btn-miniatura-nav btn-miniatura-prev';
+            btnPrev.onclick = function() {
+                miniaturaInicio = Math.max(0, miniaturaInicio - 1);
+                renderizarMiniaturas();
+            };
+            miniaturasContainer.appendChild(btnPrev);
+        }
+
+        // Miniaturas visibles
+        for (let idx = miniaturaInicio; idx < Math.min(miniaturaInicio + maxVisibles, total); idx++) {
+            const thumb = document.createElement('img');
+            thumb.src = todasLasImagenes[idx];
+            thumb.alt = `Imagen ${idx + 1}`;
+            thumb.className = 'img-thumbnail' + (imagenPrincipal.src === todasLasImagenes[idx] ? ' active' : '');
+            thumb.dataset.index = idx;
+            thumb.style.cursor = 'pointer';
+            miniaturasContainer.appendChild(thumb);
+        }
+
+        // Botón avanzar
+        if (total > maxVisibles && miniaturaInicio + maxVisibles < total) {
+            const btnNext = document.createElement('button');
+            btnNext.innerHTML = '→';
+            btnNext.className = 'btn-miniatura-nav btn-miniatura-next';
+            btnNext.onclick = function() {
+                miniaturaInicio = Math.min(total - maxVisibles, miniaturaInicio + 1);
+                renderizarMiniaturas();
+            };
+            miniaturasContainer.appendChild(btnNext);
         }
     }
+// Redibujar miniaturas al cambiar el tamaño de la pantalla
+window.addEventListener('resize', function() {
+    renderizarMiniaturas();
+});
 
     // Configurar event listeners para la galería
     function configurarEventListenersGaleria() {
-        // Click en miniaturas
-        const thumbnails = [imagenThumb1, imagenThumb2, imagenThumb3];
-        
-        thumbnails.forEach((thumb, index) => {
-            thumb.addEventListener('click', function() {
-                if (todasLasImagenes[index]) {
-                    // Actualizar imagen principal
-                    imagenPrincipal.src = todasLasImagenes[index];
-                    
-                    // Actualizar clases activas
-                    thumbnails.forEach(t => t.classList.remove('active'));
-                    thumb.classList.add('active');
+        // Delegar el evento click a las miniaturas generadas dinámicamente
+        miniaturasContainer.addEventListener('click', function(e) {
+            if (e.target && e.target.tagName === 'IMG') {
+                const idx = parseInt(e.target.dataset.index);
+                if (!isNaN(idx) && todasLasImagenes[idx]) {
+                    imagenPrincipal.src = todasLasImagenes[idx];
+                    renderizarMiniaturas();
                 }
-            });
+            }
         });
 
         // Click en imagen principal para abrir modal
@@ -179,11 +241,35 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentSrc = imagenPrincipal.src;
             modalImagen.src = currentSrc;
             modalTitulo.textContent = programaActual ? programaActual.nombre : 'Imagen del programa';
-            
             const modal = new bootstrap.Modal(document.getElementById('imagenModal'));
             modal.show();
         });
     }
+    // Estilos mínimos para los botones de navegación de miniaturas
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .btn-miniatura-nav {
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin: 0 4px;
+            font-size: 18px;
+            cursor: pointer;
+            vertical-align: middle;
+            transition: background 0.2s;
+        }
+        .btn-miniatura-nav:hover {
+            background: #e0e0e0;
+        }
+        .imagenes-miniatura {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    `;
+    document.head.appendChild(style);
 
     // Cargar programas relacionados
     function cargarProgramasRelacionados(facultadActual, programaActualId) {

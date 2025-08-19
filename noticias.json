@@ -1,0 +1,193 @@
+{
+    "categorias": [
+        "Académico",
+        "Eventos",
+        "Innovación",
+        "Cursos",
+        "Seminarios",
+        "Talleres",
+        "deportes",
+        "sss"
+    ],
+    "noticias": [
+        {
+            "id": 1,
+            "titulo": "Nueva carrera en la EPG",
+            "fecha": "2025-08-10",
+            "contenido": "La Escuela de Posgrado anuncia la apertura de una nueva carrera para el próximo semestre.",
+            "imagen": "descarga.jpeg",
+            "creador": "Juan Pérez",
+            "categoria": "Académico",
+            "clics": 18,
+            "contenidoExtendido": ""
+        },
+        {
+            "id": 2,
+            "titulo": "Conferencia internacional",
+            "fecha": "2025-08-12",
+            "contenido": "Se realizará una conferencia internacional sobre innovación educativa en la UNAC.",
+            "imagen": "img\/perro2.jpeg",
+            "creador": "María López",
+            "categoria": "Eventos",
+            "clics": 13
+        },
+        {
+            "id": 3,
+            "titulo": "Inscripciones abiertas",
+            "fecha": "2025-08-15",
+            "contenido": "Ya están abiertas las inscripciones para el ciclo 2025-II en la EPG.",
+            "imagen": "img\/perro.jpg",
+            "creador": "Carlos Ruiz",
+            "categoria": "Académico"
+        },
+        {
+            "id": 4,
+            "titulo": "Nuevo laboratorio de innovación",
+            "fecha": "2025-08-20",
+            "contenido": "Se inaugurará un nuevo laboratorio de innovación en la EPG.",
+            "imagen": "img\/perro2.jpeg",
+            "creador": "Ana Torres",
+            "categoria": "Innovación",
+            "clics": 2
+        },
+        {
+            "id": 5,
+            "titulo": "Taller de creatividad",
+            "fecha": "2025-08-25",
+            "contenido": "Se llevará a cabo un taller de creatividad en la EPG.",
+            "imagen": "img\/perro3.jpg",
+            "creador": "Luis Gómez",
+            "categoria": "Académico",
+            "clics": 0
+        },
+        {
+            "id": 6,
+            "titulo": "Nuevo curso de marketing digital",
+            "fecha": "2025-12-30",
+            "contenido": "La EPG ofrece un nuevo curso de marketing digital para profesionales.",
+            "imagen": "img\/perro4.jpg",
+            "creador": "Marta Fernández",
+            "categoria": "Cursos",
+            "clics": 17
+        },
+        {
+            "id": 7,
+            "titulo": "Seminario de investigación",
+            "fecha": "2025-02-13",
+            "contenido": "Se llevará a cabo un seminario de investigación en la EPG.",
+            "imagen": "img\/perro5.jpg",
+            "creador": "Pedro Martínez",
+            "categoria": "Seminarios",
+            "clics": 0
+        },
+        {
+            "id": 8,
+            "titulo": "Curso de análisis de datos",
+            "fecha": "2025-09-10",
+            "contenido": "La EPG ofrece un nuevo curso de análisis de datos para profesionales.",
+            "imagen": "img\/perro6.jpg",
+            "creador": "Laura Sánchez",
+            "categoria": "Cursos",
+            "clics": 1
+        },
+        {
+            "id": 10,
+            "titulo": "Nuevo curso de diseño gráfico",
+            "fecha": "2025-09-20",
+            "contenido": "La EPG ofrece un nuevo curso de diseño gráfico para profesionales.",
+            "imagen": "img\/perro8.jpg",
+            "creador": "Pedro López",
+            "categoria": "Cursos",
+            "clics": 13,
+            "contenidoExtendido": ""
+        },
+        {
+            "id": 11,
+            "titulo": "Nuevo curso de fotografía",
+            "fecha": "2025-09-25",
+            "contenido": "La EPG ofrece un nuevo curso de fotografía para profesionales.",
+            "imagen": "img\/perro9.jpg",
+            "creador": "Laura Martínez",
+            "categoria": "Cursos",
+            "clics": 3
+        },
+        {
+            "id": 12,
+            "titulo": "Nuevo curso de desarrollo web",
+            "fecha": "2025-09-30",
+            "contenido": "La EPG ofrece un nuevo curso de desarrollo web para profesionales.",
+            "imagen": "img\/perro10.jpg",
+            "creador": "Carlos Gómez",
+            "categoria": "Cursos",
+            "clics": 6
+        },
+        {
+            "id": 13,
+            "titulo": "Nuevo curso de inteligencia artificial",
+            "fecha": "2025-10-05",
+            "contenido": "La EPG ofrece un nuevo curso de inteligencia artificial para profesionales.",
+            "imagen": "img\/perro11.jpg",
+            "creador": "Fernando Torres",
+            "categoria": "Cursos",
+            "clics": 9
+        },
+        {
+            "id": 14,
+            "titulo": "adggaa",
+            "fecha": "2025-07-30",
+            "contenido": "sdsd",
+            "contenidoExtendido": "sdsd",
+            "imagen": "wos.jpg",
+            "creador": "sdsd",
+            "categoria": "Eventos",
+            "clics": 0
+        },
+        {
+            "id": 16,
+            "titulo": "qweqwe",
+            "fecha": "2025-08-15",
+            "contenido": "qweqwe",
+            "contenidoExtendido": "d",
+            "imagen": "Sin títulow.jpg",
+            "creador": "qweqwe",
+            "categoria": "Eventos",
+            "clics": 0
+        },
+        {
+            "id": 17,
+            "titulo": "noticianueva",
+            "fecha": "2025-10-30",
+            "contenido": "nmnmnmn",
+            "contenidoExtendido": "nmnmnmnm",
+            "imagen": "img_economista_1.jpg",
+            "creador": "nn",
+            "categoria": "Académico",
+            "clics": 0
+        }
+    ],
+    "eventos": [
+        {
+            "id": 1,
+            "titulo": "Webinar: 'Futuro de la IA en la Ciencia'",
+            "fecha": "2025-08-25",
+            "hora": "10:00 AM - 12:00 PM"
+        },
+        {
+            "id": 2,
+            "titulo": "Conferencia: 'Bioética y genómica'",
+            "fecha": "2025-11-15",
+            "hora": "9:00 AM - 5:00 PM"
+        },
+        {
+            "id": 3,
+            "titulo": "Taller de Innovación Educativa",
+            "fecha": "2025-12-05",
+            "hora": "3:00 PM - 6:00 PM"
+        }
+    ],
+    "destacadas": [
+        "1",
+        "2",
+        "9"
+    ]
+}

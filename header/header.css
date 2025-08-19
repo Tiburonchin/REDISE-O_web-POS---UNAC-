@@ -1,4 +1,3 @@
-
 /* FORZAR VISIBILIDAD DEL HEADER - SOLUCIÓN DE EMERGENCIA */
 #header,
 header.header {
@@ -635,7 +634,8 @@ header.header .mobile-menu.active {
     /* Ocultar el botón de función futura */
     header.header .action-btn,
     .header .action-btn,
-    .action-btn {
+    .action-btn,
+    .whatsapp-container {
         display: none !important;
     }
 
@@ -714,4 +714,65 @@ header.header .mobile-menu.active {
         font-size: 13px;
         width: calc(100% - 32px);
     }
+}
+
+/* WhatsApp Container */
+.whatsapp-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    border: none;
+    color: white;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E; /* Darker WhatsApp green on hover */
+    color: white; /* Keep icon white on hover */
+    transform: scale(1.1);
+}
+
+.whatsapp-btn i {
+    font-size: 28px; /* Slightly larger icon */
+}
+
+.whatsapp-btn:hover i {
+    color: white; /* Keep icon white on hover */
+}
+
+.whatsapp-number {
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+    background: #0a2e52; /* Dark blue from palette */
+    color: white; /* White text */
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.whatsapp-container:hover .whatsapp-number {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
 }

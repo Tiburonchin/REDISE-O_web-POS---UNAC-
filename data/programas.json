@@ -3,6 +3,13 @@
     "fcs": {
       "codigo": "fcs",
       "nombre": "Ciencias de la Salud",
+      "correo": "fcs.posgrado@unac.pe",
+      "telefono": "+51 961 995 725",
+      "modalidad": "Presencial / Virtual",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
       "programas": [
         {
           "id": 1,
@@ -10,8 +17,307 @@
           "tipo": "maestria",
           "slug": "maestria-en-salud-publica",
           "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          
+          "imagen_1": "https://elcomercio.pe/resizer/XYiuJs4MY6fshkVDbp3nf-Ggf48=/980x528/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/YDBWTGSHJNBZHCYN7A3FITRJHI.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 2,
+          "nombre": "Maestría en Salud Ocupacional",
+          "tipo": "maestria",
+          "slug": "maestria-en-salud-ocupacional",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud ocupacional",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la evaluación y tratamiento de trastornos psicológicos, utilizando enfoques basados en la evidencia."
+        },
+        {
+          "id": 3,
+          "nombre": "Maestría en Gerencia en Salud",
+          "tipo": "maestria",
+          "slug": "maestria-en-gerencia-en-salud",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la gerencia en salud",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 4,
+          "nombre": "Maestría en Enfermería",
+          "tipo": "maestria",
+          "slug": "maestria-en-enfermeria",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la enfermería",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 5,
+          "nombre": "Maestría en Enfermería Familiar y Comunitaria",
+          "tipo": "maestria",
+          "slug": "maestria-en-enfermeria-familiar-y-comunitaria",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la enfermería familiar y comunitaria",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 6,
+          "nombre": "Maestría en Ciencias de Salud con Mención en Educación para la Salud",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencias-de-salud-con-mencion-en-educacion-para-la-salud",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 7,
+          "nombre": "Doctorado en Salud Pública",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-salud-publica",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 8,
+          "nombre": "Doctorado en Enfermería",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-enfermeria",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la enfermería",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 9,
+          "nombre": "Doctorado en Ciencias de la Salud",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-ciencias-de-la-salud",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de las ciencias de la salud",
+          
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 10,
+          "nombre": "Doctorado en Administración en Salud",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-administracion-en-salud",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la administración en salud",
           "duracion": "2 años",
-          "modalidad": "Presencial",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 11,
+          "nombre": "Especialidad en Salud Pública y Comunitaria",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-salud-publica-y-comunitaria",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública y comunitaria",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 12,
+          "nombre": "Especialidad en Salud Familiar y Comunitaria",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-salud-familiar-y-comunitaria",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud familiar y comunitaria",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 13,
+          "nombre": "Especialidad en Política y Gestión de Salud en Enfermería",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-politica-y-gestion-de-salud-en-enfermeria",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 14,
+          "nombre": "Especialidad en Enfermería Pediátrica",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-pediatrica",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 15,
+          "nombre": "Especialidad en Enfermería Neonatología",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-neonatologia",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 16,
+          "nombre": "Especialidad en Enfermería Intensiva",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-intensiva",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 17,
+          "nombre": "Especialidad en Enfermería en Salud Mental",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-salud-mental",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 18,
+          "nombre": "Especialidad en Enfermería en Salud del Niño y Adolescente",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-salud-del-nino-y-adolescente",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 19,
+          "nombre": "Especialidad en Enfermería en Oncología",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-oncologia",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 20,
+          "nombre": "Especialidad en Enfermería en Gerontología y Geriátrica",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-gerontologia-y-geriatrica",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 21,
+          "nombre": "Especialidad en Enfermería en Epidemiología",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-epidemiologia",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 22,
+          "nombre": "Especialidad en Enfermería en Emergencias y Desastres",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-emergencias-y-desastres",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 23,
+          "nombre": "Especialidad en Enfermería en Cuidado Quirúrgico",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-cuidado-quirurgico",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 24,
+          "nombre": "Especialidad en Enfermería en Crecimiento, Desarrollo del Niño y Estimulación de Primera Infancia",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-crecimiento-desarrollo-del-nino-y-estimulacion-de-primera-infancia",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 25,
+          "nombre": "Especialidad en Enfermería en Centro Quirúrgico",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-enfermeria-en-centro-quirurgico",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria."
+        },
+        {
+          "id": 26,
+          "nombre": "Especialidad en Administración en Salud",
+          "tipo": "especialidad",
+          "slug": "especialidad-en-administracion-en-salud",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "duracion": "2 años",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
@@ -22,112 +328,130 @@
     "fiis": {
       "codigo": "fiis",
       "nombre": "Ingeniería Industrial y de Sistemas",
+      "correo": "fiis@unac.edu.pe",
+      "telefono": "+51 987 654 321",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
       "programas": [
         {
-          "id": 2,
-          "nombre": "Maestría en Ingeniería Industrial",
+          "id": 27,
+          "nombre": "Maestría en Ingeniería Industrial con Mención en Gerencia en Logística",
           "tipo": "maestria",
-          "slug": "maestria-en-ingenieria-industrial",
+          "slug": "maestria-en-ingenieria-industrial-con-mencion-en-gerencia-en-logistica",
           "descripcion": "Programa orientado a formar expertos en la optimización de procesos industriales",
           "duracion": "2 años",
-          "modalidad": "Presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la optimización de procesos industriales y gestión de sistemas productivos."
         },
         {
-          "id": 10,
-          "nombre": "Maestría en Ciencias de la Computación",
+          "id": 28,
+          "nombre": "Maestría en Ingeniería Industrial con Mención en Gerencia de Calidad y Productividad",
           "tipo": "maestria",
-          "slug": "maestria-en-ciencias-de-la-computacion",
-          "descripcion": "Especialización avanzada en tecnologías de la información",
+          "slug": "maestria-en-ingenieria-industrial-con-mencion-en-gerencia-de-calidad-y-productividad",
+          "descripcion": "Especialización avanzada en gestión de calidad y productividad",
           "duracion": "2 años",
-          "modalidad": "Semi-presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "descripcion_detallada": "Programa especializado en desarrollo de software avanzado, inteligencia artificial y ciencias de datos."
         },
         {
-          "id": 11,
-          "nombre": "Doctorado en Ingeniería de Sistemas",
-          "tipo": "doctorado",
-          "slug": "doctorado-en-ingenieria-de-sistemas",
+          "id": 29,
+          "nombre": "Maestría en Ingeniería de Sistemas",
+          "tipo": "maestria",
+          "slug": "maestria-en-ingenieria-de-sistemas",
           "descripcion": "Investigación avanzada en sistemas complejos",
           "duracion": "4 años",
-          "modalidad": "Presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
-          "descripcion_detallada": "Programa doctoral de investigación avanzada en ingeniería de sistemas complejos y optimización."
+          "descripcion_detallada": "Programa de investigación avanzada en ingeniería de sistemas complejos y optimización."
+        },
+        {
+          "id": 30,
+          "nombre": "Doctorado en Ingeniería Industrial",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-ingenieria-industrial",
+          "descripcion": "Programa especializado en inteligencia artificial y aprendizaje automático",
+          "duracion": "4 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de investigación avanzada en inteligencia artificial y sus aplicaciones en sistemas complejos."
+        },
+        {
+          "id": 31,
+          "nombre": "Doctorado en Ingeniería de Sistemas",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-ingenieria-de-sistemas",
+          "descripcion": "Programa especializado en sistemas complejos y su optimización",
+          "duracion": "4 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de investigación avanzada en sistemas complejos y su optimización."
         }
       ]
     },
     "fce": {
       "codigo": "fce",
       "nombre": "Ciencias Económicas",
+      "correo": "fce@unac.edu.pe",
+      "telefono": "+51 111 222 333",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
       "programas": [
         {
-          "id": 3,
-          "nombre": "Maestría en Comercio y Negociaciones Internacionales",
+          "id": 32,
+          "nombre": "Maestría en Proyectos de Inversión",
           "tipo": "maestria",
-          "slug": "maestria-en-comercio-y-negociaciones-internacionales",
+          "slug": "maestria-en-proyectos-de-inversion",
           "descripcion": "Programa orientado a formar profesionales capaces de gestionar y negociar en el ámbito internacional",
           "duracion": "2 años",
-          "modalidad": "Presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "descripcion_detallada": "Programa especializado en comercio internacional y técnicas de negociación global."
         },
         {
-          "id": 4,
-          "nombre": "Maestría en Finanzas",
+          "id": 33,
+          "nombre": "Maestría en Investigación y Docencia Universitaria",
           "tipo": "maestria",
-          "slug": "maestria-en-finanzas",
+          "slug": "maestria-en-investigacion-y-docencia-universitaria",
           "descripcion": "Enfocado en la gestión financiera y la toma de decisiones económicas",
           "duracion": "2 años",
-          "modalidad": "Presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "descripcion_detallada": "Programa especializado en análisis financiero, inversiones y gestión de riesgos."
         },
         {
-          "id": 5,
-          "nombre": "Maestría en Investigación y Docencia Universitaria",
+          "id": 34,
+          "nombre": "Maestría en Finanzas",
           "tipo": "maestria",
-          "slug": "maestria-en-investigacion-y-docencia-universitaria",
-          "descripcion": "Programa diseñado para formar investigadores y docentes universitarios",
-          "duracion": "2 años",
-          "modalidad": "Presencial",
-          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
-          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
-          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
-          "descripcion_detallada": "Forma investigadores y docentes con competencias en metodología de investigación y pedagogía universitaria."
-        },
-        {
-          "id": 6,
-          "nombre": "Maestría en Proyectos de Inversión",
-          "tipo": "maestria",
-          "slug": "maestria-en-proyectos-de-inversion",
-          "descripcion": "Capacita en la formulación y evaluación de proyectos de inversión",
-          "duracion": "2 años",
-          "modalidad": "Presencial",
-          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
-          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
-          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
-          "descripcion_detallada": "Especialización en formulación, evaluación e implementación de proyectos de inversión públicos y privados."
-        },
-        {
-          "id": 7,
-          "nombre": "Doctorado en Economía",
-          "tipo": "doctorado",
-          "slug": "doctorado-en-economia",
+          "slug": "maestria-en-finanzas",
           "descripcion": "Programa de investigación avanzada en ciencias económicas",
           "duracion": "3 años",
-          "modalidad": "Presencial",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa doctoral enfocado en investigación avanzada en teoría económica y econometría aplicada."
+        },
+        {
+          "id": 35,
+          "nombre": "Maestría en Comercio y Negociaciones Internacionales",
+          "tipo": "maestria",
+          "slug": "maestria-en-comercio-y-negociaciones-internacionales",
+          "descripcion": "Programa de investigación avanzada en ciencias económicas",
+          "duracion": "3 años",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
@@ -138,32 +462,381 @@
     "fca": {
       "codigo": "fca",
       "nombre": "Ciencias Administrativas",
+      "correo": "fca@unac.edu.pe",
+      "telefono": "+51 444 555 666",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
       "programas": [
         {
-          "id": 8,
-          "nombre": "Maestría en Administración",
+          "id": 36,
+          "nombre": "Maestría en Gerencia Educativa",
           "tipo": "maestria",
-          "slug": "maestria-en-administracion",
+          "slug": "maestria-en-gerencia-educativa",
           "descripcion": "Programa integral en gestión y administración empresarial",
           "duracion": "2 años",
-          "modalidad": "Presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "descripcion_detallada": "Forma líderes empresariales con competencias en gestión estratégica, innovación y transformación digital."
         },
         {
-          "id": 9,
-          "nombre": "Doctorado en Administración",
-          "tipo": "doctorado",
-          "slug": "doctorado-en-administracion",
-          "descripcion": "Programa doctoral en ciencias administrativas",
+          "id": 37,
+          "nombre": "Maestría en Administración Marítima y Portuaria",
+          "tipo": "maestria",
+          "slug": "maestria-en-administracion-maritima-y-portuaria",
+          "descripcion": "Programa de maestría en administración marítima y portuaria",
           "duracion": "3 años",
-          "modalidad": "Presencial",
           "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
           "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
           "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
-          "descripcion_detallada": "Programa doctoral de investigación avanzada en teorías administrativas y gestión organizacional."
+          "descripcion_detallada": "Programa de maestría en administración marítima y portuaria con enfoque en gestión portuaria y logística."
+        },
+        {
+          "id": 38,
+          "nombre": "Maestría en Administración Estratégica de Empresas",
+          "tipo": "maestria",
+          "slug": "maestria-en-administracion-estrategica-de-empresas",
+          "descripcion": "Programa de maestría en administración estratégica de empresas",
+          "duracion": "3 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en administración marítima y portuaria con enfoque en gestión portuaria y logística."
+        },
+        {
+          "id": 39,
+          "nombre": "Doctorado en Administración",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-administracion",
+          "descripcion": "Programa de doctorado en administración",
+          "duracion": "4 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en administración de proyectos con enfoque en metodologías ágiles."
+        }
+      ]
+    },
+    "fcc": {
+      "codigo": "fcc",
+      "nombre": "Ciencias Contables",
+      "correo": "fcc@unac.edu.pe",
+      "telefono": "+51 777 888 999",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 40,
+          "nombre": "Maestría en Tributación",
+          "tipo": "maestria",
+          "slug": "maestria-en-tributacion",
+          "descripcion": "Programa especializado en contabilidad y auditoría",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en contabilidad y auditoría con enfoque práctico."
+        },
+        {
+          "id": 41,
+          "nombre": "Maestría en Gestión Pública",
+          "tipo": "maestria",
+          "slug": "maestria-en-gestion-publica",
+          "descripcion": "Programa de maestría en gestión pública",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en contabilidad y auditoría con enfoque práctico."
+        },
+        {
+          "id": 42,
+          "nombre": "Maestría en Ciencias Fiscalizadoras con Mención en Auditoría Integral Empresarial",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencias-fiscalizadoras-con-mencion-en-auditoria-integral-empresarial",
+          "descripcion": "Programa de maestría en ciencias fiscalizadoras con mención en auditoría integral empresarial",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en contabilidad y auditoría con enfoque práctico."
+        },
+        {
+          "id": 43,
+          "nombre": "Doctorado en Ciencias Contables",
+          "tipo": "doctorado",
+          "slug": "doctorado-en-ciencias-contables",
+          "descripcion": "Programa de doctorado en ciencias contables",
+          "duracion": "3 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en contabilidad y auditoría con enfoque práctico."
+        }
+      ]
+    },
+    "fiq": {
+      "codigo": "fiq",
+      "nombre": "Ingeniería Química",
+      "correo": "fiq@unac.edu.pe",
+      "telefono": "+51 222 333 444",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 44,
+          "nombre": "Maestría en Ingeniería Química",
+          "tipo": "maestria",
+          "slug": "maestria-en-ingenieria-quimica",
+          "descripcion": "Programa especializado en procesos químicos y petroquímicos",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        },
+        {
+          "id": 45,
+          "nombre": "Maestría en Gerencia de Calidad y Desarrollo Humano",
+          "tipo": "maestria",
+          "slug": "maestria-en-gerencia-de-calidad-y-desarrollo-humano",
+          "descripcion": "Programa especializado en gestión de la calidad en procesos industriales",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        },
+        {
+          "id": 46,
+          "nombre": "Maestría en Ciencia y Tecnología de Alimentos",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencia-y-tecnologia-de-alimentos",
+          "descripcion": "Programa especializado en ciencia y tecnología de alimentos",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        }
+      ]
+    },
+    "fcnm": {
+      "codigo": "fcnm",
+      "nombre": "Ciencias Naturales y Matemáticas",
+      "correo": "fcnm@unac.edu.pe",
+      "telefono": "+51 555 666 777",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 47,
+          "nombre": "Maestría en Didáctica de la Enseñanza de Física y Matemática",
+          "tipo": "maestria",
+          "slug": "maestria-en-didactica-de-ensenanza-de-fisica-y-matematica",
+          "descripcion": "Programa de maestría en didáctica de la enseñanza de física y matemática",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en didáctica de la enseñanza de física y matemática con enfoque en innovación educativa."
+        }
+      ]
+    },
+    "fipa": {
+      "codigo": "fipa",
+      "nombre": "Ingeniería Pesquera y Alimentos",
+      "correo": "fipa@unac.edu.pe",
+      "telefono": "+51 888 999 000",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 48,
+          "nombre": "Maestría en Ingeniería de Alimentos",
+          "tipo": "maestria",
+          "slug": "maestria-en-ingenieria-de-alimentos",
+          "descripcion": "Programa especializado en ingeniería de alimentos y sostenibilidad de recursos alimentarios",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en acuicultura con enfoque en sostenibilidad y gestión de recursos acuáticos."
+        },
+        {
+          "id": 49,
+          "nombre": "Maestría en Gestión Pesquera",
+          "tipo": "maestria",
+          "slug": "maestria-en-gestion-pesquera",
+          "descripcion": "Programa especializado en gestión sostenible de recursos pesqueros",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        }
+      ]
+    },
+    "fime": {
+      "codigo": "fime",
+      "nombre": "Ingeniería Mecánica y Energía",
+      "correo": "fime@unac.edu.pe",
+      "telefono": "+51 333 444 555",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 50,
+          "nombre": "Maestría en Gerencia del Mantenimiento",
+          "tipo": "maestria",
+          "slug": "maestria-en-gerencia-del-mantenimiento",
+          "descripcion": "Programa de maestría en gerencia del mantenimiento con enfoque en optimización de procesos y gestión de activos.",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería mecánica con enfoque en investigación y desarrollo de tecnologías sostenibles."
+        }
+      ]
+    },
+    "fiee": {
+      "codigo": "fiee",
+      "nombre": "Ingeniería Electrónica y Eléctrica",
+      "correo": "fiee@unac.edu.pe",
+      "telefono": "+51 666 777 888",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 51,
+          "nombre": "Maestría en Ingeniería Eléctrica con Mención en Gestión de Sistemas de Energía Eléctrica",
+          "tipo": "maestria",
+          "slug": "maestria-en-ingenieria-electrica-con-mencion-en-gestion-de-sistemas-de-energia-electrica",
+          "descripcion": "Programa de maestría en ingeniería eléctrica con enfoque en diseño y desarrollo de sistemas eléctricos.",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería electrónica con enfoque en investigación y desarrollo de tecnologías sostenibles."
+        },
+        {
+          "id": 52,
+          "nombre": "Maestría en Ingeniería Eléctrica con Mención en Gerencia de Proyectos de Ingeniería",
+          "tipo": "maestria",
+          "slug": "maestria-en-ingenieria-electrica-con-mencion-en-gerencia-de-proyectos-de-ingenieria",
+          "descripcion": "Programa especializado en procesos eléctricos y de energía.",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        },
+        {
+          "id": 53,
+          "nombre": "Maestría en Ciencias de Electrónica con Mención en Telecomunicaciones",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencias-de-electronica-con-mencion-en-telecomunicaciones",
+          "descripcion": "Programa especializado en procesos químicos y petroquímicos",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        },
+        {
+          "id": 54,
+          "nombre": "Maestría en Ciencias de Electrónica con Mención en Ingeniería Biomédica",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencias-de-electronica-con-mencion-en-ingenieria-biomedica",
+          "descripcion": "Programa especializado en procesos químicos y petroquímicos",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        },
+        {
+          "id": 55,
+          "nombre": "Maestría en Ciencias de Electrónica con Mención en Control y Automatización",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencias-de-electronica-con-mencion-en-control-y-automatizacion",
+          "descripcion": "Programa especializado en procesos químicos y petroquímicos",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería química con enfoque en investigación y desarrollo."
+        }
+      ]
+    },
+    "fiarn": {
+      "codigo": "fiarn",
+      "nombre": "Ingeniería Ambiental y Recursos Naturales",
+      "correo": "fiarn@unac.edu.pe",
+      "telefono": "+51 123 321 456",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 18,
+          "nombre": "Maestría en Ingeniería Ambiental",
+          "tipo": "maestria",
+          "slug": "maestria-en-ingenieria-ambiental",
+          "descripcion": "Programa de maestría en ingeniería ambiental con enfoque en sostenibilidad y gestión de recursos naturales.",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ingeniería ambiental con enfoque en investigación y desarrollo de tecnologías sostenibles."
+        }
+      ]
+    },
+    "fced": {
+      "codigo": "fced",
+      "nombre": "Ciencias de la Educación",
+      "correo": "fced@unac.edu.pe",
+      "telefono": "+51 654 321 987",
+      "modalidad": "Presencial",
+      "duracion": {
+        "maestria": "1 año y 6 meses",
+        "doctorado": "3 años"
+      },
+      "programas": [
+        {
+          "id": 19,
+          "nombre": "Maestría en Ciencias de la Educación",
+          "tipo": "maestria",
+          "slug": "maestria-en-ciencias-de-la-educacion",
+          "descripcion": "Programa de maestría en ciencias de la educación con enfoque en innovación y mejora educativa.",
+          "duracion": "2 años",
+          "imagen_1": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "imagen_2": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp",
+          "imagen_3": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Labrador_Retriever_%281210559%29.jpg/960px-Labrador_Retriever_%281210559%29.jpg",
+          "descripcion_detallada": "Programa de maestría en ciencias de la educación con enfoque en investigación y desarrollo de prácticas educativas innovadoras."
         }
       ]
     }

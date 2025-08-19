@@ -2,7 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
     // Detectar si estamos en un subdirectorio
     const currentPath = window.location.pathname;
     const isInSubdirectory = currentPath.includes('/admision/') || currentPath.includes('/la-escuela/') || 
-                            currentPath.includes('\\admision\\') || currentPath.includes('\\la-escuela\\');
+                            currentPath.includes('\\admision\\') || currentPath.includes('\\la-escuela\\') ||
+                            currentPath.includes('/conocenos/') || currentPath.includes('\\conocenos\\') ||
+                            currentPath.includes('/sgi/') || currentPath.includes('\\sgi\\');
     
     // Determinar la ruta correcta según la ubicación
     const footerPath = isInSubdirectory ? '../footer/footer-pass.html' : 'footer/footer-pass.html';
