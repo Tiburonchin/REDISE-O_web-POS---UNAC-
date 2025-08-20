@@ -66,6 +66,8 @@
     height: 100%;
     border: 1px solid var(--gray-300);
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .programa-card:hover {
@@ -441,7 +443,6 @@ img {
     .hero {
         margin-top: -70px;
         padding-top: 70px;
-        
     }
 }
 
@@ -455,9 +456,6 @@ img {
         margin-top: -60px;
         padding-top: 60px;
         /* Full mobile viewport height with modern units */
-        
-        
-        
         padding-bottom: 20px;
         background-position: center;
         background-size: cover;
@@ -479,9 +477,6 @@ img {
         margin-top: -50px;
         padding-top: 50px;
         /* Full mobile viewport height with modern units */
-        
-        
-        
         padding-bottom: 16px;
         background-position: center;
         background-size: cover;
@@ -1507,7 +1502,6 @@ img {
     .hero {
         margin-top: -50px;
         padding-top: 50px;
-        
     }
     
     .hero-title {
@@ -2734,10 +2728,6 @@ img {
 }
 
 /* Estilos para checkboxes del formulario */
-.form-check {
-    margin-bottom: 0.75rem;
-}
-
 .form-check-input {
     width: 1.1rem;
     height: 1.1rem;
