@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar los datos de docentes desde el archivo JSON externo
     let docentes = [];
+    let facultadesData = {};
 
     // Elementos del DOM
     const docentesContainer = document.getElementById('docentes-container');
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializar la página
     function init() {
-        fetch('../la-escuela/data/docentes.json')
+        fetch('data/docentes.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No se pudo cargar el archivo de docentes');
@@ -29,16 +30,62 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                docentes = data;
+                facultadesData = data.facultades;
+                
+                // Convertir la estructura anidada a un array plano para compatibilidad
+                docentes = [];
+                Object.keys(facultadesData).forEach(facultadId => {
+                    const facultad = facultadesData[facultadId];
+                    facultad.docentes.forEach(docente => {
+                        docentes.push({
+                            ...docente,
+                            facultad: facultadId,
+                            facultadNombre: facultad.nombre
+                        });
+                    });
+                });
+                
                 docentesFiltrados = [...docentes];
+                
+                renderFacultadFilter();
                 renderDocentes();
                 setupEventListeners();
                 setupStatsCounter();
+                
+                console.log('✅ Datos cargados:', docentes.length, 'docentes y', Object.keys(facultadesData).length, 'facultades');
             })
             .catch(error => {
-                console.error('Error al cargar docentes:', error);
-                docentesContainer.innerHTML = `<div class="col-12 text-center py-5"><h3 class="h4">No se pudieron cargar los docentes</h3></div>`;
+                console.error('❌ Error al cargar docentes:', error);
+                docentesContainer.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-exclamation-triangle fa-3x mb-3 text-warning"></i>
+                        <h3 class="h4">No se pudieron cargar los docentes</h3>
+                        <p class="text-muted">Por favor, recarga la página</p>
+                        <button onclick="location.reload()" class="btn btn-primary mt-3">
+                            <i class="fas fa-refresh"></i> Recargar página
+                        </button>
+                    </div>
+                `;
             });
+    }
+
+    // Renderizar el filtro de facultades dinámicamente
+    function renderFacultadFilter() {
+        if (!facultadFilter || !facultadesData) return;
+        
+        // Limpiar el select y mantener solo la opción "Todas"
+        facultadFilter.innerHTML = '<option value="todos">Todas las facultades</option>';
+        
+        // Agregar las facultades dinámicamente
+        Object.keys(facultadesData).forEach(facultadId => {
+            const facultad = facultadesData[facultadId];
+            const option = document.createElement('option');
+            option.value = facultadId;
+            option.textContent = facultad.nombre;
+            facultadFilter.appendChild(option);
+        });
+        
+        console.log('✅ Filtro de facultades renderizado con', Object.keys(facultadesData).length, 'opciones');
     }
 
     // Configurar event listeners
@@ -68,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         docentesMostrados = docentesPorPagina;
         renderDocentes();
+        
+        console.log(`🔍 Filtrado: ${docentesFiltrados.length} docentes encontrados`);
     }
 
     // Renderizar la lista de docentes
@@ -95,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="docente-info">
                         <h3 class="docente-name">${docente.nombre}</h3>
                         <div class="docente-title">${docente.titulo}</div>
-                        <span class="docente-faculty">${getFacultadNombre(docente.facultad)}</span>
+                        <span class="docente-faculty">${docente.facultadNombre}</span>
                         <p class="docente-bio">
                             Especialista en ${docente.especialidad} con más de ${docente.experiencia} de experiencia en docencia universitaria.
                         </p>
@@ -123,21 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 block: 'nearest'
             });
         }, 100);
-    }
-
-    // Obtener el nombre de la facultad
-    function getFacultadNombre(codigo) {
-        const facultades = {
-            'fca': 'Ciencias Administrativas',
-            'fccsshh': 'Ciencias de la Salud y Servicios Humanos',
-            'fcnm': 'Ciencias Naturales y Matemática',
-            'fia': 'Ingeniería Ambiental',
-            'fiee': 'Ingeniería Eléctrica y Electrónica',
-            'fiis': 'Ingeniería Industrial y de Sistemas',
-            'fime': 'Ingeniería Mecánica y Energía',
-            'fip': 'Ingeniería Pesquera'
-        };
-        return facultades[codigo] || 'Facultad';
     }
 
     // Obtener el tipo de docente

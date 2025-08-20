@@ -1,0 +1,206 @@
+
+/* ================================
+   UBICACIÓN Y CONTACTO - UNAC EPG
+   ================================ */
+
+:root {
+	--primary-blue: #0a2e52;
+	--secondary-blue: #1a3a5f;
+	--accent-gold: #FFD54F;
+	--accent-gold-dark: #FFC107;
+	--text-dark: #2c3e50;
+	--text-light: #6c757d;
+	--white: #ffffff;
+	--light-bg: #f8f9fa;
+	--section-padding: 5rem 1rem;
+	--gray-200: #f1f3f5;
+	--gray-300: #e9ecef;
+	--gray-400: #e0e0e0;
+	--blue-100: #f0f4f8;
+	--shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+	--shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+	--glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.4);
+}
+
+body.page-ubicacion {
+	font-family: 'Roboto', sans-serif;
+	background: var(--light-bg);
+	color: var(--text-dark);
+	line-height: 1.7;
+}
+
+.main-content {
+	padding-top: 67px;
+}
+
+/* HERO */
+.page-ubicacion .hero-ubicacion {
+	position: relative;
+	min-height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	overflow: hidden;
+}
+.page-ubicacion .hero-background {
+	position: absolute;
+	top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+.page-ubicacion .hero-bg-image {
+	width: 100%; height: 100%; object-fit: cover; object-position: center;
+}
+.page-ubicacion .hero-overlay {
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+	background: linear-gradient(135deg, rgba(10, 46, 82, 0.85) 0%, rgba(26, 58, 95, 0.75) 50%, rgba(255, 193, 7, 0.1) 100%);
+	z-index: 2;
+}
+.page-ubicacion .hero-content {
+	position: relative; z-index: 3; text-align: center;
+}
+.page-ubicacion .hero-welcome { margin-bottom: 2rem; }
+.page-ubicacion .welcome-text {
+	display: block; font-size: 1.1rem; font-weight: 400; opacity: 0.9;
+	margin-bottom: 0.5rem; letter-spacing: 0.5px;
+}
+.page-ubicacion .hero-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+	font-weight: 800;
+	margin-bottom: 1.5rem;
+	line-height: 1.1;
+	text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+	letter-spacing: 1px;
+}
+.page-ubicacion .hero-divider {
+	display: flex; align-items: center; justify-content: center; margin: 1.5rem 0;
+}
+.page-ubicacion .divider-line {
+	width: 60px; height: 2px;
+	background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+.page-ubicacion .divider-icon {
+	margin: 0 1rem; width: 40px; height: 40px;
+	background: rgba(255, 193, 7, 0.2);
+	border-radius: 50%; display: flex; align-items: center; justify-content: center;
+	border: 1px solid rgba(255, 193, 7, 0.3);
+}
+.page-ubicacion .divider-icon i {
+	color: var(--accent-gold); font-size: 1.2rem;
+}
+.page-ubicacion .hero-subtitle {
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	font-weight: 400;
+	margin-bottom: 2.5rem;
+	opacity: 0.95;
+	line-height: 1.7;
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.page-ubicacion .page-container {
+	padding: var(--section-padding);
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/* SECCIÓN UBICACIÓN */
+.ubicacion-section {
+	background: var(--white);
+	border-radius: 18px;
+	box-shadow: var(--shadow-2);
+	padding: 2.5rem 2rem;
+	margin-bottom: 2rem;
+}
+.ubicacion-mapa {
+	box-shadow: var(--shadow-2);
+	border-radius: 14px;
+	overflow: hidden;
+	background: var(--gray-200);
+}
+.ubicacion-info {
+	padding: 1.5rem 1rem 1.5rem 1.5rem;
+}
+.ubicacion-info .section-title {
+	font-size: 1.2rem;
+	color: var(--secondary-blue);
+	margin-bottom: 1.2rem;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: 0.7em;
+	border-bottom: 2px solid var(--accent-gold);
+	padding-bottom: 0.5rem;
+}
+.ubicacion-list {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.ubicacion-list li {
+	margin-bottom: 1.1em;
+	font-size: 1.05rem;
+	display: flex;
+	align-items: center;
+	gap: 0.7em;
+	color: var(--primary-blue);
+}
+.ubicacion-list li i {
+	color: var(--accent-gold-dark);
+	font-size: 1.1rem;
+}
+.ubicacion-contacto-btns {
+	display: flex;
+	gap: 1.2rem;
+	flex-wrap: wrap;
+}
+.btn-contacto, .btn-whatsapp {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	font-weight: 600;
+	font-size: 1rem;
+	border-radius: 50px;
+	padding: 0.8rem 2rem;
+	text-decoration: none;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+	box-shadow: 0 2px 8px rgba(10,46,82,0.08);
+	border: none;
+	cursor: pointer;
+}
+.btn-contacto {
+	background: var(--accent-gold);
+	color: var(--primary-blue);
+}
+.btn-contacto:hover {
+	background: var(--accent-gold-dark);
+	color: var(--primary-blue);
+	box-shadow: 0 4px 15px rgba(255,213,79,0.15);
+}
+.btn-whatsapp {
+	background: #25d366;
+	color: #fff;
+}
+.btn-whatsapp:hover {
+	background: #1ebe5d;
+	color: #fff;
+}
+.btn-contacto i, .btn-whatsapp i {
+	font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+	.page-ubicacion .page-container { padding: 3rem 1rem; }
+	.ubicacion-section { padding: 1.5rem 0.5rem; }
+	.ubicacion-info { padding: 1.2rem 0.5rem; }
+}
+@media (max-width: 768px) {
+	.page-ubicacion .hero-title { font-size: 1.6rem; }
+	.ubicacion-section { padding: 1rem 0.2rem; }
+	.ubicacion-info .section-title { font-size: 1rem; }
+	.ubicacion-list li { font-size: 0.98rem; }
+	.btn-contacto, .btn-whatsapp { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+}

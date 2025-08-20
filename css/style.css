@@ -1,3 +1,249 @@
+/* ================================
+   DISEÑO DE PROGRAMAS (copiado de programas-styles.css)
+   ================================ */
+
+.programas-section {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+#programas-container {
+    padding: 1rem;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn-admision-programa {
+    background: #0a2e52;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.programa-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid var(--gray-300);
+    margin-bottom: 2rem;
+}
+
+.programa-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.programa-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 46, 82, 0.7) 0%, rgba(26, 58, 95, 0.5) 100%);
+}
+
+.tipo-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tipo-maestria {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+}
+
+.tipo-doctorado {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.programa-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.facultad-name {
+    font-size: 0.9rem;
+    color: var(--accent-gold-dark);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.programa-description {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.programa-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.detail-item i {
+    margin-right: 6px;
+    color: var(--accent-gold-dark);
+    width: 16px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.btn-ver-mas {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-ver-mas:hover {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.btn-admision {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-gold);
+}
+
+.btn-admision:hover {
+    background: transparent;
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .programa-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .card-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn-ver-mas,
+    .btn-admision {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
 /* ===================================
    GLOBAL STYLES & RESET
    =================================== */
@@ -279,8 +525,7 @@ img {
     left: 50%;
     transform: translateX(-50%);
     bottom: 28px;
-    z-index: 1; /* por debajo del contenido del hero */
-    pointer-events: none; /* no bloquea clics/taps del CTA */
+    z-index: 100; /* por debajo del contenido del hero */
 }
 
 
@@ -1008,6 +1253,7 @@ img {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.5rem;
     animation: bounce 2s infinite;
+    z-index: 100;
 }
 
 @keyframes bounce {
@@ -1476,7 +1722,7 @@ img {
 
 .admision-image img {
     width: 100%;
-    height: 350px;
+    height: 370px;
     object-fit: cover;
     object-position: center top;
     transition: transform 0.3s ease;
@@ -1888,7 +2134,7 @@ img {
 
 .motivacional-section {
     position: relative;
-    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 50%, #2a4a6f 100%);
+    background: linear-gradient(135deg, #00264d 0%, #093264 50%, #03254b 100%);
     padding: 100px 0;
     overflow: hidden;
     min-height: 400px;
@@ -2524,7 +2770,7 @@ img {
 
 .form-check-label {
     font-size: 0.85rem;
-    color: #e0e0e0;
+    color: black;
     line-height: 1.4;
     margin-left: 0.5rem;
     cursor: pointer;

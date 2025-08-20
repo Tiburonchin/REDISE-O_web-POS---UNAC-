@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Noticias</title>
+    <!-- Incluye la fuente 'Inter' de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos globales y reseteo */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Encabezado */
+        .header {
+            background-color: #0d2c54;
+            color: #ffffff;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4ac7d9;
+        }
+
+        .logo-2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Secciones principales */
+        .main-content {
+            margin-top: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        /* Slider de noticias destacadas */
+        .slider-section {
+            margin-bottom: 2rem;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .slider-item {
+            display: none; /* Se ocultan todos los slides por defecto */
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        .slider-item.active {
+            display: block; /* Solo se muestra el slide activo */
+        }
+        
+        .slider-image {
+            width: 100%;
+            height: 400px; /* Altura fija para todas las imágenes del slider */
+            border-radius: 0.75rem;
+            object-fit: cover; /* Recorta la imagen para mantener proporción sin deformarla */
+            background: #e5e7eb; /* Color de fondo por si la imagen no cubre todo */
+            display: block;
+        }
+
+        .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(17, 24, 39, 0.8) 0%, rgba(17, 24, 39, 0.5) 50%, transparent 100%);
+            padding: 1.5rem;
+            color: #ffffff;
+            border-bottom-left-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+        }
+
+        .slider-overlay h3 {
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+        .slider-overlay p {
+            margin-top: 0.5rem;
+            color: #d1d5db;
+        }
+
+        .slider-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4ac7d9;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .slider-link:hover {
+            color: #000;
+        }
+
+        /* Contenido principal y barra lateral (grid) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Una columna en móvil */
+            gap: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 2fr; /* Dos columnas en desktop */
+            }
+        }
+
+        /* Noticia principal grande - NUEVO DISEÑO COMPACTO */
+        .featured-news-card {
+            display: flex;
+            flex-direction: column; /* Por defecto vertical en móvil */
+            gap: 1.5rem;
+        }
+
+        .featured-news-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .featured-news-card .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #2563eb;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.625rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-news-card h3 {
+            font-size: 1.75rem; /* Título más pequeño */
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-news-card .meta {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-news-card p {
+            font-size: 1rem; /* Párrafo más pequeño */
+            color: #4b5563;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        /* Layout para pantallas grandes */
+        @media (min-width: 768px) {
+            .featured-news-card {
+                flex-direction: row; /* Horizontal en desktop */
+                gap: 2rem;
+            }
+
+            .featured-news-card img {
+                flex: 1 1 35%; /* La imagen ocupa el 35% del espacio */
+                width: 35%;
+                object-fit: cover;
+            }
+            
+            .featured-news-content {
+                flex: 1 1 65%; /* El texto ocupa el 65% del espacio */
+            }
+
+            .featured-news-card h3 {
+                font-size: 1.875rem; /* Tamaño de título un poco más grande en desktop */
+            }
+        }
+
+        /* Secciones de noticias y eventos (columna izquierda) */
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .news-and-events-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .news-and-events-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .section-header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Lista de noticias (general) */
+        .news-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .news-item a {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s;
+        }
+        
+        .news-item a:hover {
+            background-color: #f9fafb;
+        }
+
+        .news-item img {
+            width: 5rem;
+            height: 4rem;
+            object-fit: cover;
+            border-radius: 0.375rem;
+            flex-shrink: 0;
+        }
+        
+        .news-item h4 {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .news-item h4:hover {
+            color: #2563eb;
+        }
+
+        .news-item .meta {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        .news-item .category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        /* Sidebar (barra lateral) */
+        .aside {
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .aside {
+                position: sticky;
+                top: 2rem;
+                height: fit-content;
+            }
+        }
+
+        .aside-panel {
+            margin-bottom: 2rem;
+        }
+        
+        /* Eventos */
+        .event-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .event-item .date-box {
+            background-color: #4ac7d9;
+            color: #0d2c54;
+            font-weight: 700;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            flex-shrink: 0;
+            width: 3rem;
+        }
+        
+        .event-item .date-box p {
+            line-height: 1;
+        }
+
+        .event-item .date-box .day {
+            font-size: 1.125rem;
+        }
+
+        .event-item .date-box .month {
+            font-size: 0.875rem;
+        }
+
+        .event-item h4 {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .event-item .time {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+
+        /* Pie de página */
+        .footer {
+            background-color: #0d2c54;
+            color: #ffffff;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .aside {
+                position: sticky;
+                top: 2rem;
+                height: fit-content;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                text-align: left;
+            }
+        }
+        
+        .footer-heading {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .footer-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.875rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-list a {
+            color: #9ca3af;
+            transition: color 0.2s;
+        }
+        
+        .footer-list a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 425px) {
+            .slider-overlay {
+                padding: 1.5rem;
+            }
+            .slider-overlay h3 {
+                font-size: 1.5rem;
+            }
+            .slider-overlay p {
+                font-size: 1rem;
+            }
+            .slider-link {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .slider-overlay h3 {
+                font-size: 1rem;
+            }
+            .slider-overlay p {
+                font-size: 0.8rem;
+            }
+            .slider-link {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .slider-overlay {
+                padding: 1rem;
+            }
+            .slider-overlay h3 {
+                font-size: 1rem;
+            }
+            .slider-overlay p {
+                font-size: 0.8rem;
+            }
+            .slider-link {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado de la página -->
+    <header class="header">
+        <div class="container header-content">
+            <span class="logo-1">POSGRADO</span>
+            <span class="logo-2">News</span>
+        </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="container main-content">
+        
+        <!-- Sección 1: Slider de noticias destacadas -->
+        <section class="slider-section">
+            <h2 class="section-title">Noticias Destacadas</h2>
+            <div class="slider-container">
+                <!-- Tarjeta 1 del slider -->
+                <div class="slider-item active">
+                    <div class="relative">
+                        <img src="https://placehold.co/1200x600/a3e635/000?text=Avances+en+Investigacion" alt="Noticia destacada 1" class="slider-image">
+                        <div class="slider-overlay">
+                            <h3>Nuevos horizontes en la investigación académica</h3>
+                            <p>Un estudio reciente revoluciona el campo de la bioingeniería con hallazgos inesperados.</p>
+                            <a href="#" class="slider-link">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 del slider -->
+                <div class="slider-item">
+                    <div class="relative">
+                        <img src="https://placehold.co/1200x600/dcfce7/000?text=Congreso+Anual+2025" alt="Noticia destacada 2" class="slider-image">
+                        <div class="slider-overlay">
+                            <h3>Resumen del Congreso Anual de Ciencias 2025</h3>
+                            <p>Los mejores momentos y los ponentes clave que marcaron el evento.</p>
+                            <a href="#" class="slider-link">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 3 del slider -->
+                <div class="slider-item">
+                    <div class="relative">
+                        <img src="https://placehold.co/1200x600/ffe4e6/000?text=Nuevas+Becas+Posgrado" alt="Noticia destacada 3" class="slider-image">
+                        <div class="slider-overlay">
+                            <h3>Abren convocatoria para becas de posgrado</h3>
+                            <p>Descubre cómo aplicar a los nuevos programas de financiamiento para estudios avanzados.</p>
+                            <a href="#" class="slider-link">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Noticia principal (compacta) y el resto del contenido -->
+        <section class="content-grid">
+            
+            <!-- Columna izquierda: Noticia principal y la grilla de noticias y panel -->
+            <div class="left-panel">
+                
+                <!-- Noticia principal compacta (dinámica) -->
+                <div class="card featured-news-card" id="noticia-principal">
+                    <!-- Se cargará dinámicamente la noticia más clickeada -->
+                </div>
+                
+                <!-- Contenedor para Últimas Noticias y Noticias Más Leídas -->
+                <div class="news-and-events-grid">
+                    
+                    <!-- Sección de Últimas Noticias (Izquierda) -->
+                    <div class="card">
+                        <h2 class="section-title section-header">Últimas Noticias</h2>
+                        <ul class="news-list" id="noticias-dinamicas">
+                            <!-- Las noticias se cargarán aquí dinámicamente -->
+                        </ul>
+                    </div>
+
+                    <!-- Sidebar con Noticias Más Leídas y Eventos -->
+                    <aside class="aside">
+                        <!-- Panel de Noticias más leídas -->
+                        <div class="card aside-panel">
+                            <h3 class="section-title section-header" style="font-size: 1.25rem;">Noticias Más Leídas</h3>
+                            <ul class="news-list">
+                                <!-- Noticia 1 popular -->
+                                <li class="news-item">
+                                    <a href="#">
+                                        <img src="https://placehold.co/100x80/cffafe/000?text=Tesis" alt="Miniatura de noticia" style="width: 4rem; height: 4rem;">
+                                        <div>
+                                            <h4>¿Cómo elegir tu tema de tesis de posgrado?</h4>
+                                            <p class="meta">1.2M lecturas</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <!-- Noticia 2 popular -->
+                                <li class="news-item">
+                                    <a href="#">
+                                        <img src="https://placehold.co/100x80/a5f3fc/000?text=Financiamiento" alt="Miniatura de noticia" style="width: 4rem; height: 4rem;">
+                                        <div>
+                                            <h4>Novedades en financiamiento para proyectos de investigación</h4>
+                                            <p class="meta">980k lecturas</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <!-- Noticia 3 popular -->
+                                <li class="news-item">
+                                    <a href="#">
+                                        <img src="https://placehold.co/100x80/dcfce7/000?text=Entrevista" alt="Miniatura de noticia" style="width: 4rem; height: 4rem;">
+                                        <div>
+                                            <h4>Entrevista con la Dra. Elena Rodríguez</h4>
+                                            <p class="meta">750k lecturas</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Panel de Próximos Eventos -->
+                        <div class="card aside-panel">
+                            <h3 class="section-title section-header" style="font-size: 1.25rem;">Próximos Eventos</h3>
+                            <ul class="news-list">
+                                <!-- Evento 1 -->
+                                <li class="event-item">
+                                    <div class="date-box">
+                                        <p class="day">25</p>
+                                        <p class="month">OCT</p>
+                                    </div>
+                                    <div>
+                                        <h4>Webinar: 'Futuro de la IA en la Ciencia'</h4>
+                                        <p class="time">10:00 AM - 12:00 PM</p>
+                                    </div>
+                                </li>
+                                <!-- Evento 2 -->
+                                <li class="event-item">
+                                    <div class="date-box">
+                                        <p class="day">15</p>
+                                        <p class="month">NOV</p>
+                                    </div>
+                                    <div>
+                                        <h4>Conferencia: 'Bioética y genómica'</h4>
+                                        <p class="time">9:00 AM - 5:00 PM</p>
+                                    </div>
+                                </li>
+                                <!-- Evento 3 -->
+                                <li class="event-item">
+                                    <div class="date-box">
+                                        <p class="day">05</p>
+                                        <p class="month">DIC</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <!-- Pie de página (Footer) -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4 class="footer-heading">Sobre Nosotros</h4>
+                <p class="footer-text">Noticias de Posgrado es la fuente principal de información para estudiantes y profesionales en el ámbito académico y de investigación.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Secciones</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Investigación</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Oportunidades</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Contacto</h4>
+                <p class="footer-text">Email: contacto@posgradonews.com</p>
+                <p class="footer-text">Teléfono: +52 55 1234 5678</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+// Cargar noticias desde noticias.json y mostrarlas en la sección "Últimas Noticias" y la principal
+fetch('noticias.json')
+    .then(response => response.json())
+    .then(data => {
+        const noticias = data.noticias || [];
+        const eventos = data.eventos || [];
+
+        // --- NOTICIAS DESTACADAS ---
+        // Leer IDs de noticias destacadas desde noticias.json (global)
+        const idsDestacadas = Array.isArray(data.destacadas) ? data.destacadas.map(String) : [];
+        // Filtrar y limitar a 3 noticias destacadas
+        const noticiasDestacadas = noticias.filter(n => idsDestacadas.includes(n.id.toString())).slice(0, 3);
+        // Renderizar en el slider-section
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.innerHTML = '';
+        if (noticiasDestacadas.length > 0) {
+            noticiasDestacadas.forEach((noticia, idx) => {
+                const rutaImagen = noticia.imagen.startsWith('img/') ? noticia.imagen : 'img/' + noticia.imagen;
+                const slide = document.createElement('div');
+                slide.className = 'slider-item' + (idx === 0 ? ' active' : '');
+                slide.innerHTML = `
+                    <img class="slider-image" src="${rutaImagen}" alt="Imagen destacada">
+                    <div class="slider-overlay">
+                        <h3>${noticia.titulo}</h3>
+                        <p>${noticia.contenido}</p>
+                        <a class="slider-link" href="noticias.html?id=${noticia.id}">Ver más</a>
+                    </div>
+                `;
+                sliderContainer.appendChild(slide);
+            });
+            // Slider automático
+            let currentSlide = 0;
+            const slides = sliderContainer.querySelectorAll('.slider-item');
+            function showSlide(idx) {
+                slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+            }
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 3500);
+        } else {
+            sliderContainer.innerHTML = '<div style="padding:2rem;text-align:center;color:#6b7280;">No hay noticias destacadas seleccionadas.</div>';
+        }
+
+        // --- NOTICIAS ---
+        // Mostrar noticia principal (más clickeada)
+        const principal = document.getElementById('noticia-principal');
+        let noticiaDestacada = noticias[0];
+        noticias.forEach(noticia => {
+            if ((noticia.clics || 0) > (noticiaDestacada.clics || 0)) {
+                noticiaDestacada = noticia;
+            }
+        });
+        principal.innerHTML = `
+            <img src="${noticiaDestacada.imagen.startsWith('img/') ? noticiaDestacada.imagen : 'img/' + noticiaDestacada.imagen}" alt="Noticia principal">
+            <div class="featured-news-content">
+                <span class="badge">${noticiaDestacada.categoria || 'General'}</span>
+                <h3>${noticiaDestacada.titulo}</h3>
+                <p class="meta">Por: ${noticiaDestacada.creador} | ${formatearFecha(noticiaDestacada.fecha)}</p>
+                <p>${noticiaDestacada.contenido}</p>
+                <a href="noticias.html?id=${noticiaDestacada.id}" class="slider-link" target="_blank">Leer noticia completa &rarr;</a>
+            </div>
+        `;
+
+        // Mostrar las 3 noticias más leídas (excluyendo la principal)
+        const masLeidasContenedor = document.querySelector('.aside-panel .news-list');
+        let idsMasLeidas = [];
+        if (masLeidasContenedor) {
+            masLeidasContenedor.innerHTML = '';
+            // Ordenar por clics descendente y excluir la principal
+            const masLeidas = noticias
+                .filter(noticia => noticia.id !== noticiaDestacada.id)
+                .sort((a, b) => (b.clics || 0) - (a.clics || 0))
+                .slice(0, 3);
+            idsMasLeidas = masLeidas.map(n => n.id);
+            masLeidas.forEach(noticia => {
+                const li = document.createElement('li');
+                li.className = 'news-item';
+                const link = noticia.link ? noticia.link : `noticias.html?id=${noticia.id}`;
+                li.innerHTML = `
+                    <a href="${link}" data-id="${noticia.id}" target="_blank">
+                        <img src="${noticia.imagen.startsWith('img/') ? noticia.imagen : 'img/' + noticia.imagen}" alt="Miniatura de noticia" style="width: 4rem; height: 4rem;">
+                        <div>
+                            <h4>${noticia.titulo}</h4>
+                            <p class="meta">${(noticia.clics || 0)} lecturas</p>
+                        </div>
+                    </a>
+                `;
+                li.querySelector('a').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const noticiaId = noticia.id;
+                    fetch('noticias-contador.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ id: noticiaId })
+                    })
+                    .finally(() => {
+                        window.open(link, '_blank');
+                    });
+                });
+                masLeidasContenedor.appendChild(li);
+            });
+        }
+
+        // Mostrar solo las 6 noticias más recientes (excluyendo la principal y las más leídas)
+        const contenedor = document.getElementById('noticias-dinamicas');
+        contenedor.innerHTML = '';
+        // Ordenar por fecha descendente
+        const noticiasFiltradas = noticias
+            .filter(noticia => noticia.id !== noticiaDestacada.id && !idsMasLeidas.includes(noticia.id))
+            .sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+        let mostrar = 6;
+        function renderNoticias(limit) {
+            contenedor.innerHTML = '';
+            noticiasFiltradas.slice(0, limit).forEach(noticia => {
+                const li = document.createElement('li');
+                li.className = 'news-item';
+                // Si la noticia tiene un campo 'link', úsalo, si no, usa 'noticias.html'
+                const link = noticia.link ? noticia.link : `noticias.html?id=${noticia.id}`;
+                li.innerHTML = `
+                    <a href="${link}" data-id="${noticia.id}" target="_blank">
+                        <img src="${noticia.imagen.startsWith('img/') ? noticia.imagen : 'img/' + noticia.imagen}" alt="Miniatura de noticia">
+                        <div>
+                            <span class="category">${noticia.categoria || 'General'}</span>
+                            <h4>${noticia.titulo}</h4>
+                            <p class="meta">${formatearFecha(noticia.fecha)} | Por: ${noticia.creador}</p>
+                        </div>
+                    </a>
+                `;
+                // Evento click: aumentar contador y luego redirigir
+                li.querySelector('a').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const noticiaId = noticia.id;
+                    fetch('noticias-contador.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ id: noticiaId })
+                    })
+                    .finally(() => {
+                        window.open(link, '_blank');
+                    });
+                });
+                contenedor.appendChild(li);
+            });
+        }
+        renderNoticias(mostrar);
+
+        // Botón "ver más noticias"
+        let btnVerMas = document.getElementById('btn-ver-mas-noticias');
+        if (!btnVerMas) {
+            btnVerMas = document.createElement('button');
+            btnVerMas.id = 'btn-ver-mas-noticias';
+            btnVerMas.textContent = 'Ver más noticias';
+            btnVerMas.style.margin = '1rem auto 0 auto';
+            btnVerMas.style.display = 'block';
+            btnVerMas.style.padding = '0.5rem 1.5rem';
+            btnVerMas.style.background = '#0d2c54';
+            btnVerMas.style.color = '#fff';
+            btnVerMas.style.border = 'none';
+            btnVerMas.style.borderRadius = '0.5rem';
+            btnVerMas.style.fontWeight = '600';
+            btnVerMas.style.cursor = 'pointer';
+        }
+        if (noticiasFiltradas.length > mostrar) {
+            contenedor.parentNode.appendChild(btnVerMas);
+        } else if (btnVerMas.parentNode) {
+            btnVerMas.parentNode.removeChild(btnVerMas);
+        }
+
+        btnVerMas.onclick = function() {
+            mostrar += 6;
+            renderNoticias(mostrar);
+            if (mostrar >= noticiasFiltradas.length && btnVerMas.parentNode) {
+                btnVerMas.parentNode.removeChild(btnVerMas);
+            }
+        };
+
+        // --- EVENTOS ---
+        // Renderizar eventos dinámicamente en la sección correspondiente
+        const eventosContenedor = document.querySelectorAll('.aside-panel')[1]?.querySelector('.news-list');
+        if (eventosContenedor) {
+            eventosContenedor.innerHTML = '';
+            eventos.forEach(evento => {
+                // Extraer día y mes directamente del string para evitar desfase por zona horaria
+                let dia = '';
+                let mes = '';
+                const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+                if (typeof evento.fecha === 'string') {
+                    const partes = evento.fecha.split('-');
+                    if (partes.length === 3) {
+                        dia = partes[2];
+                        const mesNum = parseInt(partes[1], 10) - 1;
+                        mes = meses[mesNum] || '';
+                    }
+                }
+                const hora = evento.hora || '';
+                const li = document.createElement('li');
+                li.className = 'event-item';
+                li.innerHTML = `
+                    <div class="date-box">
+                        <p class="day">${dia}</p>
+                        <p class="month">${mes}</p>
+                    </div>
+                    <div>
+                        <h4>${evento.titulo}</h4>
+                        <p class="time">${hora}</p>
+                    </div>
+                `;
+                eventosContenedor.appendChild(li);
+            });
+        }
+    })
+    .catch(error => {
+        document.getElementById('noticias-dinamicas').innerHTML = '<li>Error al cargar las noticias.</li>';
+        console.error('Error cargando noticias:', error);
+    });
+
+// Función para formatear la fecha a formato "d de mes, año"
+function formatearFecha(fechaStr) {
+    // Evita desfase de día/mes por zona horaria
+    const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    if (!fechaStr || typeof fechaStr !== 'string') return fechaStr;
+    const partes = fechaStr.split('-');
+    if (partes.length !== 3) return fechaStr;
+    const anio = partes[0];
+    const mes = parseInt(partes[1], 10) - 1;
+    const dia = parseInt(partes[2], 10);
+    if (isNaN(mes) || isNaN(dia)) return fechaStr;
+    return `${dia} de ${meses[mes]}, ${anio}`;
+}
+
+// Recargar la página al volver desde una noticia para mostrar los clics actualizados
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+</html>
