@@ -43,4 +43,24 @@ document.addEventListener('DOMContentLoaded', () => {
             accordion.open = true;
         });
     });
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', (event) => {
+            event.preventDefault();
+            // Toggle the 'open' attribute
+            if (item.hasAttribute('open')) {
+                item.removeAttribute('open');
+            } else {
+                // Close all other accordions
+                faqItems.forEach(otherItem => {
+                    otherItem.removeAttribute('open');
+                });
+                item.setAttribute('open', '');
+            }
+        });
+    });
 });
