@@ -1,3 +1,63 @@
+/* Fade-in para programas destacados */
+.fade-in {
+    animation: fadeInProgramas 0.6s;
+}
+@keyframes fadeInProgramas {
+    from { opacity: 0; transform: translateY(30px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* Efecto de fade para el cambio de programas */
+.fade-in {
+    animation: fadeInProgramas 0.5s;
+}
+.fade-out {
+    animation: fadeOutProgramas 0.25s;
+}
+@keyframes fadeInProgramas {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeOutProgramas {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.98); }
+}
+
+/* Flechas de navegación para programas destacados */
+.programas-nav-arrows {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.arrow-btn {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-2);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    outline: none;
+    position: relative;
+    z-index: 2;
+}
+.arrow-btn:hover {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    transform: scale(1.12) translateY(-2px);
+    box-shadow: var(--shadow-hover-chip);
+}
+.arrow-left span, .arrow-right span {
+    pointer-events: none;
+    font-weight: bold;
+}
 /* ================================
    PROGRAMAS STYLES - UNAC EPG
    ================================ */

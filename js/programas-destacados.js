@@ -3,41 +3,27 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     const PROGRAMAS_JSON = 'data/programas.json';
-    const PROGRAMAS_POR_PAGINA = 3;
+    const PROGRAMAS_POR_MOSTRAR = 3;
     let programas = [];
-    let paginaActual = 1;
-    let totalPaginas = 1;
+    let intervalo = null;
 
     const contenedor = document.getElementById('programas-container');
-    const sectionHeader = contenedor.parentNode.querySelector('.section-header');
-    const paginacion = document.createElement('div');
-    paginacion.className = 'programas-paginacion d-flex align-items-center gap-2 mb-0';
 
-    if (sectionHeader) {
-        const infoDiv = document.createElement('div');
-        infoDiv.className = 'section-header-info text-center text-md-start';
-        
-        const title = sectionHeader.querySelector('.section-title');
-        const subtitle = sectionHeader.querySelector('.section-subtitle');
-        if (title) infoDiv.appendChild(title);
-        if (subtitle) infoDiv.appendChild(subtitle);
-
-        sectionHeader.innerHTML = '';
-        sectionHeader.classList.remove('text-center');
-        sectionHeader.classList.add('d-flex', 'flex-row', 'align-items-center', 'justify-content-between', 'gap-3');
-        sectionHeader.appendChild(infoDiv);
-        sectionHeader.appendChild(paginacion);
-    } else {
-        contenedor.parentNode.insertBefore(paginacion, contenedor);
+    function obtenerProgramasAleatorios(arr, n) {
+        const copia = [...arr];
+        const resultado = [];
+        for (let i = 0; i < n && copia.length > 0; i++) {
+            const idx = Math.floor(Math.random() * copia.length);
+            resultado.push(copia.splice(idx, 1)[0]);
+        }
+        return resultado;
     }
 
-    function renderizarProgramas() {
+    function renderizarProgramasAleatorios() {
+        contenedor.classList.remove('fade-in');
         contenedor.innerHTML = '';
-        const inicio = (paginaActual - 1) * PROGRAMAS_POR_PAGINA;
-        const fin = inicio + PROGRAMAS_POR_PAGINA;
-        const programasPagina = programas.slice(inicio, fin);
-
-        programasPagina.forEach(programa => {
+        const seleccionados = obtenerProgramasAleatorios(programas, PROGRAMAS_POR_MOSTRAR);
+        seleccionados.forEach(programa => {
             const col = document.createElement('div');
             col.className = 'col-lg-4 col-md-6 mb-4';
             col.innerHTML = `
@@ -74,42 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             contenedor.appendChild(col);
         });
-    }
-
-    function renderizarPaginacion() {
-        paginacion.innerHTML = '';
-        const btnPrev = document.createElement('button');
-        btnPrev.className = 'btn btn-light border shadow-sm rounded-circle d-flex align-items-center justify-content-center p-2';
-        btnPrev.innerHTML = '<i class="fas fa-chevron-left"></i>';
-        btnPrev.disabled = paginaActual === 1;
-        btnPrev.title = 'Anterior';
-        btnPrev.onclick = () => {
-            if (paginaActual > 1) {
-                paginaActual--;
-                renderizarProgramas();
-                renderizarPaginacion();
-            }
-        };
-        paginacion.appendChild(btnPrev);
-
-        const info = document.createElement('span');
-        info.className = 'mx-2 small text-muted align-self-center';
-        info.textContent = `${paginaActual} / ${totalPaginas}`;
-        paginacion.appendChild(info);
-
-        const btnNext = document.createElement('button');
-        btnNext.className = 'btn btn-light border shadow-sm rounded-circle d-flex align-items-center justify-content-center p-2';
-        btnNext.innerHTML = '<i class="fas fa-chevron-right"></i>';
-        btnNext.disabled = paginaActual === totalPaginas;
-        btnNext.title = 'Siguiente';
-        btnNext.onclick = () => {
-            if (paginaActual < totalPaginas) {
-                paginaActual++;
-                renderizarProgramas();
-                renderizarPaginacion();
-            }
-        };
-        paginacion.appendChild(btnNext);
+        // Forzar reflow para reiniciar la animación
+        void contenedor.offsetWidth;
+        contenedor.classList.add('fade-in');
     }
 
     fetch(PROGRAMAS_JSON)
@@ -125,20 +78,18 @@ document.addEventListener('DOMContentLoaded', function () {
                                 ...p,
                                 facultad: facultad.nombre,
                                 modalidad: facultad.modalidad,
-                                duracion: p.duracion || facultad.duracion.maestria 
+                                duracion: p.duracion || facultad.duracion?.maestria || ''
                             });
                         });
                     }
                 }
             }
-            
-            totalPaginas = Math.ceil(programas.length / PROGRAMAS_POR_PAGINA);
-            renderizarProgramas();
-            renderizarPaginacion();
+            renderizarProgramasAleatorios();
+            if (intervalo) clearInterval(intervalo);
+            intervalo = setInterval(renderizarProgramasAleatorios, 5000); // Cambia cada 4 segundos
         })
         .catch(err => {
             console.error('Error al cargar los programas:', err);
             contenedor.innerHTML = '<div class="alert alert-danger">No se pudieron cargar los programas destacados.</div>';
-            paginacion.innerHTML = '';
         });
 });
