@@ -449,25 +449,7 @@ function initializePageFunctionality() {
     // RESPONSIVE UTILITIES
     // ===================================
     
-    function handleResize() {
-        // Adjust hero height on mobile
-        const hero = document.querySelector('.hero');
-        if (hero && window.innerWidth <= 768) {
-            hero.style.minHeight = '80vh';
-        } else if (hero) {
-            hero.style.minHeight = '100vh';
-        }
-        
-        // Adjust empresas carousel speed on mobile
-        const empresasTrack = document.getElementById('empresas-track');
-        if (empresasTrack) {
-            if (window.innerWidth <= 768) {
-                empresasTrack.style.animationDuration = '15s';
-            } else {
-                empresasTrack.style.animationDuration = '20s';
-            }
-        }
-    }
+    
     
     // ===================================
     // ERROR HANDLING
@@ -528,11 +510,11 @@ function initializePageFunctionality() {
             
             // Event listeners
             window.addEventListener('scroll', throttle(handleScroll, 16));
-            window.addEventListener('resize', throttle(handleResize, 100));
+            
             
             // Initial calls
             handleScroll();
-            handleResize();
+            
             
             console.log('✅ Página de inicio inicializada correctamente con mejoras del Hero');
             

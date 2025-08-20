@@ -248,16 +248,35 @@
    GLOBAL STYLES & RESET
    =================================== */
 
-/* Paleta global UNAC */
 :root {
     --primary-blue: #0a2e52;
     --secondary-blue: #1a3a5f;
-    --accent-gold: #FFD54F;
+    --tertiary-blue: #2a4a6f;
+    --accent-gold: #FFC107;
+    --light-gold: #FFD54F;
     --accent-gold-dark: #FFC107;
     --text-dark: #2c3e50;
     --text-light: #6c757d;
+    --text-muted: #999;
     --white: #ffffff;
     --light-bg: #f8f9fa;
+    --border-light: #e9ecef;
+    --bg-light: #f8f9fa;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
     --section-padding: 5rem 0;
 }
 
@@ -304,7 +323,6 @@
 /* Tablet: mantener indicador visible como en desktop y dar espacio seguro */
 @media (max-width: 768px) {
     /* Espaciado cómodo en tablet */
-    .hero {  }
     .hero-content { padding-bottom: 40px; }
     /* Evitar recortes por overflow en contenedores internos del hero */
     .hero-content,
@@ -377,35 +395,6 @@ img {
     image-rendering: crisp-edges;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-}
-
-/* Variables CSS personalizadas para mejor mantenimiento */
-:root {
-    --primary-blue: #0a2e52;
-    --secondary-blue: #1a3a5f;
-    --tertiary-blue: #2a4a6f;
-    --accent-gold: #FFC107;
-    --light-gold: #FFD54F;
-    --text-dark: #333;
-    --text-light: #666;
-    --text-muted: #999;
-    --border-light: #e9ecef;
-    --bg-light: #f8f9fa;
-    --shadow-light: rgba(0, 0, 0, 0.1);
-    --shadow-medium: rgba(0, 0, 0, 0.15);
-    --shadow-dark: rgba(0, 0, 0, 0.2);
-    --border-radius-sm: 8px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 16px;
-    --border-radius-xl: 20px;
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
 }
 
 /* ===================================
@@ -507,6 +496,10 @@ img {
 /* ===================================
    HERO SECTION
    =================================== */
+
+.hero-full-height {
+    min-height: 100vh;
+}
 
 .hero {
     position: relative;
@@ -1017,7 +1010,7 @@ img {
     }
     
     .hero-title {
-        font-size: clamp(2.8rem, 10vw, 3.1rem);
+        font-size: clamp(2.8rem, 10vw, 4rem);
     }
     
     .animated-word {
@@ -1698,10 +1691,6 @@ img {
         font-size: 1.15rem;
     }
 }
-
-/* ===================================
-   ADMISIÓN SECTION STYLES
-   =================================== */
 
 /* ===================================
    ADMISIÓN SECTION STYLES
