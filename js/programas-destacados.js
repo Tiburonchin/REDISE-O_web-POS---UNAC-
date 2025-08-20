@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let intervalo = null;
 
     const contenedor = document.getElementById('programas-container');
+    // Barra de progreso
+    const progressBar = document.getElementById('progress-bar-destacados');
+    let progress = 0;
+    let progressInterval = null;
+    const INTERVALO_MS = 7000;
 
     function obtenerProgramasAleatorios(arr, n) {
         const copia = [...arr];
@@ -63,6 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Forzar reflow para reiniciar la animación
         void contenedor.offsetWidth;
         contenedor.classList.add('fade-in');
+        // Reiniciar barra de progreso
+        if (progressBar) {
+            progressBar.style.width = '0%';
+            progress = 0;
+        }
     }
 
     fetch(PROGRAMAS_JSON)
@@ -86,7 +96,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             renderizarProgramasAleatorios();
             if (intervalo) clearInterval(intervalo);
-            intervalo = setInterval(renderizarProgramasAleatorios, 5000); // Cambia cada 4 segundos
+            // Barra de progreso animada
+            if (progressInterval) clearInterval(progressInterval);
+            progressInterval = setInterval(() => {
+                if (progressBar) {
+                    progress += 100 / (INTERVALO_MS / 50);
+                    if (progress >= 100) progress = 100;
+                    progressBar.style.width = progress + '%';
+                }
+            }, 50);
+
+            intervalo = setInterval(() => {
+                renderizarProgramasAleatorios();
+            }, INTERVALO_MS);
         })
         .catch(err => {
             console.error('Error al cargar los programas:', err);
