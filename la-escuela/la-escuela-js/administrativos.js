@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Crear tarjeta individual de administrativo
-  function createAdminCard(admin) {
+    function createAdminCard(admin) {
     const card = document.createElement('div');
     card.className = 'admin-card';
     card.dataset.nombre = admin.nombre;
@@ -124,14 +124,28 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="https://wa.me/${admin.whatsapp}" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="tel:${admin.telefono}" class="icon-circle phone" title="Llamar">
-          <i class="fas fa-phone"></i>
-        </a>
+        <button class="icon-circle share" title="Copiar información">
+          <i class="fas fa-share-alt"></i>
+        </button>
         <a href="mailto:${admin.email}" class="icon-circle email" title="Correo">
           <i class="fas fa-envelope"></i>
         </a>
       </div>
     `;
+
+    const shareButton = card.querySelector('.share');
+    shareButton.addEventListener('click', () => {
+      const infoToCopy = `Nombre: ${admin.nombre}\nCargo: ${admin.cargo}\nFacultad: ${admin.facultad}\nTeléfono: ${admin.telefono}\nCorreo: ${admin.email}`;
+      
+      navigator.clipboard.writeText(infoToCopy)
+        .then(() => {
+          showToastNotification('¡Información copiada al portapapeles!');
+        })
+        .catch(err => {
+          console.error('Error al copiar la información: ', err);
+          showToastNotification('Error al copiar la información', true);
+        });
+    });
     
     return card;
   }
@@ -255,6 +269,33 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
     }
+  }
+
+  function showToastNotification(message, isError = false) {
+    const existingToast = document.querySelector('.toast-notification');
+    if (existingToast) {
+      existingToast.remove();
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    if (isError) {
+      toast.style.backgroundColor = 'var(--bs-danger)';
+    }
+    
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      toast.classList.add('show');
+    }, 10);
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => {
+        toast.remove();
+      }, 300);
+    }, 3000);
   }
 
   // Inicializar la aplicación
