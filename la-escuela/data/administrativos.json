@@ -221,6 +221,21 @@
           "avatar": "admin9.jpg"
         }
       ]
+    },
+    {
+      "id": "fced",
+      "nombre": "Facultad de Ciencias de la Educación",
+      "administrativos": [
+        {
+          "id": 13,
+          "nombre": "Maria Luisa",
+          "cargo": "Secretaria de la Unidad de Posgrado - FCED",
+          "telefono": "+51932795170",
+          "whatsapp": "51932795170",
+          "email": "fced.posgrado.admision@unac.pe",
+          "avatar": "admin9.jpg"
+        }
+      ]
     }
   ]
 }
