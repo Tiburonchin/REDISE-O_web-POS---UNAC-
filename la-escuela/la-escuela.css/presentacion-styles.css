@@ -676,24 +676,7 @@ body {
         font-size: 1.2rem;
     }
     
-    .features-elegant-card {
-        padding: 1.5rem;
-    }
     
-    .features-grid {
-        gap: 1rem;
-    }
-    
-    .feature-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-        padding: 1.5rem;
-    }
-    
-    .feature-icon-bg {
-        margin: 0 auto;
-    }
     
     .stats-grid-circular {
         grid-template-columns: 1fr;
@@ -732,42 +715,7 @@ body {
         align-items: center;
     }
     
-    .features-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.7rem;
-        width: 100%;
-    }
     
-    .feature-item {
-        display: flex;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        text-align: left !important;
-        width: 100% !important;
-        max-width: none !important;
-        margin: 0 auto !important;
-        padding: 0.7rem 0.5rem !important;
-        box-sizing: border-box;
-        gap: 1rem;
-    }
-    
-    .feature-icon-bg {
-        margin: 0 1rem 0 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-    }
-    
-    .feature-text {
-        flex: 1 1 0%;
-        text-align: left;
-        font-size: 1rem;
-        font-weight: 500;
-    }
 }
 
 @media (max-width: 600px) {
@@ -954,86 +902,95 @@ body {
     font-size: 1rem;
 }
 
-/* Lista con diseño especial */
-.features-elegant-card {
-    background: #fff;
-    border: 2px solid #e9ecef;
+
+
+/* Custom styles for the Fortalezas Accordion */
+.accordion {
+    --bs-accordion-border-color: var(--light-bg); /* Lighter border */
+    --bs-accordion-border-radius: 15px;
+    --bs-accordion-inner-border-radius: 15px;
+    --bs-accordion-btn-focus-box-shadow: none; /* Remove default focus shadow */
+    --bs-accordion-active-bg: var(--light-bg); /* Background when active */
+    --bs-accordion-btn-color: var(--primary-blue); /* Text color for button */
+    --bs-accordion-btn-active-color: var(--primary-blue); /* Text color when active */
+}
+
+.accordion-item {
+    margin-bottom: 1rem; /* Space between accordion items */
+    border: 1px solid var(--light-bg); /* Subtle border */
     border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    overflow: hidden; /* Ensure border-radius applies */
 }
 
-.features-elegant-card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-gold), var(--secondary-blue));
-    border-radius: 15px;
-    z-index: -1;
-}
-
-.features-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.features-title {
-    color: var(--primary-blue);
-    font-size: 1.5rem;
+.accordion-button {
+    background-color: var(--white); /* Default button background */
+    color: var(--primary-blue); /* Default button text color */
     font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.features-divider {
-    width: 80px;
-    height: 3px;
-
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-    margin: 0 auto;
-    border-radius: 2px;
-}
-
-.features-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-.feature-item:hover {
-    background: #e9ecef;
-    transform: translateX(5px);
-}
-
-.feature-icon-bg {
-    width: 45px;
-    height: 45px;
-    background: var(--primary-blue);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.3rem;
-    margin-right: 1.5rem;
-    box-shadow: 0 3px 10px rgba(10, 46, 82, 0.25);
-}
-
-.feature-text {
-    color: #2c3e50;
     font-size: 1.1rem;
-    font-weight: 500;
+    padding: 1.2rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.accordion-button:not(.collapsed) {
+    background-color: var(--light-bg); /* Background when expanded */
+    color: var(--primary-blue); /* Text color when expanded */
+}
+
+.accordion-button:hover {
+    background-color: var(--light-bg); /* Hover background */
+    color: var(--primary-blue);
+}
+
+.accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(70%) saturate(1000%) hue-rotate(190deg) brightness(90%) contrast(90%); /* Adjust arrow color to primary-blue */
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(70%) saturate(1000%) hue-rotate(190deg) brightness(90%) contrast(90%); /* Adjust arrow color to primary-blue when active */
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Adjust feature-icon-bg within accordion button */
+.accordion-button .feature-icon-bg {
+    margin-right: 1rem; /* Adjust margin for better spacing */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Styling for the vertical image placeholder */
+.image-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-position: center; /* Centers the image within the area */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 991.98px) { /* For tablets and smaller, where col-lg-4 becomes full width */
+    .image-placeholder {
+        height: 300px; /* Adjust height for smaller screens */
+        margin-top: 2rem; /* Add some space above the image on smaller screens */
+    }
+}
+
+@media (max-width: 575.98px) { /* For extra small screens */
+    .image-placeholder {
+        height: 250px; /* Further adjust height for very small screens */
+    }
+}

@@ -99,7 +99,7 @@
                 </div>
 
                 <!-- Contenido principal -->
-                <div class="row align-items-center">
+                <div class="row">
                     <!-- Contenido elegante con diseño -->
                     <div class="col-lg-8">
                         <div class="content-elegant">
@@ -155,30 +155,52 @@
                                 </div>
                             </div>
                             
-                            <!-- Lista con diseño especial -->
-                            <div class="features-elegant-card">
-                                <div class="features-header">
-                                    <h4 class="features-title">Nuestras Fortalezas</h4>
-                                    <div class="features-divider"></div>
+                            <!-- Nuestras Fortalezas - Acordeón -->
+                            <div class="accordion" id="fortalezasAccordion">
+                                <h4 class="features-title text-center mb-4">Nuestras Fortalezas</h4>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <div class="feature-icon-bg me-3">
+                                                <i class="fas fa-globe-americas"></i>
+                                            </div>
+                                            Programas acreditados internacionalmente
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#fortalezasAccordion">
+                                        <div class="accordion-body">
+                                            La Escuela de Posgrado de la Universidad Nacional del Callao ofrece programas acreditados internacionalmente, garantizando formación de calidad con reconocimiento global.
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="features-grid">
-                                    <div class="feature-item">
-                                        <div class="feature-icon-bg">
-                                            <i class="fas fa-globe-americas"></i>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <div class="feature-icon-bg me-3">
+                                                <i class="fas fa-chalkboard-teacher"></i>
+                                            </div>
+                                            Docentes con altas calificaciones
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#fortalezasAccordion">
+                                        <div class="accordion-body">
+                                            La Escuela de Posgrado de la Universidad Nacional del Callao cuenta con docentes de altas calificaciones académicas y experiencia profesional, comprometidos con la excelencia en la formación.
                                         </div>
-                                        <span class="feature-text">Programas acreditados internacionalmente</span>
                                     </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon-bg">
-                                            <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <div class="feature-icon-bg me-3">
+                                                <i class="fas fa-handshake"></i>
+                                            </div>
+                                            Vinculación empresarial directa
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#fortalezasAccordion">
+                                        <div class="accordion-body">
+                                            La Escuela de Posgrado de la UNAC promueve una vinculación empresarial directa que conecta a los estudiantes con el sector productivo y abre oportunidades de crecimiento profesional.
                                         </div>
-                                        <span class="feature-text">Docentes con altas calificaciones</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <div class="feature-icon-bg">
-                                            <i class="fas fa-handshake"></i>
-                                        </div>
-                                        <span class="feature-text">Vinculación empresarial directa</span>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +210,7 @@
                     <!-- Espacio para imagen vertical -->
                     <div class="col-lg-4">
                         <div class="image-placeholder">
-                            <img src="../img/escuela/hero_section/5bd833478dd147473517b475fc00f776.jpg" alt="Universidad Nacional de Callao" class="img-fluid rounded shadow" style="height: 60vw; max-height: 100vw; object-fit: cover; width: 100%;">
+                            <img src="../img/escuela/hero_section/5bd833478dd147473517b475fc00f776.jpg" alt="Universidad Nacional de Callao" class="rounded shadow">
                         </div>
                     </div>
                 </div>
@@ -257,8 +279,7 @@
                             <div class="card-content">
                                 <h3 class="card-title">Programas de Excelencia</h3>
                                 <p class="card-description">
-                                    Programas de estudios conducentes a la obtención de grados académicos 
-                                    de Doctor, Maestro y Diplomados con los más altos estándares.
+                                    Formación académica de alto nivel que impulsa el desarrollo profesional y la investigación con impacto.
                                 </p>
                             </div>
                         </div>
@@ -273,8 +294,7 @@
                             <div class="card-content">
                                 <h3 class="card-title">Alcance Global</h3>
                                 <p class="card-description">
-                                    Vínculos con empresas, instituciones y escuelas de posgrado 
-                                    nacionales e internacionales para una formación integral.
+                                    Formación de posgrado con proyección internacional y reconocimiento en el ámbito académico y profesional.
                                 </p>
                             </div>
                         </div>
@@ -289,8 +309,7 @@
                             <div class="card-content">
                                 <h3 class="card-title">Docentes Calificados</h3>
                                 <p class="card-description">
-                                    Profesores de altas calificaciones comprometidos con la 
-                                    excelencia académica y el desarrollo profesional.
+                                    Un cuerpo docente altamente calificado, con experiencia académica y profesional al servicio de la excelencia.
                                 </p>
                             </div>
                         </div>
@@ -305,8 +324,7 @@
                             <div class="card-content">
                                 <h3 class="card-title">Mejora Continua</h3>
                                 <p class="card-description">
-                                    Proceso de mejora continua que nos permite el logro y 
-                                    cumplimiento de la acreditación internacional.
+                                    Certificados con ISO 21001 e ISO 9001, garantizamos calidad educativa y mejora continua en todos nuestros procesos.
                                 </p>
                             </div>
                         </div>
@@ -321,8 +339,7 @@
                             <div class="card-content">
                                 <h3 class="card-title">Innovación Educativa</h3>
                                 <p class="card-description">
-                                    Identificamos nuevas necesidades y nuevos modos de responder 
-                                    a los desafíos del mundo moderno.
+                                    Impulsamos la innovación educativa con metodologías modernas y tecnologías que transforman la experiencia de aprendizaje.
                                 </p>
                             </div>
                         </div>
@@ -337,8 +354,7 @@
                             <div class="card-content">
                                 <h3 class="card-title">Altos Estándares</h3>
                                 <p class="card-description">
-                                    Formación con los más altos estándares de calidad para que 
-                                    nuestros participantes lleguen a la cima de sus expectativas.
+                                    Formación respaldada por altos estándares de calidad académica y profesional.
                                 </p>
                             </div>
                         </div>
@@ -356,9 +372,7 @@
                     <div class="col-lg-8 text-center mb-5">
                         <h2 class="section-title">Acreditación Internacional</h2>
                         <p class="section-subtitle">
-                            La Escuela de Posgrado de la Universidad Nacional del Callao cuenta con 
-                            certificaciones internacionales que avalan la calidad de nuestros procesos 
-                            educativos y administrativos.
+                            La Escuela de Posgrado de la UNAC cuenta con certificaciones internacionales otorgadas por LRQA: ISO 9001 en Sistemas de Gestión de la Calidad e ISO 21001 en Sistemas de Gestión Educativa, que avalan nuestra excelencia y mejora continua.
                         </p>
                     </div>
                 </div>
