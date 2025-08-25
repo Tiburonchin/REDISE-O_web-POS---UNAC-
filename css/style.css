@@ -3081,6 +3081,28 @@ img {
     transform: translateY(-2px);
 }
 
+.btn-admision-programa {
+    background: var(--accent-gold); /* Using accent-gold for consistency with other admission buttons */
+    color: var(--primary-blue);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex; /* Ensure it behaves like a button */
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-admision-programa:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
 .btn-admision {
     background: var(--accent-gold);
     color: var(--primary-blue);
@@ -3113,7 +3135,8 @@ img {
         gap: 1rem;
     }
     .btn-ver-mas,
-    .btn-admision {
+    .btn-admision,
+    .btn-admision-programa {
         width: 100%;
         text-align: center;
     }
