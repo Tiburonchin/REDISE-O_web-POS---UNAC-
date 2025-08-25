@@ -1,0 +1,23 @@
+Array
+(
+    [archivoPdf] => Array
+        (
+            [name] => documento_maestria_RomelSanchezOrtiz.pdf
+            [full_path] => documento_maestria_RomelSanchezOrtiz.pdf
+            [type] => application/pdf
+            [tmp_name] => /tmp/php585c7C
+            [error] => 0
+            [size] => 4330849
+        )
+
+    [imagen] => Array
+        (
+            [name] => foto_colegiatura.jpg
+            [full_path] => foto_colegiatura.jpg
+            [type] => image/jpeg
+            [tmp_name] => /tmp/phppwRXLH
+            [error] => 0
+            [size] => 1022794
+        )
+
+)
