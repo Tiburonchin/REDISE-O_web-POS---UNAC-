@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const facultyPanel = document.getElementById('facultyPanel');
     const closePanelBtn = document.getElementById('closePanelBtn');
     const facultyGrid = document.getElementById('facultyGrid');
+    const panelBackdrop = document.getElementById('panelBackdrop'); // Get backdrop
 
     let allAdmins = [];
     let allFaculties = [];
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createAdminCard(admin) {
         const card = document.createElement('div');
         card.className = 'admin-card';
-        card.dataset.adminId = admin.id; // Use a unique ID for the admin
+        card.dataset.adminId = admin.id;
 
         const initial = admin.nombre.charAt(0).toUpperCase();
 
@@ -113,17 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
             searchInput.addEventListener('input', handleFiltering);
         }
         if (facultyFilterBtn) {
-            facultyFilterBtn.addEventListener('click', toggleFacultyPanel);
+            facultyFilterBtn.addEventListener('click', openFacultyPanel);
         }
         if (closePanelBtn) {
             closePanelBtn.addEventListener('click', closeFacultyPanel);
         }
-        
-        document.addEventListener('click', (e) => {
-            if (facultyPanel && facultyFilterBtn && !facultyPanel.contains(e.target) && !facultyFilterBtn.contains(e.target)) {
-                closeFacultyPanel();
-            }
-        });
+        if (panelBackdrop) {
+            panelBackdrop.addEventListener('click', closeFacultyPanel); // Close on backdrop click
+        }
 
         if (facultyGrid) {
             facultyGrid.addEventListener('click', (e) => {
@@ -138,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Event delegation for share buttons
         if (adminContainer) {
             adminContainer.addEventListener('click', handleAdminCardClicks);
         }
@@ -184,30 +181,32 @@ document.addEventListener('DOMContentLoaded', () => {
         toast.textContent = message;
         document.body.appendChild(toast);
 
-        // Trigger the animation
         setTimeout(() => {
             toast.classList.add('show');
         }, 10);
 
-        // Hide and remove the toast after 3 seconds
         setTimeout(() => {
             toast.classList.remove('show');
             toast.addEventListener('transitionend', () => toast.remove());
         }, 3000);
     }
 
-    function toggleFacultyPanel() {
-        if (!facultyPanel || !facultyFilterBtn) return;
-        const isActive = facultyPanel.classList.toggle('show');
-        facultyFilterBtn.classList.toggle('active', isActive);
-        facultyFilterBtn.setAttribute('aria-expanded', isActive);
+    function openFacultyPanel() {
+        if (!facultyPanel || !panelBackdrop) return;
+        panelBackdrop.classList.add('show');
+        facultyPanel.classList.add('show');
+        facultyFilterBtn.classList.add('active');
+        facultyFilterBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     function closeFacultyPanel() {
-        if (!facultyPanel || !facultyFilterBtn) return;
+        if (!facultyPanel || !panelBackdrop) return;
+        panelBackdrop.classList.remove('show');
         facultyPanel.classList.remove('show');
         facultyFilterBtn.classList.remove('active');
         facultyFilterBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = ''; // Restore scrolling
     }
 
     // --- 4. FILTERING LOGIC ---
