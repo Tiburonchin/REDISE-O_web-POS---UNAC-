@@ -445,13 +445,7 @@ body {
 /* Badge para especialidad */
 .tipo-especialidad {
     background: var(--grass-light);
-    color: #fff;
-    font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    box-shadow: 0 2px 8px rgba(74,199,217,0.13);
-    letter-spacing: 0.5px;
+    color: var(--white);
 }
 .card-body {
     padding: 1.5rem;
