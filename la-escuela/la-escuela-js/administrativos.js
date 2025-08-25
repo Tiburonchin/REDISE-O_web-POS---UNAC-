@@ -1,303 +1,234 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Variables globales
-  let facultadesData = [];
-  let administrativosData = []; // Array plano para facilitar búsquedas
-  
-  // Elementos del DOM
-  const searchInput = document.getElementById("searchInput");
-  const facultyFilters = document.querySelector(".faculty-filter");
-  const adminContainer = document.getElementById("adminContainer");
-  const noResults = document.getElementById("noResults");
-  const filterToggle = document.getElementById("filterToggle");
-  const facultySection = document.getElementById("facultySection");
+document.addEventListener('DOMContentLoaded', () => {
+    const adminContainer = document.getElementById('adminContainer');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+    
+    const facultyFilterBtn = document.getElementById('facultyFilterBtn');
+    const facultyPanel = document.getElementById('facultyPanel');
+    const closePanelBtn = document.getElementById('closePanelBtn');
+    const facultyGrid = document.getElementById('facultyGrid');
 
-  // Cargar datos desde JSON
-  async function loadAdministrativosData() {
-    try {
-      const response = await fetch('data/administrativos.json');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      facultadesData = data.facultades;
-      
-      // Convertir estructura anidada a array plano para facilitar búsquedas
-      administrativosData = [];
-      facultadesData.forEach(facultad => {
-        facultad.administrativos.forEach(admin => {
-          administrativosData.push({
-            ...admin,
-            facultad: facultad.nombre,
-            facultadId: facultad.id
-          });
+    let allAdmins = [];
+    let allFaculties = [];
+    let activeFaculty = 'all';
+
+    // --- 1. DATA FETCHING AND INITIALIZATION ---
+    async function loadData() {
+        try {
+            const response = await fetch('./data/administrativos.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            
+            allFaculties = data.facultades.map(f => ({ id: f.id, nombre: f.nombre }));
+            allAdmins = data.facultades.flatMap(faculty => 
+                faculty.administrativos.map(admin => ({
+                    ...admin,
+                    facultyName: faculty.nombre,
+                    facultyId: faculty.id
+                }))
+            );
+            
+            initComponents();
+        } catch (error) {
+            console.error("Error loading administrative data:", error);
+            if (adminContainer) {
+                adminContainer.innerHTML = '<p class="error-message">No se pudo cargar la información. Por favor, intente más tarde.</p>';
+            }
+        }
+    }
+
+    function initComponents() {
+        populateFacultyFilter();
+        displayAdmins(allAdmins);
+        setupEventListeners();
+    }
+
+    // --- 2. DYNAMIC ELEMENT CREATION ---
+    function populateFacultyFilter() {
+        if (!facultyGrid) return;
+        facultyGrid.innerHTML = '';
+        
+        const allButton = createFacultyCard({ id: 'all', nombre: 'Mostrar Todos' });
+        allButton.classList.add('active');
+        facultyGrid.appendChild(allButton);
+
+        allFaculties.forEach(faculty => {
+            const facultyButton = createFacultyCard(faculty);
+            facultyGrid.appendChild(facultyButton);
         });
-      });
-      
-      console.log('✅ Datos cargados:', facultadesData.length, 'facultades y', administrativosData.length, 'administrativos');
-      
-      // Inicializar la interfaz
-      renderFacultyFilters();
-      renderAdministrativos();
-      setupEventListeners();
-      setInitialCollapse();
-      
-    } catch (error) {
-      console.error('❌ Error al cargar datos de administrativos:', error);
-      showErrorMessage();
     }
-  }
 
-  // Renderizar filtros de facultades
-  function renderFacultyFilters() {
-    if (!facultyFilters) return;
-    
-    // Limpiar filtros existentes
-    facultyFilters.innerHTML = '';
-    
-    // Agregar opción "Todas"
-    const allOption = document.createElement('li');
-    allOption.dataset.facultad = 'all';
-    allOption.classList.add('active');
-    allOption.textContent = 'Todas';
-    facultyFilters.appendChild(allOption);
-    
-    // Agregar facultades dinámicamente
-    facultadesData.forEach(facultad => {
-      const li = document.createElement('li');
-      li.dataset.facultad = facultad.id;
-      li.textContent = facultad.nombre;
-      
-      facultyFilters.appendChild(li);
-    });
-    
-    console.log('✅ Filtros de facultades renderizados');
-  }
-
-  // Renderizar tarjetas de administrativos
-  function renderAdministrativos(filteredData = administrativosData) {
-    if (!adminContainer) return;
-    
-    // Limpiar contenedor (mantener el mensaje de "no results")
-    const existingNoResults = adminContainer.querySelector('#noResults');
-    adminContainer.innerHTML = '';
-    if (existingNoResults) {
-      adminContainer.appendChild(existingNoResults);
+    function createFacultyCard(faculty) {
+        const card = document.createElement('button');
+        card.className = 'faculty-card';
+        card.dataset.facultyId = faculty.id;
+        card.textContent = faculty.nombre;
+        return card;
     }
-    
-    // Si no hay datos, mostrar mensaje
-    if (filteredData.length === 0) {
-      showNoResults(true);
-      return;
-    }
-    
-    showNoResults(false);
-    
-    // Mostrar todas las tarjetas de forma simple
-    renderIndividualCards(filteredData);
-  }
 
-  // Renderizar tarjetas individuales
-  function renderIndividualCards(data) {
-    data.forEach(admin => {
-      const adminCard = createAdminCard(admin);
-      adminContainer.appendChild(adminCard);
-    });
-  }
-
-  // Crear tarjeta individual de administrativo
     function createAdminCard(admin) {
-    const card = document.createElement('div');
-    card.className = 'admin-card';
-    card.dataset.nombre = admin.nombre;
-    card.dataset.facultad = admin.facultadId;
-    
-    card.innerHTML = `
-      <div class="admin-avatar">
-        <i class="fas fa-user-tie"></i>
-      </div>
-      <div class="admin-info">
-        <h4>${admin.nombre}</h4>
-        <p class="cargo">${admin.cargo}</p>
-        <p class="faculty">${admin.facultad}</p>
-      </div>
-      <div class="contact-icons">
-        <a href="https://wa.me/${admin.whatsapp}" target="_blank" class="icon-circle whatsapp" title="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <button class="icon-circle share" title="Copiar información">
-          <i class="fas fa-share-alt"></i>
-        </button>
-        <a href="mailto:${admin.email}" class="icon-circle email" title="Correo">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-    `;
+        const card = document.createElement('div');
+        card.className = 'admin-card';
+        card.dataset.adminId = admin.id; // Use a unique ID for the admin
 
-    const shareButton = card.querySelector('.share');
-    shareButton.addEventListener('click', () => {
-      const infoToCopy = `Nombre: ${admin.nombre}\nCargo: ${admin.cargo}\nFacultad: ${admin.facultad}\nTeléfono: ${admin.telefono}\nCorreo: ${admin.email}`;
-      
-      navigator.clipboard.writeText(infoToCopy)
-        .then(() => {
-          showToastNotification('¡Información copiada al portapapeles!');
-        })
-        .catch(err => {
-          console.error('Error al copiar la información: ', err);
-          showToastNotification('Error al copiar la información', true);
+        const initial = admin.nombre.charAt(0).toUpperCase();
+
+        card.innerHTML = `
+            <div class="admin-avatar">${initial}</div>
+            <div class="admin-info">
+                <h4 class="admin-name">${admin.nombre}</h4>
+                <p class="admin-cargo">${admin.cargo}</p>
+                <p class="admin-faculty">${admin.facultyName}</p>
+            </div>
+            <div class="contact-icons">
+                ${admin.whatsapp ? `<a href="https://wa.me/${admin.whatsapp}" target="_blank" class="icon-circle whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>` : ''}
+                <button class="icon-circle btn-share" aria-label="Compartir">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                ${admin.email ? `<a href="mailto:${admin.email}" class="icon-circle email" aria-label="Enviar correo"><i class="fas fa-envelope"></i></a>` : ''}
+            </div>
+        `;
+        return card;
+    }
+
+    function displayAdmins(admins) {
+        if (!adminContainer || !noResults) return;
+        adminContainer.innerHTML = '';
+        if (admins.length === 0) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+            admins.forEach(admin => {
+                const card = createAdminCard(admin);
+                adminContainer.appendChild(card);
+            });
+        }
+    }
+
+    // --- 3. EVENT LISTENERS AND HANDLERS ---
+    function setupEventListeners() {
+        if (searchInput) {
+            searchInput.addEventListener('input', handleFiltering);
+        }
+        if (facultyFilterBtn) {
+            facultyFilterBtn.addEventListener('click', toggleFacultyPanel);
+        }
+        if (closePanelBtn) {
+            closePanelBtn.addEventListener('click', closeFacultyPanel);
+        }
+        
+        document.addEventListener('click', (e) => {
+            if (facultyPanel && facultyFilterBtn && !facultyPanel.contains(e.target) && !facultyFilterBtn.contains(e.target)) {
+                closeFacultyPanel();
+            }
         });
-    });
-    
-    return card;
-  }
 
-  // Configurar event listeners
-  function setupEventListeners() {
-    // Búsqueda por texto
-    if (searchInput) {
-      searchInput.addEventListener("input", () => {
-        const y = window.scrollY;
-        filterAdmins();
-        window.scrollTo(0, y);
-      });
-    }
-
-    // Filtro por facultad
-    if (facultyFilters) {
-      facultyFilters.addEventListener('click', (e) => {
-        if (e.target.tagName === 'LI' || e.target.parentElement.tagName === 'LI') {
-          const clickedLi = e.target.tagName === 'LI' ? e.target : e.target.parentElement;
-          
-          // Remover clase active de todos
-          facultyFilters.querySelectorAll('li').forEach(li => li.classList.remove('active'));
-          // Agregar clase active al clickeado
-          clickedLi.classList.add('active');
-          
-          const y = window.scrollY;
-          filterAdmins();
-          window.scrollTo(0, y);
+        if (facultyGrid) {
+            facultyGrid.addEventListener('click', (e) => {
+                const target = e.target.closest('.faculty-card');
+                if (target) {
+                    activeFaculty = target.dataset.facultyId;
+                    facultyGrid.querySelectorAll('.faculty-card').forEach(btn => btn.classList.remove('active'));
+                    target.classList.add('active');
+                    handleFiltering();
+                    closeFacultyPanel();
+                }
+            });
         }
-      });
-    }
 
-    // Toggle del filtro en móviles
-    if (filterToggle) {
-      filterToggle.addEventListener("click", () => {
-        facultySection?.classList.toggle("collapsed");
-        const expanded = !(facultySection?.classList.contains("collapsed"));
-        filterToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-        const icon = filterToggle.querySelector("i");
-        if (icon) {
-          icon.classList.toggle("fa-chevron-up", expanded);
-          icon.classList.toggle("fa-chevron-down", !expanded);
+        // Event delegation for share buttons
+        if (adminContainer) {
+            adminContainer.addEventListener('click', handleAdminCardClicks);
         }
-      });
     }
 
-    // Responsive: colapsar en móviles
-    window.addEventListener("resize", setInitialCollapse);
-  }
+    function handleAdminCardClicks(e) {
+        const shareButton = e.target.closest('.btn-share');
+        if (shareButton) {
+            const card = e.target.closest('.admin-card');
+            const adminId = parseInt(card.dataset.adminId, 10);
+            const adminInfo = allAdmins.find(a => a.id === adminId);
 
-  // Función de filtrado
-  function filterAdmins() {
-    const query = (searchInput?.value || "").toLowerCase().trim();
-    const activeEl = facultyFilters?.querySelector('.active');
-    const selectedFaculty = activeEl ? activeEl.dataset.facultad : "all";
-
-    const filteredData = administrativosData.filter(admin => {
-      // Filtro por texto (nombre, cargo o facultad)
-      const matchesText = query === "" || 
-        admin.nombre.toLowerCase().includes(query) ||
-        admin.cargo.toLowerCase().includes(query) ||
-        admin.facultad.toLowerCase().includes(query);
-      
-      // Filtro por facultad
-      const matchesFaculty = selectedFaculty === "all" || admin.facultadId === selectedFaculty;
-      
-      return matchesText && matchesFaculty;
-    });
-
-    renderAdministrativos(filteredData);
-    
-    console.log(`🔍 Filtrado: ${filteredData.length} administrativos encontrados`);
-  }
-
-  // Estado inicial responsive
-  function setInitialCollapse() {
-    const isMobile = window.matchMedia("(max-width: 992px)").matches;
-    
-    if (isMobile) {
-      facultySection?.classList.add("collapsed");
-      if (filterToggle) {
-        filterToggle.setAttribute("aria-expanded", "false");
-        const icon = filterToggle.querySelector("i");
-        if (icon) {
-          icon.classList.remove("fa-chevron-up");
-          icon.classList.add("fa-chevron-down");
+            if (adminInfo) {
+                copyAdminInfoToClipboard(adminInfo);
+            }
         }
-      }
-    } else {
-      facultySection?.classList.remove("collapsed");
-      if (filterToggle) {
-        filterToggle.setAttribute("aria-expanded", "true");
-        const icon = filterToggle.querySelector("i");
-        if (icon) {
-          icon.classList.remove("fa-chevron-down");
-          icon.classList.add("fa-chevron-up");
+    }
+
+    function copyAdminInfoToClipboard(admin) {
+        const infoText = `
+            Nombre: ${admin.nombre}
+
+            Cargo: ${admin.cargo}
+
+            Facultad: ${admin.facultyName}
+
+            Teléfono: ${admin.telefono || 'No disponible'}
+
+            Email: ${admin.email || 'No disponible'}
+        `.trim().replace(/^ +/gm, '');
+
+        navigator.clipboard.writeText(infoText).then(() => {
+            showToast('¡Información copiada!');
+        }).catch(err => {
+            console.error('Error al copiar la información: ', err);
+            showToast('Error al copiar', 'error');
+        });
+    }
+
+    function showToast(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `toast-notification ${type}`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        // Trigger the animation
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 10);
+
+        // Hide and remove the toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.remove('show');
+            toast.addEventListener('transitionend', () => toast.remove());
+        }, 3000);
+    }
+
+    function toggleFacultyPanel() {
+        if (!facultyPanel || !facultyFilterBtn) return;
+        const isActive = facultyPanel.classList.toggle('show');
+        facultyFilterBtn.classList.toggle('active', isActive);
+        facultyFilterBtn.setAttribute('aria-expanded', isActive);
+    }
+
+    function closeFacultyPanel() {
+        if (!facultyPanel || !facultyFilterBtn) return;
+        facultyPanel.classList.remove('show');
+        facultyFilterBtn.classList.remove('active');
+        facultyFilterBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    // --- 4. FILTERING LOGIC ---
+    function handleFiltering() {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        let filteredAdmins = allAdmins;
+
+        if (activeFaculty !== 'all') {
+            filteredAdmins = filteredAdmins.filter(admin => admin.facultyId === activeFaculty);
         }
-      }
-    }
-  }
 
-  // Mostrar/ocultar mensaje de "no results"
-  function showNoResults(show) {
-    if (noResults) {
-      noResults.style.display = show ? "block" : "none";
-    }
-  }
+        if (searchTerm) {
+            filteredAdmins = filteredAdmins.filter(admin => 
+                admin.nombre.toLowerCase().includes(searchTerm) ||
+                admin.cargo.toLowerCase().includes(searchTerm)
+            );
+        }
 
-  // Mostrar mensaje de error
-  function showErrorMessage() {
-    if (adminContainer) {
-      adminContainer.innerHTML = `
-        <div class="error-message" style="text-align: center; padding: 2rem; color: #666;">
-          <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107;"></i>
-          <h3>Error al cargar datos</h3>
-          <p>No se pudieron cargar los datos de los administrativos. Por favor, recarga la página.</p>
-          <button onclick="location.reload()" class="btn btn-primary mt-3">
-            <i class="fas fa-refresh"></i> Recargar página
-          </button>
-        </div>
-      `;
-    }
-  }
-
-  function showToastNotification(message, isError = false) {
-    const existingToast = document.querySelector('.toast-notification');
-    if (existingToast) {
-      existingToast.remove();
+        displayAdmins(filteredAdmins);
     }
 
-    const toast = document.createElement('div');
-    toast.className = 'toast-notification';
-    toast.textContent = message;
-    if (isError) {
-      toast.style.backgroundColor = 'var(--bs-danger)';
-    }
-    
-    document.body.appendChild(toast);
-
-    setTimeout(() => {
-      toast.classList.add('show');
-    }, 10);
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => {
-        toast.remove();
-      }, 300);
-    }, 3000);
-  }
-
-  // Inicializar la aplicación
-  loadAdministrativosData();
+    // --- INITIAL KICK-OFF ---
+    loadData();
 });

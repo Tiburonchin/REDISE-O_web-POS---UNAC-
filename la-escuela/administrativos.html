@@ -105,22 +105,33 @@
         <section class="administrativos-section" id="administrativos-section">
             <div class="container">
                 
-                <!-- Filtro a la izquierda -->
-                <aside class="filter-panel" id="filterPanel">
-                  <h2>Buscar Administrativo</h2>
-                  <input type="text" id="searchInput" placeholder="Nombre o Facultad..." />
+                <!-- Filtros -->
+                <div class="filters-container">
+                    <!-- Botón de filtro de facultades -->
+                    <div class="filter-group">
+                        <button class="btn-filter" id="facultyFilterBtn">
+                            <i class="fas fa-university"></i>
+                            <span>Filtrar por Facultad</span>
+                            <i class="fas fa-chevron-down arrow-icon"></i>
+                        </button>
+                    </div>
+                    <!-- Campo de búsqueda -->
+                    <div class="search-group">
+                        <input type="text" id="searchInput" placeholder="Buscar por nombre o cargo..." />
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                </div>
 
-                  <button class="filter-toggle" id="filterToggle" type="button" aria-controls="facultySection" aria-expanded="true">
-                    <span>Filtrar por Facultad</span>
-                    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-                  </button>
-
-                  <div class="faculty-section" id="facultySection">
-                    <ul class="faculty-filter">
-                        <!-- Las facultades se cargarán dinámicamente desde el JSON -->
-                    </ul>
-                  </div>
-                </aside>
+                <!-- Panel flotante de facultades -->
+                <div class="faculty-panel" id="facultyPanel">
+                    <div class="panel-header">
+                        <h3>Nuestras Facultades</h3>
+                        <button class="btn-close-panel" id="closePanelBtn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="panel-content" id="facultyGrid">
+                        <!-- Las facultades se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
                 
                 <!-- Lista a la derecha -->
                 <div class="admin-list" id="adminContainer">

@@ -588,3 +588,250 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* ===============================
+   NEW FILTER STYLES
+   ================================ */
+
+/* Container for all filter controls */
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-2);
+    position: relative; /* Needed for panel positioning */
+}
+
+/* Filter button group */
+.filter-group {
+    flex-grow: 1;
+    min-width: 220px;
+}
+
+.btn-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+    background-color: #f0f4f8;
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+    background-color: #e1e8f0;
+    border-color: #bac6d6;
+}
+
+.btn-filter .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-filter.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Search input group */
+.search-group {
+    position: relative;
+    flex-grow: 2;
+    min-width: 250px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.75rem 1.25rem 0.75rem 2.5rem; /* Add padding for icon */
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: var(--glow-gold);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: #9aabbf;
+}
+
+/* Faculty Panel */
+.faculty-panel {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the filter container */
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    max-width: 800px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-3);
+    border: 1px solid #e1e8f0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.faculty-panel.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e1e8f0;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.btn-close-panel {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9aabbf;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-close-panel:hover {
+    color: var(--primary-blue);
+}
+
+.panel-content {
+    padding: 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+#facultyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.faculty-card {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e1e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.faculty-card:hover {
+    background-color: #e9ecef;
+    border-color: #bac6d6;
+    transform: translateY(-2px);
+}
+
+.faculty-card.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .faculty-panel {
+        max-width: 100%;
+    }
+    #facultyGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 576px) {
+    #facultyGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-content {
+        max-height: 50vh;
+    }
+}
+
+/* ===============================
+   ADMIN CARD STYLES
+   ================================ */
+
+.admin-info .admin-cargo {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.admin-info .admin-faculty {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Share Button Style */
+.btn-share {
+    background-color: transparent; /* Make it look like the others */
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.icon-circle.btn-share {
+    background-color: var(--accent-gold-dark); /* A different color to distinguish it */
+}
+
+.icon-circle.btn-share:hover {
+    background-color: var(--accent-gold);
+}
+
+/* Toast Notification Error Style */
+.toast-notification.error {
+    background-color: #d9534f; /* Red for errors */
+}
