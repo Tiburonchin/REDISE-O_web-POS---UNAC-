@@ -1,0 +1,154 @@
+/**
+ * CRITICAL LOADING OPTIMIZATION
+ * Script para optimizar la carga inicial y prevenir flash de contenido sin estilos
+ */
+
+// Ejecutar inmediatamente cuando el DOM esté listo
+(function() {
+    'use strict';
+    
+    // ===================================
+    // OPTIMIZACIÓN DE CARGA CRÍTICA
+    // ===================================
+    
+    // Función para precargar recursos críticos
+    function preloadCriticalResources() {
+        // Calcular prefijo relativo a raíz según la profundidad del archivo actual
+        const parts = location.pathname.replace(/\\/g, '/').split('/').filter(Boolean);
+        // Excluir el nombre del archivo (último segmento) para contar solo directorios
+        const dirDepth = Math.max(parts.length - 1, 0);
+        const base = '../'.repeat(dirDepth);
+
+        const resources = [
+            { href: base + 'header/header.css', as: 'style' },
+            { href: base + 'img/logo_unac.png', as: 'image' },
+            { href: base + 'img/ep.png', as: 'image' }
+        ];
+        
+        // Solo precargar la imagen de index cuando estemos en la página de inicio
+        const path = location.pathname.replace(/\\/g, '/');
+        const isHome = path.endsWith('/') || path.endsWith('/index.html');
+        if (isHome) {
+            resources.push({ href: base + 'img/index/admsion.jpg', as: 'image' });
+        }
+        
+        resources.forEach(resource => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.href = resource.href;
+            link.as = resource.as;
+            if (resource.as === 'style') {
+                link.onload = function() {
+                    this.onload = null;
+                    this.rel = 'stylesheet';
+                };
+            }
+            document.head.appendChild(link);
+        });
+    }
+    
+    // Función para optimizar la visibilidad inicial
+    function optimizeInitialVisibility() {
+        // Asegurar que el header esté oculto inicialmente
+        const headerStyle = document.createElement('style');
+        headerStyle.textContent = `
+            #header {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            #header.loaded {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(headerStyle);
+    }
+    
+    // Función para detectar y manejar la carga del DOM
+    function handleDOMReady() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
+    }
+    
+    // Función de inicialización principal
+    function initializePage() {
+        // Precargar recursos críticos
+        preloadCriticalResources();
+        
+        // Optimizar visibilidad inicial
+        optimizeInitialVisibility();
+        
+        // Configurar observer para lazy loading de imágenes no críticas
+        setupLazyLoading();
+        
+        // Evitar barra vertical momentánea en desktop durante la carga inicial
+        try {
+            const isDesktop = window.matchMedia('(min-width: 992px)').matches;
+            if (isDesktop) {
+                const htmlEl = document.documentElement;
+                const bodyEl = document.body;
+                const prevHtmlOverflow = htmlEl.style.overflowY;
+                const prevBodyOverflow = bodyEl.style.overflowY;
+                htmlEl.style.overflowY = 'hidden';
+                bodyEl.style.overflowY = 'hidden';
+                const restore = () => {
+                    htmlEl.style.overflowY = prevHtmlOverflow;
+                    bodyEl.style.overflowY = prevBodyOverflow;
+                };
+                if (document.readyState === 'complete') {
+                    setTimeout(restore, 600);
+                } else {
+                    window.addEventListener('load', () => setTimeout(restore, 600), { once: true });
+                }
+            }
+        } catch (_) {}
+
+        console.log('Optimización de carga crítica inicializada');
+    }
+    
+    // Función para configurar lazy loading
+    function setupLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+            
+            // Observar imágenes que no son críticas
+            setTimeout(() => {
+                const lazyImages = document.querySelectorAll('img[data-src]');
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }, 100);
+        }
+    }
+    
+    // ===================================
+    // MANEJO DE ERRORES Y FALLBACKS
+    // ===================================
+    
+    // Manejo de errores globales para recursos críticos
+    window.addEventListener('error', function(e) {
+        if (e.target.tagName === 'LINK' || e.target.tagName === 'IMG') {
+            console.warn('Error cargando recurso crítico:', e.target.src || e.target.href);
+            // Implementar fallback si es necesario
+        }
+    }, true);
+    
+    // ===================================
+    // INICIALIZACIÓN
+    // ===================================
+    
+    // Inicializar inmediatamente
+    handleDOMReady();
+    
+})();

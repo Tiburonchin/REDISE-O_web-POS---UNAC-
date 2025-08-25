@@ -1,0 +1,283 @@
+{
+    "categorias": [
+        "Académico",
+        "Eventos",
+        "Innovación",
+        "Cursos",
+        "Seminarios",
+        "Talleres",
+        "deportes",
+        "sss",
+        "medicina",
+        "caidas"
+    ],
+    "noticias": [
+        {
+            "id": 1,
+            "titulo": "Nueva carrera en la EPG",
+            "fecha": "2025-08-10",
+            "contenido": "La Escuela de Posgrado anuncia la apertura de una nueva carrera para el próximo semestre.",
+            "contenidoExtendido": "Esta nueva carrera está diseñada para ofrecer a los estudiantes una formación integral en las últimas tendencias del mercado laboral.",
+            "imagen": "img\/img-noticias\/descarga.jpeg",
+            "creador": "Juan Pérez",
+            "categoria": "Eventos",
+            "clics": 22
+        },
+        {
+            "id": 2,
+            "titulo": "Conferencia internacional",
+            "fecha": "2025-08-12",
+            "contenido": "Se realizará una conferencia internacional sobre innovación educativa en la UNAC.",
+            "contenidoExtendido": "Esta conferencia contará con la participación de expertos internacionales en el campo de la educación y la innovación.",
+            "imagen": "img\/img-noticias\/perro2.jpeg",
+            "creador": "María López",
+            "categoria": "Talleres",
+            "clics": 17
+        },
+        {
+            "id": 3,
+            "titulo": "Inscripciones abiertas",
+            "fecha": "2025-08-15",
+            "contenido": "Ya están abiertas las inscripciones para el ciclo 2025-II en la EPG.",
+            "contenidoExtendido": "Los interesados pueden inscribirse a través de la página web de la EPG. Las inscripciones estarán abiertas hasta el 30 de agosto.",
+            "imagen": "img\/img-noticias\/perro.jpg",
+            "creador": "Carlos Ruiz",
+            "categoria": "Académico",
+            "clics": 7
+        },
+        {
+            "id": 4,
+            "titulo": "Nuevo laboratorio de innovación",
+            "fecha": "2025-08-20",
+            "contenido": "Se inaugurará un nuevo laboratorio de innovación en la EPG.",
+            "contenidoExtendido": "Este laboratorio estará equipado con las últimas tecnologías para fomentar la investigación y el desarrollo de proyectos innovadores.",
+            "imagen": "img\/img-noticias\/perro2.jpeg",
+            "creador": "Ana Torres",
+            "categoria": "Innovación",
+            "clics": 2
+        },
+        {
+            "id": 5,
+            "titulo": "Taller de creatividad",
+            "fecha": "2025-08-25",
+            "contenido": "Se llevará a cabo un taller de creatividad en la EPG.",
+            "contenidoExtendido": "Este taller está diseñado para ayudar a los participantes a desarrollar su creatividad y aplicar técnicas innovadoras en sus proyectos.",
+            "imagen": "img\/img-noticias\/perro3.jpg",
+            "creador": "Luis Gómez",
+            "categoria": "Académico",
+            "clics": 2
+        },
+        {
+            "id": 6,
+            "titulo": "Nuevo curso de marketing digital 2",
+            "fecha": "2025-12-30",
+            "contenido": "La EPG ofrece un nuevo curso de marketing digital para profesionales.",
+            "contenidoExtendido": "Este curso está diseñado para profesionales que deseen aprender sobre las últimas tendencias en marketing digital y su aplicación en proyectos reales.",
+            "imagen": "img\/img-noticias\/perro.jpg",
+            "creador": "Marta Fernández",
+            "categoria": "Cursos",
+            "clics": 23
+        },
+        {
+            "id": 7,
+            "titulo": "Seminario de investigación",
+            "fecha": "2025-02-13",
+            "contenido": "Se llevará a cabo un seminario de investigación en la EPG.",
+            "contenidoExtendido": "Este seminario está diseñado para investigadores y académicos que deseen profundizar en las últimas tendencias en investigación.",
+            "imagen": "img\/img-noticias\/perro5.jpg",
+            "creador": "Pedro Martínez",
+            "categoria": "Seminarios",
+            "clics": 0
+        },
+        {
+            "id": 8,
+            "titulo": "Curso de análisis de datos",
+            "fecha": "2025-09-10",
+            "contenido": "La EPG ofrece un nuevo curso de análisis de datos para profesionales.",
+            "contenidoExtendido": "Este curso está diseñado para profesionales que deseen aprender sobre las últimas herramientas y técnicas de análisis de datos.",
+            "imagen": "img\/img-noticias\/perro6.jpg",
+            "creador": "Laura Sánchez",
+            "categoria": "Cursos",
+            "clics": 1
+        },
+        {
+            "id": 10,
+            "titulo": "Nuevo curso de diseño gráfico",
+            "fecha": "2025-09-20",
+            "contenido": "La EPG ofrece un nuevo curso de diseño gráfico para profesionales.",
+            "contenidoExtendido": "Este curso está diseñado para profesionales que deseen aprender sobre las últimas tendencias en diseño gráfico y su aplicación en proyectos reales.",
+            "imagen": "img\/img-noticias\/perro8.jpg",
+            "creador": "Pedro López",
+            "categoria": "Cursos",
+            "clics": 17
+        },
+        {
+            "id": 11,
+            "titulo": "Nuevo curso de fotografía",
+            "fecha": "2025-09-25",
+            "contenido": "La EPG ofrece un nuevo curso de fotografía para profesionales.",
+            "contenidoExtendido": "Este curso está diseñado para profesionales que deseen mejorar sus habilidades fotográficas y aprender sobre técnicas avanzadas.",
+            "imagen": "img\/img-noticias\/perro9.jpg",
+            "creador": "Laura Martínez",
+            "categoria": "Cursos",
+            "clics": 3
+        },
+        {
+            "id": 12,
+            "titulo": "Nuevo curso de desarrollo web",
+            "fecha": "2025-09-30",
+            "contenido": "La EPG ofrece un nuevo curso de desarrollo web para profesionales.",
+            "contenidoExtendido": "Este curso está diseñado para profesionales que deseen aprender sobre las últimas tecnologías de desarrollo web y su aplicación en proyectos reales.",
+            "imagen": "img\/img-noticias\/perro10.jpg",
+            "creador": "Carlos Gómez",
+            "categoria": "Cursos",
+            "clics": 6
+        },
+        {
+            "id": 13,
+            "titulo": "Nuevo curso de inteligencia artificial",
+            "fecha": "2025-10-05",
+            "contenido": "La EPG ofrece un nuevo curso de inteligencia artificial para profesionales.",
+            "contenidoExtendido": "Este curso está diseñado para profesionales que deseen aprender sobre las últimas tendencias en inteligencia artificial y su aplicación en diversos campos.",
+            "imagen": "img\/img-noticias\/img_economista_1.jpg",
+            "creador": "Fernando Torres",
+            "categoria": "Cursos",
+            "clics": 10
+        },
+        {
+            "id": 14,
+            "titulo": "adggaa",
+            "fecha": "2025-07-30",
+            "contenido": "sdsd",
+            "contenidoExtendido": "sdsd",
+            "imagen": "img\/img-noticias\/wos.jpg",
+            "creador": "sdsd",
+            "categoria": "Cursos",
+            "clics": 1
+        },
+        {
+            "id": 16,
+            "titulo": "qweqwe",
+            "fecha": "2025-08-15",
+            "contenido": "qweqwe",
+            "contenidoExtendido": "d",
+            "imagen": "img\/img-noticias\/Sin títulow.jpg",
+            "creador": "qweqwe",
+            "categoria": "Innovación",
+            "clics": 0
+        },
+        {
+            "id": 17,
+            "titulo": "noticianueva",
+            "fecha": "2025-10-30",
+            "contenido": "nmnmnmn",
+            "contenidoExtendido": "nmnmnmnm",
+            "imagen": "img\/img-noticias\/img_economista_1.jpg",
+            "creador": "nn",
+            "categoria": "Académico",
+            "clics": 5
+        },
+        {
+            "id": 18,
+            "titulo": "noticia tia",
+            "fecha": "2025-08-17",
+            "contenido": "medicina",
+            "contenidoExtendido": "medicina",
+            "imagen": "img\/img-noticias\/WhatsApp Image 2025-08-12 at 10.15.03 AM.jpeg",
+            "creador": "cecilia",
+            "categoria": "medicina",
+            "clics": 2
+        },
+        {
+            "id": 19,
+            "titulo": "pepito se cayó",
+            "fecha": "2025-12-31",
+            "contenido": "se cayó xd",
+            "contenidoExtendido": "se cayó",
+            "imagen": "img\/img-noticias\/descarga_1.jpeg",
+            "creador": "pepe",
+            "categoria": "caidas",
+            "clics": 3
+        },
+        {
+            "id": 20,
+            "titulo": "noticia 20",
+            "fecha": "2025-12-31",
+            "contenido": "contenido 20",
+            "contenidoExtendido": "contenido extendido 20",
+            "imagen": "img\/img-noticias\/img_economista_1.jpg",
+            "creador": "creador 20",
+            "categoria": "categoria 20",
+            "clics": 0
+        },
+        {
+            "id": 21,
+            "titulo": "Nuevo proceso de admisión 2026 A",
+            "fecha": "2025-08-25",
+            "contenido": "Nuevo proceso de admisión 2026 A",
+            "contenidoExtendido": "Nuevo proceso de admisión 2026 A",
+            "imagen": "img\/img-noticias\/soy_volteado.png",
+            "creador": "Edgar Chamo",
+            "categoria": "Académico",
+            "clics": 4
+        },
+        {
+            "id": 22,
+            "titulo": "proceso de admin",
+            "fecha": "2025-08-26",
+            "contenido": "proceso de admin",
+            "contenidoExtendido": "proceso de admin",
+            "imagen": "img\/img-noticias\/image (1).jpg",
+            "creador": "el creador",
+            "categoria": "Académico",
+            "clics": 4
+        },
+        {
+            "id": 23,
+            "titulo": "proceso administrador jeje",
+            "fecha": "2025-08-25",
+            "contenido": "proceso administrador jeje",
+            "contenidoExtendido": "proceso administrador jeje",
+            "imagen": "image_no_genial_invertido.jpg",
+            "creador": "proadmin",
+            "categoria": "Cursos",
+            "clics": 1
+        },
+        {
+            "id": 24,
+            "titulo": "maricon",
+            "fecha": "2025-08-26",
+            "contenido": "maricon",
+            "contenidoExtendido": "maricon",
+            "imagen": "img\/img-noticias\/si_aja.png",
+            "creador": "maricon",
+            "categoria": "Innovación",
+            "clics": 4
+        }
+    ],
+    "eventos": [
+        {
+            "id": 1,
+            "titulo": "Webinar: 'Futuro de la IA en la Ciencia'",
+            "fecha": "2025-08-25",
+            "hora": "10:00 AM - 12:00 PM"
+        },
+        {
+            "id": 2,
+            "titulo": "Conferencia: 'Bioética y genómica'",
+            "fecha": "2025-11-15",
+            "hora": "9:00 AM - 5:00 PM"
+        },
+        {
+            "id": 3,
+            "titulo": "Taller de Innovación Educativa",
+            "fecha": "2025-12-05",
+            "hora": "3:00 PM - 6:00 PM"
+        }
+    ],
+    "destacadas": [
+        "2",
+        "3",
+        "17"
+    ]
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferencia</title>
+    <style>
+        /* Estilo general de la página */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Contenedor del "PDF" */
+        .pdf-container {
+            width: 800px;  /* Ajustamos el tamaño para imágenes horizontales */
+            height: 533px; /* Ajustamos la altura para mantener la relación de aspecto */
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Imagen simulada como página de PDF */
+        .pdf-page {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Esto mantiene la relación de aspecto y ajusta la imagen sin distorsionarla */
+            display: none;  /* Ocultamos las imágenes por defecto */
+        }
+
+        /* Estilos para los botones de navegación */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Efecto de transición para las imágenes */
+        .pdf-page.active {
+            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .pdf-page.inactive {
+            opacity: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+     
+    <div id= "pdf-container" class="pdf-container">
+        <!-- Imágenes simulando páginas de un PDF (en formato horizontal)
+        <img src="archivos-7/01-08-01.jpg" class="pdf-page active" id="page1">
+        <img src="archivos-7/01-08-02.jpg" class="pdf-page" id="page2">
+        <img src="archivos-7/01-08-03.jpg" class="pdf-page" id="page3">
+        <img src="archivos-7/01-08-04.jpg" class="pdf-page" id="page3">
+        <img src="archivos-7/01-08-05.jpg" class="pdf-page" id="page2">
+        <img src="archivos-7/01-08-06.jpg" class="pdf-page" id="page3">
+        <img src="archivos-7/01-08-07.jpg" class="pdf-page" id="page3"> -->
+        
+        <!-- Botones de navegación -->
+        <button class="nav-button prev-button" onclick="cambiarPagina(-1)">&#10094;</button>
+        <button class="nav-button next-button" onclick="cambiarPagina(1)">&#10095;</button>
+
+        
+    </div>     
+    <script>
+    let pdfContainer = document.getElementById("pdf-container");
+    let totalPaginas = 19; // Cambia según cantidad de páginas
+    let carpeta = "archivos-8";
+    let prefijo = "08-08"; // Nombre fijo del archivo
+    let imagenes = [];
+    let paginaActual = 0;
+
+    for (let i = 1; i <= totalPaginas; i++) {
+        let numero = String(i).padStart(2, "0");
+        let img = document.createElement("img");
+        img.src = `${carpeta}/${prefijo}-${numero}.jpg`;
+        img.className = "pdf-page";
+        img.id = `page${i}`;
+        if (i === 1) img.classList.add("active"); // Primera visible
+        pdfContainer.insertBefore(img, pdfContainer.querySelector(".next-button"));
+        imagenes.push(img);
+    }
+
+    function cambiarPagina(paso) {
+        imagenes[paginaActual].classList.remove("active");
+        paginaActual = (paginaActual + paso + imagenes.length) % imagenes.length;
+        imagenes[paginaActual].classList.add("active");
+    }
+    // Bloquear el clic derecho en toda la página
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Prevenir el menú contextual
+            alert("El clic derecho está deshabilitado en esta página.");
+    });
+    </script>
+
+    <style>
+    .pdf-page { display: none; }
+    .pdf-page.active { display: block; }
+    </style>
+</body>
+</html>
