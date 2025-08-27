@@ -1,7 +1,7 @@
 /* ================================
    PRELOADER (Pantalla de carga)
    ================================ */
-   .page-preloader {
+   #preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
 html {
     scroll-behavior: auto !important;
 }
-.page-preloader.hide {
+#preloader.hide {
     opacity: 0;
     visibility: hidden;
 }

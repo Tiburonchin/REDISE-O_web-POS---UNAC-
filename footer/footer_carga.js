@@ -1,18 +1,16 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // Detectar si estamos en un subdirectorio
-    const currentPath = window.location.pathname;
-    const isInSubdirectory = currentPath.includes('/admision/') || currentPath.includes('/la-escuela/') || 
-                            currentPath.includes('\\admision\\') || currentPath.includes('\\la-escuela\\') ||
-                            currentPath.includes('/conocenos/') || currentPath.includes('\\conocenos\\') ||
-                            currentPath.includes('/sgi/') || currentPath.includes('\\sgi\\');
-    
-    // Determinar la ruta correcta según la ubicación
-    const footerPath = isInSubdirectory ? '../footer/footer-pass.html' : 'footer/footer-pass.html';
-    
-    console.log('Footer - Detectado subdirectorio:', isInSubdirectory);
+    // Determinar la ruta base relativa dinámicamente
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    pathSegments.pop(); // Remove filename
+    const depth = pathSegments.length;
+    const relativePath = '../'.repeat(depth) || './';
+
+    // Construir la ruta al HTML del footer dinámicamente
+    const footerPath = `${relativePath}footer/footer-pass.html`;
+
+    console.log('Footer - Profundidad detectada:', depth);
     console.log('Footer - Cargando desde:', footerPath);
-    
-    // Cargar contenido HTML externo
+
     fetch(footerPath)
         .then(response => {
             if (!response.ok) {
@@ -23,12 +21,17 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             document.getElementById('footer').innerHTML = data;
 
-            // Si estamos en un subdirectorio, corregir las rutas de las imágenes
-            if (isInSubdirectory) {
-                const images = document.querySelectorAll('#footer img');
-                images.forEach(img => {
-                    if (img.src.includes('img/')) {
-                        img.src = img.src.replace('img/', '../img/');
+            // Si no estamos en la raíz, corregir las rutas de imágenes y enlaces
+            if (depth > 0) {
+                const elementsToFix = document.querySelectorAll('#footer [src], #footer [href]');
+                elementsToFix.forEach(el => {
+                    const attribute = el.hasAttribute('src') ? 'src' : 'href';
+                    const value = el.getAttribute(attribute);
+
+                    if (value && !value.startsWith('http') && !value.startsWith('#') && !value.startsWith('mailto:') && !value.startsWith('tel:') && !value.startsWith('data:')) {
+                        if (!value.startsWith(relativePath)) {
+                            el.setAttribute(attribute, relativePath + value);
+                        }
                     }
                 });
             }
