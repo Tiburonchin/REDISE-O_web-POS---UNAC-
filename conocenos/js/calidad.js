@@ -1,14 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.calidad-card');
 
-// Acordeón exclusivo: solo uno abierto a la vez
-document.addEventListener('DOMContentLoaded', function() {
-	const accordions = document.querySelectorAll('.calidad-acordeones details.accordion-item');
-	accordions.forEach((item) => {
-		item.addEventListener('toggle', function() {
-			if (item.open) {
-				accordions.forEach((other) => {
-					if (other !== item) other.open = false;
-				});
-			}
-		});
-	});
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('hover');
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('hover');
+        });
+    });
 });
