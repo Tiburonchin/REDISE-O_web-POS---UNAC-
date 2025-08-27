@@ -1,4 +1,3 @@
-
 /* ===================================
    GLOBAL STYLES & RESET
    =================================== */
@@ -2395,7 +2394,7 @@ img {
     bottom: 0;
     background: 
         radial-gradient(circle at 30% 70%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at  70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -2833,7 +2832,7 @@ img {
 
 /* Regla final para asegurar responsividad total */
 @media (max-width: 991px) {
-    *:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *):not(img.footer-logo):not(.testimonio-card) {
+    *:not(.btn-cta):not(.hero-buttons):not(.hero-buttons *):not(img.footer-logo):not(.testimonio-card):not(.popup-content):not(.popup-overlay):not(.popup-content *):not(.popup-overlay *) {
         max-width: 100vw !important;
     }
     
