@@ -175,10 +175,6 @@
     border: 1px solid var(--gray-300);
 }
 
-.card-header {
-    height: auto;
-}
-
 .contenido-card .card-header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
     color: var(--white);
