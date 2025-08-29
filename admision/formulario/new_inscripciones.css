@@ -26,6 +26,7 @@
     --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
     --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
     --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --shadow-blue-30: 0 4px 12px rgba(10, 46, 82, 0.3);
     --shadow-hover-chip: 0 8px 25px rgba(10, 46, 82, 0.3);
     --border-muted: 1px solid rgba(0, 0, 0, 0.05);
     --border-blue-10: 1px solid rgba(10, 46, 82, 0.1);
@@ -241,7 +242,7 @@ body {
     background-color: var(--white);
     padding: 2.5rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-blue-15);
+    box-shadow: var(--shadow-blue-30);
     margin-bottom: 2rem;
 }
 
@@ -711,5 +712,80 @@ body {
         grid-template-columns: 1fr; /* Stack options vertically */
         padding: 1rem;
         gap: 1rem;
+    }
+}
+
+/* ================================
+   CINTA SEPARADORA
+   ================================ */
+
+.cinta-separadora-particulas {
+    position: relative;
+    padding: 2.5rem 2rem; /* Reducido */
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+    border-top: 2px solid var(--accent-gold); /* Más delgado */
+    border-bottom: 2px solid var(--accent-gold); /* Más delgado */
+}
+
+.cinta-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.cinta-contenido h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Un poco menos pesado */
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Más pequeño */
+    margin-bottom: 0.5rem; /* Menos espacio */
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cinta-contenido p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* Ligeramente más pequeño */
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Partículas más sutiles */
+.particula {
+    position: absolute;
+    background-color: rgba(255, 213, 79, 0.1); /* Más transparente */
+    border-radius: 50%;
+    animation: flotar 25s infinite linear;
+    z-index: 1;
+}
+
+.particula:nth-child(1) { width: 60px; height: 60px; top: 15%; left: 8%; animation-duration: 28s; }
+.particula:nth-child(2) { width: 20px; height: 20px; top: 25%; left: 85%; animation-duration: 20s; }
+.particula:nth-child(3) { width: 40px; height: 40px; top: 65%; left: 12%; animation-duration: 24s; }
+.particula:nth-child(4) { width: 80px; height: 80px; top: 75%; left: 92%; animation-duration: 32s; }
+.particula:nth-child(5) { width: 15px; height: 15px; top: 55%; left: 55%; animation-duration: 18s; }
+.particula:nth-child(6) { width: 45px; height: 45px; top: 35%; left: 35%; animation-duration: 30s; }
+.particula:nth-child(7) { width: 30px; height: 30px; top: 85%; left: 45%; animation-duration: 21s; }
+.particula:nth-child(8) { width: 50px; height: 50px; top: 10%; left: 65%; animation-duration: 29s; }
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-15px) translateX(15px) scale(1.05);
+        opacity: 0.15;
+    }
+    100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .cinta-separadora-particulas {
+        padding: 2rem 1rem;
     }
 }

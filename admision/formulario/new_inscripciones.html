@@ -104,12 +104,12 @@
                 </div>
             </div>
         </section>
-
+    
     <!-- ================================
     MAIN CONTENT
     ================================ -->
     <main class="container my-5">
-        <div class="form-container">
+        <div class="form-container mt-4">
             <!-- Progress Bar -->
             <div class="progress-bar-container">
                 <div class="progress-bar" id="progress-bar"></div>
@@ -131,7 +131,7 @@
             </div>
 
             <!-- Form -->
-            <form id="inscription-form" class="mt-4">
+            <form id="inscription-form" action="proceso_form_preinscripcion.php" method="POST" class="mt-4">
                 <!-- Step 1: Datos Personales -->
                 <div class="form-step active" id="step-1">
                     <div class="row">
@@ -139,7 +139,7 @@
                             <label for="nombres" class="form-label">Nombres <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" id="nombres" name="nombres" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese sus nombres">
                             </div>
                             <div class="invalid-feedback"></div>
                         </div>
@@ -147,7 +147,7 @@
                             <label for="apellidos" class="form-label">Apellidos <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" required>
                             </div>
                             <div class="invalid-feedback"></div>
                         </div>
@@ -157,7 +157,7 @@
                             <label for="email" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese su correo personal o institucional">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             </div>
                             <div class="invalid-feedback"></div>
@@ -166,7 +166,7 @@
                             <label for="dni" class="form-label">DNI <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                                <input type="text" class="form-control" id="dni" name="dni" required maxlength="8" inputmode="numeric" pattern="\d*">
+                                <input type="text" class="form-control" id="dni" name="dni" required maxlength="8" inputmode="numeric" placeholder="8 dígitos" pattern="\d*">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             </div>
                             <div class="invalid-feedback"></div>
@@ -177,7 +177,7 @@
                             <label for="celular" class="form-label">Celular <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                <input type="text" class="form-control" id="celular" name="celular" required maxlength="9">
+                                <input type="text" class="form-control" id="telefono" name="telefono" required maxlength="9" placeholder="9 dígitos sin espacios" pattern="\d*">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             </div>
                             <div class="invalid-feedback"></div>
@@ -196,12 +196,12 @@
                             <label class="form-label">Lugar donde vives <span class="text-danger">*</span></label>
                             <div class="radio-group-container">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="lugar_residencia" id="lima" value="Lima" required>
-                                    <label class="form-check-label" for="lima">Lima</label>
+                                    <input class="form-check-input" type="radio" name="domicilio" id="Lima" value="Lima" required>
+                                    <label class="form-check-label" for="domicilio">Lima</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="lugar_residencia" id="provincia" value="Provincia" required>
-                                    <label class="form-check-label" for="provincia">Provincia</label>
+                                    <input class="form-check-input" type="radio" name="domicilio" id="Provincia" value="Provincia" required>
+                                    <label class="form-check-label" for="domicilio">Provincia</label>
                                 </div>
                             </div>
                             <div class="invalid-feedback"></div>
