@@ -67,6 +67,45 @@
     <header id="header"></header>
 
     <!-- ================================
+    HERO SECTION
+    ================================ -->
+
+        <section class="hero-proceso-admision">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <img src="/img/admision/proceso-admision.jpg" alt="Directores Escuela de Posgrado UNAC" class="hero-bg-image">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="hero-content">
+                            <div class="hero-welcome">
+                                <span class="welcome-text">Conoce nuestro</span>
+                                <h1 class="hero-title">PROCESO DE ADMISIÓN DE POSGRADO</h1>
+                                <div class="hero-divider">
+                                    <div class="divider-line"></div>
+                                    <div class="divider-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="divider-line"></div>
+                                </div>
+                            </div>
+                            <p class="hero-subtitle">
+                                Descubre el proceso de admisión y los requisitos necesarios <strong>para formar parte de nuestra comunidad académica.</strong>
+                            </p>
+                            <div class="hero-cta">
+                                <a href="#guia-admision-2025-v2" class="btn-scroll-down">
+                                    <span>Ver guía de admisión 2025</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- ================================
     MAIN CONTENT
     ================================ -->
     <main class="container my-5">
@@ -127,7 +166,7 @@
                             <label for="dni" class="form-label">DNI <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                                <input type="text" class="form-control" id="dni" name="dni" required maxlength="8">
+                                <input type="text" class="form-control" id="dni" name="dni" required maxlength="8" inputmode="numeric" pattern="\d*">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
                             </div>
                             <div class="invalid-feedback"></div>
@@ -192,20 +231,24 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="detalle_programa" class="form-label">Detalle del Programa <span class="text-danger">*</span></label>
-                        <select class="form-select" id="detalle_programa" name="detalle_programa" size="5" required>
-                            <!-- Options will be loaded based on programa selection -->
-                        </select>
+                        <label class="form-label">Detalle del Programa <span class="text-danger">*</span></label>
+                        <div id="detalle_programa_container" class="detalle-programa-container">
+                            <!-- Custom options will be loaded here -->
+                        </div>
+                        <input type="hidden" id="detalle_programa" name="detalle_programa" required>
                         <div class="invalid-feedback"></div>
                     </div>
-                    <div class="mb-3">
+                    <div id="selected-detalle-display" class="selected-detalle-display">
+                        <p><strong>Programa elegido:</strong> <span id="selected-detalle-text"></span></p>
+                    </div>
+                    <div class="mb-5">
                         <label for="medio_conocimiento" class="form-label">¿Cómo se enteró de nosotros? <span class="text-danger">*</span></label>
-                        <select class="form-select" id="medio_conocimiento" name="medio_conocimiento" required>
-                            <option value="">Seleccione una opción</option>
-                            <option value="Redes Sociales">Redes Sociales</option>
-                            <option value="Página web">Página web</option>
-                            <option value="Recomendación">Recomendación</option>
-                            <option value="Otro">Otro</option>
+                        <select class="form-select" id="medio_conocimiento" name="medio_conocimiento" required aria-label="¿Cómo se enteró de nosotros?">
+                            <option value="" disabled selected hidden>Seleccione una opción</option>
+                            <option value="Redes Sociales">Redes Sociales (Facebook, Instagram, etc.)</option>
+                            <option value="Página web">Página web oficial</option>
+                            <option value="Recomendación">Recomendación de un amigo o colega</option>
+                            <option value="Otro">Otro medio</option>
                         </select>
                         <div class="invalid-feedback"></div>
                     </div>
