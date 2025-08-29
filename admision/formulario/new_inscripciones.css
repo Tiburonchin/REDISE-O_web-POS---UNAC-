@@ -1,0 +1,371 @@
+
+:root {
+    --primary-blue: #0a2e52;
+    --secondary-blue: #1a3a5f;
+    --accent-gold: #FFD54F;
+    --accent-gold-dark: #FFC107;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --text-light-on-dark: rgba(255, 255, 255, 0.85);
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --accent-brown: #8B4513;
+    --warning-bg: #fff8e1;
+    --danger-text: #d32f2f;
+    --border-light: #e9ecef;
+    --border-light-dark: #a2a8af;   
+    --primary-light-bg: #e3f0ff;
+    --primary-dark-text: #01579b;
+    --border-accent: #d0e2ff;
+    --focus-ring: #b3d4fc;
+    --button-text: #2c2c2c;
+    --active-brown: #5c3317;
+    --active-border: #d4a373;
+    --section-padding: 5rem 0;
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-2b: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --shadow-hover-chip: 0 8px 25px rgba(10, 46, 82, 0.3);
+    --border-muted: 1px solid rgba(0, 0, 0, 0.05);
+    --border-blue-10: 1px solid rgba(10, 46, 82, 0.1);
+    --glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.2);
+    --success-color: var(--primary-blue); /* Using blue for correct */
+    --warning-color: var(--accent-gold-dark); /* Using yellow for incorrect */
+}
+
+main {
+    padding-top: 80px;
+    flex: 1 0 auto;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-bg);
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-container {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-blue-15);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--border-light);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-gold);
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+
+/* Stepper */
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.stepper-item .step-counter {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--border-light);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    border: 3px solid var(--border-light);
+}
+
+.stepper-item .step-name {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+
+.stepper-item.active .step-counter {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+    box-shadow: var(--glow-gold);
+}
+
+.stepper-item.active .step-name {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.stepper-item.completed .step-counter {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+
+.stepper-item::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    height: 3px;
+    width: 100%;
+    background-color: var(--border-light);
+    z-index: -1;
+}
+
+.stepper-item:last-child::after {
+    content: none;
+}
+
+/* Form */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-light-dark);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--glow-gold);
+}
+
+.input-group-text {
+    background-color: var(--light-bg);
+    border-color: var(--border-light);
+    color: var(--text-light);
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+}
+
+.btn-secondary {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--button-text);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+}
+
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: var(--warning-color);
+    font-weight: 500;
+}
+
+.is-invalid .form-control, .is-invalid .form-select {
+    border-color: var(--warning-color);
+    background-color: var(--warning-bg);
+}
+
+.is-invalid .form-control:focus, .is-invalid .form-select:focus {
+     box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+}
+
+.is-valid .form-control, .is-valid .form-select {
+    border-color: var(--success-color);
+}
+
+.is-valid .form-control:focus, .is-valid .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(10, 46, 82, 0.2);
+}
+
+
+/* Summary */
+#summary {
+    background-color: var(--primary-light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-blue);
+    color: var(--text-dark);
+}
+
+#summary h4 {
+    color: var(--primary-dark-text);
+    font-weight: 700;
+}
+
+#summary ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#summary li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-accent);
+}
+#summary li:last-child {
+    border-bottom: none;
+}
+#summary strong {
+    color: var(--primary-blue);
+}
+
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: var(--shadow-2b);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: var(--shadow-3);
+}
+
+/* Security Info */
+.security-info {
+    text-align: center;
+    color: var(--text-light);
+}
+
+/* Custom Checkbox and Radio */
+.form-check-input {
+    cursor: pointer;
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid var(--text-light); /* Bolder border */
+    transition: all 0.2s ease;
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--glow-gold);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.form-check-input:checked[type=radio] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.form-check-label {
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* Make invalid check more obvious */
+.form-check-input.is-invalid {
+    border-color: var(--warning-color);
+}
+
+.form-check-input.is-invalid~.form-check-label {
+    color: var(--warning-color);
+}
+
+.form-check .invalid-feedback {
+    display: none; /* Hide by default */
+}
+
+.form-check-input.is-invalid~.invalid-feedback {
+    display: block; /* Show when invalid */
+}
+
+.radio-group-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adds space between the radio buttons */
+    height: 48px; /* Match height of other form controls for alignment */
+}

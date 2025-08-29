@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción de Admisión | Escuela de Posgrado UNAC</title>
+    <!-- SEO Mejorado -->
+    <meta name="description" content="Formulario de inscripción para el proceso de admisión a la Escuela de Posgrado de la Universidad Nacional del Callao (UNAC). Regístrate y postula a nuestros programas de maestría y doctorado.">
+    <meta name="keywords" content="UNAC, inscripción, admisión, formulario, posgrado, universidad, Callao, maestría, doctorado, registro, postulación, educación superior, Perú, Escuela de Posgrado, proceso de admisión, postulante, llenar formulario, registro online">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://posgrado.unac.edu.pe/admision/formulario/inscripcionesUNAC.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:title" content="Inscripción de Admisión | Escuela de Posgrado UNAC">
+    <meta property="og:description" content="Completa el formulario de inscripción para postular a la Escuela de Posgrado UNAC. Proceso de admisión, requisitos y registro online.">
+    <meta property="og:url" content="https://posgrado.unac.edu.pe/admision/formulario/inscripcionesUNAC.html">
+    <meta property="og:site_name" content="Escuela de Posgrado UNAC">
+    <meta property="og:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inscripción de Admisión | Escuela de Posgrado UNAC">
+    <meta name="twitter:description" content="Completa el formulario de inscripción para postular a la Escuela de Posgrado UNAC. Proceso de admisión, requisitos y registro online.">
+    <meta name="twitter:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <!-- Favicon -->
+    <link rel="icon" href="/img/logo_unac_p.png" type="image/png">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="/css/preloader.css">
+    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+    <link rel="stylesheet" href="new_inscripciones.css">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3E365Z2DMM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3E365Z2DMM');
+</script>
+
+<body>
+    <!-- Preloader -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="/img/logo_unac_p.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
+    </div>
+    <!-- ================================
+         HEADER SECTION
+         ================================ -->
+    <header id="header"></header>
+
+    <!-- ================================
+    MAIN CONTENT
+    ================================ -->
+    <main class="container my-5">
+        <div class="form-container">
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <!-- Stepper -->
+            <div class="stepper-wrapper">
+                <div class="stepper-item active">
+                    <div class="step-counter"><i class="fas fa-user"></i></div>
+                    <div class="step-name">Datos personales</div>
+                </div>
+                <div class="stepper-item">
+                    <div class="step-counter"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="step-name">Programa</div>
+                </div>
+                <div class="stepper-item">
+                    <div class="step-counter"><i class="fas fa-check"></i></div>
+                    <div class="step-name">Confirmación</div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="inscription-form" class="mt-4">
+                <!-- Step 1: Datos Personales -->
+                <div class="form-step active" id="step-1">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombres" class="form-label">Nombres <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" id="nombres" name="nombres" required>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="apellidos" class="form-label">Apellidos <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="dni" class="form-label">DNI <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                <input type="text" class="form-control" id="dni" name="dni" required maxlength="8">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="celular" class="form-label">Celular <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                <input type="text" class="form-control" id="celular" name="celular" required maxlength="9">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Lugar donde vives <span class="text-danger">*</span></label>
+                            <div class="radio-group-container">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="lugar_residencia" id="lima" value="Lima" required>
+                                    <label class="form-check-label" for="lima">Lima</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="lugar_residencia" id="provincia" value="Provincia" required>
+                                    <label class="form-check-label" for="provincia">Provincia</label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary next-step">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Programa -->
+                <div class="form-step" id="step-2">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="unidad" class="form-label">Unidad <span class="text-danger">*</span></label>
+                            <select class="form-select" id="unidad" name="unidad" required>
+                                <!-- Options will be loaded from JSON -->
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="programa" class="form-label">Programa <span class="text-danger">*</span></label>
+                            <select class="form-select" id="programa" name="programa" required>
+                                <!-- Options will be loaded based on unidad selection -->
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="detalle_programa" class="form-label">Detalle del Programa <span class="text-danger">*</span></label>
+                        <select class="form-select" id="detalle_programa" name="detalle_programa" size="5" required>
+                            <!-- Options will be loaded based on programa selection -->
+                        </select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="medio_conocimiento" class="form-label">¿Cómo se enteró de nosotros? <span class="text-danger">*</span></label>
+                        <select class="form-select" id="medio_conocimiento" name="medio_conocimiento" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Redes Sociales">Redes Sociales</option>
+                            <option value="Página web">Página web</option>
+                            <option value="Recomendación">Recomendación</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Anterior</button>
+                        <button type="button" class="btn btn-primary next-step">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Confirmación -->
+                <div class="form-step" id="step-3">
+                    <div id="summary" class="mb-4">
+                        <h4>Resumen de Inscripción</h4>
+                        <p>Por favor, revise sus datos antes de enviar.</p>
+                        <!-- Summary content will be inserted here by JS -->
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="privacy-policy" required>
+                        <label class="form-check-label" for="privacy-policy">Acepto los <a href="#">términos y la política de privacidad</a>. <span class="text-danger">*</span></label>
+                        <div class="invalid-feedback">Debe aceptar los términos y la política de privacidad.</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                    </div>
+                    <div class="security-info mb-3">
+                        <p><i class="fas fa-lock"></i> Tus datos están protegidos.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Editar</button>
+                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i> Enviar Inscripción</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- ================================
+         FOOTER SECTION
+         ================================ -->
+    <footer id="footer"></footer>
+
+    <!-- ================================
+        JAVASCRIPT SCRIPTS
+        ================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <script src="/js/critical-loading.js"></script>
+    <script src="/js/preloader-fallback.js"></script>
+    
+    <!-- Header Scripts -->
+    <script src="/header/header_function.js"></script>
+    <script src="/header/header_carga.js"></script>
+
+    <!-- Footer Scripts -->
+    <script src="/footer/footer_carga.js"></script>
+    <script src="/footer/footer_function.js"></script>
+
+    <!-- Custom Script -->
+    <script src="new_inscripciones.js"></script>
+</body>
+</html>
