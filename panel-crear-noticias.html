@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración de Noticias</title>
+    <!-- Usa una fuente moderna como Inter desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
+            color: #e5e7eb; /* Color de texto claro para el fondo oscuro */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0.5rem;
+        }
+        
+        /* Estilos del contenedor principal */
+        .container {
+            width: 100%;
+            max-width: 60rem;
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+            padding: 2rem; /* Aumento del padding para más espacio interno */
+        }
+
+        /* Título del panel */
+        .title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            text-align: center;
+            color: #111827;
+            margin-bottom: 1.5rem; /* Aumento del margen inferior */
+        }
+
+        /* Mensaje de éxito */
+        .success-message {
+            display: none;
+            background-color: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #FFC107;
+            color: #FFC107;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+
+        .success-message p {
+            font-weight: 700;
+        }
+
+        /* Contenedor de los campos del formulario para el diseño horizontal */
+        .form-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem; /* Aumento del espacio entre los campos */
+        }
+        
+        /* Estilo para los grupos de formulario dentro del grid */
+        .form-grid > .form-group {
+            flex: 1 1 45%;
+            min-width: 15rem;
+        }
+        
+        /* Contenido y Contenido Extendido ocupan todo el ancho */
+        .form-grid .full-width {
+            flex: 1 1 100%;
+        }
+        
+        /* Estilos del formulario */
+        .form-group {
+            margin-bottom: 0; /* Elimina el margen inferior para que el gap lo controle */
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            display: block;
+            width: 98%;
+            padding: 0.6rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.15s ease-in-out;
+            color: #1f2937;
+            font-size: 0.875rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFC107;
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+        }
+
+        /* Estilos del área de carga de imagen */
+        .image-upload {
+            display: flex;
+            justify-content: center;
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
+            padding: 1.5rem; /* Aumento del padding para más espacio */
+        }
+
+        .image-upload-content {
+            text-align: center;
+        }
+
+        .image-upload-content svg {
+            margin: auto;
+            height: 2.5rem;
+            width: 2.5rem;
+            color: #9ca3af;
+        }
+
+        .image-upload-text {
+            display: flex;
+            font-size: 0.75rem;
+            color: #4b5563;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .image-upload-text label {
+            position: relative;
+            cursor: pointer;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            color: #4f46e5;
+            background-color: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .image-upload-text label:hover {
+            color: #4338ca;
+        }
+
+        .image-upload-text input[type="file"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        /* Botón de envío */
+        .submit-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.375rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #111827;
+            background-color: #FFC107;
+            transition: background-color 0.2s;
+        }
+
+        .submit-button:hover {
+            background-color: #e6b100;
+        }
+
+        /* Media queries para adaptar el diseño */
+        @media (max-width: 48rem) {
+            .form-grid > .form-group {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (min-width: 320px) {
+            .image-upload-text {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Panel de Administración de Noticias</h1>
+        
+        <div id="successMessage" class="success-message">
+            <p>¡Noticia enviada!</p>
+            <p>La información ha sido registrada en la consola del navegador.</p>
+        </div>
+
+        <form id="newsForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="titulo">Título de la noticia</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="creador">Creador</label>
+                    <input type="text" id="creador" name="creador" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecciona una categoría</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="contenido">Contenido (resumen)</label>
+                    <textarea id="contenido" name="contenido" rows="2" required></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="contenido-extendido">Contenido extendido</label>
+                    <textarea id="contenido-extendido" name="contenido-extendido" rows="4"></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="imagen">Imagen de la noticia</label>
+                    <div class="image-upload">
+                        <div class="image-upload-content">
+                            <svg stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28m0 0l4 4m-4-4l-1.414-1.414m-4-4l-1.414-1.414a4 4 0 00-5.656 0L8 32l8-8 8 8z" />
+                            </svg>
+                            <div class="image-upload-text">
+                                <label for="imagen">
+                                    <span>Subir un archivo</span>
+                                    <input id="imagen" name="imagen" type="file" accept="image/*">
+                                </label>
+                                <p class="pl-1">o arrastrar y soltar</p>
+                            </div>
+                            <p class="text-xs text-gray-500">PNG, JPG, GIF hasta 10MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <button type="submit" class="submit-button">
+                        Enviar Noticia
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Selecciona el formulario y el mensaje de éxito
+        const newsForm = document.getElementById('newsForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // Escucha el evento de envío del formulario
+        newsForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(newsForm);
+            formData.append('action', 'add_noticia');
+            fetch('noticias-contador.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(resp => {
+                if (resp.success) {
+                    successMessage.style.display = 'block';
+                    successMessage.innerHTML = '<p>¡Noticia enviada y guardada!</p><p>La noticia ha sido registrada correctamente.</p>';
+                    newsForm.reset();
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Error al guardar la noticia: ' + (resp.error || ''));
+                }
+            })
+            .catch((err) => {
+                alert('Error de conexión al guardar la noticia.');
+                console.error(err);
+            });
+        });
+
+        // Cargar categorías dinámicamente desde el arreglo 'categorias' de noticias.json
+        fetch('noticias.json')
+            .then(res => res.json())
+            .then(data => {
+                const categorias = Array.isArray(data.categorias) ? data.categorias : [];
+                const select = document.getElementById('categoria');
+                select.innerHTML = '<option value="">Selecciona una categoría</option>' +
+                    categorias.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+            });
+
+        // Modal para agregar nueva categoría
+        const modalHtml = `
+        <div id="modal-categoria" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);z-index:1000;align-items:center;justify-content:center;">
+          <div style="background:#fff;padding:2rem;border-radius:1rem;max-width:350px;margin:auto;box-shadow:0 4px 24px rgba(0,0,0,0.2);text-align:center;">
+            <h2 style="font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:#0d2c54;">Agregar nueva categoría</h2>
+            <input type="text" id="nueva-categoria-input" placeholder="Nombre de la categoría" style="width:90%;padding:0.5rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #d1d5db;">
+            <div style="display:flex;gap:1rem;justify-content:center;">
+              <button id="guardar-categoria-btn" style="background:#4ac7d9;color:#fff;padding:0.5rem 1.5rem;border:none;border-radius:0.5rem;font-weight:600;cursor:pointer;">Guardar</button>
+              <button id="cerrar-modal-categoria" style="background:#e5e7eb;color:#0d2c54;padding:0.5rem 1.5rem;border:none;border-radius:0.5rem;font-weight:600;cursor:pointer;">Cancelar</button>
+            </div>
+          </div>
+        </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+        // Botón para abrir el modal
+        const selectCat = document.getElementById('categoria');
+        const btnAddCat = document.createElement('button');
+        btnAddCat.type = 'button';
+        btnAddCat.textContent = '+ Nueva categoría';
+        btnAddCat.style.marginTop = '0.5rem';
+        btnAddCat.style.background = '#FFC107';
+        btnAddCat.style.color = '#111827';
+        btnAddCat.style.border = 'none';
+        btnAddCat.style.borderRadius = '0.375rem';
+        btnAddCat.style.fontWeight = '600';
+        btnAddCat.style.padding = '0.25rem 0.75rem';
+        btnAddCat.style.cursor = 'pointer';
+        selectCat.parentNode.appendChild(btnAddCat);
+
+        btnAddCat.onclick = function() {
+            document.getElementById('modal-categoria').style.display = 'flex';
+        };
+        document.getElementById('cerrar-modal-categoria').onclick = function() {
+            document.getElementById('modal-categoria').style.display = 'none';
+        };
+        document.getElementById('guardar-categoria-btn').onclick = function() {
+            const nuevaCat = document.getElementById('nueva-categoria-input').value.trim();
+            if (nuevaCat) {
+                // Agregar la nueva categoría al select si no existe
+                if (![...selectCat.options].some(opt => opt.value.toLowerCase() === nuevaCat.toLowerCase())) {
+                    const option = document.createElement('option');
+                    option.value = nuevaCat;
+                    option.textContent = nuevaCat;
+                    selectCat.appendChild(option);
+                }
+                selectCat.value = nuevaCat;
+                // Guardar la nueva categoría en noticias.json
+                fetch('noticias.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!Array.isArray(data.categorias)) data.categorias = [];
+                        if (!data.categorias.includes(nuevaCat)) {
+                            data.categorias.push(nuevaCat);
+                            fetch('noticias-contador.php', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ categorias: data.categorias, action: 'update_categorias' })
+                            })
+                            .then(res => res.json())
+                            .then(resp => {
+                                if (resp.success) {
+                                    // Mostrar mensaje de éxito
+                                    let msg = document.getElementById('categoria-success-msg');
+                                    if (!msg) {
+                                        msg = document.createElement('div');
+                                        msg.id = 'categoria-success-msg';
+                                        msg.style.background = '#d1fae5';
+                                        msg.style.color = '#065f46';
+                                        msg.style.padding = '0.5rem 1rem';
+                                        msg.style.borderRadius = '0.5rem';
+                                        msg.style.margin = '1rem auto';
+                                        msg.style.textAlign = 'center';
+                                        msg.style.fontWeight = '600';
+                                        selectCat.parentNode.appendChild(msg);
+                                    }
+                                    msg.textContent = '¡Categoría agregada correctamente!';
+                                    setTimeout(() => { msg.remove(); }, 3000);
+                                }
+                            });
+                        }
+                    });
+                document.getElementById('modal-categoria').style.display = 'none';
+                document.getElementById('nueva-categoria-input').value = '';
+            }
+        };
+    </script>
+</body>
+</html>

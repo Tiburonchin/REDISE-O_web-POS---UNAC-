@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela de Posgrado UNAC - Excelencia Académica</title>
+    
+    <!-- SEO Meta Tags Optimizados -->
+    <meta name="description" content="Escuela de Posgrado UNAC: Maestrías y doctorados con excelencia académica, investigación, innovación y liderazgo. Descubre nuestros programas, admisión, docentes y vida universitaria en la Universidad Nacional del Callao.">
+    <meta name="keywords" content="posgrado, maestría, doctorado, UNAC, Universidad Nacional del Callao, admisión, investigación, educación superior, programas, docentes, Callao, Perú, excelencia académica, innovación, liderazgo, vida universitaria">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Escuela de Posgrado UNAC - Excelencia Académica y Liderazgo">
+    <meta property="og:description" content="Conoce los programas de maestría y doctorado, admisión, docentes y vida universitaria en la Escuela de Posgrado UNAC.">
+    <meta property="og:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <meta property="og:url" content="https://posgrado.unac.edu.pe/">
+    <meta property="og:site_name" content="Escuela de Posgrado UNAC">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Escuela de Posgrado UNAC - Excelencia Académica y Liderazgo">
+    <meta name="twitter:description" content="Descubre maestrías, doctorados y oportunidades académicas en la UNAC.">
+    <meta name="twitter:image" content="https://posgrado.unac.edu.pe/img/logo_unac.png">
+    <meta name="twitter:site" content="@UNACoficial">
+    
+    <!-- Favicon -->
+    <!-- El favicon se establece dinámicamente mediante favico.js -->
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/style.css?v=3">
+    
+    <!-- Preload Header-Footer Styles para evitar flash sin estilos -->
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="footer/footer.css">
+
+    <!-- Estilos para optimizar la carga inicial -->
+    <link rel="stylesheet" href="css/preloader.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="./img/logo_unac_p.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
+    </div>
+
+    <!-- ✅ Popup encima del contenido -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+        <button class="popup-close" onclick="cerrarPopup()">×</button>
+        <a href="https://posgrado.unac.edu.pe/admision/formulario/inscripcionesUNAC.html" target="_blank">
+            <img src="img/index/FECHAS_CLAVE_ADMISION_copia.png" alt="Publicidad">
+        </a>
+        </div>
+    </div>
+
+    <script>
+        function cerrarPopup() {
+        document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+    <!-- ================================
+         HEADER SECTION
+         ================================ -->
+    <header id="header"></header>
+
+    <!-- ================================
+         MAIN CONTENT
+         ================================ -->
+    <main class="main-content">
+        
+        <!-- ================================
+             HERO SECTION
+             ================================ -->
+        <section class="hero hero-full-height" id="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 hero-content text-center">
+                        <!-- Hero Title -->
+                        <h1 class="hero-title">
+                            LA ESCUELA DE POSGRADO
+                        </h1>
+                        
+                        <!-- Animated Word -->
+                        <div class="animated-word-container">
+                            <span class="animated-word" id="animatedWord">maravilloso</span>
+                        </div>
+                        
+                        <!-- Hero Description -->
+                        <p class="hero-description">
+                            En nuestra Escuela de Posgrado, brindamos la oportunidad de crecer profesionalmente con programas de excelencia.
+                        </p>
+                        
+                        <!-- Hero Statistics -->
+                        <div class="hero-stats">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <!-- Stat 1: Programas -->
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="stat-item">
+                                                <div class="stat-number">+50</div>
+                                                <div class="stat-label">Programas</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Stat 2: Egresados -->
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="stat-item">
+                                                <div class="stat-number">+1000</div>
+                                                <div class="stat-label">Egresados</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Stat 3: Convenios -->
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="stat-item">
+                                                <div class="stat-number">50+</div>
+                                                <div class="stat-label">Convenios</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hero Action Buttons -->
+                        <div class="hero-buttons">
+                            <a href="#info-contacto" class="btn btn-primary btn-cta">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Solicitar Información
+                            </a>
+                            <a href="programas.html" class="btn btn-outline-primary btn-cta">
+                                <i class="fas fa-graduation-cap me-2"></i>
+                                 Ver Programas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" aria-hidden="true">
+                <a href="#cinta" class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================================
+             CINTA INFORMATIVA SECTION
+             ================================ -->
+        <section class="cinta-section" id="cinta">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Cinta Content -->
+                    <div class="col-lg-8 col-md-7">
+                        <div class="cinta-content">
+                            <h3 class="cinta-text">Una universidad con rostro humano</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Cinta Action -->
+                    <div class="col-lg-4 col-md-5 text-end">
+                        <div class="cinta-action">
+                            <a href="#info-contacto" class="btn btn-cinta">
+                                <i class="fas fa-question-circle"></i>
+                                <span>¿Necesitas más información?</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             ADMISIÓN 2025-II SECTION
+             ================================ -->
+        <section class="admision-section" id="admision">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <!-- Imagen de la Universidad -->
+                    <div class="col-lg-6">
+                        <div class="admision-image">
+                            <img src="img/index/admsion.jpg" alt="Escuela de Posgrado UNAC" class="img-fluid" loading="eager" fetchpriority="high">
+                        </div>
+                    </div>
+                    
+                    <!-- Contenido Informativo -->
+                    <div class="col-lg-6">
+                        <div class="admision-content">
+                            <!-- Badge del Proceso -->
+                            <div class="admision-badge">
+                                <span>Proceso de Admisión</span>
+                            </div>
+                            
+                            <!-- Título Principal -->
+                            <h2 class="admision-title">Admisión 2025 - II</h2>
+                            
+                            <!-- Fecha Límite -->
+                            <div class="admision-deadline">
+                                <div class="deadline-info">
+                                    <span class="deadline-label">Inscripciones hasta el</span>
+                                    <span class="deadline-date">22 de Agosto</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Programas Disponibles -->
+                            <div class="admision-programs">
+                                <h3 class="programs-title">Doctorados • Diplomados • Maestrías</h3>
+                                <p class="university-name">Escuela de Posgrado UNAC</p>
+                            </div>
+                            
+                            <!-- Botón de Acción -->
+                            <div class="admision-action">
+                                <a href="admision/Proceso_admision.html" class="btn btn-admision">
+                                    <span>Ver Guía de Admisión</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+            LO ÚLTIMO SECTION
+            ================================ -->
+        <section class="lo-ultimo-section" id="lo-ultimo">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <h2 class="lo-ultimo-title">Lo último</h2>
+                    </div>
+                </div>
+                
+                <!-- News Cards Grid -->
+                <div class="row g-4">
+                    <!-- Card 1: Docencia -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ultimo-card">
+                            <div class="ultimo-image">
+                                <img src="img/index/b-diplomado.png" alt="Formación de calidad" class="img-fluid">
+                            </div>
+                            <div class="ultimo-content">
+                                <h3 class="ultimo-card-title">📢 Diplomado en Investigación Científica – Inscripciones Abiertas</h3>
+                                <p class="ultimo-description">
+                                    Inscríbete hasta el 1 de setiembre de 2025 y potencia tu formación con nuestro Diplomado en Investigación Científica.
+                                </p>
+                                <div class="ultimo-action">
+                                    <a href="#" class="btn-ultimo">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Medicina -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ultimo-card">
+                            <div class="ultimo-image">
+                                <img src="img/index/bicentenario.jpg" alt="Grado en Medicina" class="img-fluid">
+                            </div>
+                            <div class="ultimo-content">
+                                <h3 class="ultimo-card-title">🎓 Beca Generación del Bicentenario – PRONABEC</h3>
+                                <p class="ultimo-description">
+                                    Postula a la Beca Generación del Bicentenario de PRONABEC y accede a oportunidades de financiamiento para estudios de posgrado en el extranjero.
+                                </p>
+                                <div class="ultimo-action">
+                                    <a href="#" class="btn-ultimo">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Becas -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ultimo-card">
+                            <div class="ultimo-image">
+                                <img src="img/index/gradosytitulos.webp" alt="Becas disponibles" class="img-fluid">
+                            </div>
+                            <div class="ultimo-content">
+                                <h3 class="ultimo-card-title">🎓 Ceremonia de Graduación – UNAC 2025</h3>
+                                <p class="ultimo-description">
+                                    La UNAC se prepara para la ceremonia de graduación de sus 12 facultades, un evento que celebra el esfuerzo, dedicación y éxito de nuestros nuevos profesionales.
+                                </p>
+                                <div class="ultimo-action">
+                                    <a href="#" class="btn-ultimo">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             PROGRAMAS DESTACADOS SECTION
+             ================================ -->
+             <section class="programas-section" id="programas">
+                 <div class="container">
+                <div class="section-header text-center mb-3">
+                    <h2 class="section-title">Programas Destacados</h2>
+                    <p class="section-subtitle">Conoce algunos de nuestros programas de maestría y doctorado más solicitados</p>
+                </div>
+                <div class="row" id="programas-container">
+                    <!-- Carga de los programas destacados de manera dinámica -->
+                </div>
+                    <!-- Barra de carga para programas destacados -->
+                    <div class="progress-bar-destacados-wrap">
+                        <div class="progress-bar-destacados-bg">
+                            <div class="progress-bar-destacados-fill" id="progress-bar-destacados"></div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             FRASE MOTIVACIONAL SECTION
+             ================================ -->
+        <section class="motivacional-section" id="motivacional">
+            <!-- Background Elements -->
+            <div class="motivacional-background" aria-hidden="true">
+                <div class="motivacional-overlay"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <h2 class="motivacional-text">
+                            "La Universidad que forma líderes para transformar el futuro"
+                        </h2>
+                        <p class="motivacional-subtitle">
+                            Más de 50 años de excelencia académica y compromiso con el desarrollo del país
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             EMPRESAS SECTION
+             ================================ -->
+        <section class="empresas-section" id="empresas">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title">El talento se premia</h2>
+                        <p class="section-subtitle">Nuestros alumnos trabajan en empresas como:</p>
+                    </div>
+                </div>
+                
+                <!-- Company Logos Grid -->
+                <div class="empresas-grid">
+                    <!-- Primera Fila de Empresas -->
+                    <div class="row justify-content-center align-items-center g-4 mb-4">
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="empresa-logo">
+                                <img src="img/index/logos_empresas/Scotiabank.png" alt="Empresa 1" class="img-fluid" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="empresa-logo">
+                                <img src="img/index/logos_empresas/mi_edu.png" alt="Empresa 7" class="img-fluid" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="empresa-logo">
+                                <img src="img/index/logos_empresas/contraloria.jpg" alt="Empresa 2" class="img-fluid" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="empresa-logo">
+                                <img src="img/index/logos_empresas/gobierno_regional_callao.png" alt="Empresa 3" class="img-fluid" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             TESTIMONIOS SECTION
+             ================================ -->
+        <section class="testimonios-section" id="testimonios" style="display: none;">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="row">
+                    <div class="col-12 text-center mb-3">
+                        <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+                        <p class="section-subtitle">Testimonios de egresados que han transformado sus carreras profesionales</p>
+                    </div>
+                </div>
+
+                <!-- Testimonios Marquee -->
+                <div class="testimonios-marquee-container mb-5">
+                    <div class="testimonios-marquee">
+                        <!-- Testimonio 1: Rizzel herrada -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto2.jpg" alt="Rizzel herrada" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Rizzel herrada</h4>
+                                    <p class="author-handle">@</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "La Maestría en Administración de la UNAC cambió completamente mi perspectiva profesional. Los docentes son excelentes y el nivel académico es de primer nivel."
+                            </p>
+                        </div>
+
+                        <!-- Testimonio 2: Carlos Mendoza -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto4.jpg" alt="Carlos Mendoza" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Carlos Mendoza</h4>
+                                    <p class="author-handle">@carlos_ing</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "El Doctorado en Ingeniería me permitió desarrollar mi investigación con el apoyo de profesores reconocidos internacionalmente. Una experiencia transformadora."
+                            </p>
+                        </div>
+
+                        <!-- Testimonio 3: Edgar Ramos -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto3.PNG" alt="Edgar Ramos" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Edgar Ramos</h4>
+                                    <p class="author-handle">earamost@unac.edu.pe</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "Gracias a la formación en programación que recibí, pude desarrollar habilidades técnicas sólidas que me permitieron ingresar a una empresa reconocida del sector tecnológico. La UNAC me brindó las herramientas necesarias para destacar en el mundo laboral."
+                            </p>
+                        </div>
+
+                        <!-- Testimonio 4: Diego Hernández -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto5.jpg" alt="Diego Hernández" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Diego Hernández</h4>
+                                    <p class="author-handle">@diego_tech</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "La metodología de enseñanza es excepcional. Cada clase es una oportunidad de crecimiento profesional y personal. Altamente recomendado."
+                            </p>
+                        </div>
+
+                        <!-- Testimonio 5: Lucía Vásquez -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto2.PNG" alt="Lucía Vásquez" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Lucía Vásquez</h4>
+                                    <p class="author-handle">@lucia_master</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "La red de contactos que he generado durante mi maestría es invaluable. La UNAC realmente forma líderes para el futuro del país."
+                            </p>
+                        </div>
+
+                        <!-- Duplicados para efecto continuo -->
+                        <!-- Testimonio 1 (duplicado) -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto2.jpg" alt="María García" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">María García</h4>
+                                    <p class="author-handle">@maria_garcia</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "La Maestría en Administración de la UNAC cambió completamente mi perspectiva profesional. Los docentes son excelentes y el nivel académico es de primer nivel."
+                            </p>
+                        </div>
+
+                        <!-- Testimonio 2 (duplicado) -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto4.jpg" alt="Carlos Mendoza" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Carlos Mendoza</h4>
+                                    <p class="author-handle">@carlos_ing</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "El Doctorado en Ingeniería me permitió desarrollar mi investigación con el apoyo de profesores reconocidos internacionalmente. Una experiencia transformadora."
+                            </p>
+                        </div>
+
+                        <!-- Testimonio 3 (duplicado) -->
+                        <div class="testimonio-card">
+                            <div class="testimonio-author">
+                                <img src="img/index/foto_perfil/foto3.PNG" alt="Edgar Ramos" class="author-avatar">
+                                <div class="author-info">
+                                    <h4 class="author-name">Edgar Ramos</h4>
+                                    <p class="author-handle">earamost@unac.edu.pe</p>
+                                </div>
+                            </div>
+                            <p class="testimonio-text">
+                                "Los programas de posgrado de la UNAC están a la vanguardia. La formación integral que recibí me ha abierto puertas en el mercado laboral."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información y Contacto Section -->
+        <section class="info-contacto-section" id="info-contacto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2 class="info-title">¿Tienes algunas preguntas?</h2>
+                        <p class="info-subtitle">Déjanos tus datos y nos pondremos en contacto contigo para darte la información que necesites.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Formulario de contacto -->
+                    <div class="col-lg-6">
+                        <div class="formulario-contacto">
+                            <form class="contact-form">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Nombre*" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Apellidos*" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Email*" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="phone-input">
+                                            <select class="country-code">
+                                                <option value="+51">🇵🇪 +51</option>
+                                                <option value="+1">🇺🇸 +1</option>
+                                                <option value="+34">🇪🇸 +34</option>
+                                            </select>
+                                            <input type="tel" class="form-control" placeholder="Teléfono">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="date" class="form-control" required>
+                                        <label class="form-label-small">Fecha de nacimiento*</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-select" required>
+                                            <option value="">Género*</option>
+                                            <option value="masculino">Masculino</option>
+                                            <option value="femenino">Femenino</option>
+                                            <option value="otro">Otro</option>
+                                            <option value="prefiero-no-decir">Prefiero no decir</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-select" required>
+                                            <option value="">Lugar de residencia*</option>
+                                            <option value="lima">Lima</option>
+                                            <option value="provincia">Provincia</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-select" required>
+                                            <option value="">Quiero estudiar en...*</option>
+                                            <option value="maestria">Maestría</option>
+                                            <option value="doctorado">Doctorado</option>
+                                            <option value="diplomado">Diplomado</option>
+                                            <option value="segunda-especialidad">Segunda Especialidad</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select" required>
+                                            <option value="">Quiero saber más del área...*</option>
+                                            <option value="ingenieria">Ingeniería</option>
+                                            <option value="ciencias-economicas">Ciencias Económicas</option>
+                                            <option value="ciencias-administrativas">Ciencias Administrativas</option>
+                                            <option value="ciencias-contables">Ciencias Contables</option>
+                                            <option value="ciencias-naturales">Ciencias Naturales y Matemática</option>
+                                            <option value="ciencias-pesqueras">Ciencias Pesqueras</option>
+                                            <option value="ciencias-salud">Ciencias de la Salud</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="privacidad" required>
+                                            <label class="form-check-label" for="privacidad">
+                                                Acepto la política de privacidad y tratamiento de datos
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="comunicaciones">
+                                            <label class="form-check-label" for="comunicaciones">
+                                                Consiento recibir comunicaciones comerciales de productos y servicios propios, de las entidades del GRUPO EUROPA EDUCATION, relacionadas anteriormente, en base a la evaluación de mi perfil y comportamiento, a través de fuentes internas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-submit">
+                                            Solicitar información
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Información de contacto y mapa -->
+                    <div class="col-lg-6">
+                        <div class="info-side">
+                            <!-- Información de contacto -->
+                            <div class="contacto-info-simple">
+                                <div class="contacto-item-compacto">
+                                    <div class="icono-contacto-pequeno">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contacto-content-compacto">
+                                        <span class="contacto-label-pequeno">¿Necesitas ayuda?</span>
+                                        <span class="contacto-telefono-pequeno">+51 900 970 371</span>
+                                        <span class="contacto-disponibilidad-pequeno">Lunes a Viernes: 8:00 AM - 5:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mapa -->
+                            <div class="mapa-container">
+                                <h4 class="mapa-title">Encuéntranos en</h4>
+                                <div class="mapa-embed">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.285147253173!2d-77.1147736!3d-12.0453945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c693394f2123%3A0x1f8cfc4f6b7b8b8b!2sUniversidad%20Nacional%20del%20Callao!5e0!3m2!1ses!2spe!4v1691234567890!5m2!1ses!2spe" 
+                                        width="100%" 
+                                        height="280" 
+                                        style="border:0; border-radius: 12px;" 
+                                        allowfullscreen="" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        sandbox="allow-scripts allow-same-origin"
+                                        title="Mapa de ubicación Universidad Nacional del Callao">
+                                    </iframe>
+                                </div>
+                                <div class="direccion-compacta">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Av. Juan Pablo II 306, Bellavista - Callao</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================================
+         FOOTER SECTION
+         ================================ -->
+    <div id="footer"></div>
+
+    <!-- ================================
+         JAVASCRIPT SCRIPTS
+         ================================ -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Critical Loading Optimization (debe cargar primero) -->
+    <script src="js/critical-loading.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="favico.js?v=2"></script>
+    <script src="js/image-loader.js"></script>
+    <script src="js/config.js"></script>
+    <script src="header/header_carga.js"></script>
+    <script src="footer/footer_carga.js?v=2"></script>
+    <script src="js/main.js?v=3"></script>
+    <!-- Script de paginación dinámica de Programas Destacados -->
+    <script src="js/programas-destacados.js"></script>
+</body>
+</html>

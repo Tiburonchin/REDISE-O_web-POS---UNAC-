@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias de Posgrado UNAC - Últimas novedades, eventos y becas</title>
+    <meta name="description" content="Noticias de Posgrado UNAC: descubre las últimas novedades, eventos, becas y avances académicos en la Escuela de Posgrado de la Universidad Nacional del Callao.">
+    <meta name="keywords" content="UNAC, posgrado, noticias, becas, eventos, investigación, universidad, Callao, Perú, maestría, doctorado, educación superior">
+    <meta name="author" content="Escuela de Posgrado UNAC">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Noticias de Posgrado UNAC - Últimas novedades, eventos y becas">
+    <meta property="og:description" content="Noticias de Posgrado UNAC: descubre las últimas novedades, eventos, becas y avances académicos en la Escuela de Posgrado de la Universidad Nacional del Callao.">
+    <meta property="og:image" content="img/logo_unac.png">
+    <meta property="og:url" content="https://posgrado.unac.edu.pe/noticias.html">
+    <meta property="og:site_name" content="Escuela de Posgrado UNAC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Noticias de Posgrado UNAC - Últimas novedades, eventos y becas">
+    <meta name="twitter:description" content="Noticias de Posgrado UNAC: descubre las últimas novedades, eventos, becas y avances académicos en la Escuela de Posgrado de la Universidad Nacional del Callao.">
+    <meta name="twitter:image" content="img/logo_unac.png">
+    <meta name="twitter:site" content="@UNACoficial">
+
+    <!-- Incluye la fuente 'Inter' de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/noticias/noticias.css">
+
+    <!-- Preload Header-Footer Styles para evitar flash sin estilos -->
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="footer/footer.css">
+
+    <!-- Estilos para optimizar la carga inicial -->
+    <link rel="stylesheet" href="css/preloader.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="page-preloader" id="preloader">
+        <div class="preloader-content">
+            <img src="./img/logo_unac_p.png" alt="UNAC" class="preloader-logo" loading="eager" fetchpriority="high">
+            <div class="preloader-text">Cargando...</div>
+        </div>
+    </div>
+
+    <!-- ================================
+         HEADER SECTION
+         ================================ -->
+    <header id="header"></header>
+
+    <!-- Contenido principal de la página -->
+    <main class="container main-content">
+        
+        <!-- Sección 1: Slider de noticias destacadas -->
+        <section class="slider-section">
+            <h2 class="section-title">Noticias Destacadas</h2>
+            <div class="slider-container">
+                <!-- Carga de noticias destacadas en el slider de manera dinámica -->
+            </div>
+        </section>
+
+        <!-- Sección 2: Noticia principal (compacta) y el resto del contenido -->
+        <section class="content-grid">
+            
+            <!-- Columna izquierda: Noticia principal y la grilla de noticias y panel -->
+            <div class="left-panel">
+                
+                <!-- Noticia principal compacta (dinámica) -->
+                <div class="card featured-news-card" id="noticia-principal">
+                    <!-- Se cargará dinámicamente la noticia más clickeada -->
+                </div>
+                
+                <!-- Contenedor para Últimas Noticias y Noticias Más Leídas -->
+                <div class="news-and-events-grid">
+                    
+                    <!-- Sección de Últimas Noticias (Izquierda) -->
+                    <div class="card">
+                        <h2 class="section-title section-header">Últimas Noticias</h2>
+                        <ul class="news-list" id="noticias-dinamicas">
+                            <!-- Las noticias se cargarán aquí dinámicamente -->
+                        </ul>
+                    </div>
+
+                    <!-- Sidebar con Noticias Más Leídas y Eventos -->
+                    <aside class="aside">
+                        <!-- Panel de Noticias más leídas -->
+                        <div class="card aside-panel">
+                            <h3 class="section-title section-header" style="font-size: 1.25rem;">Noticias Más Leídas</h3>
+                            <ul class="news-list">
+                                <!-- Carga de las noticias más leídas de manera dinámica -->
+                            </ul>
+                        </div>
+
+                        <!-- Panel de Próximos Eventos -->
+                        <div class="card aside-panel">
+                            <h3 class="section-title section-header" style="font-size: 1.25rem;">Próximos Eventos</h3>
+                            <ul class="news-list">
+                                <!-- Carga de los eventos de manera dinámica -->
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+    
+    <!-- ================================
+    FOOTER SECTION
+    ================================ -->
+    <div id="footer"></div>
+    
+    <!-- ================================
+    JAVASCRIPT SCRIPTS
+    ================================ -->
+    
+    <!-- Critical Loading Optimization (debe cargar primero) -->
+    <script src="js/critical-loading.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="favico.js"></script>
+    <script src="js/noticias/noticias.js"></script>
+    <script src="js/image-loader.js"></script>
+    <script src="js/config.js"></script>
+    <script src="header/header_carga.js"></script>
+    <script src="footer/footer_carga.js"></script>
+    <script src="js/main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,141 @@
+{
+  "Facultad de Ciencias de la Salud": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCS-BROCHURE.pdf",
+    "pdf_link_doctorado":"https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCS-BROCHURE.pdf",
+    "pdf_link_especialidad": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCS-ESPECIALIDADES-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Gerencia en Salud",
+      "Maestría en Ciencias de la Salud con Mención en Educación para la Salud",
+      "Maestría en Salud Pública",
+      "Maestría en Enfermería",
+      "Maestría en Enfermería Familiar y Comunitaria",
+      "Maestría en Salud Ocupacional y Ambiental"
+    ],
+    "Doctorado": [
+      "Doctorado en Salud Pública",
+      "Doctorado en Ciencias de la Salud",
+      "Doctorado en Administración en Salud",
+      "Doctorado en Enfermería"
+    ],
+    "Especialidad": [
+      "Especialidad en Administración en Salud",
+      "Especialidad en Enfermería en Centro Quirúrgico",
+      "Especialidad en Enfermería en Cuidados Quirúrgicos",
+      "Especialidad en Enfermería en Emergencias y Desastres",
+      "Especialidad en Enfermería en Gerontología y Geriatría",
+      "Especialidad en Enfermería en Oncología",
+      "Especialidad en Enfermería en Salud Mental",
+      "Especialidad en Salud Pública y Comunitaria",
+      "Especialidad en Enfermería en Salud del Niño y Adolescente",
+      "Especialidad en Enfermería Intensiva",
+      "Especialidad en Enfermería Pediátrica",
+      "Especialidad en Enfermería en Epidemiología",
+      "Especialidad en Enfermería en Salud Familiar y Comunitaria",
+      "Especialidad en Enfermería Neonatología",
+      "Especialidad en Política y Gestión de la Salud en Enfermería",
+      "Especialidad en Enfermería en Crecimiento, Desarrollo del Niño y Estimulación de la Primera Infancia"
+    ]
+  },
+  "Facultad de Ciencias Administrativas": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCA-BROCHURE.pdf",
+    "pdf_link_doctorado": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCA-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Administración Estratégica de Empresas",
+      "Maestría en Administración Marítima y Portuaria",
+      "Maestría en Gerencia Educativa"
+    ],
+    "Doctorado": [
+      "Doctorado en Administración"
+    ]
+  },
+  "Facultad de Ciencias Contables": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCC-BROCHURE.pdf",
+    "pdf_link_doctorado": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCC-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Tributación",
+      "Maestría en Ciencias Fiscalizadoras con Mención en Auditoría Gubernamental",
+      "Maestría en Ciencias Fiscalizadoras con Mención en Auditoría Integral Empresarial",
+      "Maestría en Gestión Pública"
+    ],
+    "Doctorado": [
+      "Doctorado en Ciencias Contables"
+    ]
+  },
+  "Facultad de Ingeniería Industrial y de Sistemas": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIIS-BROCHURE.pdf",
+    "pdf_link_doctorado": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIIS-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Ingeniería Industrial con Mención en Gerencia de la Calidad y Productividad",
+      "Maestría en Ingeniería Industrial con Mención en Gerencia Logística",
+      "Maestría en Ingeniería de Sistemas"
+    ],
+    "Doctorado": [
+      "Doctorado en Ingeniería de Sistemas",
+      "Doctorado en Ingeniería Industrial"
+    ]
+  },
+  "Facultad de Ciencias Económicas": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCE-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Comercio y Negociaciones Internacionales",
+      "Maestría en Finanzas",
+      "Maestría en Investigación y Docencia Universitaria",
+      "Maestría en Proyectos de Inversión"
+    ]
+  },
+  "Facultad de Ingeniería Química": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIQ-BROCHURE.pdf",
+    "pdf_link_doctorado": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIQ-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Gerencia de Calidad y Desarrollo Humano",
+      "Maestría en Ciencia y Tecnología de Alimentos",
+      "Maestría en Ingeniería Química"
+    ]
+  },  
+  "Facultad de Ingeniería Eléctrica y Electrónica": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIEE-BROCHURE.pdf",
+    "pdf_link_doctorado": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIEE-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Ciencias de la Electrónica con Mención en Ingeniería Biomédica",
+      "Maestría en Ciencias de la Electrónica con Mención en Control y Automatización",
+      "Maestría en Ciencias de la Electrónica con Mención en Telecomunicaciones",
+      "Maestría en Ingeniería Eléctrica con Mención en Gestión de Sistemas de Energía Eléctrica",
+      "Maestría en Ingeniería Eléctrica con Mención en Gerencia de Proyectos de Ingeniería"
+    ],
+    "Doctorado": [
+      "Doctorado en Ingeniería Eléctrica"
+    ]
+  },
+  "Facultad de Ingeniería Pesquera y de Alimentos": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIPA-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Ingeniería de Alimentos",
+      "Maestría en Gestión Pesquera"
+    ]
+  },
+  "Facultad de Ingeniería Ambiental y de Recursos Naturales": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FIARN-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Gestión Ambiental para el Desarrollo Sostenible"
+    ]
+  },
+  "Facultad de Ciencias Naturales y Matemática": {
+    "pdf_link": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCNM-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Didáctica de la Enseñanza de la Física y Matemática"
+    ]
+  },
+  "Facultad de Ciencias de la Educación": {
+    "pdf_link_doctorado": "https://raw.githubusercontent.com/PosgradoUNAC/BROCHURE_2025_B/main/FCED-DOCTORADO-BROCHURE.pdf",
+    "Doctorado": [
+      "Doctorado en Educación"
+    ]
+  },
+  
+  "Facultad de Ingeniería Mecánica y de Energía": {
+    "pdf_link": "https://raw.githubusercontent.com/5rogian5/PosgradoUNAC/main/FIME-MAESTRIA-BROCHURE.pdf",
+    "Maestría": [
+      "Maestría en Gerencia del Mantenimiento"
+    ]
+  }
+}

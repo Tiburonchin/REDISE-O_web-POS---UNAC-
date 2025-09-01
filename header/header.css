@@ -1,0 +1,778 @@
+/* FORZAR VISIBILIDAD DEL HEADER - SOLUCIÓN DE EMERGENCIA */
+#header,
+header.header {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    min-height: 80px;
+}
+
+/* Resetear y proteger los estilos del header contra Bootstrap */
+header.header,
+#header {
+    all: initial;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+/* Reglas específicas para evitar conflictos con Bootstrap en dropdowns */
+header.header .nav-item .dropdown-menu {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: auto !important;
+    z-index: 10001 !important;
+}
+
+header.header .nav-item:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Prevenir scroll cuando el menú móvil está abierto */
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* Overlay para difuminar el fondo cuando el menú móvil está activo */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+header.header {
+    background: #0a2e52 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+    width: 100% !important;
+    display: block !important;
+    border-bottom: 2px solid #E6A800 !important; /* Cambiado de #FFC107 a dorado más oscuro */
+}
+
+header.header .header-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 80px !important;
+    box-sizing: border-box !important;
+}
+
+header.header .logo-section {
+    display: flex !important;
+    align-items: center !important;
+    min-width: 150px !important;
+}
+
+header.header .logo img {
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    transition: all 0.3s ease !important;
+}
+
+header.header .logo img:hover {
+    transform: scale(1.05) !important;
+}
+
+header.header .nav-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header.header .nav-item {
+    position: relative !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header.header .nav-link {
+    display: block !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    padding: 24px 20px !important;
+    font-weight: 600 !important; /* Cambiado de 500 a 600 para más grosor */
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    background: none !important;
+    border: none !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+}
+
+header.header .nav-link:hover, 
+header.header .nav-item:hover > .nav-link {
+    color: #E6A800 !important; /* Cambiado de #FFC107 a un dorado más oscuro */
+    background: rgba(230, 168, 0, 0.08) !important; /* Fondo más oscuro acorde */
+}
+
+header.header .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+header.header .nav-link:hover::before {
+    width: 60%;
+}
+
+.nav-link.has-dropdown::after {
+    content: '▼';
+    margin-left: 6px;
+    font-size: 10px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    color: rgba(230, 168, 0, 0.8); /* Cambiado a dorado más oscuro */
+}
+
+.nav-item:hover .nav-link.has-dropdown::after {
+    transform: rotate(180deg);
+    color: #E6A800; /* Cambiado a dorado más oscuro */
+}
+
+header.header .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(4px) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(255, 193, 7, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    min-width: 220px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    z-index: 10001 !important;
+    padding: 8px 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    list-style: none !important;
+    margin: 0 !important;
+}
+
+header.header .dropdown-menu::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -6px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 12px !important;
+    height: 12px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(255, 193, 7, 0.2) !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    transform: translateX(-50%) rotate(45deg) !important;
+    z-index: -1 !important;
+}
+
+header.header .nav-item:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
+}
+
+header.header .dropdown-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
+    color: #0a2e52 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important; /* Cambiado de 400 a 500 para más grosor */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 0 4px;
+    border-radius: 4px;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom;
+}
+
+header.header .dropdown-item:hover {
+    background: rgba(230, 168, 0, 0.08) !important; /* Cambiado a dorado más oscuro */
+    color: #0a2e52 !important;
+    /* Eliminado font-weight: 500 para evitar cambio de grosor en hover */
+}
+
+.dropdown-item:hover::before {
+    transform: scaleY(1);
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+    color: #0a2e52;
+    border: 2px solid transparent;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 24px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(255, 213, 79, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estilos para el icono del botón */
+.action-btn i {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.action-btn:hover i {
+    color: #FFD54F;
+}
+
+.action-btn span {
+    transition: color 0.3s ease;
+}
+
+.action-btn:hover span {
+    color: #FFD54F;
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
+    color: #FFD54F;
+    border-color: #FFD54F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(10, 46, 82, 0.2);
+}
+
+.action-btn:active {
+    background: linear-gradient(135deg, #082140 0%, #122a4d 100%);
+    color: #FFC107;
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(10, 46, 82, 0.3);
+    transition: all 0.15s ease;
+}
+
+/* Estado de enfoque para accesibilidad */
+.action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.4);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    position: relative;
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(230, 168, 0, 0.1); /* Cambiado a dorado más oscuro */
+    transform: scale(1.05);
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+    margin: 3px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-btn.active {
+    background: rgba(230, 168, 0, 0.15); /* Cambiado a dorado más oscuro */
+}
+
+.mobile-menu-btn.active .hamburger-line {
+    background: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+header.header .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-top: 2px solid #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+header.header .mobile-menu.active {
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid rgba(10, 46, 82, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-item:hover {
+    background: rgba(255, 193, 7, 0.06);
+}
+
+.mobile-nav-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #0a2e52;
+    text-decoration: none;
+    padding: 16px 20px;
+    font-weight: 600; /* Cambiado de 500 a 600 para más grosor */
+    transition: all 0.3s ease;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.mobile-nav-link:hover {
+    color: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+    padding-left: 24px;
+}
+
+.mobile-dropdown {
+    background: rgba(10, 46, 82, 0.04);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin: 0 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(230, 168, 0, 0.1); /* Cambiado a dorado más oscuro */
+}
+
+.mobile-dropdown.active {
+    max-height: 300px;
+    margin-bottom: 8px;
+    padding: 8px 0;
+}
+
+.mobile-dropdown-item {
+    display: flex;
+    align-items: center;
+    color: #0a2e52;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500; /* Cambiado de 400 a 500 para más grosor */
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.mobile-dropdown-item::before {
+    content: '•';
+    margin-right: 12px;
+    color: #E6A800; /* Cambiado de #FFC107 a dorado más oscuro */
+    font-size: 16px;
+}
+
+.mobile-dropdown-item:hover {
+    background: rgba(230, 168, 0, 0.08); /* Cambiado a dorado más oscuro */
+    color: #0a2e52;
+    opacity: 1;
+    padding-left: 20px;
+    /* Eliminado el cambio de font-weight en hover */
+}
+
+.mobile-action-btn {
+    margin: 20px;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+    color: #0a2e52;
+    border: 2px solid transparent;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: calc(100% - 40px);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(255, 213, 79, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Estilos para el icono del botón móvil */
+.mobile-action-btn i {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.mobile-action-btn:hover i {
+    color: #FFD54F;
+}
+
+.mobile-action-btn span {
+    transition: color 0.3s ease;
+}
+
+.mobile-action-btn:hover span {
+    color: #FFD54F;
+}
+
+.mobile-action-btn:hover {
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
+    color: #FFD54F;
+    border-color: #FFD54F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(10, 46, 82, 0.2);
+}
+
+.mobile-action-btn:active {
+    background: linear-gradient(135deg, #082140 0%, #122a4d 100%);
+    color: #FFC107;
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(10, 46, 82, 0.3);
+    transition: all 0.15s ease;
+}
+
+/* Estado de enfoque para el botón móvil */
+.mobile-action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.4);
+}
+
+/* OPCIÓN 2: Botón Minimalista con Gradiente Sutil (comentado)
+.mobile-action-btn-option2 {
+    margin: 25px 25px 30px 25px;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 160, 0, 0.05));
+    color: rgba(255, 193, 7, 0.9);
+    border: 2px solid rgba(255, 193, 7, 0.2);
+    padding: 18px 25px;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    width: calc(100% - 50px);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.mobile-action-btn-option2:hover {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 160, 0, 0.1));
+    border-color: rgba(255, 193, 7, 0.5);
+    color: rgba(255, 193, 7, 1);
+    transform: scale(1.02);
+}
+*/
+
+/* OPCIÓN 3: Botón con Icono y Efecto Neón (comentado)
+.mobile-action-btn-option3 {
+    margin: 25px 25px 30px 25px;
+    background: transparent;
+    color: rgba(255, 193, 7, 0.8);
+    border: 1px solid rgba(255, 193, 7, 0.4);
+    padding: 16px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    width: calc(100% - 50px);
+    transition: all 0.4s ease;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    position: relative;
+}
+
+.mobile-action-btn-option3::before {
+    content: '⚡';
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.mobile-action-btn-option3:hover {
+    background: rgba(255, 193, 7, 0.1);
+    color: rgba(255, 193, 7, 1);
+    border-color: rgba(255, 193, 7, 0.8);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.3),
+                inset 0 0 20px rgba(255, 193, 7, 0.1);
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+*/
+
+/* Responsive */
+@media (max-width: 1200px) {
+    header.header .nav-link {
+        padding: 30px 15px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    header.header .header-container {
+        padding: 0 15px !important;
+    }
+    
+    header.header .nav-link {
+        padding: 30px 12px !important;
+        font-size: 13px !important;
+    }
+    
+    .action-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+        margin-left: 15px;
+    }
+}
+
+/* Responsive - SIMPLIFICADO */
+@media (max-width: 900px) {
+    /* Ocultar completamente el menú desktop */
+    header.header .nav-menu,
+    header.header nav.nav-menu,
+    .header .nav-menu,
+    .nav-menu {
+        display: none !important;
+    }
+
+    /* Ocultar el botón de función futura */
+    header.header .action-btn,
+    .header .action-btn,
+    .action-btn,
+    .whatsapp-container {
+        display: none !important;
+    }
+
+    /* Mostrar solo el botón hamburguesa */
+    header.header .mobile-menu-btn,
+    .header .mobile-menu-btn,
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+    
+    /* Ajustar altura del header */
+    header.header .header-container {
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 20px !important;
+    }
+
+    .logo-section {
+        min-width: auto;
+    }
+    
+    header.header .header-container {
+        height: 70px !important;
+    }
+    
+    header.header .logo img {
+        height: 40px !important;
+    }
+    
+    .mobile-menu {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header.header .header-container {
+        height: 65px !important;
+        padding: 0 16px !important;
+    }
+    
+    header.header .logo img {
+        height: 36px !important;
+    }
+    
+    .mobile-menu-btn {
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+    }
+    
+    .hamburger-line {
+        width: 18px;
+        height: 2px;
+        margin: 2px 0;
+    }
+    
+    .mobile-nav-link {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+    
+    .mobile-dropdown-item {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .mobile-action-btn {
+        margin: 16px;
+        padding: 12px 16px;
+        font-size: 13px;
+        width: calc(100% - 32px);
+    }
+}
+
+/* WhatsApp Container */
+.whatsapp-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    border: none;
+    color: white;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E; /* Darker WhatsApp green on hover */
+    color: white; /* Keep icon white on hover */
+    transform: scale(1.1);
+}
+
+.whatsapp-btn i {
+    font-size: 28px; /* Slightly larger icon */
+}
+
+.whatsapp-btn:hover i {
+    color: white; /* Keep icon white on hover */
+}
+
+.whatsapp-number {
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+    background: #0a2e52; /* Dark blue from palette */
+    color: white; /* White text */
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.whatsapp-container:hover .whatsapp-number {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}

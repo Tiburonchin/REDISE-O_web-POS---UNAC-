@@ -1,0 +1,305 @@
+/* ================================
+   FORMATOS Y TUTORIALES - UNAC EPG
+   ================================ */
+
+:root {
+    --primary-blue: #0a2e52;
+    --secondary-blue: #1a3a5f;
+    --accent-gold: #FFD54F;
+    --accent-gold-dark: #FFC107;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+    --section-padding: 5rem 1rem;
+    --gray-200: #f1f3f5;
+    --gray-300: #e9ecef;
+    --gray-400: #e0e0e0;
+    --blue-100: #f0f4f8;
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-blue-15: 0 4px 12px rgba(10, 46, 82, 0.15);
+    --glow-gold: 0 0 0 3px rgba(255, 213, 79, 0.4);
+}
+
+body.page-formatos-tutoriales {
+    font-family: 'Roboto', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.main-content {
+    padding-top: 67px;
+}
+
+/* HERO */
+.page-formatos-tutoriales .hero-docentes {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    overflow: hidden;
+}
+.page-formatos-tutoriales .hero-background {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+.page-formatos-tutoriales .hero-bg-image {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+}
+.page-formatos-tutoriales .hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(10, 46, 82, 0.85) 0%, rgba(26, 58, 95, 0.75) 50%, rgba(255, 193, 7, 0.1) 100%);
+    z-index: 2;
+}
+.page-formatos-tutoriales .hero-content {
+    position: relative; z-index: 3; text-align: center;
+}
+.page-formatos-tutoriales .hero-welcome { margin-bottom: 2rem; }
+.page-formatos-tutoriales .welcome-text {
+    display: block; font-size: 1.1rem; font-weight: 400; opacity: 0.9;
+    margin-bottom: 0.5rem; letter-spacing: 0.5px;
+}
+.page-formatos-tutoriales .hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+.page-formatos-tutoriales .hero-divider {
+    display: flex; align-items: center; justify-content: center; margin: 1.5rem 0;
+}
+.page-formatos-tutoriales .divider-line {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+.page-formatos-tutoriales .divider-icon {
+    margin: 0 1rem; width: 40px; height: 40px;
+    background: rgba(255, 193, 7, 0.2);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+.page-formatos-tutoriales .divider-icon i {
+    color: var(--accent-gold); font-size: 1.2rem;
+}
+.page-formatos-tutoriales .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.page-formatos-tutoriales .page-container {
+    padding: var(--section-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TARJETAS DE FORMATOS */
+.formatos-tutoriales-section .formatos-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.formatos-tutoriales-section .formatos-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-2);
+    padding: 2.5rem 2rem 2rem 2rem;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    transition: box-shadow 0.3s, transform 0.3s;
+    border-top: 5px solid var(--accent-gold);
+}
+.formatos-tutoriales-section .formatos-card.shadow-hover:hover {
+    box-shadow: var(--shadow-blue-15);
+    transform: translateY(-5px);
+}
+.formatos-tutoriales-section .icon-header {
+    position: absolute;
+    top: -28px; left: 1.5rem;
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    border-radius: 50%; width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 3px solid var(--white);
+    z-index: 2;
+}
+.formatos-tutoriales-section .section-title {
+    font-size: 1.25rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+.formatos-tutoriales-section .section-title .section-sub {
+    font-size: 1.05rem;
+    color: var(--accent-gold-dark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.formatos-list {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 1.2rem;
+}
+.formatos-list li {
+    margin-bottom: 1.2em;
+}
+.formatos-list a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    transition: color 0.2s;
+    padding: 0.5em 0.2em;
+    border-radius: 6px;
+}
+.formatos-list a i {
+    color: var(--accent-gold-dark);
+    font-size: 1.2rem;
+}
+.formatos-list a:hover {
+    color: var(--secondary-blue);
+    background: var(--blue-100);
+}
+
+/* VIDEO TUTORIAL */
+.video-tutorial-section .section-title {
+    font-size: 1.5rem;
+    color: var(--secondary-blue);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+}
+.video-tutorial-section .video-icon {
+    color: var(--accent-gold-dark);
+    font-size: 1.7rem;
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 340px;
+}
+.video-container iframe {
+    border-radius: 12px;
+    box-shadow: var(--shadow-2);
+    max-width: 100%;
+}
+
+/* CINTA FINAL */
+.cinta-adquiere-docs {
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: var(--shadow-2);
+}
+.cinta-adquiere-docs::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255, 213, 79, 0.1), transparent 70%);
+    transform: rotate(45deg);
+    animation: rotate-glow 15s linear infinite;
+}
+@keyframes rotate-glow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.cinta-contenido { position: relative; z-index: 2; }
+.cinta-adquiere-docs h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    color: var(--white);
+}
+.cinta-adquiere-docs p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+.btn-cta-rect {
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.btn-cta-rect:hover {
+    background-color: var(--accent-gold-dark);
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .page-formatos-tutoriales .page-container { max-width: 98vw; }
+}
+@media (max-width: 992px) {
+    .formatos-tutoriales-section .formatos-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .formatos-tutoriales-section .col-lg-4 {
+        max-width: 100%; flex: 0 0 100%;
+    }
+    .cinta-adquiere-docs { padding: 3rem 1rem; }
+}
+@media (max-width: 768px) {
+    .page-formatos-tutoriales .page-container { padding: 3rem 1rem; }
+    .formatos-tutoriales-section .formatos-card { padding: 2rem 1rem 1.5rem 1rem; min-height: 0; }
+    .video-tutorial-section .section-title { font-size: 1.2rem; }
+    .cinta-adquiere-docs h2 { font-size: 1.5rem; }
+}
+@media (max-width: 575.98px) {
+    .page-formatos-tutoriales .hero-title { font-size: 1.6rem; }
+    .formatos-tutoriales-section .formatos-card { padding: 1.2rem 0.5rem 1rem 0.5rem; }
+    .cinta-adquiere-docs { padding: 2rem 0.5rem; }
+}
