@@ -33,36 +33,45 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.disabled = currentStep === totalSteps;
         };
         
-        nextBtn.addEventListener('click', () => {
-            if (currentStep < totalSteps) {
-                currentStep++;
-                updateStepper();
-            }
-        });
 
-        prevBtn.addEventListener('click', () => {
-            if (currentStep > 1) {
-                currentStep--;
-                updateStepper();
-            }
-        });
-
-        stepperItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const clickedStep = parseInt(item.dataset.step);
-                if (item.classList.contains('completed') || clickedStep === currentStep || clickedStep === currentStep + 1) {
-                     currentStep = clickedStep;
-                     updateStepper();
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStepper();
                 }
             });
-        });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStepper();
+                }
+            });
+        }
+
+
+        if (stepperItems && stepperItems.length > 0) {
+            stepperItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const clickedStep = parseInt(item.dataset.step);
+                    if (item.classList.contains('completed') || clickedStep === currentStep || clickedStep === currentStep + 1) {
+                        currentStep = clickedStep;
+                        updateStepper();
+                    }
+                });
+            });
+        }
         
         // --- Gemini API Feature ---
-        geminiBtn.addEventListener('click', async () => {
-            geminiBtn.disabled = true;
-            geminiResult.style.display = 'none';
-            loader.style.display = 'block';
-            geminiBtnText.textContent = 'Generando...';
+        if (geminiBtn) {
+            geminiBtn.addEventListener('click', async () => {
+                geminiBtn.disabled = true;
+                if (geminiResult) geminiResult.style.display = 'none';
+                if (loader) loader.style.display = 'block';
+                if (geminiBtnText) geminiBtnText.textContent = 'Generando...';
 
             // Prompt mejorado: consejos, preguntas, ejemplos de respuesta y recursos
             const prompt = `Eres un coach de admisión universitaria. Dame:
@@ -126,7 +135,8 @@ Formato exacto:
                 }
             }
         }
+    }
 
-        // Initialize
-        updateStepper();
-    });
+    // Initialize
+    updateStepper();
+});

@@ -1,16 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // Determinar la ruta base relativa dinámicamente
-    const pathSegments = window.location.pathname.split('/').filter(Boolean);
-    pathSegments.pop(); // Remove filename
-    const depth = pathSegments.length;
-    const relativePath = '../'.repeat(depth) || './';
+    const base = typeof basePath !== 'undefined' ? basePath : '';
 
-    // Construir la ruta al HTML del footer dinámicamente
-    const footerPath = `${relativePath}footer/footer-pass.html`;
-
-    console.log('Footer - Profundidad detectada:', depth);
+    const footerPath = `${base}footer/footer-pass.html`;
+    
     console.log('Footer - Cargando desde:', footerPath);
-
+    
     fetch(footerPath)
         .then(response => {
             if (!response.ok) {
@@ -19,24 +13,29 @@ window.addEventListener('DOMContentLoaded', () => {
             return response.text();
         })
         .then(data => {
-            document.getElementById('footer').innerHTML = data;
+            const footerElement = document.getElementById('footer');
+            footerElement.innerHTML = data;
 
-            // Si no estamos en la raíz, corregir las rutas de imágenes y enlaces
-            if (depth > 0) {
-                const elementsToFix = document.querySelectorAll('#footer [src], #footer [href]');
-                elementsToFix.forEach(el => {
-                    const attribute = el.hasAttribute('src') ? 'src' : 'href';
-                    const value = el.getAttribute(attribute);
+            if (base !== '') {
+                // Corregir rutas de imágenes
+                const images = footerElement.querySelectorAll('img');
+                images.forEach(img => {
+                    let src = img.getAttribute('src');
+                    if (src && !src.startsWith('http') && !src.startsWith(base)) {
+                        img.setAttribute('src', base + src);
+                    }
+                });
 
-                    if (value && !value.startsWith('http') && !value.startsWith('#') && !value.startsWith('mailto:') && !value.startsWith('tel:') && !value.startsWith('data:')) {
-                        if (!value.startsWith(relativePath)) {
-                            el.setAttribute(attribute, relativePath + value);
-                        }
+                // Corregir rutas de enlaces
+                const links = footerElement.querySelectorAll('a');
+                links.forEach(link => {
+                    let href = link.getAttribute('href');
+                    if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith(base)) {
+                        link.setAttribute('href', base + href);
                     }
                 });
             }
 
-            // Insertar el correo dinámicamente después de cargar el HTML
             document.querySelectorAll('#footer-email').forEach(el => {
                 const correo = 'posgrado' + '@' + 'unac.pe';
                 el.innerHTML = `${correo}`;
