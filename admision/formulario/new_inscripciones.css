@@ -378,12 +378,6 @@ main {
     opacity: 0.95;
 }
 
-/* --- Estilos Mejorados para Selects (legacy) --- */
-
-.form-select {
-    /* ... styles from previous turn ... */
-}
-
 /* --- Custom Select --- */
 .custom-select-wrapper {
     position: relative;
@@ -457,4 +451,54 @@ main {
 
 .form-select.original-select {
     display: none;
+}
+
+/* --- Custom Form Check --- */
+.form-check-input {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid var(--primary-blue);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+    position: relative;
+    top: -0.2em;
+    margin-right: 0.5em;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold-dark);
+}
+
+.form-check-input:checked::before {
+    content: '';
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-check-input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+.form-check-input[type="checkbox"]:checked::before {
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    color: var(--primary-blue);
+    background-color: transparent;
+    border-radius: 0;
+    width: auto;
+    height: auto;
 }

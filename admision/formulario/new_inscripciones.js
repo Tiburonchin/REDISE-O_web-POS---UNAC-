@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const unidadSelect = document.getElementById('unidad');
     const programaSelect = document.getElementById('programa');
     const detalleSelect = document.getElementById('detalle_programa');
-    const medioConocimientoSelect = document.getElementById('medio_conocimiento');
 
     // --- ESTADO --- 
     let currentStep = 0;
@@ -62,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             this.selectElement.addEventListener('options-updated', () => this.update());
+            this.selectElement.addEventListener('change', () => this.update());
             this.update();
         }
 
@@ -70,22 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
             this.selectTrigger.textContent = selectedOption ? selectedOption.textContent : '';
             this.customOptions.innerHTML = '';
 
-            Array.from(this.selectElement.options).forEach(option => {
+            Array.from(this.selectElement.options).forEach((option, index) => {
+                if (option.disabled) return; // No mostrar opciones deshabilitadas
+
                 const customOption = document.createElement('div');
                 customOption.classList.add('custom-option');
                 customOption.textContent = option.textContent;
                 customOption.dataset.value = option.value;
 
-                if (option.disabled) {
-                    customOption.classList.add('disabled');
-                }
                 if (option.selected) {
                     customOption.classList.add('selected');
                 }
 
                 customOption.addEventListener('click', () => {
-                    if (option.disabled) return;
-                    this.selectElement.value = option.value;
+                    this.selectElement.selectedIndex = index;
                     const event = new Event('change', { bubbles: true });
                     this.selectElement.dispatchEvent(event);
                     this.customSelect.classList.remove('open');
@@ -103,10 +101,44 @@ document.addEventListener('DOMContentLoaded', () => {
         new CustomSelect(unidadSelect);
         new CustomSelect(programaSelect);
         new CustomSelect(detalleSelect);
-        new CustomSelect(medioConocimientoSelect);
+        createMedioConocimientoRadios();
 
         fetchPrograms();
         updateUI();
+    };
+
+    const createMedioConocimientoRadios = () => {
+        const options = [
+            { value: "Redes Sociales", label: "Redes Sociales (Facebook, Instagram, etc.)" },
+            { value: "Página web", label: "Página web oficial" },
+            { value: "Recomendación", label: "Recomendación de un amigo o colega" },
+            { value: "Otro", label: "Otro medio" }
+        ];
+
+        const container = document.getElementById('medio_conocimiento_options');
+        container.innerHTML = ''; // Clear container
+
+        options.forEach(option => {
+            const div = document.createElement('div');
+            div.classList.add('form-check', 'mb-2');
+
+            const input = document.createElement('input');
+            input.classList.add('form-check-input');
+            input.type = 'radio';
+            input.name = 'medio_conocimiento';
+            input.id = `medio_${option.value.replace(/\s+/g, '')}`;
+            input.value = option.value;
+            input.required = true;
+
+            const label = document.createElement('label');
+            label.classList.add('form-check-label');
+            label.htmlFor = input.id;
+            label.textContent = option.label;
+
+            div.appendChild(input);
+            div.appendChild(label);
+            container.appendChild(div);
+        });
     };
 
     // --- LÓGICA DE TRANSICIÓN DE PASOS ---
@@ -143,7 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- ACTUALIZACIÓN DE LA INTERFAZ ---
     const updateUI = () => {
         stepperItems.forEach((item, index) => {
-            item.classList.toggle('active', index < currentStep ? 'completed' : index === currentStep ? 'active' : '');
+            item.classList.remove('active', 'completed');
+            if (index < currentStep) {
+                item.classList.add('completed');
+            } else if (index === currentStep) {
+                item.classList.add('active');
+            }
         });
         const progress = (currentStep / (stepperItems.length - 1)) * 100;
         progressBar.style.width = `${progress}%`;
@@ -157,12 +194,33 @@ document.addEventListener('DOMContentLoaded', () => {
         let isValid = true;
         const currentFormStep = formSteps[stepIndex];
         currentFormStep.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-        currentFormStep.querySelectorAll('input[required], select[required]').forEach(input => {
+        
+        currentFormStep.querySelectorAll('input[required]:not([type="radio"]), select[required]').forEach(input => {
             if (!input.checkValidity()) {
                 input.classList.add('is-invalid');
                 isValid = false;
             }
         });
+
+        currentFormStep.querySelectorAll('[data-radio-group]').forEach(group => {
+            const radios = group.querySelectorAll('input[type="radio"][required]');
+            if (radios.length > 0) {
+                const isChecked = Array.from(radios).some(radio => radio.checked);
+                if (!isChecked) {
+                    isValid = false;
+                    const errorDiv = group.querySelector('.invalid-feedback');
+                    if (errorDiv) {
+                        errorDiv.style.display = 'block';
+                    }
+                } else {
+                    const errorDiv = group.querySelector('.invalid-feedback');
+                    if (errorDiv) {
+                        errorDiv.style.display = 'none';
+                    }
+                }
+            }
+        });
+
         if (stepIndex === formSteps.length - 1) {
             const recaptchaResponse = grecaptcha.getResponse();
             const recaptchaErrorDiv = document.getElementById('recaptcha-error');

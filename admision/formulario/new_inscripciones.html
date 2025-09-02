@@ -176,15 +176,11 @@
                             <div class="invalid-feedback">Por favor, seleccione una maestría o doctorado.</div>
                         </div>
                         <div class="mb-4">
-                            <label for="medio_conocimiento" class="form-label">¿Cómo se enteró de nosotros? <span class="text-danger">*</span></label>
-                            <select class="form-select" id="medio_conocimiento" name="medio_conocimiento" required>
-                                <option value="" disabled selected>Seleccione una opción</option>
-                                <option value="Redes Sociales">Redes Sociales (Facebook, Instagram, etc.)</option>
-                                <option value="Página web">Página web oficial</option>
-                                <option value="Recomendación">Recomendación de un amigo o colega</option>
-                                <option value="Otro">Otro medio</option>
-                            </select>
-                            <div class="invalid-feedback">Por favor, seleccione una opción.</div>
+                            <label class="form-label">¿Cómo se enteró de nosotros? <span class="text-danger">*</span></label>
+                            <div id="medio_conocimiento_options" class="mt-2">
+                                <!-- Radio buttons will be generated here -->
+                            </div>
+                            <div class="invalid-feedback" id="medio_conocimiento_error">Por favor, seleccione una opción.</div>
                         </div>
                         <div class="button-container">
                             <button type="button" class="btn-step btn-secondary prev-step"><i class="fas fa-arrow-left me-2"></i> Anterior</button>
@@ -194,7 +190,7 @@
 
                     <!-- Step 3: Confirmación -->
                     <div class="form-step" id="step-3">
-                         <h4>Resumen de su Pre-Inscripción</h4>
+                         <h4>Resumen de su Inscripción</h4>
                         <div id="summary" class="mb-4">
                             <!-- El resumen se generará aquí con JS -->
                         </div>
@@ -206,7 +202,7 @@
                             <div class="invalid-feedback">Debe aceptar los términos y la política de privacidad.</div>
                         </div>
                         <div class="mb-3">
-                            <div class="g-recaptcha" data-sitekey="6LdtvVMrAAAAAJOd5g_p4hR_S2Y_x-aY_cE-3d2D"></div>
+                            <div class="g-recaptcha" data-sitekey="6LdtvVMrAAAAAFOIiU2CFLJN9UqcsBh6GvC6h--W"></div>
                             <div id="recaptcha-error" class="invalid-feedback" style="display: none;">Por favor, complete el reCAPTCHA.</div>
                         </div>
                         <div class="button-container">
