@@ -548,3 +548,435 @@ body {
         transform: scale(1);
     }
 }
+
+/* ===============================
+   CUSTOM FORM STYLING
+   ================================ */
+
+/* Mejora para los Selects (Unidad y Programa) */
+.form-select {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-light);
+    background-color: var(--light-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}
+
+.form-select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+    outline: none;
+}
+
+/* ===============================
+   MINIMALIST SELECTION STYLES
+   ================================ */
+
+/* Common container style for scrollable selections */
+.selection-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem; /* Increased gap for better spacing */
+    margin-top: 0.5rem;
+    padding: 1rem 0.5rem; /* Vertical padding, less horizontal */
+    background-color: transparent; /* No background */
+    border-bottom: 2px solid var(--border-light); /* Bottom border for the container */
+    transition: border-color 0.3s ease;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-blue) var(--light-bg);
+}
+
+.selection-container::-webkit-scrollbar {
+    height: 6px; /* Thinner scrollbar */
+}
+
+.selection-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.selection-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 6px;
+}
+.selection-container::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+
+.selection-container.is-invalid {
+    border-color: var(--danger-text);
+    box-shadow: none;
+}
+
+/* Item sizing */
+.selection-container .form-check {
+    flex: 0 0 180px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common label styles */
+.selection-container .form-check-label {
+    display: block;
+    padding: 1rem 0.5rem;
+    border: none; /* No border */
+    border-bottom: 2px solid transparent; /* Placeholder for selection indicator */
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-light);
+}
+
+/* Hover state */
+.selection-container .form-check-label:hover {
+    color: var(--primary-blue);
+    background-color: var(--light-bg);
+}
+
+/* Hide the actual radio button */
+.selection-container .form-check-input {
+    display: none;
+}
+
+/* Selected state */
+.selection-container .form-check-input:checked + .form-check-label {
+    color: var(--primary-blue);
+    font-weight: 600;
+    background-color: transparent;
+    border-bottom-color: var(--accent-gold-dark);
+    box-shadow: none;
+    transform: none;
+}
+
+/* ===============================
+   DETALLE PROGRAMA STYLES (FORM CHECK)
+   ================================ */
+
+.detalle-programa-container {
+    display: block; /* Change to block for a vertical list */
+    margin-top: 0.5rem;
+    padding: 1rem;
+    max-height: 300px; /* Limit height and make it scrollable */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.detalle-programa-container.is-invalid {
+    border-color: var(--danger-text);
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.25);
+}
+
+.detalle-programa-container .form-check {
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.detalle-programa-container .form-check:hover {
+    background-color: var(--primary-light-bg);
+}
+
+.detalle-programa-container .form-check-input {
+    /* Make the radio button visible and styled */
+    display: block;
+    flex-shrink: 0;
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 0.75rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--white);
+    border: 2px solid var(--border-light);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.detalle-programa-container .form-check-input:checked {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.detalle-programa-container .form-check-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.detalle-programa-container .form-check-label {
+    /* Reset previous styles */
+    display: inline;
+    flex-direction: unset;
+    justify-content: unset;
+    align-items: unset;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: transparent !important; /* Override hover styles from other rules */
+    width: auto;
+    height: auto;
+    font-weight: 500;
+    text-align: left;
+    overflow: visible;
+    color: var(--text-dark);
+    box-shadow: none !important; /* Override hover styles from other rules */
+    transform: none !important; /* Override hover styles from other rules */
+}
+
+.detalle-programa-container .form-check-input:checked + .form-check-label {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Estilos para el display del programa elegido */
+#selected-detalle-display {
+    margin: 2rem 0rem;
+    padding: 1rem;
+    background-color: var(--primary-light-bg);
+    border-left: 5px solid var(--primary-blue);
+    border-radius: 4px;
+    display: none; /* Se mostrará cuando se elija algo */
+}
+
+#selected-detalle-display p {
+    margin: 0;
+    font-weight: 500;
+    color: var(--primary-dark-text);
+}
+
+#selected-detalle-display strong {
+    color: var(--primary-blue);
+}
+
+
+
+
+/* ===============================
+   SELECTION CONTAINER STYLES (Unidad, Programa, etc)
+   ================================ */
+
+.selection-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    transition: border-color 0.3s ease;
+}
+
+.selection-container.is-invalid {
+    border-color: var(--danger-text);
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.25);
+}
+
+.selection-container .form-check {
+    margin: 0;
+    padding: 0;
+}
+
+.selection-container .form-check-label {
+    display: block;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+}
+
+.selection-container .form-check-label:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+}
+
+.selection-container .form-check-input {
+    display: none;
+}
+
+.selection-container .form-check-input:checked + .form-check-label {
+    background-color: var(--primary-light-bg);
+    border-color: var(--primary-blue);
+    color: var(--primary-dark-text);
+    font-weight: 700;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+
+/* ===============================
+   KNOWLEDGE SOURCE STYLES
+   ================================ */
+
+.knowledge-source-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.knowledge-source-container .form-check {
+    margin: 0;
+    padding: 0;
+}
+
+.knowledge-source-container .form-check-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    min-height: 120px;
+}
+
+.knowledge-source-container .form-check-label i {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.knowledge-source-container .form-check-label span {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+.knowledge-source-container .form-check-label:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2);
+}
+
+.knowledge-source-container .form-check-input {
+    display: none;
+}
+
+.knowledge-source-container .form-check-input:checked + .form-check-label {
+    background-color: var(--primary-light-bg);
+    border-color: var(--primary-blue);
+    color: var(--primary-dark-text);
+    font-weight: 700;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.knowledge-source-container .form-check-input:checked + .form-check-label i {
+    color: var(--accent-gold-dark);
+    transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+    .selection-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===============================
+   SEARCHABLE LIST STYLES
+   ================================ */
+
+.searchable-list-container {
+    position: relative;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: var(--light-bg);
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    background-color: var(--white);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+    outline: none;
+}
+
+.scrollable-list {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 0.5rem; /* Space for scrollbar */
+}
+
+.scrollable-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 8px;
+}
+
+.scrollable-list .list-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+}
+
+.scrollable-list .list-item:hover {
+    background-color: var(--primary-light-bg);
+    color: var(--primary-dark-text);
+}
+
+.scrollable-list .list-item.selected {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-weight: 600;
+}

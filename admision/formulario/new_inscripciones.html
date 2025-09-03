@@ -214,19 +214,22 @@
                 <!-- Step 2: Programa -->
                 <div class="form-step" id="step-2">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="unidad" class="form-label">Unidad <span class="text-danger">*</span></label>
-                            <select class="form-select" id="unidad" name="unidad" required>
-                                <option value="" disabled selected hidden>Seleccione una unidad</option>
-                                <!-- Options will be loaded from JSON -->
-                            </select>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label">Unidad <span class="text-danger">*</span></label>
+                            <div class="searchable-list-container">
+                                <div class="search-bar">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="text" id="unidad-search" class="search-input" placeholder="Buscar unidad...">
+                                </div>
+                                <div id="unidad-container" class="scrollable-list"></div>
+                            </div>
+                            <input type="hidden" id="unidad" name="unidad" required>
                             <div class="invalid-feedback"></div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="programa" class="form-label">Programa <span class="text-danger">*</span></label>
-                            <select class="form-select" id="programa" name="programa" required>
-                                <!-- Options will be loaded based on unidad selection -->
-                            </select>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label">Programa <span class="text-danger">*</span></label>
+                            <div id="programa-container" class="selection-container"></div>
+                            <input type="hidden" id="programa" name="programa" required>
                             <div class="invalid-feedback"></div>
                         </div>
                     </div>
@@ -242,14 +245,37 @@
                         <p><strong>Programa elegido:</strong> <span id="selected-detalle-text"></span></p>
                     </div>
                     <div class="mb-5">
-                        <label for="medio_conocimiento" class="form-label">¿Cómo se enteró de nosotros? <span class="text-danger">*</span></label>
-                        <select class="form-select" id="medio_conocimiento" name="medio_conocimiento" required aria-label="¿Cómo se enteró de nosotros?">
-                            <option value="" disabled selected hidden>Seleccione una opción</option>
-                            <option value="Redes Sociales">Redes Sociales (Facebook, Instagram, etc.)</option>
-                            <option value="Página web">Página web oficial</option>
-                            <option value="Recomendación">Recomendación de un amigo o colega</option>
-                            <option value="Otro">Otro medio</option>
-                        </select>
+                        <label class="form-label">¿Cómo se enteró de nosotros? <span class="text-danger">*</span></label>
+                        <div class="knowledge-source-container">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medio_conocimiento" id="ks-redes" value="Redes Sociales" required>
+                                <label class="form-check-label" for="ks-redes">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span>Redes Sociales</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medio_conocimiento" id="ks-web" value="Página web" required>
+                                <label class="form-check-label" for="ks-web">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Página web oficial</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medio_conocimiento" id="ks-recom" value="Recomendación" required>
+                                <label class="form-check-label" for="ks-recom">
+                                    <i class="fas fa-users"></i>
+                                    <span>Recomendación</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medio_conocimiento" id="ks-otro" value="Otro" required>
+                                <label class="form-check-label" for="ks-otro">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Otro</span>
+                                </label>
+                            </div>
+                        </div>
                         <div class="invalid-feedback"></div>
                     </div>
                     <div class="d-flex justify-content-between">
@@ -264,7 +290,7 @@
                         <!-- El resumen será generado dinámicamente por JS y el CSS mejorado lo hará más visual -->
                     </div>
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="privacy-policy" required>
+                        <input type="checkbox" class="form-check-input" id="privacy-policy" name="privacy-policy" required>
                         <label class="form-check-label" for="privacy-policy">Acepto los <a href="#">términos y la política de privacidad</a>. <span class="text-danger">*</span></label>
                         <div class="invalid-feedback">Debe aceptar los términos y la política de privacidad.</div>
                     </div>

@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const unidad = data.unidad;
         const programa = data.programa;
         const detallePrograma = data.detalle_programa;
-        const medioConocimiento = document.querySelector('#medio_conocimiento option:checked').textContent;
+        const medioConocimiento = document.querySelector('input[name="medio_conocimiento"]:checked') ? document.querySelector('input[name="medio_conocimiento"]:checked').value : 'No especificado';
         const domicilio = document.querySelector('input[name="domicilio"]:checked') ? document.querySelector('input[name="domicilio"]:checked').labels[0].textContent : 'No especificado';
 
         summaryContainer.innerHTML = `
@@ -90,12 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentStepFields = steps[currentStep - 1].querySelectorAll('[required]');
             let isValid = true;
             currentStepFields.forEach(field => {
-                // Special check for radio buttons
                 if (field.type === 'radio') {
                     const radioGroup = document.getElementsByName(field.name);
                     if (!Array.from(radioGroup).some(r => r.checked)) {
                         isValid = false;
-                        // Find the container to add the invalid class
                         const container = field.closest('.radio-group-container') || field.closest('.detalle-programa-container');
                         if(container) container.classList.add('is-invalid');
                     }
@@ -115,83 +113,105 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Load Unidades and Programas from JSON
-    const unidadSelect = document.getElementById('unidad');
-    const programaSelect = document.getElementById('programa');
+    const unidadContainer = document.getElementById('unidad-container');
+    const programaContainer = document.getElementById('programa-container');
     const detalleProgramaContainer = document.getElementById('detalle_programa_container');
+    const unidadInput = document.getElementById('unidad');
+    const programaInput = document.getElementById('programa');
     const detalleProgramaInput = document.getElementById('detalle_programa');
     const selectedDetalleText = document.getElementById('selected-detalle-text');
+    const unidadSearch = document.getElementById('unidad-search');
+
+    const createRadioCard = (name, value, labelText, container, onChangeCallback) => {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('form-check');
+        const input = document.createElement('input');
+        input.classList.add('form-check-input');
+        input.type = 'radio';
+        input.name = name;
+        const inputId = `${name}-${value.replace(/[^a-zA-Z0-9]/g, '-')}`;
+        input.id = inputId;
+        input.value = value;
+        input.required = true;
+        const label = document.createElement('label');
+        label.classList.add('form-check-label');
+        label.htmlFor = inputId;
+        label.textContent = labelText;
+        wrapper.appendChild(input);
+        wrapper.appendChild(label);
+        container.appendChild(wrapper);
+        input.addEventListener('change', onChangeCallback);
+        return input;
+    };
 
     fetch('programas.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
+            unidadContainer.innerHTML = '';
             const facultades = Object.keys(data);
+
             facultades.forEach(facultad => {
-                const option = new Option(facultad, facultad);
-                unidadSelect.add(option);
-            });
+                const item = document.createElement('div');
+                item.classList.add('list-item');
+                item.textContent = facultad;
+                item.dataset.value = facultad;
+                unidadContainer.appendChild(item);
 
-            unidadSelect.addEventListener('change', () => {
-                const selectedFacultad = data[unidadSelect.value];
-                programaSelect.innerHTML = '<option value="" disabled selected hidden>Seleccione un tipo de programa</option>';
-                detalleProgramaContainer.innerHTML = '';
-                selectedDetalleText.textContent = '';
-                detalleProgramaInput.value = '';
+                item.addEventListener('click', () => {
+                    unidadInput.value = facultad;
 
-                if (selectedFacultad) {
-                    const tiposDePrograma = Object.keys(selectedFacultad).filter(key => !key.includes('pdf_link'));
-                    tiposDePrograma.forEach(tipo => {
-                        const option = new Option(tipo, tipo);
-                        programaSelect.add(option);
-                    });
-                }
-            });
+                    document.querySelectorAll('#unidad-container .list-item').forEach(el => el.classList.remove('selected'));
+                    item.classList.add('selected');
 
-            programaSelect.addEventListener('change', () => {
-                const selectedFacultad = data[unidadSelect.value];
-                const selectedTipo = programaSelect.value;
-                const programas = selectedFacultad[selectedTipo];
+                    programaContainer.innerHTML = '';
+                    detalleProgramaContainer.innerHTML = '';
+                    programaInput.value = '';
+                    detalleProgramaInput.value = '';
+                    selectedDetalleText.textContent = '';
+                    document.getElementById('selected-detalle-display').style.display = 'none';
 
-                detalleProgramaContainer.innerHTML = '';
-                selectedDetalleText.textContent = '';
-                detalleProgramaInput.value = '';
+                    const selectedFacultad = data[facultad];
+                    if (selectedFacultad) {
+                        const tiposDePrograma = Object.keys(selectedFacultad).filter(key => !key.includes('pdf_link'));
+                        tiposDePrograma.forEach(tipo => {
+                            createRadioCard('programa_radio', tipo, tipo, programaContainer, () => {
+                                programaInput.value = tipo;
+                                detalleProgramaContainer.innerHTML = '';
+                                detalleProgramaInput.value = '';
+                                selectedDetalleText.textContent = '';
+                                document.getElementById('selected-detalle-display').style.display = 'none';
 
-                if (programas && Array.isArray(programas)) {
-                    programas.forEach(programa => {
-                        const radioWrapper = document.createElement('div');
-                        radioWrapper.classList.add('form-check');
-                        const radio = document.createElement('input');
-                        radio.classList.add('form-check-input');
-                        radio.type = 'radio';
-                        radio.name = 'detalle_programa_radio';
-                        const radioId = `prog-${programa.replace(/[^a-zA-Z0-9]/g, '-')}`;
-                        radio.id = radioId;
-                        radio.value = programa;
-                        radio.required = true;
-                        const label = document.createElement('label');
-                        label.classList.add('form-check-label');
-                        label.htmlFor = radioId;
-                        label.textContent = programa;
-                        radioWrapper.appendChild(radio);
-                        radioWrapper.appendChild(label);
-                        detalleProgramaContainer.appendChild(radioWrapper);
-                        radio.addEventListener('change', () => {
-                            if (radio.checked) {
-                                detalleProgramaInput.value = programa;
-                                selectedDetalleText.textContent = programa;
-                            }
+                                const programas = selectedFacultad[tipo];
+                                if (programas && Array.isArray(programas)) {
+                                    programas.forEach(programa => {
+                                        createRadioCard('detalle_programa_radio', programa, programa, detalleProgramaContainer, () => {
+                                            detalleProgramaInput.value = programa;
+                                            selectedDetalleText.textContent = programa;
+                                            document.getElementById('selected-detalle-display').style.display = 'block';
+                                        });
+                                    });
+                                }
+                            });
                         });
-                    });
-                }
+                    }
+                });
+            });
+
+            unidadSearch.addEventListener('input', () => {
+                const searchTerm = unidadSearch.value.toLowerCase();
+                document.querySelectorAll('#unidad-container .list-item').forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
             });
         })
         .catch(error => {
             console.error('Error al cargar o procesar los programas:', error);
+            unidadContainer.innerHTML = '<p class="text-danger">Error al cargar las unidades.</p>';
         });
 
     const showSuccessMessage = () => {
@@ -211,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('close-success-message').addEventListener('click', () => {
             document.body.removeChild(successOverlay);
             form.reset();
-            showStep(1);
+            window.location.href = '../Proceso_admision.html#step=2';
         });
     };
 
