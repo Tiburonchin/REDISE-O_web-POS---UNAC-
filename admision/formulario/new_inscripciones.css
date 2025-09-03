@@ -327,7 +327,7 @@ body {
 }
 
 .step.active:not(:last-child)::after {
-    background: linear-gradient(90deg, #0a2e52, #e0e0e0);
+    background: linear-gradient(90deg, --accent-gold-dark, --accent-brown);
 }
 
 
@@ -345,15 +345,14 @@ body {
 
 /* Estilos para el Paso Activo */
 .step.active .step-circle {
-    background-color: #E6A800; /* Dorado UNAC */
-    border-color: #E6A800;
-    color: #fff;
+    background-color: var(--accent-gold-dark); /* Dorado UNAC */
+    border-color: var(--accent-gold-dark);
+    color: var(--secondary-blue);
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(230, 168, 0, 0.6);
 }
 
 .step.active .step-title {
-    color: #E6A800;
+    color: var(--accent-gold-dark);
     font-weight: 700;
 }
 
