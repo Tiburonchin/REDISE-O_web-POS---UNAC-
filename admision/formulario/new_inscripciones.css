@@ -263,7 +263,7 @@ body {
     padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--shadow-3);
 }
 
 /* Estilos del Stepper Moderno - REVISADO */

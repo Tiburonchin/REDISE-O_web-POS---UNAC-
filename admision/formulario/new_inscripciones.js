@@ -231,7 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('close-success-message').addEventListener('click', () => {
             document.body.removeChild(successOverlay);
             form.reset();
-            window.location.href = '../Proceso_admision.html#step=2';
+            // Redirigir a Proceso_admision.html y activar el paso 2 del stepper
+            window.location.href = '../Proceso_admision.html#ir-paso-2';
         });
     };
 

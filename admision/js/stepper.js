@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loader = document.getElementById('loader');
         const geminiBtnText = document.getElementById('geminiBtnText');
 
-        let currentStep = 1;
+    let currentStep = 1;
         const totalSteps = stepperItems.length;
 
         const updateStepper = () => {
@@ -127,6 +127,16 @@ Formato exacto:
             }
         }
 
+        // Si la URL contiene #ir-paso-2, activar el paso 2 y hacer scroll
+        if (window.location.hash === '#ir-paso-2') {
+            currentStep = 2;
+            setTimeout(() => {
+                const stepper = document.querySelector('.stepper-container');
+                if (stepper) {
+                    stepper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 300);
+        }
         // Initialize
         updateStepper();
     });
