@@ -42,6 +42,8 @@
     
     <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="css/style.css?v=3">
+    <!-- Floating Inscríbete Component Styles -->
+    <link rel="stylesheet" href="css/floating-inscribete.css?v=1">
     
     <!-- Preload Header-Footer Styles para evitar flash sin estilos -->
     <link rel="stylesheet" href="header/header.css">
@@ -617,6 +619,14 @@
          ================================ -->
     <div id="footer"></div>
 
+    <!-- Floating Inscríbete YA Component (refactor: fixed left, non-draggable) -->
+    <div id="inscribete-float" role="button" aria-label="Inscríbete ya" aria-expanded="false" tabindex="0">
+        <div class="inscribete-core">
+            <span class="inscribete-icon" aria-hidden="true">Go!</span>
+            <span class="inscribete-text" aria-hidden="true">¡Inscríbete ya!</span>
+        </div>
+    </div>
+
     <!-- ================================
          JAVASCRIPT SCRIPTS
          ================================ -->
@@ -635,5 +645,7 @@
     <script src="js/main.js?v=3"></script>
     <!-- Script de paginación dinámica de Programas Destacados -->
     <script src="js/programas-destacados.js"></script>
+    <!-- Floating Inscríbete Script -->
+    <script src="js/inscribete-float.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,148 @@
+/* === Floating Inscríbete (versión fija izquierda, transparente, expansión pill) === */
+/* Variables fallback (por si aún no cargaron en :root) */
+:root {
+  --insc-border: var(--primary-blue, #0a2e52);
+  --insc-icon: var(--accent-gold, #FFC107);
+  --insc-bg-solid: var(--primary-blue, #0a2e52);
+  --insc-bg-hover: var(--secondary-blue, #1a3a5f);
+  --insc-text-pill: var(--white, #ffffff);
+  --insc-radius: 38px;
+}
+
+#inscribete-float {
+  position: fixed;
+  bottom: 2.25rem;
+  right: 1.35rem; /* reposicionado lado derecho */
+  z-index: 1200;
+  width: 66px;
+  height: 66px;
+  font-family: 'Poppins','Roboto',sans-serif;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: width .5s cubic-bezier(.22,1,.36,1);
+}
+
+#inscribete-float:focus-visible .inscribete-core { box-shadow: 0 0 0 4px rgba(255,193,7,.45); }
+
+/* Círculo transparente con borde */
+.inscribete-core {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15); /* más visible */
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: 2px solid rgba(255,193,7,0.85); /* contorno dorado visible */
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,.25), 0 0 0 3px rgba(255,193,7,0.15);
+  color: var(--insc-border);
+  cursor: pointer;
+  transition: background .4s ease, width .5s cubic-bezier(.22,1,.36,1), padding .45s ease, border-color .4s ease, box-shadow .4s ease;
+  padding: 0; /* se expandirá */
+  overflow: hidden;
+}
+
+/* Icono ! siempre visible */
+.inscribete-icon {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--insc-icon);
+  letter-spacing: .5px;
+  pointer-events: none;
+  display: inline-block;
+  transition: transform .55s cubic-bezier(.22,1,.36,1), color .4s ease, letter-spacing .4s ease, opacity .35s ease, width .45s ease, margin .45s ease;
+  margin: 0; /* centrado perfecto */
+  text-shadow: 0 2px 4px rgba(0,0,0,.35);
+  width: auto;
+}
+
+/* Texto oculto inicialmente dentro del mismo contenedor */
+.inscribete-text {
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .35px;
+  white-space: nowrap;
+  margin-left: .65rem;
+  margin-right: .9rem;
+  opacity: 0;
+  transform: translateY(6px);
+  color: var(--insc-text-pill);
+  transition: opacity .35s ease .05s, transform .55s cubic-bezier(.22,1,.36,1), width .45s ease, margin .3s ease;
+  pointer-events: none;
+}
+
+/* Texto NO ocupa espacio cuando está colapsado */
+#inscribete-float:not(.expanded):not(:hover) .inscribete-text {
+  width: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Modo expandido por hover (desktop) o click (touch) usando clase .expanded */
+#inscribete-float.expanded,
+#inscribete-float:hover { width: 240px; }
+
+#inscribete-float.expanded .inscribete-core,
+#inscribete-float:hover .inscribete-core {
+  background: linear-gradient(135deg,var(--insc-bg-solid), var(--insc-bg-hover));
+  border-radius: var(--insc-radius);
+  padding: 0 .35rem 0 .75rem;
+  box-shadow: 0 10px 30px -8px rgba(0,0,0,.35),0 4px 14px -4px rgba(0,0,0,.25);
+}
+
+#inscribete-float.expanded .inscribete-icon,
+#inscribete-float:hover .inscribete-icon { opacity:0; transform: scale(.25); width:0; margin:0; letter-spacing:0; }
+#inscribete-float.expanded .inscribete-core,
+#inscribete-float:hover .inscribete-core { justify-content: flex-start; }
+
+#inscribete-float.expanded .inscribete-text,
+#inscribete-float:hover .inscribete-text { opacity: 1; transform: translateY(0); }
+
+/* Animación sutil de presencia */
+@keyframes insc-pulse-soft { 0%,100% { box-shadow: 0 4px 14px -4px rgba(0,0,0,.22);} 50% { box-shadow: 0 6px 18px -6px rgba(0,0,0,.28);} }
+#inscribete-float:not(.expanded) .inscribete-core { animation: insc-pulse-soft 6s ease-in-out infinite; }
+
+/* Interacciones */
+.inscribete-core:active { transform: translateY(1px); }
+
+/* Accesibilidad reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #inscribete-float:not(.expanded) .inscribete-core { animation: none; }
+  .inscribete-core, .inscribete-icon, .inscribete-text { transition: none !important; }
+}
+
+/* Responsive pequeños ajusta ancho expandido */
+@media (max-width: 480px) {
+  #inscribete-float { right: .85rem; bottom: 1.75rem; width: 54px; height: 54px; }
+  .inscribete-core { border-width: 2px; }
+  .inscribete-icon { font-size: 1.25rem; }
+  #inscribete-float.expanded, #inscribete-float:hover { width: 170px; }
+  .inscribete-text { font-size: .78rem; letter-spacing:.25px; }
+}
+
+/* ===== Variantes por sección (sin detección automática) ===== */
+/* Modo amarillo (default en secciones definidas) */
+#inscribete-float.mode-yellow .inscribete-core {
+  border-color: rgba(255,193,7,0.85);
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,.25), 0 0 0 3px rgba(255,193,7,0.15);
+}
+#inscribete-float.mode-yellow .inscribete-icon { color: var(--accent-gold); }
+
+/* Modo azul (resto de secciones) */
+#inscribete-float.mode-blue .inscribete-core {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,.20), 0 0 0 3px rgba(10,46,82,.12);
+}
+#inscribete-float.mode-blue .inscribete-icon { color: var(--primary-blue); }
+
+/* Dark mode hipotético */
+body.dark-mode #inscribete-float .inscribete-core { background: rgba(255,255,255,0.04); border-color: var(--accent-gold,#FFC107); }
+body.dark-mode #inscribete-float.expanded .inscribete-core,
+body.dark-mode #inscribete-float:hover .inscribete-core { background: linear-gradient(135deg,var(--secondary-blue,#1a3a5f), var(--tertiary-blue,#2a4a6f)); }
