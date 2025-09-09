@@ -63,6 +63,23 @@
   width: auto;
 }
 
+/* Ajustes específicos para el SVG de la flecha */
+.inscribete-icon svg {
+  display: block;
+  width: 1.55em; /* relativo al font-size del contenedor */
+  height: 1.55em;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.35));
+  transition: transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+/* Pequeño vaivén suave cuando no está expandido para llamar la atención */
+@keyframes arrow-breathe { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-3px); } }
+#inscribete-float:not(.expanded):not(:hover) .inscribete-icon svg { animation: arrow-breathe 4.5s ease-in-out infinite; }
+
+/* Al expandir u hover la flecha se encoge suavemente antes de desaparecer */
+#inscribete-float.expanded .inscribete-icon svg,
+#inscribete-float:hover .inscribete-icon svg { transform: translateX(-2px) scale(.4); }
+
 /* Texto oculto inicialmente dentro del mismo contenedor */
 .inscribete-text {
   font-size: .95rem;

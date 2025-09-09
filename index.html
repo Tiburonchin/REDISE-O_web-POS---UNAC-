@@ -622,7 +622,12 @@
     <!-- Floating Inscríbete YA Component (refactor: fixed left, non-draggable) -->
     <div id="inscribete-float" role="button" aria-label="Inscríbete ya" aria-expanded="false" tabindex="0">
         <div class="inscribete-core">
-            <span class="inscribete-icon" aria-hidden="true">Go!</span>
+                        <span class="inscribete-icon" aria-hidden="true">
+                                <!-- Flecha izquierda SVG accesible (decorativa) -->
+                                <svg width="28" height="28" viewBox="0 0 24 24" role="presentation" focusable="false" aria-hidden="true">
+                                    <path d="M14.75 5.25L8.25 12l6.5 6.75" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </span>
             <span class="inscribete-text" aria-hidden="true">¡Inscríbete ya!</span>
         </div>
     </div>
