@@ -73,7 +73,8 @@ header.header {
 
 header.header .header-container {
     max-width: 90% !important;
-    margin: auto !important;
+
+    margin: 0rem 2rem 0rem 8rem;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -108,6 +109,8 @@ header.header .nav-menu {
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    flex: 1 1 auto !important; /* take available space */
+    justify-content: center !important; /* center menu */
 }
 
 header.header .nav-item {
@@ -123,7 +126,7 @@ header.header .nav-link {
     text-decoration: none !important;
     padding: 16px 18px !important;
     font-weight: 600 !important; /* Cambiado de 500 a 600 para más grosor */
-    font-size: 14px !important;
+    font-size: 13px !important;
     transition: all 0.3s ease !important;
     position: relative !important;
     background: none !important;
@@ -643,12 +646,14 @@ header.header .mobile-menu.active {
     /* Ajustar altura del header */
     header.header .header-container {
         height: 70px !important;
+    margin: 0 auto !important; /* centrar automáticamente en móviles, sin márgenes laterales forzados */
     }
 }
 
 @media (max-width: 768px) {
     .header-container {
-        padding: 0 20px !important;
+    padding: 0 20px !important;
+    margin: 0 auto !important; /* asegurar centrado también en tablet */
     }
 
     .logo-section {
@@ -656,7 +661,8 @@ header.header .mobile-menu.active {
     }
     
     header.header .header-container {
-        height: 70px !important;
+    height: 70px !important;
+    margin: 0 auto !important; /* mantener auto en este breakpoint */
     }
     
     header.header .logo img {
@@ -672,8 +678,9 @@ header.header .mobile-menu.active {
 
 @media (max-width: 480px) {
     header.header .header-container {
-        height: 65px !important;
-        padding: 0 0px !important;
+    height: 65px !important;
+    padding: 0 0px !important;
+    margin: 0 auto !important; /* forzar auto en móviles pequeños */
     }
     
     header.header .logo img {
@@ -715,7 +722,24 @@ header.header .mobile-menu.active {
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: 24px;
+    margin-left: 8px;
+}
+
+/* Expanding background pill behind WhatsApp icon and number (overlay, no layout shift) */
+.whatsapp-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0; /* anchor to the right, expand to the left */
+    transform: translateY(-50%);
+    height: 41px;
+    width: 41px; /* same as icon: starts as a circle */
+    border-radius: 999px;
+    background: rgba(10, 46, 82, 0.96); /* dark blue harmony */
+    border: 1px solid rgba(255, 213, 79, 0.25); /* subtle golden edge */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: width 0.3s ease;
+    z-index: 0;
 }
 
 .whatsapp-btn {
@@ -731,12 +755,15 @@ header.header .mobile-menu.active {
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    z-index: 3; /* ensure icon sits above text/background */
+    box-sizing: border-box; /* keep computed height at 41px */
 }
 
 .whatsapp-btn:hover {
     background: #128C7E; /* Darker WhatsApp green on hover */
     color: white; /* Keep icon white on hover */
-    transform: scale(1.1);
+    transform: none; /* avoid layout jitter */
 }
 
 .whatsapp-btn i {
@@ -749,24 +776,101 @@ header.header .mobile-menu.active {
 
 .whatsapp-number {
     position: absolute;
-    left: 100%;
-    margin-left: 10px;
-    background: #0a2e52; /* Dark blue from palette */
-    color: white; /* White text */
-    padding: 8px 12px;
-    border-radius: 6px;
+    top: 50%;
+    right: 120px; /* push further left to avoid overlap with icon */
+    transform: translateY(-50%);
+    color: white; /* readable on dark pill */
+    padding: 0 8px; /* spacing within pill */
+    text-align: right;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: opacity 0.25s ease 0.05s, visibility 0.25s ease 0.05s;
+    z-index: 2; /* above the pill, below icon */
+    pointer-events: none; /* avoid intercepting clicks; keeps hover on container */
+}
+
+.whatsapp-container:hover::before {
+    width: 180px; /* expand more to the left for long numbers */
 }
 
 .whatsapp-container:hover .whatsapp-number {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0);
+}
+
+/* Header actions layout */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative; /* ensure overlay stacking over nav if overlapping */
+    z-index: 2;
+}
+
+/* Expandable Button (circle -> rounded rectangle on hover) */
+.expandable-btn-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 16px; /* sits to the right of WhatsApp, effectively swapping prominence */
+}
+
+.expandable-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+    color: #0a2e52;
+    text-decoration: none;
+    height: 41px;
+    border-radius: 999px; /* rounded pill */
+    padding: 0 14px; /* always expanded */
+    width: auto;
+    min-width: 41px;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 2px 6px rgba(255, 213, 79, 0.15);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-sizing: border-box; 
+}
+
+.expandable-btn i {
+    font-size: 18px;
+}
+
+.expandable-btn .label {
+    opacity: 1;
+    transform: none;
+    transition: color 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Hover only adjusts color/elevation */
+/* Hover only adjusts color/elevation */
+.expandable-btn:hover {
+    background: linear-gradient(135deg, #0a2e52 0%, #1a3a5f 100%);
+    color: #FFD54F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(10, 46, 82, 0.2);
+}
+
+.expandable-btn:hover .label {
+    color: #FFD54F;
+}
+
+/* Ensure icon stays visible */
+.expandable-btn:hover i {
+    color: #FFD54F;
+}
+
+/* Responsive: hide both containers inside header on small screens (already hiding WhatsApp) */
+@media (max-width: 900px) {
+    .expandable-btn-container {
+        display: none !important;
+    }
 }

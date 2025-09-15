@@ -68,6 +68,167 @@
          ================================ -->
     <header id="header"></header>
 
+    <!-- ================================
+    HERO SECTION
+    ================================ -->
+
+        <section class="hero-proceso-admision">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <img src="../../img/admision/proceso-admision.jpg" alt="Directores Escuela de Posgrado UNAC" class="hero-bg-image">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="hero-content">
+                            <div class="hero-welcome">
+                                <span class="welcome-text">Conoce nuestro</span>
+                                <h1 class="hero-title">PROCESO DE ADMISIÓN DE POSGRADO</h1>
+                                <div class="hero-divider">
+                                    <div class="divider-line"></div>
+                                    <div class="divider-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <div class="divider-line"></div>
+                                </div>
+                            </div>
+                            <p class="hero-subtitle">
+                                Descubre el proceso de admisión y los requisitos necesarios <strong>para formar parte de nuestra comunidad académica.</strong>
+                            </p>
+                            <div class="hero-cta">
+                                <a href="#guia-admision-2025-v2" class="btn-scroll-down">
+                                    <span>Ver formulario de inscripciones 2026 - I</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             FORMULARIO DE PRE-INSCRIPCIÓN 2026-I
+             ================================ -->
+    <section id="guia-admision-2025-v2" class="py-5 bg-light"><!-- Anchor destino scroll -->
+            <div class="container">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-10">
+                        <h2 class="text-center fw-bold mb-3" style="color:#0a2e52">Formulario de Pre‑Inscripción 2026 - I</h2>
+                        <p class="text-center text-muted mb-0">Completa tus datos correctamente. Todos los campos marcados con * son obligatorios.</p>
+                    </div>
+                </div>
+
+                <div id="form-messages" class="row justify-content-center d-none">
+                    <div class="col-lg-8">
+                        <div class="alert" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <form id="formPreinscripcion" class="card shadow-sm border-0 p-4 needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="dni" class="form-label">DNI * </label>
+                                    <input type="text" maxlength="8" pattern="\\d{8}" class="form-control" id="dni" name="dni" required>
+                                    <div class="invalid-feedback">Ingresa 8 dígitos.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="nombre" class="form-label">Nombres * </label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    <div class="invalid-feedback">Ingresa tus nombres.</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="apellidos" class="form-label">Apellidos * </label>
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                                    <div class="invalid-feedback">Ingresa tus apellidos.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="correo" class="form-label">Correo electrónico * </label>
+                                    <input type="email" class="form-control" id="correo" name="correo" required>
+                                    <div class="invalid-feedback">Correo inválido.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="telefono" class="form-label">Celular (Perú) * </label>
+                                    <input type="tel" maxlength="9" pattern="\\d{9}" class="form-control" id="telefono" name="telefono" required>
+                                    <div class="invalid-feedback">9 dígitos.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento * </label>
+                                    <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                                    <div class="invalid-feedback">Selecciona una fecha.</div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="domicilio" class="form-label">Domicilio (Ciudad / Distrito / Dirección) * </label>
+                                    <input type="text" class="form-control" id="domicilio" name="domicilio" required>
+                                    <div class="invalid-feedback">Ingresa tu domicilio.</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="unidad" class="form-label">Facultad / Unidad * </label>
+                                    <select id="unidad" name="unidad" class="form-select" required>
+                                        <option value="" selected disabled>Seleccione...</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecciona una facultad.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="nivel" class="form-label">Nivel * </label>
+                                    <select id="nivel" class="form-select" required>
+                                        <option value="" selected disabled>Seleccione...</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecciona un nivel.</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="programa" class="form-label">Programa * </label>
+                                    <select id="programa" name="programa" class="form-select" required disabled>
+                                        <option value="" selected disabled>Seleccione...</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecciona un programa.</div>
+                                </div>
+
+                                <input type="hidden" id="detalle_programa" name="detalle_programa" />
+
+                                <div class="col-md-6">
+                                    <label for="medio_conocimiento" class="form-label">¿Cómo te enteraste? * </label>
+                                    <select id="medio_conocimiento" name="medio_conocimiento" class="form-select" required>
+                                        <option value="" disabled selected>Seleccione...</option>
+                                        <option>Facebook</option>
+                                        <option>Instagram</option>
+                                        <option>WhatsApp</option>
+                                        <option>Página Web</option>
+                                        <option>Radio / TV</option>
+                                        <option>Recomendación</option>
+                                        <option>Otro</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecciona una opción.</div>
+                                </div>
+
+                                <div class="col-md-6 d-flex flex-column justify-content-end">
+                                    <div class="mb-2 small text-muted" id="brochureInfo"></div>
+                                </div>
+
+                                <div class="col-12">
+                                    <!-- Reemplazar YOUR_RECAPTCHA_SITE_KEY con la site key pública correspondiente -->
+                                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                                    <div class="form-text">Protegido por reCAPTCHA</div>
+                                </div>
+
+                                <div class="col-12 d-flex gap-3 mt-3">
+                                    <button type="submit" id="btnSubmit" class="btn btn-primary px-4">
+                                        <span class="btn-text">Enviar pre‑inscripción</span>
+                                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- ================================
          FOOTER SECTION
