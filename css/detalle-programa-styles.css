@@ -1,3 +1,107 @@
+/* ================================
+   POR QUÉ LLEVARLA (CARDS)
+   ================================ */
+.porque-llevarla-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+@media (min-width: 576px) {
+    .porque-llevarla-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.porque-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow-1);
+    padding: 1.5rem 1.5rem 1.5rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--gray-300);
+    position: relative;
+    min-height: 160px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.porque-card::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 1rem;
+    bottom: 1rem;
+    width: 5px;
+    background: var(--accent-gold);
+    border-radius: 4px;
+}
+.porque-card:hover {
+    box-shadow: var(--shadow-3);
+    transform: translateY(-4px);
+}
+.porque-num {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.porque-text {
+    font-size: 1.05rem;
+    color: var(--primary-blue);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* ================================
+   PLAN DE ESTUDIOS (TABS)
+   ================================ */
+.plan-estudios-tabs .nav-pills .nav-link {
+    background: var(--white);
+    color: var(--primary-blue);
+    border: 1.5px solid var(--accent-gold);
+    border-radius: 8px 8px 0 0;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+.plan-estudios-tabs .nav-pills .nav-link.active {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    border-bottom: 2.5px solid var(--primary-blue);
+}
+.plan-list {
+    list-style: disc inside;
+    padding-left: 1.2rem;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+/* ================================
+   CAMPO OCUPACIONAL
+   ================================ */
+.campo-title {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.campo-list {
+    list-style: disc inside;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+}
+.campo-list li {
+    margin-bottom: 0.5rem;
+}
+.campo-extra {
+    color: var(--accent-gold-dark);
+    font-size: 1.05rem;
+    font-style: italic;
+}
 /* Centrado de hero section excepto badges */
 .hero-center {
     width: 100%;
@@ -175,7 +279,8 @@
     border: 1px solid var(--gray-300);
 }
 
-.card-header {
+.contenido-card .card-header,
+.sidebar-card .card-header {
     height: auto;
 }
 
@@ -261,9 +366,50 @@
 /* ================================
    SIDEBAR
    ================================ */
-.info-sidebar {
-    position: sticky;
-    top: 100px;
+/* .info-sidebar: regla removida (evita lint por bloque vacío) */
+
+.scroll-container {
+    position: relative;
+}
+
+.scroll-container.scrolling {
+    display: block;
+}
+
+.scroll-container.scrolling .scroll-content {
+    position: fixed;
+    top: 100px; /* Adjust based on header height */
+    width: 50%; /* Corresponds to col-lg-8 */
+    padding-right: 15px; /* Gutter */
+}
+
+.scroll-container.scrolling .info-sidebar {
+    position: fixed;
+    top: 100px; /* Adjust based on header height */
+    width: 25%; /* Corresponds to col-lg-4 */
+    padding-left: 15px; /* Gutter */
+}
+
+.info-section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.info-section:last-child {
+    border-bottom: none;
+}
+
+.info-section .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+}
+
+.contenido-card .card-body {
+    padding: 0;
 }
 
 .sidebar-card {

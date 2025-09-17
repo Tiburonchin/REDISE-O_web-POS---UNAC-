@@ -1,0 +1,9 @@
+# robots.txt for Posgrado UNAC
+User-agent: *
+Allow: /
+
+# Disallow common noise
+Disallow: /tmp/
+Disallow: /admision/posgrado_env%C3%ADo/
+
+Sitemap: https://posgrado.unac.edu.pe/sitemap.xml

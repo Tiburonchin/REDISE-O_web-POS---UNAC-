@@ -10,6 +10,9 @@
     <meta name="keywords" content="UNAC, Escuela de Posgrado, programas académicos, maestrías, doctorados, educación superior, posgrado, universidad, Callao, Perú">
     <meta name="author" content="Escuela de Posgrado UNAC">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://posgrado.unac.edu.pe/detalle_programa.html">
+    <link rel="alternate" href="https://posgrado.unac.edu.pe/detalle_programa.html" hreflang="es-pe">
+    <link rel="alternate" href="https://posgrado.unac.edu.pe/detalle_programa.html" hreflang="es">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -46,6 +49,8 @@
     <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="css/programas-styles.css">
     <link rel="stylesheet" href="css/detalle-programa-styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body class="page-detalle-programa">
@@ -84,14 +89,14 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="hero-content hero-center">
-                            <div class="programa-info">
+                            <div class="programa-info animate-on-scroll fade-in-down">
                                 <span id="facultad-badge" class="facultad-badge">Cargando...</span>
                                 <span id="tipo-badge" class="tipo-badge">Cargando...</span>
                             </div>
-                            <h1 id="programa-titulo" class="hero-title">Cargando programa...</h1>
-                            <p id="programa-descripcion" class="hero-subtitle">Cargando descripción...</p>
+                            <h1 id="programa-titulo" class="hero-title animate-on-scroll fade-in-up">Cargando programa...</h1>
+                            <p id="programa-descripcion" class="hero-subtitle animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">Cargando descripción...</p>
                             
-                            <div class="programa-quick-info">
+                            <div class="programa-quick-info animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
                                 <div class="info-item">
                                     <i class="fas fa-clock"></i>
                                     <span>Duración: <strong id="programa-duracion">-</strong></span>
@@ -102,8 +107,8 @@
                                 </div>
                             </div>
 
-                            <div class="hero-cta">
-                                <a href="admision/proceso_admision.html" class="btn-postular">
+                            <div class="hero-cta animate-on-scroll fade-in-up" style="animation-delay: 0.6s;">
+                                <a href="admision/Proceso_admision.html" class="btn-postular">
                                     <i class="fas fa-user-plus me-2"></i>Postular ahora
                                 </a>
                                 <a href="programas.html" class="btn-volver">
@@ -121,30 +126,229 @@
              ================================ -->
         <section class="detalle-contenido py-5">
             <div class="container">
-                <div class="row">
-                    
-                    <!-- ================================
-                         DESCRIPCIÓN DETALLADA
+                <div class="scroll-container">
+                    <div class="row">
+                        <!-- ================================
+                         CONTENIDO DEL PROGRAMA
                          ================================ -->
-                    <div class="col-lg-8 mb-5">
-                        <div class="contenido-card">
-                            <div class="card-header">
-                                <h2 class="section-title">
-                                    <i class="fas fa-info-circle me-3"></i>
-                                    Acerca del Programa
-                                </h2>
-                            </div>
-                            <div class="card-body">
-                                <p id="descripcion-detallada" class="descripcion-texto">
-                                    Cargando descripción detallada del programa...
-                                </p>
+                        <div class="col-lg-8 mb-5 scroll-content">
+                            <div class="contenido-card">
+                                <div class="card-body">
+                                    <section id="acerca-del-programa" class="info-section">
+                                        <h2 class="section-title">Acerca del programa</h2>
+                                        <div id="descripcion-detallada" class="descripcion-texto">Cargando descripción detallada del programa...</div>
+                                    </section>
+                                    <section id="porque-llevarla" class="info-section">
+                                        <h2 class="section-title">¿Por qué llevarla?</h2>
+                                        <div class="porque-llevarla-grid">
+                                            <div class="porque-card">
+                                                <div class="porque-num">1</div>
+                                                <div class="porque-text">Accederás a mayores oportunidades de crecimiento profesional con salarios más competitivos.</div>
+                                            </div>
+                                            <div class="porque-card">
+                                                <div class="porque-num">2</div>
+                                                <div class="porque-text">Potenciarás tus habilidades de liderazgo que te permitirán destacar en entornos laborales dinámicos.</div>
+                                            </div>
+                                            <div class="porque-card">
+                                                <div class="porque-num">3</div>
+                                                <div class="porque-text">Expandirás tu red de contactos con profesionales destacados en los diferentes sectores.</div>
+                                            </div>
+                                            <div class="porque-card">
+                                                <div class="porque-num">4</div>
+                                                <div class="porque-text">Podrás obtener nuevos conocimientos que te permitirán estar actualizado y ser competitivo en el mercado laboral.</div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section id="plan-de-estudios-section" class="info-section">
+                                        <h2 class="section-title">Plan de estudios</h2>
+                                        <div id="plan-estudios-tabs" class="plan-estudios-tabs mb-3">
+                                            <ul class="nav nav-pills" id="semestres-tabs" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" id="semestre1-tab" data-bs-toggle="pill" data-bs-target="#semestre1" type="button" role="tab" aria-controls="semestre1" aria-selected="true">Semestre 1</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="semestre2-tab" data-bs-toggle="pill" data-bs-target="#semestre2" type="button" role="tab" aria-controls="semestre2" aria-selected="false">Semestre 2</button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" id="semestre3-tab" data-bs-toggle="pill" data-bs-target="#semestre3" type="button" role="tab" aria-controls="semestre3" aria-selected="false">Semestre 3</button>
+                                                </li>
+                                                <!-- Para doctorado, agregar hasta 6 semestres -->
+                                                <li class="nav-item d-none" role="presentation" id="semestre4-li">
+                                                    <button class="nav-link" id="semestre4-tab" data-bs-toggle="pill" data-bs-target="#semestre4" type="button" role="tab" aria-controls="semestre4" aria-selected="false">Semestre 4</button>
+                                                </li>
+                                                <li class="nav-item d-none" role="presentation" id="semestre5-li">
+                                                    <button class="nav-link" id="semestre5-tab" data-bs-toggle="pill" data-bs-target="#semestre5" type="button" role="tab" aria-controls="semestre5" aria-selected="false">Semestre 5</button>
+                                                </li>
+                                                <li class="nav-item d-none" role="presentation" id="semestre6-li">
+                                                    <button class="nav-link" id="semestre6-tab" data-bs-toggle="pill" data-bs-target="#semestre6" type="button" role="tab" aria-controls="semestre6" aria-selected="false">Semestre 6</button>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content mt-3" id="semestres-content">
+                                                <div class="tab-pane fade show active" id="semestre1" role="tabpanel" aria-labelledby="semestre1-tab">
+                                                    <ul class="plan-list">
+                                                        <li>Curso 1: Fundamentos avanzados</li>
+                                                        <li>Curso 2: Metodología de la investigación</li>
+                                                        <li>Curso 3: Seminario de especialidad</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="semestre2" role="tabpanel" aria-labelledby="semestre2-tab">
+                                                    <ul class="plan-list">
+                                                        <li>Curso 4: Gestión de proyectos</li>
+                                                        <li>Curso 5: Electivo profesional</li>
+                                                        <li>Curso 6: Seminario de tesis I</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="semestre3" role="tabpanel" aria-labelledby="semestre3-tab">
+                                                    <ul class="plan-list">
+                                                        <li>Curso 7: Ética y responsabilidad profesional</li>
+                                                        <li>Curso 8: Electivo de investigación</li>
+                                                        <li>Curso 9: Seminario de tesis II</li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Doctorado: semestres 4-6 -->
+                                                <div class="tab-pane fade" id="semestre4" role="tabpanel" aria-labelledby="semestre4-tab">
+                                                    <ul class="plan-list">
+                                                        <li>Curso 10: Investigación avanzada I</li>
+                                                        <li>Curso 11: Electivo doctoral</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="semestre5" role="tabpanel" aria-labelledby="semestre5-tab">
+                                                    <ul class="plan-list">
+                                                        <li>Curso 12: Investigación avanzada II</li>
+                                                        <li>Curso 13: Publicación científica</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="semestre6" role="tabpanel" aria-labelledby="semestre6-tab">
+                                                    <ul class="plan-list">
+                                                        <li>Curso 14: Defensa de tesis doctoral</li>
+                                                        <li>Curso 15: Seminario internacional</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 small text-muted">El plan puede variar según la cohorte y el tipo de programa.</div>
+                                    </section>
+                                    <section id="campo-ocupacional-section" class="info-section">
+                                        <h2 class="section-title">Campo ocupacional</h2>
+                                        <div id="campo-ocupacional">
+                                            <h4 class="campo-title">¿Dónde podrás aplicar lo aprendido?</h4>
+                                            <ul class="campo-list">
+                                                <li><strong>Instituciones públicas y privadas:</strong> Gestión, dirección y consultoría en entidades de salud, educación, empresas, ONGs, y organismos internacionales.</li>
+                                                <li><strong>Docencia universitaria:</strong> Enseñanza e investigación en universidades e institutos superiores.</li>
+                                                <li><strong>Investigación:</strong> Proyectos de innovación, desarrollo científico y tecnológico en centros de investigación.</li>
+                                                <li><strong>Consultoría independiente:</strong> Asesoría especializada en tu campo profesional.</li>
+                                                <li><strong>Emprendimiento:</strong> Creación y gestión de empresas o servicios propios relacionados a tu especialidad.</li>
+                                            </ul>
+                                            <div class="campo-extra mt-3">
+                                                <em>Un posgrado te permitirá acceder a cargos de mayor responsabilidad, liderar equipos multidisciplinarios y contribuir al desarrollo de tu sector.</em>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
                             </div>
                         </div>
 
                         <!-- ================================
-                             GALERÍA DE IMÁGENES
-                             ================================ -->
-                        <div class="contenido-card mt-4">
+                         SIDEBAR CON INFORMACIÓN
+                         ================================ -->
+                        <div class="col-lg-4">
+                            <div class="info-sidebar">
+                                <!-- Información del programa -->
+                                <div class="sidebar-card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-graduation-cap me-3"></i>
+                                            Información del Programa
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="info-list">
+                                            <div class="info-row">
+                                                <span class="info-label">Tipo:</span>
+                                                <span id="sidebar-tipo" class="info-value">-</span>
+                                            </div>
+                                            <div class="info-row">
+                                                <span class="info-label">Duración:</span>
+                                                <span id="sidebar-duracion" class="info-value">-</span>
+                                            </div>
+                                            <div class="info-row">
+                                                <span class="info-label">Modalidad:</span>
+                                                <span id="sidebar-modalidad" class="info-value">-</span>
+                                            </div>
+                                            <div class="info-row">
+                                                <span class="info-label">Facultad:</span>
+                                                <span id="sidebar-facultad" class="info-value">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Acciones rápidas -->
+                                <div class="sidebar-card mt-4">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-rocket me-2"></i>
+                                            Comienza tu postulación
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="action-buttons">
+                                            <a href="admision/Proceso_admision.html" class="btn-action primary">
+                                                <i class="fas fa-user-plus"></i>
+                                                <span>Postular</span>
+                                            </a>
+                                            <a href="PDF/manual-de-pago-postulantes.pdf" target="_blank" class="btn-action secondary">
+                                                <i class="fas fa-download"></i>
+                                                <span>Manual de pago</span>
+                                            </a>
+                                            <a href="admision/cronograma.html" class="btn-action secondary">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                <span>Cronograma</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Información de contacto -->
+                                <div class="sidebar-card mt-4">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-phone me-2"></i>
+                                            ¿Necesitas ayuda?
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="contact-info">
+                                            <div class="contact-item">
+                                                <i class="fas fa-envelope"></i>
+                                                <span id="contact-correo">posgrado@unac.edu.pe</span>
+                                            </div>
+                                            <div class="contact-item">
+                                                <i class="fas fa-phone"></i>
+                                                <span id="contact-telefono">(01) 429-6101</span>
+                                            </div>
+                                            <div class="contact-item">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Av. Juan Pablo II 306, Bellavista - Callao</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================
+             GALERÍA (SECCIÓN APARTE)
+             ================================ -->
+        <section class="galeria-programa py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contenido-card">
                             <div class="card-header">
                                 <h2 class="section-title">
                                     <i class="fas fa-images me-3"></i>
@@ -153,101 +357,13 @@
                             </div>
                             <div class="card-body">
                                 <div class="galeria-imagenes">
-                                    <div class="imagen-principal">
-                                        <img id="imagen-principal" src="" alt="Imagen principal del programa" class="img-principal">
-                                    </div>
-                                    <div class="imagenes-miniatura" id="imagenes-miniatura">
-                                        <!-- Miniaturas generadas dinámicamente por JS -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ================================
-                         SIDEBAR CON INFORMACIÓN
-                         ================================ -->
-                    <div class="col-lg-4">
-                        
-                        <!-- Información del programa -->
-                        <div class="info-sidebar">
-                            <div class="sidebar-card">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-graduation-cap me-3"></i>
-                                        Información del Programa
-                                    </h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="info-list">
-                                        <div class="info-row">
-                                            <span class="info-label">Tipo:</span>
-                                            <span id="sidebar-tipo" class="info-value">-</span>
-                                        </div>
-                                        <div class="info-row">
-                                            <span class="info-label">Duración:</span>
-                                            <span id="sidebar-duracion" class="info-value">-</span>
-                                        </div>
-                                        <div class="info-row">
-                                            <span class="info-label">Modalidad:</span>
-                                            <span id="sidebar-modalidad" class="info-value">-</span>
-                                        </div>
-                                        <div class="info-row">
-                                            <span class="info-label">Facultad:</span>
-                                            <span id="sidebar-facultad" class="info-value">-</span>
+                                    <div class="imagen-principal-container">
+                                        <div class="imagen-principal">
+                                            <img id="imagen-principal" src="" alt="Imagen principal del programa" class="img-principal">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Acciones rápidas -->
-                            <div class="sidebar-card mt-4">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-rocket me-2"></i>
-                                        Comienza tu postulación
-                                    </h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="action-buttons">
-                                        <a href="admision/proceso_admision.html" class="btn-action primary">
-                                            <i class="fas fa-user-plus"></i>
-                                            <span>Postular</span>
-                                        </a>
-                                        <a href="PDF/manual-de-pago-postulantes.pdf" target="_blank" class="btn-action secondary">
-                                            <i class="fas fa-download"></i>
-                                            <span>Manual de pago</span>
-                                        </a>
-                                        <a href="admision/cronograma.html" class="btn-action secondary">
-                                            <i class="fas fa-calendar-alt"></i>
-                                            <span>Cronograma</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Información de contacto -->
-                            <div class="sidebar-card mt-4">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-phone me-2"></i>
-                                        ¿Necesitas ayuda?
-                                    </h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="contact-info">
-                                        <div class="contact-item">
-                                            <i class="fas fa-envelope"></i>
-                                            <span id="contact-correo">posgrado@unac.edu.pe</span>
-                                        </div>
-                                        <div class="contact-item">
-                                            <i class="fas fa-phone"></i>
-                                            <span id="contact-telefono">(01) 429-6101</span>
-                                        </div>
-                                        <div class="contact-item">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Av. Juan Pablo II 306, Bellavista - Callao</span>
-                                        </div>
+                                    <div class="imagenes-miniatura-wrapper">
+                                        <div class="imagenes-miniatura mt-3" id="imagenes-miniatura"><!-- Miniaturas dinámicas --></div>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +386,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" id="programas-relacionados-container">
+                <div class="row g-4" id="programas-relacionados-container">
                     <!-- Programas relacionados cargados dinámicamente -->
                 </div>
                 <div class="text-center mt-4">
@@ -314,5 +430,6 @@
     <script src="header/header_carga.js"></script>
     <script src="footer/footer_carga.js"></script>
     <script src="js/detalle_programa.js"></script>
+    <script src="js/detalle_programa_scroll.js"></script>
 </body>
 </html>

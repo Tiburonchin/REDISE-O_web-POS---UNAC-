@@ -33,7 +33,7 @@
       manualToggle = true;
       expand();
     } else {
-      window.location.href = 'admision/formulario/new_inscripciones.html';
+      window.open('https://wa.me/51900970371', '_blank');
     }
   });
 

@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "2025-09-17",
+    "total_programas": 120,
+    "total_facultades": 11
+  },
+  "facultades": {
+    "fcs": {
+      "codigo": "fcs",
+      "nombre": "Ciencias de la Salud",
+      "contacto": {
+        "correo": "fcs.posgrado@unac.pe",
+        "telefono": "+51 961 995 725"
+      },
+      "programas": [
+        {
+          "id": 1,
+          "nombre": "Maestría en Salud Pública",
+          "tipo": "maestria",
+          "slug": "maestria-en-salud-publica",
+          "descripcion": "Programa orientado a formar profesionales en el ámbito de la salud pública",
+          "descripcion_detallada": "Este programa está diseñado para capacitar a profesionales en la gestión y promoción de la salud pública, abordando temas como epidemiología, políticas de salud y promoción de la salud comunitaria.",
+          "sidebar": {
+            "tipo": "Maestría",
+            "duracion": "1 año y 6 meses",
+            "modalidad": "Presencial / Virtual",
+            "facultad": "Ciencias de la Salud"
+          },
+          "imagenes": {
+            "principal": "img/img-programas/ciencias-de-la-salud/maestria-en-salud-publica/maestria-en-salud-publica_1.jpg",
+            "galeria": [
+              "img/img-programas/ciencias-de-la-salud/maestria-en-salud-publica/maestria-en-salud-publica_1.jpg",
+              "img/img-programas/ciencias-de-la-salud/maestria-en-salud-publica/maestria-en-salud-publica_2.jpg",
+              "img/img-programas/ciencias-de-la-salud/maestria-en-salud-publica/maestria-en-salud-publica_3.jpg"
+            ]
+          },
+          "informacion_adicional": {
+            "creditos": 60,
+            "requisitos": ["Título profesional", "Experiencia mínima 2 años"],
+            "costo": "S/ 15,000",
+            "fecha_inicio": "Marzo 2025"
+          }
+        }
+      ]
+    }
+  }
+}

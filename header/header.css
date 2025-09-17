@@ -472,6 +472,10 @@ header.header .mobile-menu.active {
     /* Eliminado el cambio de font-weight en hover */
 }
 
+/* Quitar subrayado a los botones móviles */
+.mobile-action-btn, .mobile-solid-btn, .mobile-action-btn:visited, .mobile-solid-btn:visited {
+    text-decoration: none !important;
+}
 .mobile-action-btn {
     margin: 20px;
     background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
@@ -717,28 +721,28 @@ header.header .mobile-menu.active {
     }
 }
 
-/* WhatsApp Container */
+/* WhatsApp Container - Versión Verde Unificada */
 .whatsapp-container {
     position: relative;
     display: flex;
     align-items: center;
     margin-left: 8px;
+    height: 44px;
 }
 
-/* Expanding background pill behind WhatsApp icon and number (overlay, no layout shift) */
 .whatsapp-container::before {
     content: '';
     position: absolute;
     top: 50%;
-    right: 0; /* anchor to the right, expand to the left */
+    right: 0;
     transform: translateY(-50%);
-    height: 41px;
-    width: 41px; /* same as icon: starts as a circle */
+    height: 44px;
+    width: 44px; /* aire lateral para centrar icono */
     border-radius: 999px;
-    background: rgba(10, 46, 82, 0.96); /* dark blue harmony */
-    border: 1px solid rgba(255, 213, 79, 0.25); /* subtle golden edge */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    transition: width 0.3s ease;
+    background: linear-gradient(140deg, #27d366 0%, #21c25d 45%, #18a851 100%);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 4px 12px -4px rgba(24,168,81,0.45), 0 0 0 2px rgba(255,255,255,0.04) inset, 0 0 0 1px rgba(0,0,0,0.25);
+    transition: width 0.38s cubic-bezier(.4,0,.2,1), background 0.4s ease;
     z-index: 0;
 }
 
@@ -746,59 +750,59 @@ header.header .mobile-menu.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #25D366;
-    border: none;
-    color: white;
-    width: 41px;
-    height: 41px;
-    border-radius: 50%;
+    background: linear-gradient(160deg, #2fe172, #22c85e 55%, #18a851 100%);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.18s ease;
     cursor: pointer;
     position: relative;
-    z-index: 3; /* ensure icon sits above text/background */
-    box-sizing: border-box; /* keep computed height at 41px */
+    z-index: 3;
+    box-sizing: border-box;
+    box-shadow: 0 4px 14px -5px rgba(34,200,94,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset;
 }
+
+.whatsapp-btn i { font-size: 22px; }
 
 .whatsapp-btn:hover {
-    background: #128C7E; /* Darker WhatsApp green on hover */
-    color: white; /* Keep icon white on hover */
-    transform: none; /* avoid layout jitter */
-}
-
-.whatsapp-btn i {
-    font-size: 28px; /* Slightly larger icon */
-}
-
-.whatsapp-btn:hover i {
-    color: white; /* Keep icon white on hover */
+    background: linear-gradient(150deg, #34e476, #27c665 55%, #1fa155 100%);
+    box-shadow: 0 8px 18px -6px rgba(31,161,85,0.55), 0 0 0 1px rgba(255,255,255,0.12) inset;
 }
 
 .whatsapp-number {
     position: absolute;
     top: 50%;
-    right: 120px; /* push further left to avoid overlap with icon */
-    transform: translateY(-50%);
-    color: white; /* readable on dark pill */
-    padding: 0 8px; /* spacing within pill */
+    right: 52px; /* alineado con nuevo ancho base */
+    transform: translate(12px, -50%);
+    color: #f7fff9;
     text-align: right;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: 0.3px;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s ease 0.05s, visibility 0.25s ease 0.05s;
-    z-index: 2; /* above the pill, below icon */
-    pointer-events: none; /* avoid intercepting clicks; keeps hover on container */
+    transition: transform 0.38s cubic-bezier(.4,0,.2,1), opacity 0.38s ease, visibility 0s linear 0.38s;
+    z-index: 2;
+    pointer-events: none;
+    padding: 0 10px 0 18px;
+    max-width: 210px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
 }
 
 .whatsapp-container:hover::before {
-    width: 180px; /* expand more to the left for long numbers */
+    width: 270px; /* cubre texto completo con aire */
+    background: linear-gradient(140deg, #29d968 0%, #23c65d 40%, #1bad56 100%);
 }
 
 .whatsapp-container:hover .whatsapp-number {
     opacity: 1;
     visibility: visible;
+    transform: translate(0, -50%);
+    transition: transform 0.38s cubic-bezier(.4,0,.2,1) 0.08s, opacity 0.38s ease 0.08s, visibility 0s linear 0.08s;
 }
 
 /* Header actions layout */
@@ -873,4 +877,104 @@ header.header .mobile-menu.active {
     .expandable-btn-container {
         display: none !important;
     }
+}
+
+/* Rediseño Armónico Botón Admisión 2025 */
+/* Ajuste saturación: base más sólida y menos cristalina */
+.expandable-btn {
+    background: linear-gradient(145deg, rgba(16,63,112,0.92) 0%, rgba(12,53,95,0.94) 55%, rgba(10,46,82,0.97) 100%) !important;
+    border: 1px solid rgba(230,168,0,0.65) !important;
+    height: 44px !important;
+    padding: 0 22px !important;
+    border-radius: 14px !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 10px -3px rgba(0,0,0,0.38), 0 0 0 2px rgba(255,255,255,0.03) inset !important;
+    position: relative !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+}
+
+.expandable-btn i {
+    color: #E6A800 !important;
+    font-size: 18px !important;
+    text-shadow: 0 0 4px rgba(230,168,0,0.45);
+    transition: transform 0.4s cubic-bezier(.25,.8,.25,1), color 0.3s ease !important;
+}
+
+.expandable-btn .label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.8px !important;
+    font-size: 13px !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.expandable-btn::before,
+.expandable-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+/* Halo más discreto */
+.expandable-btn::before {
+    background: radial-gradient(circle at 28% 25%, rgba(230,168,0,0.28), transparent 62%);
+    opacity: 0.42;
+    mix-blend-mode: screen;
+}
+
+.expandable-btn::after { /* borde animado suavizado */
+    background: linear-gradient(120deg, rgba(230,168,0,0.0) 0%, rgba(230,168,0,0.5) 46%, rgba(255,213,79,0.65) 54%, rgba(230,168,0,0.0) 100%);
+    background-size: 250% 100%;
+    animation: shimmerBorder 6s linear infinite;
+    mix-blend-mode: overlay;
+    opacity: 0.38;
+}
+
+@keyframes shimmerBorder {
+    0% { background-position: 200% 0; }
+    100% { background-position: -20% 0; }
+}
+
+/* Hover más sutil (menos movimiento y brillo) */
+.expandable-btn:hover {
+    background: linear-gradient(145deg, #114772 0%, #0d3d64 60%, #0b3458 100%) !important;
+    border-color: #E6A800 !important;
+    box-shadow: 0 0 0 2px rgba(230,168,0,0.12), 0 5px 14px -4px rgba(0,0,0,0.5) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Icono menos exagerado */
+.expandable-btn:hover i {
+    transform: scale(1.05);
+    color: #FFD54F !important;
+    text-shadow: 0 0 4px rgba(255,213,79,0.55);
+}
+
+.expandable-btn:active {
+    transform: translateY(0) scale(.97) !important;
+    box-shadow: 0 2px 10px -2px rgba(0,0,0,0.55) !important;
+    background: #0b335b !important;
+}
+
+.expandable-btn:focus-visible {
+    outline: 2px solid #E6A800 !important;
+    outline-offset: 3px !important;
+}
+
+@media (max-width: 1100px) {
+    .expandable-btn { padding: 0 18px !important; height: 42px !important; }
+    .expandable-btn .label { font-size: 12px !important; letter-spacing: 0.6px !important; }
+}
+
+@media (max-width: 980px) {
+    .expandable-btn { padding: 0 16px !important; }
+    .expandable-btn i { font-size: 16px !important; }
 }

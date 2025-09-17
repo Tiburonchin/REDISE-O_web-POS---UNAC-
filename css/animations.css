@@ -1,0 +1,72 @@
+/* ================================
+   ANIMATION KEYFRAMES
+   ================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   ANIMATION CLASSES
+   ================================ */
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.5s ease-in-out forwards;
+}
+
+/* ================================
+   SCROLL-TRIGGERED ANIMATIONS
+   ================================ */
+
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.animate-on-scroll.fade-in-up {
+    transform: translateY(20px);
+}
+
+.animate-on-scroll.fade-in-down {
+    transform: translateY(-20px);
+}

@@ -7,7 +7,13 @@
   --insc-bg-hover: var(--secondary-blue, #1a3a5f);
   --insc-text-pill: var(--white, #ffffff);
   --insc-radius: 38px;
+
+  /* WhatsApp Colors */
+  --whatsapp-green-light: #25D366;
+  --whatsapp-green-dark: #128C7E;
+  --whatsapp-green-darker: #075E54;
 }
+
 
 #inscribete-float {
   position: fixed;
